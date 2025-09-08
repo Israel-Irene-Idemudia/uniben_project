@@ -21,6 +21,6 @@ class LevelAdmin(admin.ModelAdmin):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ("code", "title", "unit", "level")
+    list_display = ("code", "title", "level")
     list_filter = ("level",)
     search_fields = ("code", "title")

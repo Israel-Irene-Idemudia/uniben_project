@@ -36,7 +36,6 @@ class Level(models.Model):
 class Course(models.Model):
     code = models.CharField(max_length=20)   # e.g. "MTH101"
     title = models.CharField(max_length=200)
-    unit = models.IntegerField()
     level = models.ForeignKey(Level, on_delete=models.CASCADE, related_name="courses")
 
     def __str__(self):
