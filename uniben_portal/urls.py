@@ -22,4 +22,5 @@ urlpatterns = [
     path('api/', include('news.urls')),
     path('api/', include('events.urls')),  
     path('api/', include('materials.urls')),
+    path('api/cbt/', include('cbt.urls')),
 ]
