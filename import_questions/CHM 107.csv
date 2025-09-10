@@ -1,0 +1,386 @@
+Question Number,Question,Option A,Option B,Option C,Option D,correct_indices
+1,"Which of the following methods will hasten the reaction of CaCO₃ with HCl?","Cooling the acid","Using a lump of marble","Using pulverized marble","Adding excess water",2
+2,"Which of these is a standard solution?","Tap water","Vinegar","A solution of known concentration","A supersaturated sugar solution",2
+3,"The colour change of phenolphthalein in a basic solution is:","Colourless","Pink","Blue","Red",1
+4,"In a redox reaction, the species that gains electrons is:","Oxidized","Reduced","Neutralized","Precipitated",1
+5,"What is the mole of HCl in 250 cm³ of 0.1 M solution?","0.0025 mol","0.025 mol","0.25 mol","2.5 mol",1
+6,"Which acid is commonly used in titrations with sodium hydroxide?","Nitric acid","Acetic acid","Hydrochloric acid","Sulfuric acid",2
+7,"The indicator used for strong acid-strong base titration is:","Methyl orange","Phenolphthalein","Litmus","Universal indicator",1
+8,"Which of the following is an example of a basic salt?","NaCl","Zn(OH)Cl","KNO₃","Na₂SO₄",1
+9,"Calculate the volume of 2.0 M HCl needed to supply 0.01 mol of HCl.","5 cm³","10 cm³","15 cm³","20 cm³",0
+10,"Which of the following is a redox reaction?","NaOH + HCl → NaCl + H₂O","AgNO₃ + NaCl → AgCl + NaNO₃","Zn + H₂SO₄ → ZnSO₄ + H₂","Na₂CO₃ + 2HCl → 2NaCl + CO₂ + H₂O",2
+11,"What is the function of a stock solution in volumetric analysis?","Indicator","Standard reference","Unknown solution","Precipitate",1
+12,"A solution of 25 cm³ of NaOH neutralizes 20 cm³ of 0.2 M HCI. What is the molarity of NaOH?","0.1 M","0.16 M","0.2 M","0.25 M",1
+13,"The part of a titration curve where rapid pH change occurs is the:","Buffer region","Equivalence point","Starting point","Plateau",1
+14,"What is the molar concentration of 10 g NaOH in 500 mL solution? (Na=23, O=16, H=1)","0.25 M","0.4 M","0.5 M","1.0 M",2
+15,"Which of the following is an acidic salt?","Na₂SO₄","NH₄Cl","NaHSO₄","K₂CO₃",2
+16,"A standard solution must:","Be colorless","Be acidic","Have known concentration","Be prepared from an unknown solute",2
+17,"The endpoint of a titration is:","When the beaker breaks","When the solution boils","When there is a permanent colour change","When the burette is empty",2
+18,"Which of the following can act as both an acid and a base?","HCl","NH₃","H₂O","NaOH",2
+19,"In redox reactions, oxidizing agents:","Lose electrons","Gain electrons","Donate protons","Are oxidized",1
+20,"What is the normality of 1 M H₂SO₄?","0.5 N","1 N","2 N","4 N",2
+21,"What volume of 0.5 M NaOH will neutralize 25 cm³ of 0.1 M HCI?","2.5 cm³","5.0 cm³","10.0 cm³","12.5 cm³",1
+22,"What is observed when NaOH is added to phenolphthalein?","Colourless","Pink","Yellow","Red",1
+23,"In preparing a standard solution of Na₂CO₃, the solid is first:","Washed in acid","Dried in an oven","Dissolved in ethanol","Crushed and heated",1
+24,"Which of the following is not a salt?","NaCl","CuSO₄","HNO₃","NH₄NO₃",2
+25,"Which process separates a soluble salt from a salt solution?","Sublimation","Filtration","Evaporation","Chromatography",2
+26,"Redox titration involves:","Acid-base only","Oxidation-reduction","Filtration","Neutralization",1
+27,"What is the colour of methyl orange in an acidic solution?","Red","Yellow","Blue","Colourless",0
+28,"The mole ratio in the reaction Zn + 2HCl → ZnCl₂ + H₂ is:","1:1:1:1","1:2:1:1","2:1:2:1","1:2:2:1",1
+29,"Which of the following is a conjugate base of H₂O?","H₃O⁺","OH⁻","NH₄⁺","Cl⁻",1
+30,"A salt formed by the reaction of a strong acid and a weak base is:","Neutral","Basic","Acidic","Amphoteric",2
+31,"The main use of a pipette in titration is to:","Measure acids","Wash burette","Deliver an accurate volume","Mix reagents",2
+32,"The equivalence point in a titration is when:","The acid is in excess","The base is in excess","Moles of acid equals moles of base","The solution becomes neutral",2
+33,"A standard solution is always:","Slightly basic","Strongly acidic","Of known concentration","Of unknown concentration",2
+34,"Oxidation involves:","Gain of electrons","Loss of electrons","Absorption of water","Precipitation",1
+35,"In redox titration, KMnO₄ often acts as a:","Reducing agent","Base","Oxidizing agent","Solvent",2
+36,"The molar mass of Na₂CO₃ is (Na=23, C=12, O=16):","84 g/mol","86 g/mol","106 g/mol","100 g/mol",2
+37,"What is the volume of gas at STP that contains 1 mole of gas?","11.2 L","22.4 L","44.8 L","33.6 L",1
+38,"A buffer solution resists change in:","Colour","Pressure","Temperature","pH",3
+39,"Which of the following can be used as a primary standard to standardize NaOH?","H₂SO₄","HCl","Oxalic acid","NaCl",2
+40,"When zinc reacts with HCl, the gas evolved is:","Oxygen","Hydrogen","Carbon dioxide","Chlorine",1
+41,"What is a primary standard?","An acid used once","A solution of weak acid","A stable solid of known purity","A solution of unknown concentration",2
+42,"Calculate the number of moles in 40 g of NaOH (Na=23, O=16, H=1):","0.5 mol","1.0 mol","2.0 mol","1.5 mol",1
+43,"Which of the following is a base?","H₂O","NaCl","NH₃","CO₂",2
+44,"What is the equivalent weight of H₂SO₄ (Molar mass = 98 g/mol)?","49","50","98","196",0
+45,"A colour change from pink to colourless in phenolphthalein indicates a transition from:","Basic to neutral","Neutral to acidic","Basic to acidic","Acidic to basic",2
+46,"Which acid is diprotic?","HCl","H₂SO₄","CH₃COOH","HNO₃",1
+47,"One mole of Na₂CO₃ reacts with how many moles of HCl for complete neutralization?","1","2","3","4",1
+48,"Which of these is NOT typically required during a titration?","Pipette","Burette","Crucible","Conical flask",2
+49,"An indicator is used in titration to:","Neutralize the acid","Speed up reaction","Show the end point","Act as a base",2
+50,"A solution that resists pH change when a small amount of acid or base is added is called a:","Neutral solution","Standard solution","Buffer solution","Titrant",2
+51,"What is the pH of a neutral solution at 25°C?","0","7.5","7","14",2
+52,"Which of the following compounds is amphoteric?","NaOH","HCl","Al(OH)₃","KCl",2
+53,"The molarity of a solution is defined as:","Moles per gram","Moles per litre","Volume per mole","Mass per volume",1
+54,"Which of these gases is acidic in nature?","NH₃","CO₂","H₂","N₂",1
+55,"In a titration curve, the steep vertical portion corresponds to the:","Starting point","Initial pH","Equivalence point","End point",2
+56,"Which salt is formed from a strong acid and a strong base?","NH₄Cl","CH₃COONa","NaCl","AlCl₃",2
+57,"Which of the following is a strong acid?","H₂CO₃","CH₃COOH","HCl","HCN",2
+58,"A solution that contains approximately equal moles of a weak acid and its conjugate base is a:","Strong acid","Buffer solution","Neutral solution","Weak base",1
+59,"What is the main characteristic of a primary standard?","Easily contaminated","Reacts slowly","High purity","Low solubility",2
+60,"Which indicator changes from colourless in acid to pink in base?","Methyl orange","Bromothymol blue","Phenolphthalein","Litmus",2
+61,"What is the mass of 1 mole of CaCO₃ (Ca=40, C=12, O=16)?","56 g","84 g","100 g","120 g",2
+62,"In titration, the solution of known concentration is called the:","Titrand","Indicator","Titrant","Buffer",2
+63,"When a strong acid is diluted, its pH:","Decreases","Stays the same","Increases","Becomes zero",2
+64,"The reaction between an acid and a base produces:","Salt only","Water only","Salt and water","Acid and base",2
+65,"Which of these is a weak base?","NaOH","NH₃","KOH","Ca(OH)₂",1
+66,"The term ""mole"" in chemistry refers to:","6.022x10²³ particles","Mass of a substance","Quantity of substance","Volume of gas",0
+67,"The burette is used to:","Transfer a fixed volume","Measure mass","Deliver a variable volume","Hold solution",2
+68,"Which is the correct expression for normality?","Molarity × number of equivalents","Molarity / number of equivalents","Molarity × number of protons","Molarity × volume",0
+69,"Which of the following substances can act as a base?","HCl","NH₄⁺","OH⁻","CO₂",2
+70,"The point in a titration where the indicator changes colour is called the:","Starting point","End point","Equivalence point","Neutralization point",1
+71,"How many moles of H₂SO₄ are in 25 cm³ of 0.2 M solution?","0.005 mole","0.05 mole","1 mole","0.5 mole",0
+72,"Which of these is an example of a strong base?","NH₃","Na₂CO₃","NaOH","CH₃NH₂",2
+73,"What is the function of a conical flask in a titration?","Measure volume","Store reagent","Hold and mix reactants","Deliver acid",2
+74,"Which of these salts will hydrolyze to produce an acidic solution?","NaCl","NH₄Cl","KNO₃","NaNO₃",1
+75,"The volume of 0.1 M HCl required to neutralize 25 cm³ of 0.2 M NaOH is:","12.5 cm³","25 cm³","50 cm³","75 cm³",2
+76,"The molar concentration of a solution is 2 M. The normality of this H₂SO₄ solution is:","2 N","1 N","4 N","0.5 N",2
+77,"Which acid-base indicator changes from red in acid to yellow in base?","Phenolphthalein","Methyl orange","Litmus","Bromothymol blue",1
+78,"The oxidation number of sulfur in H₂SO₄ is:","+4","+2","+6","-2",2
+79,"The pH of a basic solution is:","pH < 7","pH = 7","pH > 7","pH = 0",2
+80,"Which salt produces a basic solution when dissolved in water?","NH₄Cl","NaCl","Na₂CO₃","KCl",2
+81,"Which of these acids is diprotic?","HCl","H₂SO₄","HNO₃","CH₃COOH",1
+82,"Which of the following is NOT an acid-base indicator?","Methyl orange","Phenolphthalein","Sodium chloride","Litmus",2
+83,"The molar mass of a substance is the:","Mass of one molecule","Mass of one mole","Mass of one atom","Mass of 6.022x10²³ atoms",1
+84,"Which of the following is a neutral salt?","NH₄Cl","NaCl","KNO₃","Both B and C",3
+85,"A solution with pH 3 is:","Neutral","Acidic","Basic","Alkaline",1
+86,"Which of the following bases is weak?","KOH","NaOH","NH₃","Ba(OH)₂",2
+87,"What volume of 0.5 M NaOH will neutralize 50 cm³ of 1 M HCl?","25 cm³","100 cm³","50 cm³","75 cm³",1
+88,"What is the molarity of 4 moles of solute dissolved in 2 liters of solution?","2 M","4 M","1 M","0.5 M",0
+89,"The formula for normality (N) is:","Molarity × valency factor","Molarity / valency factor","Molarity × number of moles","Molarity × volume",0
+90,"Which salt solution will have a pH less than 7?","NaCl","KNO₃","NH₄Cl","Na₂SO₄",2
+91,"The pH of a 0.01 M HCl solution is:","2","-2","1","4",0
+92,"Which of these substances is a strong electrolyte?","CH₃COOH","NH₃","NaCl","C₂H₅OH",2
+93,"In a titration, the volume at the equivalence point is the:","Volume equal to the starting volume","Volume less than the initial volume","Volume where moles of acid equals moles of base","Zero volume",2
+94,"What is the normality of a 1 M H₂SO₄ solution?","1 N","2 N","0.5 N","4 N",1
+95,"Which of the following salts will produce a basic solution in water?","NH₄Cl","Na₂CO₃","KCl","AlCl₃",1
+96,"What is the molar mass of NaOH? (Na=23, O=16, H=1)","40 g/mol","23 g/mol","59 g/mol","39 g/mol",0
+97,"Which of these is a strong acid?","HCN","H₂CO₃","HCl","CH₃COOH",2
+98,"What is the role of an indicator in a titration?","To react with the acid","To react with the base","To show the end point by a colour change","To increase the concentration",2
+99,"Which of the following acids is monoprotic?","H₂SO₄","H₃PO₄","HCl","H₂CO₃",2
+100,"The ion responsible for acidic properties in water is:","OH⁻","H₃O⁺ (or H⁺)","Na⁺","Cl⁻",1
+101,"Which of these substances can act as both an acid and a base (amphoteric)?","NaOH","HCl","H₂O","NH₃",2
+102,"What is the normality of 0.5 M H₃PO₄?","0.5 N","1 N","1.5 N","2 N",2
+103,"What volume of 0.1 M H₂SO₄ is needed to neutralize 25 cm³ of 0.2 M NaOH?","25 cm³","50 cm³","12.5 cm³","100 cm³",0
+104,"Which acid is triprotic?","HCl","H₂SO₄","H₃PO₄","HNO₃",2
+105,"The pH of an acidic solution is:","< 7","= 7","> 7","0",0
+106,"Which of the following salts is formed from a weak acid and a strong base?","NaCl","CH₃COONa","NH₄Cl","KNO₃",1
+107,"Which of these bases is considered strong?","NH₃","CH₃NH₂","NaOH","C₅H₅N",2
+108,"What is the oxidation state of carbon in CO₂?","+2","0","+4","-4",2
+109,"Which of the following is an example of a weak acid?","HCl","CH₃COOH","H₂SO₄","HNO₃",1
+110,"What is the purpose of washing the precipitate in gravimetric analysis?","To dissolve the precipitate","To react with the precipitate","To remove impurities","To dry the precipitate",2
+111,"Which of the following compounds is a salt?","NaOH","HCl","Na₂SO₄","H₂SO₄",2
+112,"The volume of 0.1 M NaOH needed to neutralize 50 cm³ of 0.1 M HCl is:","25 cm³","50 cm³","75 cm³","100 cm³",1
+113,"Which acid-base reaction is called neutralization?","Acid + Acid","Base + Base","Acid + Base → Salt + Water","Salt + Water",2
+114,"The pH of a solution changes from 3 to 5. The concentration of H⁺ ions:","Increases 100 times","Decreases 2 times","Decreases 100 times","Stays the same",2
+115,"Which indicator turns yellow in acidic medium and red in alkaline medium?","Phenolphthalein","Litmus","Methyl orange","Bromothymol blue",2
+116,"Which of these is a polyprotic acid?","HCl","HNO₃","H₂SO₄","CH₃COOH",2
+117,"What is the concentration of H⁺ ions in pure water at 25°C?","1x10⁻¹⁴ M","1 M","1x10⁻⁷ M","7 M",2
+118,"The reaction between an acid and a carbonate produces:","Salt and water only","Salt, water, and CO₂","Salt only","Water and CO₂ only",1
+119,"Which of the following acts as a buffer?","NaCl","HCl","A mixture of CH₃COOH and CH₃COONa","NaOH",2
+120,"What is the effect of dilution on the pH of a weak acid?","pH decreases","pH remains constant","pH increases","pH becomes zero",2
+121,"The main component of baking soda is:","NaCl","NaOH","NaHCO₃","Na₂CO₃",2
+122,"Which acid is responsible for the sour taste in lemons?","Acetic acid","Citric acid","Sulfuric acid","Hydrochloric acid",1
+123,"The formula for calculating molarity is:","Moles / Volume (L)","Mass / Volume","Moles × Volume (L)","Volume / Moles",0
+124,"Which of the following substances is a strong electrolyte?","CH₃COOH","C₂H₅OH","NaCl","Glucose",2
+125,"Which of these is a weak acid?","HCl","HF","H₂SO₄","HNO₃",1
+126,"Which salt produces an acidic solution on hydrolysis?","NaCl","NH₄Cl","Na₂SO₄","KNO₃",1
+127,"Which of the following is a strong base?","NH₃","CH₃NH₂","KOH","C₅H₅N",2
+128,"Which of these ions is responsible for the basic nature of a solution?","H⁺","Cl⁻","OH⁻","Na⁺",2
+129,"What is the pH of a 0.001 M NaOH solution?","3","11","7","1",1
+130,"Which of the following is a conjugate acid-base pair?","HCl and NaCl","H₂SO₄ and HSO₄⁻","NaOH and NaCl","H₂O and O₂",1
+131,"Which gas is released when an acid reacts with a carbonate?","O₂","H₂","CO₂","N₂",2
+132,"The ion responsible for basicity in aqueous solutions is:","H₃O⁺","Na⁺","OH⁻","Cl⁻",2
+133,"What is the pH of a 0.1 M HCl solution?","1"," -1"," 0"," 2",0
+134,"Which of these acids is the weakest?","HCl","H₂SO₄","CH₃COOH","HNO₃",2
+135,"In a neutralization reaction, the products are:","Salt and acid","Salt and water","Water only","Acid only",1
+136,"Which of these salts is basic in nature?","NH₄Cl","Na₂CO₃","KCl","AlCl₃",1
+137,"The process of determining the concentration of an unknown solution by reacting it with a solution of known concentration is called:","Filtration","Distillation","Titration","Crystallization",2
+138,"Which indicator is colorless in acidic solution and pink in basic solution?","Methyl orange","Phenolphthalein","Litmus","Bromothymol blue",1
+139,"The pH scale typically ranges from:","0 to 10","-1 to 15","0 to 14","1 to 7",2
+140,"Which of the following is amphoteric?","HCl","H₂O","NaOH","NH₃",1
+141,"The strength of an acid depends on its:","Degree of ionization","Concentration","Volume","Mass",0
+142,"A solution that resists changes in pH when small amounts of acid or base are added is called a:","Acidic solution","Basic solution","Buffer solution","Neutral solution",2
+143,"What is the molarity of 2 moles of solute in 4 liters of solution?","2 M","1 M","0.5 M","4 M",2
+144,"Which of the following bases is weak?","NaOH","KOH","NH₃","Ba(OH)₂",2
+145,"The pH of a neutral solution at 25°C is:","0","14","7.5","7",3
+146,"What volume of 0.2 M NaOH is required to neutralize 25 cm³ of 0.1 M HCl?","12.5 cm³","25 cm³","50 cm³","100 cm³",0
+147,"Which of the following substances will produce an acidic solution when dissolved in water?","NaCl","KNO₃","NH₄Cl","Na₂SO₄",2
+148,"The number of equivalents of acid in 1 mole of H₂SO₄ is:","1","2","0.5","3",1
+149,"Which of these is a salt?","HCl","NaOH","NaCl","H₂O",2
+150,"The normality of a 1 M H₃PO₄ solution is:","1 N","2 N","3 N","0.5 N",2
+151,"Which of the following is a strong acid?","HF","CH₃COOH","HNO₃","H₂CO₃",2
+152,"The equivalence point in a titration is when:","The indicator changes color","The volumes are equal","Moles of acid = moles of base","The solution is neutral",2
+153,"The pH of a 0.01 M NaOH solution is:","2","7","12","14",2
+154,"Which salt will give a neutral solution in water?","NH₄Cl","Na₂CO₃","KCl","AlCl₃",2
+155,"The strength of a base depends on its:","Concentration only","Degree of ionization","Volume","Mass",1
+156,"Which of the following is an example of a weak base?","NaOH","KOH","NH₃","Ba(OH)₂",2
+157,"The process of removing soluble impurities from a precipitate is called:","Filtration","Washing","Drying","Crystallization",1
+158,"Which indicator turns red in acidic solution and blue in alkaline solution?","Phenolphthalein","Methyl orange","Litmus","Bromothymol blue",2
+159,"What volume of 0.5 M H₂SO₄ is required to neutralize 100 cm³ of 0.5 M NaOH?","25 cm³","50 cm³","100 cm³","200 cm³",1
+160,"The molar mass of CaCO₃ is (Ca=40, C=12, O=16):","100 g/mol","102 g/mol","106 g/mol","104 g/mol",0
+161,"The ionization of a strong acid in water is:","Partial","No ionization","Complete","Dependent on concentration",2
+162,"Which of the following is amphiprotic?","NaOH","HCl","H₂O","NH₃",2
+163,"The normality of a 1 M solution of HCl is:","0.5 N","1 N","2 N","3 N",1
+164,"The pH of a 0.0001 M HCl solution is:"," -4"," 1"," 4"," 7",2
+165,"Which of the following salts is acidic in nature?","NaCl","NH₄Cl","KNO₃","Na₂SO₄",1
+166,"Which of the following is a polyprotic acid?","HCl","HNO₃","H₂SO₄","CH₃COOH",2
+167,"Which of the following is a strong electrolyte?","CH₃COOH","C₂H₅OH","NaCl","Glucose",2
+168,"The reaction between an acid and a metal produces:","Salt only","Hydrogen only","Salt and hydrogen gas","Water and salt",2
+169,"Which of the following is the strongest base?","NH₃","CH₃NH₂","NaOH","C₅H₅N",2
+170,"The pH of a 0.1 M NaOH solution is:","7","1","13","14",2
+171,"What is the pH of pure water at 25°C?","7","0","-7","14",0
+172,"Which of the following acts as a buffer solution?","NaCl","A mixture of CH₃COOH and CH₃COONa","HCl","NaOH",1
+173,"The equivalent weight of an acid is:","Molar mass / number of replaceable H⁺ ions","Molar mass × number of replaceable H⁺ ions","Molar mass / number of atoms","Molar mass × number of electrons",0
+174,"Which salt solution has a pH greater than 7?","NH₄Cl","NaCl","Na₂CO₃","AlCl₃",2
+175,"Which of the following is a weak acid?","HCl","HNO₃","CH₃COOH","H₂SO₄",2
+176,"The ion responsible for acidity in a solution is:","OH⁻","Na⁺","H⁺","Cl⁻",2
+177,"The product of neutralization between an acid and a base is:","Acid","Base","Salt and water","Salt only",2
+178,"If the pH of a solution changes from 4 to 7, the H⁺ concentration:","Increases 1000 times","Decreases 3 times","Decreases 1000 times","Remains the same",2
+179,"Which of these substances is amphoteric?","NaOH","HCl","H₂O","NH₃",2
+180,"Which salt solution will have a neutral pH?","NH₄Cl","Na₂CO₃","KCl","AlCl₃",2
+
+Question Number,Question,Option A,Option B,Option C,Option D,correct_indices
+1,"Which of the following methods will hasten the reaction of CaCO₃ with HCl?","Cooling the acid","Using a lump of marble","Using pulverized marble","Adding excess water",2
+2,"Which of these is a standard solution?","Tap water","Vinegar","A solution of known concentration","A supersaturated sugar solution",2
+3,"The colour change of phenolphthalein in a basic solution is:","Colourless","Pink","Blue","Red",1
+4,"In a redox reaction, the species that gains electrons is:","Oxidized","Reduced","Neutralized","Precipitated",1
+5,"What is the mole of HCl in 250 cm³ of 0.1 M solution?","0.0025 mol","0.025 mol","0.25 mol","2.5 mol",1
+6,"Which acid is commonly used in titrations with sodium hydroxide?","Nitric acid","Acetic acid","Hydrochloric acid","Sulfuric acid",2
+7,"The indicator used for strong acid–strong base titration is:","Methyl orange","Phenolphthalein","Litmus","Universal indicator",1
+8,"Which is an example of a basic salt?","NaCl","CH₃COONa","NH₄Cl","Zn(OH)Cl",1
+9,"Calculate the volume of 2.0 M HCl needed to supply 0.01 mol of HCl.","5 cm³","10 cm³","15 cm³","20 cm³",0
+10,"Which of the following is a redox reaction?","NaOH + HCl → NaCl + H₂O","AgNO₃ + NaCl → AgCl + NaNO₃","Zn + H₂SO₄ → ZnSO₄ + H₂","Na₂CO₃ + HCl → NaCl + CO₂ + H₂O",2
+11,"What is the function of a stock solution in volumetric analysis?","Indicator","Standard reference","Unknown solution","Precipitate",1
+12,"A solution of 25 cm³ of NaOH neutralizes 20 cm³ of 0.2 M HCl. What is the molarity of NaOH?","0.1 M","0.16 M","0.2 M","0.25 M",1
+13,"The part of a titration curve where rapid pH change occurs is:","Buffer region","Equivalence point","Starting point","Plateau",1
+14,"What is the molar concentration of 10 g NaOH in 500 mL solution? (Na = 23, O = 16, H = 1)","0.25 M","0.4 M","0.5 M","1.0 M",2
+15,"Which of the following is an acidic salt?","Na₂SO₄","NH₄Cl","NaHSO₄","K₂CO₃",2
+16,"A standard solution must:","Have colour","Be acidic","Have known concentration","Be prepared from an unknown solute",2
+17,"The endpoint of a titration is:","When the beaker breaks","When the solution boils","When there is a permanent colour change","When the burette is empty",2
+18,"Which of the following can act as both acid and base?","HCl","NH₃","H₂O","NaOH",2
+19,"In redox reactions, oxidizing agents:","Lose electrons","Gain electrons","Donate protons","Are reduced",1
+20,"What is the normality of 1 M H₂SO₄?","0.5 N","1 N","2 N","3 N",2
+21,"What volume of 0.5 M NaOH will neutralize 25 cm³ of 0.1 M HCl?","2.5 cm³","5.0 cm³","10.0 cm³","12.5 cm³",1
+22,"What is observed when NaOH is added to phenolphthalein?","Colourless","Pink","Yellow","Red",1
+23,"In preparing a standard solution of Na₂CO₃, the solid is first:","Washed in acid","Dried in an oven","Dissolved in ethanol","Crushed and heated",1
+24,"Which of the following is not a salt?","NaCl","CuSO₄","HNO₃","NH₄NO₃",2
+25,"Which process separates salt from a salt solution?","Sublimation","Filtration","Evaporation","Chromatography",2
+26,"Redox titration involves:","Acid-base only","Oxidation-reduction","Filtration","Neutralization",1
+27,"What is the colour of methyl orange in acid?","Red","Yellow","Blue","Colourless",0
+28,"The mole ratio in the reaction: Zn + 2HCl → ZnCl₂ + H₂ is:","1:1:1:1","1:2:1:1","2:1:2:1","1:2:2:1",1
+29,"Which of the following is a conjugate base?","H₂O","OH⁻","NH₄⁺","Cl⁻",1
+30,"A salt formed by the reaction of a strong acid and weak base is:","Neutral","Basic","Acidic","Amphoteric",2
+31,"The main use of a pipette in titration is to:","Measure acids","Wash burette","Deliver accurate volume","Mix reagents",2
+32,"The equivalence point in titration is when:","The acid is in excess","The base is in excess","Moles of acid equal moles of base","Colour disappears",2
+33,"A standard solution is always:","Dilute","Strong","Of known concentration","Slightly basic",2
+34,"Oxidation involves:","Gain of electrons","Loss of electrons","Absorption of water","Precipitation",1
+35,"In redox titration, KMnO₄ acts as:","Reducing agent","Base","Oxidizing agent","Solvent",2
+36,"The molar mass of Na₂CO₃ is:","84 g/mol","86 g/mol","106 g/mol","100 g/mol",2
+37,"What is the volume of gas at STP that contains 1 mole of gas?","11.2 L","22.4 L","44.8 L","33.6 L",1
+38,"A buffer solution resists change in:","Colour","Pressure","Temperature","pH",3
+39,"Which of the following can be used to standardize NaOH?","H₂SO₄","HCl","Oxalic acid","NaCl",2
+40,"When zinc reacts with HCl, the gas evolved is:","Oxygen","Hydrogen","Carbon dioxide","Chlorine",1
+41,"What is a primary standard?","An acid used once","A solution of weak acid","A stable solid of known purity","A solution of unknown concentration",2
+42,"Calculate the number of moles in 40 g of NaOH (Na=23, O=16, H=1)","0.5 mol","1.0 mol","2.0 mol","1.5 mol",1
+43,"Which of the following is a base?","H₂O","NaCl","NH₃","CO₂",2
+44,"What is the equivalent weight of H₂SO₄?","49","50","98","196",0
+45,"A colour change from pink to colourless in phenolphthalein indicates:","Basic to neutral","Neutral to acidic","Basic to acidic","Acidic to basic",2
+46,"Which acid is diprotic?","HCl","H₂SO₄","CH₃COOH","HNO₃",1
+47,"One mole of Na₂CO₃ reacts with how many moles of HCl?","1","2","3","4",1
+48,"Which of these is NOT required during a titration?","Pipette","Burette","Crucible","Conical flask",2
+49,"An indicator is used in titration to:","Neutralize the acid","Speed up reaction","Show end point","Act as a base",2
+50,"A solution that resists pH change when small amount of acid or base is added is called:","Neutral solution","Standard solution","Buffer solution","Titrant",2
+51,"What is the function of a volumetric flask?","To measure temperature","To prepare standard solutions","To titrate solutions","To evaporate liquids",1
+52,"What happens to the pH of a basic solution when an acid is added?","Increases","Remains constant","Decreases","Becomes neutral instantly",2
+53,"The equivalence point in a titration is best described as:","When the burette is empty","When the pH is 7","When moles of acid equal moles of base","When the colour darkens",2
+54,"Which of these is amphoteric?","NaOH","Al(OH)₃","HCl","MgO",1
+55,"A solution prepared by dissolving a known mass of solute in a known volume of solvent is a:","Buffer","Stock solution","Standard solution","Filtrate",2
+56,"The pH of a 0.01 M HCl solution is approximately:","1","2","3","4",1
+57,"In stoichiometry, the limiting reagent is the one that:","Is cheapest","Has the highest mass","Runs out first","Is in excess",2
+58,"What is the number of moles in 22.4 L of a gas at STP?","0.5 mol","1 mol","2 mol","1.5 mol",1
+59,"The formula for molarity is:","Mass / volume","Moles / volume (L)","Volume / moles","Moles × volume",1
+60,"The basicity of H₂SO₄ is:","1","2","3","4",1
+61,"The burette is used to:","Measure temperature","Deliver variable volumes","Hold solid reagents","Heat liquids",1
+62,"Which ion is responsible for acidic character?","OH⁻","H⁺","Cl⁻","Na⁺",1
+63,"A buffer solution is made from:","Strong acid and strong base","Weak acid and its salt","Pure water","Strong acid and weak base",1
+64,"Which salt is formed from a strong acid and strong base?","NaCl","NH₄NO₃","CH₃COONa","NH₄Cl",0
+65,"Which is a suitable primary standard?","NaOH","KMnO₄","HCl","Na₂CO₃",3
+66,"The indicator used in acid–base titration must:","Change colour at endpoint","Be red","Be neutral","React with salt",0
+67,"The redox pair in Fe²⁺ → Fe³⁺ is:","Fe only","Fe²⁺/Fe³⁺","Fe³⁺ only","Fe²⁺ only",1
+68,"Which equation represents a redox reaction?","NaOH + HCl → NaCl + H₂O","CuSO₄ + NaOH → Cu(OH)₂ + Na₂SO₄","Zn + CuSO₄ → ZnSO₄ + Cu","NaCl + AgNO₃ → AgCl + NaNO₃",2
+69,"In the reaction Zn + 2HCl → ZnCl₂ + H₂, Zn is:","Reduced","Oxidized","Catalyst","Precipitate",1
+70,"What is the concentration (mol/dm³) of 5 g NaCl in 500 cm³? (Na = 23, Cl = 35.5)","0.10","0.17","0.25","0.50",1
+71,"Molar mass of H₂SO₄ is:","49","96","98","100",2
+72,"What is the volume of 0.1 M HCl that contains 0.005 mol of HCl?","50 cm³","20 cm³","25 cm³","0.5 cm³",0
+73,"To prepare 250 cm³ of 0.1 M NaOH, how many moles of NaOH are needed?","0.01 mol","0.025 mol","0.05 mol","0.1 mol",1
+74,"What mass of Na₂CO₃ is needed to make 250 cm³ of 0.1 M solution? (Na=23, C=12, O=16)","2.65 g","5.3 g","1.33 g","3.2 g",0
+75,"The term titrant refers to the:","Acid in a reaction","Base in a reaction","Solution in burette","Solution in conical flask",2
+76,"A compound that undergoes a permanent colour change at the endpoint is called an:","Titrant","Reagent","Indicator","Solute",2
+77,"Which of the following can oxidize Fe²⁺ to Fe³⁺?","HCl","H₂O","KMnO₄","NaOH",2
+78,"The oxidation number of Mn in KMnO₄ is:","+2","+4","+6","+7",3
+79,"The reaction between Na₂CO₃ and HCl gives off:","H₂","O₂","CO₂","Cl₂",2
+80,"In redox titration, a common self-indicator is:","HCl","NaOH","KMnO₄","H₂SO₄",2
+81,"Which of the following is not an acid-base indicator?","Phenolphthalein","Methyl orange","Litmus","Sodium chloride",3
+82,"A known weight of solute dissolved in a known volume of solvent makes a:","Unknown solution","Standard solution","Buffer","Stock solution",1
+83,"The pipette is rinsed with:","Water","Acid","Base","The solution to be delivered",3
+84,"Which apparatus is used for swirling during titration?","Conical flask","Pipette","Beaker","Burette",0
+85,"What is the number of moles in 4.4 g of CO₂? (C=12, O=16)","0.05","0.1","0.2","1.0",1
+86,"Which chemical is used to standardize KMnO₄ solution?","NaCl","FeSO₄","H₂O","HCl",1
+87,"Which of the following is not a redox titration pair?","KMnO₄ vs FeSO₄","I₂ vs S₂O₃²⁻","HCl vs NaOH","K₂Cr₂O₇ vs Fe²⁺",2
+88,"In the equation: H₂ + Cl₂ → 2HCl, hydrogen is:","Oxidized","Reduced","Oxidizing agent","Unchanged",0
+89,"The unit of molarity is:","mol","g/dm³","mol/dm³","mol/cm³",2
+90,"To prepare 1 M NaOH solution, you can dissolve:","40 g in 1 L","20 g in 500 mL","10 g in 250 mL","All of the above",3
+91,"Which of the following salts will hydrolyze in water?","NaCl","NH₄Cl","KNO₃","CaCl₂",1
+92,"What is the function of acid in a redox titration involving KMnO₄?","Increase pH","Stabilize Mn⁷⁺","Provide H⁺ for reduction","Neutralize KMnO₄",2
+93,"Which of these is a tribasic acid?","HNO₃","H₂SO₄","H₃PO₄","CH₃COOH",2
+94,"The reaction of acid with carbonate produces:","Hydrogen","Carbon dioxide","Oxygen","Nitrogen",1
+95,"Which of the following is most suitable for drying a solid?","Desiccator","Beaker","Evaporating dish","Watch glass",0
+96,"The purpose of heating a solution to dryness is to:","Sterilize","Precipitate","Evaporate the solvent","Oxidize solute",2
+97,"Methyl orange changes from red to yellow between pH:","4.4 to 6.2","3.1 to 4.4","6.0 to 7.2","8.2 to 10",1
+98,"KMnO₄ is purple due to the presence of:","Mn²⁺","MnO₂","Mn⁷⁺ in the MnO₄⁻ ion","K⁺",2
+99,"In acid–base titration, the curve for strong acid–weak base ends in the:","Acidic region","Basic region","Neutral region","Alkaline buffer",0
+100,"Which chemical is commonly used to prepare a buffer?","HCl and NaCl","NH₄OH and NH₄Cl","NaOH and Na₂CO₃","NaOH and KNO₃",1
+101,"Which method is best for separating sand from saltwater?","Filtration","Distillation","Decantation","Chromatography",1
+102,"What is the oxidation number of oxygen in H₂O?","+2","–1","–2","0",2
+103,"A reaction that absorbs heat from its surroundings is:","Exothermic","Neutralization","Displacement","Endothermic",3
+104,"In titration, concordant titre values mean:","Any value within range","Identical volumes in three readings","Two readings within ±0.1 cm³","First and third readings are equal",2
+105,"A mixture of iodine and iron filings is best separated by:","Filtration","Magnetic separation","Distillation","Decanting",1
+106,"The function of anti-bumping granules during boiling is to:","Increase boiling point","Reduce heat","Prevent splashing","Ensure smooth boiling",3
+107,"What is observed when dilute HCl is added to sodium thiosulfate?","Gas is evolved","Yellow precipitate of sulfur forms","Effervescence","No reaction",1
+108,"The color change of methyl orange in base is from:","Red to yellow","Yellow to red","Blue to colorless","Green to blue",0
+109,"Which is the correct test for a sulfate ion?","Add AgNO₃","Add BaCl₂ followed by dilute HCl","Add NaOH","Add CuSO₄",1
+110,"A burette is more accurate than a measuring cylinder because:","It has a tap","It’s wider","It has finer graduations (reads to two decimal places)","It’s longer",2
+111,"Which apparatus is used to heat substances to high temperatures?","Evaporating dish","Watch glass","Crucible","Pipette",2
+112,"When ammonia is passed into copper(II) sulfate solution, the deep blue solution forms due to:","Formation of copper hydroxide","Complex ion formation","Oxidation","Displacement",1
+113,"The reading on a burette should be taken at the:","Bottom of the meniscus (for clear liquids)","Top of the meniscus","Eye level","Both A and C",3
+114,"Which of these is most suitable to measure exactly 25.00 cm³ of a solution?","Measuring cylinder","Test tube","Burette","Pipette",3
+115,"The molar mass of Na₂CO₃ is:","100 g/mol","106 g/mol","96 g/mol","92 g/mol",1
+116,"The purpose of a standard solution in titration is to:","Color the solution","React with all acid","Provide a reactant of known exact concentration","Prevent contamination",2
+117,"In a chemical equation, the large numbers in front of molecules are:","Atomic numbers","Oxidation numbers","Molar ratios","Coefficients",3
+118,"When iron reacts with copper(II) sulfate, the blue solution fades and eventually turns:","Green (due to Fe²⁺ formation)","Red","Stays Blue","Colorless",0
+119,"The neutralization of a strong acid with a weak base gives an:","Acidic salt","Basic salt","Neutral salt","Insoluble salt",0
+120,"Which chemical reaction is used in CO₂ fire extinguishers?","Acid + base","Acid + carbonate","Combustion","Precipitation",1
+121,"Which technique separates a mixture based on different boiling points?","Filtration","Chromatography","Distillation","Crystallization",2
+122,"The latent heat absorbed during boiling indicates an _____ process.","Isothermal","Endothermic","Exothermic","Adiabatic",1
+123,"Which indicator would be suitable for titrating a weak acid with a strong base?","Phenolphthalein","Methyl orange","Thymolphthalein","Bromothymol blue",0
+124,"The process of removing a solvent by heating to leave a solid residue is called:","Sublimation","Evaporation","Distillation","Filtration",1
+125,"In a graph of volume of titrant vs. pH, the steepest slope corresponds to the _____ point.","Stoichiometric","Equivalence","Endpoint","Inflection",1
+126,"What is the main purpose of placing a white tile under the conical flask during a titration?","To reflect light for better visibility","To absorb excess reagent","To provide a clear background to see the color change","To prevent contamination",2
+127,"Which reagent is used to test for the presence of starch?","Benedict’s solution","Iodine solution","Fehling’s solution","Lubin’s solution",1
+128,"Which of these is an oxidizing agent in an acidified solution?","KMnO₄","HCl","Cl₂","KNO₃",0
+129,"What property of water allows it to act as a good solvent for many ionic compounds?","High viscosity","Its polar nature","Low boiling point","Non-polarity",1
+130,"Which gas produces an acidic solution when dissolved in water?","CO₂","O₂","H₂","N₂",0
+131,"During acid-base titration, the colour change of the indicator occurs at the _____ point.","Equivalence","Initial","Midpoint","End",3
+132,"A precipitate formed when BaCl₂ is added to a solution indicates the presence of:","Chloride ion","Sulfate ion","Nitrate ion","Carbonate ion",1
+133,"The unit of specific heat capacity is:","J","J/g","J/(g°C)","J/kg",2
+134,"Which of the following is true for a first-order reaction?","Rate is independent of concentration","Half-life is constant","Rate is proportional to the square of the concentration","Rate constant has units of s⁻¹",1
+135,"What apparatus is used to measure the mass of a powder sample precisely?","Volumetric flask","Analytical balance","Trip balance","Burette",1
+136,"In an electrolyte solution, which particles carry the current?","Electrons","Ions","Protons","Neutrons",1
+137,"Which salt crystallizes with 10 molecules of water (a decahydrate)?","MgSO₄·7H₂O","CuSO₄·5H₂O","Na₂CO₃·10H₂O","FeSO₄·4H₂O",2
+138,"The random movement of pollen grains in water (Brownian motion) provides evidence for the:","Molecular composition","Particle charge","Kinetic theory of matter","Nuclear fission",2
+139,"A student measures the pH of a solution using a:","Thermometer","pH meter","Colorimeter","Voltmeter",1
+140,"Which laboratory glassware is calibrated to contain a single, accurate volume?","Beaker","Test tube","Graduated cylinder","Volumetric flask",3
+141,"A primary standard should have all of the following properties except being:","High purity","Hygroscopic","Stable","Of a known formula weight",1
+142,"Which of these compounds is commonly used as a primary standard in acid-base titration?","Sodium hydroxide","Potassium hydrogen phthalate (KHP)","Hydrochloric acid","Sulfuric acid",1
+143,"To prepare 250.00 cm³ of 0.1000 M standard solution of KHP, how many grams of KHP (M = 204.22 g/mol) are required?","5.106 g","2.0422 g","10.211 g","20.422 g",0
+144,"Why must a primary standard be dried before use?","To remove dissolved gases","To eliminate adsorbed water","To increase reactivity","To change its color",1
+145,"Which step ensures the accurate concentration of a standard solution?","Using a volumetric flask to measure the final volume","Adding indicator","Heating the solution","Leaving it overnight",0
+146,"When standardizing a NaOH solution with KHP, the titrant is:","Sodium hydroxide","The primary standard (KHP)","The indicator","The solvent",0
+147,"A standard solution is one whose concentration is known _____.","Approximately","Exactly","Within 10% error","Only at room temperature",1
+148,"Why should the volumetric flask be filled to the graduation mark at eye level?","To avoid parallax error","To prevent spillage","To mix properly","To calibrate the flask",0
+149,"The process of adding a solvent up to the mark on a volumetric flask is called:","Decantation","Dilution to the mark","Titration","Filtration",1
+150,"After preparing a standard solution, it is good practice to:","Store it in a labeled, stoppered bottle","Leave it uncovered","Expose it to sunlight","Heat it before use",0
+151,"A stock solution is defined as a:","Solution of unknown concentration","Highly concentrated solution used to prepare dilutions","Solution stored for more than a month","Weak solution for immediate use",1
+152,"To prepare 100.0 mL of 0.010 M solution from a 1.000 M stock solution, what volume of the stock solution is required?","1.00 mL","10.0 mL","0.10 mL","100.0 mL",0
+153,"The relationship C₁V₁ = C₂V₂ is used for:","Titration calculations","Diluting stock solutions","Calculating reaction rate","Determining molar mass",1
+154,"Which unit is commonly used for stock solution concentration?","g/mL","M (mol/L)","mL","L",1
+155,"When diluting a stock solution, the final volume must be measured accurately in a:","Beaker","Graduated cylinder","Volumetric flask","Test tube",2
+156,"If you need 25 mL of 0.200 M solution and have a 2.00 M stock, what volume of the stock do you pipette?","2.5 mL","25 mL","0.25 mL","20 mL",0
+157,"What is the main advantage of using stock solutions?","Efficiency and accuracy in preparing multiple dilutions","Lower cost of reagents","Reduced need for safety equipment","Faster reaction rates",0
+158,"After diluting a stock solution, it should be:","Mixed thoroughly","Left to stand undisturbed","Heated to evaporate excess solvent","Exposed to direct sunlight",0
+159,"If a stock solution is labelled incorrectly, this could lead to:","Faster reaction","Significant concentration errors in subsequent experiments","Increased purity","No effect on results",1
+160,"A serial dilution involves:","Diluting to a single lower concentration","Successive dilutions in a series of steps","Mixing two stock solutions together","Concentrating a solution further",1
+
+
+Question Number,Question,Option A,Option B,Option C,Option D,Option E,correct_indices
+1,"What mass of calcium oxide (M=56) is formed when 60 g of calcium carbonate (M=100) is completely decomposed according to the equation CaCO₃(s) → CaO(s) + CO₂(g)?","28 g","18.5 g","60 g","33.6 g","30 g",3
+2,"Calculate the molarity of concentrated hydrochloric acid, if this solution is 37.7% HCl by mass and its density is 1.195 g/mL. [H=1.0, Cl=35.5]","11.8 M","12.3 M","13.3 M","15.2 M","16.2 M",1
+3,"How many grams of KCl would be required to prepare 1L of a 0.02 molar solution of the salt? [K=39, Cl=35.5]","1.49 g","2.98 g","1.59 g","1.69 g","0.35 g",0
+4,"How many grams of sodium dichromate Na₂Cr₂O₇ should be added to a 100.00 mL volumetric flask to prepare a 0.025 M solution?","0.33 g","0.55 g","0.66 g","0.88 g","0.99 g",2
+5,"How many mL of 0.150 M H₂SO₄ are required to react with 8.20 g of NaHCO₃ according to the equation H₂SO₄ + 2NaHCO₃ → Na₂SO₄ + 2CO₂ + 2H₂O?","162.5 mL","325 mL","650 mL","812.50 mL","16.25 mL",1
+6,"How many mL of a 15.8 M stock solution of nitric acid are required to make 1.00 L of 0.12 M HNO₃?","0.76 mL","7.6 mL","25.20 mL","76.00 mL","152.00 mL",-1
+7,"In the Niger Delta, where there is emission of gases from natural gas combustion, the pH of the rainwater would likely be?","3","5","7","7.5","none of the above",1
+8,"In which of the reactions would phenolphthalein be a suitable indicator?","HCl and NaOH","CH₃COOH and NaOH","CH₃COOH and NH₃","H₂SO₄ and KOH","A and D",-1
+9,"The following are suitable primary standards except?","NaOH","Na₂CO₃","K₂Cr₂O₇","NaCl","none of the above",0
+10,"What is the concentration in mol/dm³ of a solution containing 16g of NaOH in 200 cm³ of distilled water? [Na=23, H=1, O=16]","2.0","2.0","0.2","1.0","0.25",-1
+11,"What is the concentration in mol/L of a standard solution prepared by dissolving 0.4 g of NaOH in 250 mL of water? [Na=23, H=1, O=16]","0.4","0.04","0.02","0.004","0.002",1
+12,"What is the hydrogen ion concentration of a solution whose pH is 5.3?","5.0x10⁻⁶","5.0x10⁻⁶","5.0x10⁻⁷","5.0x10⁻⁸","6.0x10⁻⁷",1
+13,"What is the likely pH of a solution which contains an equivalent amount of hydrochloric acid and ammonia?","6","7","8","9","none of the above",0
+14,"What is the molar concentration in mol/L of a solution prepared by dissolving 10.6 g of Na₂CO₃ in 1 litre of water? [Na=23, C=12, O=16]","0.01 mol/L","0.001 mol/L","0.1 mol/L","0.0001 mol/L","0.2 mol/L",2
+15,"What volume of 0.250 M HNO₃ reacts with 44.8 mL of 0.150 M Na₂CO₃ in the reaction 2HNO₃ + Na₂CO₃ → 2NaNO₃ + CO₂ + H₂O?","13.45 mL","26.90 mL","53.80 mL","80.70 mL","30.35 mL",2
+16,"What weight of anhydrous sodium trioxocarbonate (IV) is required to prepare 250 mL of a 0.05 M solution?","0.6625 g","2.65 g","13.35 g","1.325 g","0.1325 g",3
+17,"Which indicator is most appropriate for the titration of H₂SO₄ with standard NaOH?","phenolphthalein","bromophenol blue","methyl orange","starch","none of the above",0
+18,"Which of the following is the strongest acid among the series formed by chlorine?","HClO₄","HClO₂","HClO₃","HClO","None of the above",0
+19,"Which of the following can be a Lewis acid?","CH₄","BF₃","CH₃⁻","Cl₂","None of the above",1
+20,"Which of the following solutions is the most acidic?","0.10 M H₃PO₄; pH=1.4","0.10 M H₂PO₄⁻; pH=4.4","0.10 M HPO₄²⁻; pH=9.3","0.10 M PO₄³⁻; pH=12.0","None of the above",0
+21,"Which of the following is a correct identification of oxygen gas?","Damp blue litmus paper turns red then white","rekindles a glowing splint","lighted splint pops","none of the above","all of the above",1
+22,"Which of the following is an acidic oxide?","CaO","RbO₂","SeO₃","Na₂O₃","all of the above",2
+23,"Which of the following is not a redox reaction?","Cr₂O₄²⁻ + 2H⁺ → Cr₂O₇²⁻ + H₂O","Cr₂O₇²⁻ + 6Fe²⁺ + 14H⁺ → 2Cr³⁺ + 6Fe³⁺ + 7H₂O","2IO₃⁻ + 12H⁺ + 10I⁻ → 6I₂ + 6H₂O","2MnO₄⁻ + 5NO₂⁻ + 6H⁺ → 2Mn²⁺ + 5NO₃⁻ + 3H₂O","none of the above",0
+24,"Which of the following is not a way to make a solid solute dissolve more quickly in a liquid solvent?","by stirring vigorously","by heating and shaking","by grinding to powder","by pulverizing","None of the above",4
+25,"Which of the following is the strongest Brønsted acid?","H₃O⁺","HF","NH₃","NaHSO₄","NaOH",0
+26,"Which of the following is the strongest Brønsted base?","H₂O","SH⁻","OH⁻","S²⁻","O²⁻",4
+27,"Which of the following is the weakest Brønsted acid?","HClO₄","HPO₄²⁻","H₂CO₃","H₂SO₄","Al(OH)₃",4
+28,"Which of the following are correct laboratory practices?","avoid use of naked flame when handling flammable liquids","avoid holding necks of bottles containing hazardous materials","avoids throwing solid waste in the sink","all of the above","none of the above",3
+29,"Which of the following solutions is the strongest oxidizing agent?","MnO₄⁻ in acid","MnO₄⁻ in base","MnO₂ in base","Cr₂O₇²⁻ in acid","Cr₂O₇²⁻ in base",0
+30,"Balance the reaction in basic medium: MnO₄⁻ + I⁻ → MnO₂ + I₂","2MnO₄⁻+6I⁻+4H₂O → 2MnO₂+3I₂+8OH⁻","MnO₄⁻+2I⁻+4H₂O → MnO₂+I₂+O₂","2MnO₄⁻+6I⁻+6H⁺ → MnO₂+I₂+O₂+3H₂O","MnO₄⁻+2I⁻+H₂O+8H⁺ → MnO₂+I₂+O₂+3H₂O","none of the above",4
+31,"The reaction 3ClO⁻ → ClO₃⁻ + 2Cl⁻ is an example of?","reduction reaction","oxidation reaction","disproportionation reaction","decomposition reaction","none of the above",2
+32,"A solution is prepared by mixing 1.00 g of ethanol (C₂H₅OH) with 100.0 g of water. Calculate the mass percent of ethanol.","1.01%","0.99%","0.97%","1%","1.15%",1
+33,"A standard sodium hydroxide solution cannot be made by weighing the solid directly because it is:","effervescent","hygroscopic","deliquescent","a dessicant","None of the above",1
+34,"A standard solution is _______?","a solution that is standardized in the laboratory","a solution that is titrated by using an acid and a base","a solution that is made by dissolving the solute in a solvent","a solution whose concentration is accurately known","none of the above",3
+35,"A stock solution of K₂Cr₂O₇ was made by dissolving 89.3 g of the compound in 1.10 L of solution. How many mL of this solution is required to prepare 1.00 L of 0.100 M K₂Cr₂O₇?","110 mL","165 mL","274 mL","364 mL","none of the above",-1
+36,"A student titrated 25 cm³ of HCl against a 0.1 mol/dm³ standard NaOH solution. The average titre of NaOH was 30 cm³. What is the concentration of the acid?","0.5 mol/dm³","0.12 mol/dm³","1.25 mol/dm³","1.0 mol/dm³","none of the above",1
+37,"All the listed are necessary precautions in the laboratory except:","avoid skin contact with chemicals","keep workspace clean","wear laboratory coat","eat in the laboratory","none of the above",3
+38,"All the listed compounds are strong acids except?","H₂SO₄","HCl","HNO₃","H₂CO₃","none of the above",3
+39,"All the properties listed are required of a primary standard except:","highly pure","possess definite composition","stable at room temperature","hygroscopic","none of the above",3
+40,"Balance the reaction in acidic medium: Cr₂O₇²⁻ + H₂S → Cr³⁺ + S","3H₂S+8H⁺+Cr₂O₇²⁻ → 2Cr³⁺+3S+7H₂O","Cr₂O₇²⁻+H₂S → 2Cr³⁺+2H⁺+S","Cr₂O₇²⁻+14H⁺+H₂S → 2Cr³⁺+2H⁺+S+7H₂O","Cr₂O₇²⁻+H₂S+5e⁻ → Cr³⁺+S","none of the above",0

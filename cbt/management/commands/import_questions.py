@@ -1,128 +1,127 @@
 import os
 import csv
-import re
 from django.core.management.base import BaseCommand
-from cbt.models import Question, Option
+from django.contrib.auth import get_user_model
+from core.models import Course
+from cbt.models import Exam, Question, Option
+
+User = get_user_model()
+DEFAULT_USER_ID = 1  # change to a valid admin user ID
+DEFAULT_FOLDER = 'import_questions/'  # default folder with CSVs
 
 class Command(BaseCommand):
-    help = "Import questions from a CSV file. Usage: python manage.py import_questions path/to/questions.csv"
+    help = 'Import multiple CSV files for CBT exams'
 
     def add_arguments(self, parser):
-        # positional optional arg (no --file)
-        parser.add_argument('csv_file', nargs='?', default='questions.csv', help='Path to CSV file (default: questions.csv)')
+        parser.add_argument(
+            '--folder',
+            type=str,
+            default=DEFAULT_FOLDER,
+            help='Folder containing course CSVs'
+        )
 
     def handle(self, *args, **options):
-        path = options['csv_file']
+        CSV_DIR = options['folder']
 
-        # If user passed a relative path, make it relative to project CWD (where manage.py is)
-        path = os.path.abspath(path)
-        if not os.path.exists(path):
-            self.stdout.write(self.style.ERROR(f"CSV file not found at {path}"))
+        if not os.path.exists(CSV_DIR):
+            self.stdout.write(self.style.ERROR(f'Folder {CSV_DIR} does not exist'))
             return
 
-        # Try to sniff delimiter / encoding if needed; we assume comma and latin1 safe fallback
         try:
-            f = open(path, newline='', encoding='utf-8')
-            # try reading header
-            sample = f.read(2048)
-            f.seek(0)
-            # decide encoding later if fail
-            reader = csv.DictReader(f)
-        except UnicodeDecodeError:
-            f = open(path, newline='', encoding='latin1')
-            reader = csv.DictReader(f)
+            user = User.objects.get(id=DEFAULT_USER_ID)
+        except User.DoesNotExist:
+            self.stdout.write(self.style.ERROR(f'User with id {DEFAULT_USER_ID} does not exist'))
+            return
 
-        row_count = 0
-        for row in reader:
-            row_count += 1
-            # support various header names
-            qtext = (row.get('Question') or row.get('question_text') or row.get('Question Text') or row.get('question') or '').strip()
-            if not qtext:
-                # skip empty lines
+        for filename in os.listdir(CSV_DIR):
+            if not filename.endswith('.csv'):
                 continue
 
-            # marks if present
-            marks_raw = row.get('marks') or row.get('Marks') or ''
+            course_code = filename.replace('.csv', '').strip()
             try:
-                marks = float(marks_raw) if marks_raw != '' else 1
-            except Exception:
-                marks = 1
+                course = Course.objects.get(code=course_code)
+            except Course.DoesNotExist:
+                self.stdout.write(self.style.WARNING(f'Course {course_code} does not exist, skipping'))
+                continue
 
-            # Create question. We'll set qtype after parsing indices/options
-            q = Question.objects.create(text=qtext, marks=marks)
+            # Create or reuse exam
+            exam, created = Exam.objects.get_or_create(
+                title=f"{course.code} Exam",
+                course=course,
+                defaults={'created_by': user}
+            )
 
-            # Collect option columns: common header patterns
-            option_keys = []
-            for k in row.keys():
-                if not k:
-                    continue
-                k_lower = k.strip().lower()
-                if k_lower.startswith('option') or k_lower.startswith('option ') or re.match(r'option\s*[a-d]', k_lower) or re.match(r'option_[1-9]', k_lower) or k_lower in ('a','b','c','d'):
-                    option_keys.append(k)
-            # fallback explicit Option A..D
-            if not option_keys:
-                for key in ['Option A','Option B','Option C','Option D','option_a','option_b','option_c','option_d','A','B','C','D']:
-                    if key in row:
-                        option_keys.append(key)
-
-            # Create options in the order we found them
-            opts = []
-            order = 1
-            for key in option_keys:
-                text = row.get(key) or ''
-                text = text.strip()
-                if text:
-                    o = Option.objects.create(question=q, text=text, order=order)
-                    opts.append(o)
-                    order += 1
-
-            # Determine indices field (try multiple names)
-            idx_field = (row.get('indices') or row.get('correct_indices') or row.get('Answer') or row.get('answer') or row.get('correct') or '').strip()
-
-            # Normalize index list: supports "1;2;4", "1,2", "A;C" or "A,C" or "a,c"
-            indices = []
-            if idx_field:
-                # if looks like letters (A,B,C) convert to numbers
-                # split on semicolon/comma/space
-                parts = re.split(r'[;,/\s]+', idx_field)
-                for p in parts:
-                    p = p.strip()
-                    if not p:
-                        continue
-                    if p.isdigit():
-                        indices.append(int(p))
-                    else:
-                        # maybe letter like 'A' or 'c'
-                        p_up = p.upper()
-                        if len(p_up) == 1 and 'A' <= p_up <= 'Z':
-                            # A->1, B->2
-                            num = ord(p_up) - ord('A') + 1
-                            indices.append(num)
-                        else:
-                            # try to extract digits inside parentheses or strings like "3)"
-                            digits = re.findall(r'\d+', p)
-                            if digits:
-                                indices.append(int(digits[0]))
-
-            # Mark the correct options based on indices
-            if indices and opts:
-                # set qtype based on count
-                q.qtype = Question.QTYPE_MULTI if len(indices) > 1 else Question.QTYPE_MCQ
-                q.save()
-                for i in indices:
-                    if 1 <= i <= len(opts):
-                        opt = opts[i-1]  # 1-based index in CSV maps to 0-based list
-                        opt.is_correct = True
-                        opt.save()
+            if created:
+                self.stdout.write(self.style.SUCCESS(f'Created exam for {course.code}'))
             else:
-                # if no indices found but options exist -> assume mcq with no answer (leave is_correct False)
-                if opts:
-                    q.qtype = Question.QTYPE_MCQ
-                    q.save()
-                else:
-                    # no options => text question
-                    q.qtype = Question.QTYPE_TEXT
-                    q.save()
+                self.stdout.write(self.style.WARNING(f'Using existing exam for {course.code}'))
 
-        f.close()
-        self.stdout.write(self.style.SUCCESS(f"✅ Imported {row_count} rows from {path}"))
+            # Open CSV and normalize headers
+            file_path = os.path.join(CSV_DIR, filename)
+            with open(file_path, newline='', encoding='utf-8') as csvfile:
+                reader = csv.DictReader(csvfile)
+                if reader.fieldnames is None:
+                    self.stdout.write(self.style.WARNING(f'No headers found in {filename}, skipping'))
+                    continue
+
+                # ✅ Normalize headers safely
+                reader.fieldnames = [
+                    str(h).strip().lower() if h else '' for h in reader.fieldnames
+                ]
+
+                for row in reader:
+                    # ✅ Normalize row safely
+                    row = {
+                        (str(k).strip().lower() if k else ''): (str(v).strip() if v else '')
+                        for k, v in row.items()
+                    }
+
+                    # Flexible column names
+                    question_text = row.get('question') or row.get('text')
+                    if not question_text:
+                        self.stdout.write(self.style.WARNING(f'Skipping row with no question text in {filename}'))
+                        continue
+
+                    # ✅ Safe handling for correct_index
+                    correct_index = row.get('correct_indices')
+                    if not correct_index:
+                        correct_index = row.get('correct')
+                    if not correct_index:
+                        correct_index = 'A'
+                    correct_index = str(correct_index).strip().upper()
+
+                    # 🔹 Check if question already exists in this exam
+                    existing_question = (
+                        Question.objects.filter(text=question_text, examquestion__exam=exam).first()
+                    )
+
+                    if existing_question:
+                        question = existing_question
+                        self.stdout.write(self.style.NOTICE(f'Updating existing question: "{question_text[:50]}..."'))
+                        # Delete old options (to avoid duplicates) and recreate
+                        question.options.all().delete()
+                    else:
+                        question = Question.objects.create(
+                            text=question_text,
+                            qtype=Question.QTYPE_MCQ,
+                            created_by=user
+                        )
+                        exam.exam_questions.create(question=question)
+                        self.stdout.write(self.style.SUCCESS(f'Created new question: "{question_text[:50]}..."'))
+
+                    # Create options A-D
+                    for opt_label in ['A', 'B', 'C', 'D']:
+                        col_name = f'option_{opt_label.lower()}'
+                        option_text = row.get(col_name)
+                        if not option_text:
+                            continue
+
+                        is_correct = (opt_label == correct_index)
+                        Option.objects.create(
+                            question=question,
+                            text=option_text,
+                            is_correct=is_correct,
+                            order=ord(opt_label)
+                        )
+
+            self.stdout.write(self.style.SUCCESS(f'Imported/updated questions from {filename}'))

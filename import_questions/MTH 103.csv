@@ -1,0 +1,280 @@
+Question Number,Question,Option A,Option B,Option C,Option D,Option E,correct_indices
+1,"Which of the following is not a vector quantity?","velocity","force","momentum","acceleration","none of the above",4
+2,"Which of the following is not correct?","unit vector has a magnitude of 1","two or more vectors having the same initial point are coinitial vectors","two vectors are equal if they have same magnitude and direction","two or more vectors are collinear if they are perpendicular to the same line","a zero vector is one in which the initial and terminal points coincide",3
+3,"If the length of the vector a = xi + 2j - k is 3, find the positive value of x.","2","4","5","1","7",0
+4,"Find the values of x if the magnitude of a = xi + (3+x)j + 2k is 2x+1.","3, -2","5, 6","7, 4","-2, 6","0, 5",0
+5,"Evaluate 2x²+x+1, if the magnitude of a=3i+xj+2k is equal to the magnitude of b=6i+(x-4)j+3k.","432","439","216","532","539",4
+6,"Find the sum of the vectors AB + BC - DC - AD.","1","AB","AC","0","none of the above",3
+7,"If A = 3i+6j+12k and C = 3i-7j+8k, evaluate |2A-C|.","625","25.02","52.02","25.04","48",-1
+8,"If r₁=4i-3j+2k and r₂=3i+5j+4k, evaluate 2r₁+4r₂.","30i+41j-20k","20i+14j+20k","20i+14j+20k","18i+20j-24k","20i-14j-20k",2
+9,"If a=2i+3k, b=4i-6k and c=20i-6k, find the scalars λ and β if c is the resultant of λa and βb.","3, 4","6, 8","4, 3","4, 8","3, 2",2
+10,"Find the values of λ if the modulus of P is 7, where P is the resultant of A=λi+4j-k and B=i+2j-k.","6, 5","8, 4","2, -4","0, 9","3, 2",2
+11,"Find the value of λ if the magnitude of v=λi+6j-2k is the same as the magnitude of w=2i-3j+(3+λ)k.","6","7","4","9","3",4
+12,"If the unit vector of the resultant of A=i+j and B=j-xk is c = 1/3 i + 2/3 j - 2/3 k, find the value of x.","6, -5","2","8, -4","5, -5","3, -3",1
+13,"If the unit vector of the sum of A=xi+2j and B=2k is equal to the unit vector of the sum of C=(x+1)j+k and D=i+k, find x.","4","1","6","3","8",-1
+14,"Find a unit vector parallel to the sum of A=2i+4j-5k, B=i+2j+3k, and C=2i+4j+10k.","(5i+10j+8k)/√189","(5i+10j+7k)/√174","(i+4j+17k)/7","(9i+8j+14k)/5","none of the above",-1
+15,"Evaluate (A+B)·(A-B), if A=2i-3j+5k and B=3i+j-2k.","-24","42","56","32","40",-1
+16,"Find the value of λ if 2i-3j+5k is orthogonal to 3i+λj-2k.","8","9","16","3/4","-4/3",4
+17,"Find the angle between the two vectors a=i+j+k and b=-i+2j+3k.","82°","63°","73°","32°","52°",-1
+18,"Find the value of x if the cross product of i-2j+(x-2)k and -3i+j+xk is 7i-14j+7k.","7","5","8","4","3",-1
+19,"If a=2i-j+3k, b=3i+2j+k and c=i+mj+4k are coplanar, find the value of m.","-5","-4","-6","-8","-3",0
+20,"If a=2i+3j-7k, b=i+2j+(x²+4)k, c=2i+2j+2k and d=i+xj-4k, e=i+2j+4k, f=i+j+k, and a·(bxc) = 4 * d·(exf), find x.","4, 5","2, 4","7, 3","6, 8","4, 9",-1
+21,"Find the length of the straight line joining the points A(2,1) and B(5,5).","5","8","12","14","24",0
+22,"Find the gradient of the line joining the points A(4,3) and B(8,12).","9/4","10/11","6/7","2/3","1/2",0
+23,"Find the equation of a straight line through the point (-2,3), parallel to 3x-4y+7=0.","y+3x+18=0","y-6x+5=0","4y-3x-18=0","7y-x+21=0","none of the above",2
+24,"Find the equation of the line joining the point (1,2) to the intersection of the lines 3x+y=7 and 4x+2y=10.","y-x=3","y+3x=6","y+7x=5","y+x=3","y-2x=9",3
+25,"Find the equation of a circle with center (2,3) and radius 1.","x²+y²-4x-6y+12=0","4x²+4y²-16x+7y-4=0","8x²+8y²-x+y+9=0","x²+y²-x+y=0","2x²+2y²-6x+8y+9=0",0
+26,"Find the radius and center of the circle x²+y²+4x-6y+12=0.","r=9, C=(-2,3)","r=3, C=(8,5)","r=1, C=(-2,3)","r=5, C=(4,3)","r=2, C=(6,3)",2
+27,"Find the length of the tangent from the point (7,5) to the circle x²+y²-4x-6y+9=0.","7","8","12","4","5",4
+28,"Find the equation of the tangent to the parabola 4y²=64x at the point (3,5).","y=8x+24","7y=9x+3","y=3x-9","5y=-8x+24","y=x+24",-1
+29,"Find the equation of a hyperbola with foci (±9,0) and directrix x=±4.","x²/36 - y²/45 = 1","x²/49 - y²/54 = 1","x²/12 - y²/24 = 1","x²/8 - y²/16 = 1","x²/14 - y²/19 = 1",0
+30,"Find the values of x if the distance between A(x,1) and B(2,-3) is √41.","7, -3","8, 4","7, -7","7, -3","0, 8",-1
+31,"Find the mid-point coordinates of the line joining A(5,1) and B(3,-1).","(6,9)","(0,8)","(5,4)","(8,4)","(4,0)",4
+32,"Find the angle between the lines 3y-4x=2 and 7y=x+1.","54°","65°","75°","45°","15°",3
+33,"Find the equation of the straight line joining the points (-1,-4) and (4,-3).","y-5x=-19","y-x=28","5y-x=-19","8y-7x=25","6y-x=8",2
+34,"Find the equation of a line through (-2,-3) and perpendicular to the line 4x+3y-5=0.","4y-3x+6=0","y-3x+6=0","y-7x+13=0","5y+7x=1","y+x=1",0
+35,"Which of the following does not represent a circle?","x²+y²+8x+7y-9=0","x²+y²-8x+2y+7=0","8x²-8y²-x+y-10=0","2x²+2y²-8=0","none of the above",2
+36,"Find the equation of the line passing through the points (2, 5) and (-4, 7).","y=8x-9","y=2x+1","y=-1/3x+17/3","y=9x-8","y=x+1",2
+37,"A curve passes through (-3,5) and its gradient is 6x²+10x-7. Find the equation of the curve.","2x³+5x²-7x-47","x³+5x²-9x","2x³+5x²-7x-7","x³-2x-7x","3x³-7x²-7x-67",-1
+38,"A line L passes through (6, -13) and is parallel to the line through (7,4) and (-3,9). Find the equation of L.","2y=-x-20","y=x-10","y=5x-15","y=12x-4","2y=-x-20",-1
+39,"Find the gradient of the curve y=2x²+5x-1 at x=4.","34","45","78","21","65",3
+40,"If the distance between (-3,9) and (x,3) is 2 times the distance between (x,-1) and (2,3), find x.","8","6","5","7","4",-1
+41,"A particle of mass 5kg, initially at rest, is acted upon by a force (7t+t²)N. Find the velocity of the particle.","(7t²/2 + t³/3) m/s","(7t²/10 + t³/15) m/s","(7t²/5 + t³/5) m/s","(7/5 + t/5) m/s","None of the above",1
+42,"A particle of mass 5kg, initially at rest, is acted upon by a force (7t+t²)N. Find the distance covered after 3 seconds.","7.65m","40.5m","10.35m","13.5m","None of the above",-1
+43,"A particle's parametric equations are x=e⁻ᵗ, y=2cos(5t), z=2sin(5t). Find its position vector at t=0.","(1,-50,0)m","(10,-500,0)m","(-1,0,10)m","(1,2,0)m","None of the above",3
+44,"Which of the following is TRUE about Force (F) in Newtons? (I) Rate of change of momentum (II) Change in momentum (III) Product of mass and acceleration (IV) Work done / displacement.","(I), (II), (III) and (IV)","(I), (II) and (III)","(I), (III) and (IV)","(I), (II) and (IV)","None of the above",2
+45,"Work done by a particle in Joules is obtained by the...","product of the Force and distance covered","rate of change of momentum","impulse","product of mass and acceleration","None of the above",0
+46,"A particle's velocity is v = (3t²+4t) m/s. Find the distance (s) covered at t=5s, with s=0 at t=0.","175m","200m","400m","800m","None of the above",0
+47,"A particle's position is s=5t³+3t² in meters. Find its acceleration at t=3s.","14 m/s²","96 m/s²","100 m/s²","90 m/s²","None of the above",1
+48,"A car's velocity is v=(3t+5t², 2t+3t³, t+5t²) m/s. Determine its position at t=2s, assuming it starts from the origin.","(18, 16, 46/3)m","(5, 0, 5)m","(3, 1, 4)m","(18, 16, 46/2)m","None of the above",0
+49,"A particle's parametric equations are x=3t², y=8t, z=2t³. Determine the magnitude of acceleration at t=2s.","612 m/s²","√880 m/s²","√612 m/s²","√784 m/s²","None of the above",-1
+50,"A particle of mass 30kg has position x(t)=3t² and y(t)=2t³+5t². Find the position vector at t=2s.","(12, 36)m","(12, 36)m","(180, 1020)m","(6, 24)m","None of the above",1
+51,"A particle of mass 30kg has position x(t)=3t² and y(t)=2t³+5t². Find the work done at t=2s if the force is inclined at 60° to the horizontal.","2160 Joules","36720 Joules","38880 Joules","19440 Joules","None of the above",-1
+52,"(Duplicate Question)","",,"",,"",-1
+53,"A particle has mass 4kg and position x(t)=3t⁴-2t³ and y(t)=4t³+5t. Calculate its velocity at 4 seconds.","(528, 96) m/s","(672, 197) m/s","(768, 192) m/s","(704, 197) m/s","None of the above",-1
+54,"(Duplicate Question)","",,"",,"",-1
+55,"A particle has mass 4kg and position x(t)=3t⁴-2t³ and y(t)=4t³+5t. Calculate the Force (Resistance) acting on it at 4 seconds.","(528, 96)N","(672, 197)N","(768, 192)N","(2688, 384)N","None of the above",-1
+56,"(Duplicate Question)","",,"",,"",-1
+57,"Find the work done by a particle of mass 25kg which ran up a staircase to a coordinate (x,y)=(2,3)m in 3 seconds. (Take g=9.8 m/s² and assume y is the vertical height).","245 Joules","403.33 Joules","1225 Joules","735 Joules","None of the above",3
+58,"Calculate the Kinetic Energy of a particle of mass 10kg whose position coordinates are x(t)=5t and y(t)=3t at t=2 seconds.","45 Joules","170 Joules","170 Joules","6.8 Joules","None of the above",2
+59,"Which equation of motion represents a body of mass M shot upward against gravity (g) in a medium with air resistance Mkv?","dv/dt = g - kv","dv/dt = -g - kv","dv/dt = g + kv","dv/dt = mg - kv","none of the above",1
+60,"A particle of mass 20kg moves with x=3t², y=8t, z=3t³. Find the velocity at t=2s.","(6, 0, 36) m/s","(12, 8, 36) m/s","(12, 16, 24) m/s","(120, 0, 720) m/s","None of the above",1
+61,"Find the equation of a straight line passing through P(0,3) and Q(2,0).","2y²+3x-6=0","y+3x-6=0","2y+3x-6=0","Close to each other","None of the above",2
+62,"Find the equation of a straight line with gradient 4 that passes through P(0,3).","y-4x-3=0","y-4x+3=0","y+4x-3=0","y+x-3=0","None of the above",0
+63,"If two lines with gradients m₁ and m₂ are perpendicular, then:","m₁m₂ = -1","m₁m₂ = 1","m₁m₂ = -2","m₁m₂ = 2","None of the above",0
+64,"If two lines with gradients m₁ and m₂ are parallel, then:","m₁ = m₂","m₁ = -m₂","m₁ = m₂²","m₁m₂ = 2","None of the above",0
+
+
+Question Number,Question,Option A,Option B,Option C,Option D,Option E,correct_indices
+1,"Which of the following is not a vector quantity?","velocity","force","momentum","acceleration","none of the above",4
+2,"Which of the following is not correct?","A unit vector has a magnitude of 1.","Two or more vectors with the same initial point are coinitial.","Two vectors are equal if they have the same magnitude and direction.","Two or more vectors are collinear if they are perpendicular to the same line.","A zero vector has coinciding initial and terminal points.",3
+3,"If the length of the vector a = xi + 2j - k is 3, find the positive value of x.","2","4","5","1","7",0
+4,"Find the value(s) of x if the magnitude of a = xi + (3+x)j + 2k is 2x+1.","3, -2","5, 6","7, 4","-2, 6","0, 5",0
+5,"Evaluate 2x³+x+1, if the magnitude of a=3i+xj+2k is equal to the magnitude of b=6i+(x-4)j+3k.","432","439","216","532","539",4
+6,"Find the sum of the vectors AB + BC - DC - AD.","1","AB","AC","0","none of the above",3
+7,"If A = 3i+6j+12k and C = 3i-7j+8k, evaluate |2A-C|.","625","25.02","52.02","25.04","48",-1
+8,"If r₁=4i-3j+2k and r₂=3i+5j+4k, evaluate 2r₁+4r₂.","30i+41j-20k","20i+14j+20k","20i+14j+20k","18i+20j-24k","20i-14j-20k",2
+9,"If a=2i+3k, b=4i-6k and c=20i-6k, find the scalars λ and β if c is the resultant of λa and βb.","3, 4","6, 8","4, 3","4, 8","3, 2",2
+10,"Find the values of λ if the modulus of P is 7, where P is the resultant of A=λi+4j-k and B=i+2j-k.","6, 5","8, 4","2, -4","0, 9","3, 2",2
+11,"Find the value of λ if the magnitude of v=λi+6j-2k is the same as the magnitude of w=2i-3j+(3+λ)k.","6","7","4","9","3",4
+12,"If the unit vector of the resultant of A=i+j and B=j-xk is c = i/3 + 2j/3 - 2k/3, find the value of x.","6, -5","2","8, -4","5, -5","3, -3",1
+13,"If the unit vector of A=xi+2j and B=2k is equal to the unit vector of C=(x+1)j+k and D=i+k, find x.","4","1","6","3","8",-1
+14,"Find a unit vector parallel to the sum of A=2i+4j-5k, B=i+2j+3k, and C=2i+4j+10k.","(5i+10j+8k)/√189","(5i+10j+7k)/√174","(i+4j+17k)/7","(9i+8j+14k)/5","none of the above",-1
+15,"Evaluate (A+B)·(A-B), if A=2i-3j+5k and B=3i+j-2k.","-24","42","56","32","40",-1
+16,"Find the value of λ if 2i-3j+5k is orthogonal to 3i+λj-2k.","8","9","16","-3/4","-4/3",4
+17,"Find the angle between the two vectors a=i+j+k and b=-i+2j+3k.","82°","63°","73°","32°","52°",-1
+18,"Find the value of x if the cross product of i+2j+(x-2)k and -3i+j+xk is 7i-14j+7k.","7","5","8","4","3",-1
+19,"If a=2i-j+3k, b=3i+2j+k and c=i+mj+4k are coplanar, find the value of m.","-5","-4","-6","-8","-3",0
+20,"If a·(bxc) = 4 * d·(exf) for the given vectors, find x.","4,5","2, 4","7, 3","6, 8","4, 9",-1
+21,"Find the length of the straight line joining the points A(2,1) and B(5,5).","5","8","12","14","24",0
+22,"Find the gradient of the line joining the points A(4,3) and B(8,12).","9/4","10/11","6/7","2/3","1/2",0
+23,"Find the equation of a straight line through the point (-2,3), parallel to 3x-4y+7=0.","4y+3x+18=0","y-6x+5=0","4y-3x-18=0","7y-x+21=0","none of the above",2
+24,"Find the equation of the line joining (1,2) to the intersection of 3x+y=7 and 4x+2y=10.","y-x=3","y+3x=6","y+7x=5","y+x=3","y-2x=9",3
+25,"Find the equation of a circle with center (2,3) and radius 1.","x²+y²-4x-6y+12=0","4x²+4y²-16x+7y-4=0","8x²+8y²-x+y+9=0","x²+y²-x+y=0","2x²+2y²-6x+8y+9=0",0
+26,"Find the radius and center of the circle x²+y²+4x-6y+12=0.","r=9, C=(-2,3)","r=3, C=(8,5)","r=1, C=(-2,3)","r=5, C=(4,3)","r=2, C=(6,3)",2
+27,"Find the length of the tangent from the point (7,5) to the circle x²+y²-4x-6y+9=0.","7","8","12","4","5",4
+28,"Find the equation of the tangent to the parabola 4y²=64x at the point (3,5).","y=8x+24","7y=9x+3","y=3x-9","5y=-8x+24","y=x+24",-1
+29,"Find the equation of a hyperbola with foci (±9,0) and directrix x=±4.","x²/36 - y²/45 = 1","x²/49 - y²/54 = 1","x²/12 - y²/24 = 1","x²/8 - y²/16 = 1","x²/14 - y²/19 = 1",0
+30,"Find the values of x if the distance between A(x,1) and B(2,-3) is √41.","7, -3","8, 4","7, -7","7, -3","0, 8",-1
+31,"Find the mid-point coordinates of the line joining A(5,1) and B(3,-1).","(6,9)","(0,8)","(5,4)","(8,4)","(4,0)",4
+32,"Find the angle between the lines 3y-4x=2 and 7y=x+1.","54°","65°","75°","45°","15°",3
+33,"Find the equation of the straight line joining the points (-1,-4) and (4,-3).","y-5x=-19","y-x=28","5y-x=-19","8y-7x=25","6y-x=8",2
+34,"Find the equation of a line through (-2,-3) and perpendicular to the line 4x+3y-5=0.","4y-3x+6=0","y-3x+6=0","6y-7x+13=0","5y+7x=1","y+x=1",0
+35,"Which of the following does not represent a circle?","x²+y²+8x+7y-9=0","x²+y²-8x+2y+7=0","8x²-8y²-x+y-10=0","2x²+2y²-8=0","none of the above",2
+36,"Find the equation of the line passing through the points (2, 5) and (-4, 7).","y=8x-9","y=2x+1","y=-1/3x+17/3","y=9x-8","y=x+1",2
+37,"A curve passes through (-3,5) and its gradient is 6x²+10x-7. Find the equation.","2x³+5x²-7x-47","x³+5x²-9x","2x³+5x²-7x-7","x³-2x-7x","3x³-7x²-7x-67",-1
+38,"A line L passes through (6, -13) and is parallel to the line through (7,4) and (-3,9). Find the equation of L.","2y=-x-20","y=x-10","y=5x-15","y=12x-4","2y=-x-20",-1
+39,"Find the gradient of the curve y=2x²+5x-1 at x=4.","34","45","78","21","65",3
+40,"If the distance between (-3,9) and (x,3) is 2 times the distance between (x,-1) and (2,3), find x.","8","6","5","7","4",-1
+41,"A particle of mass 5kg, initially at rest, is acted upon by a force (7t+t²)N. Find the velocity.","(7t²/2 + t³/3) m/s","(7t²/10 + t³/15) m/s","(7t²/5 + t³/5) m/s","(7/5 + t/5) m/s","None of the above",1
+42,"A particle of mass 5kg, initially at rest, is acted upon by a force (7t+t²)N. Find the distance covered after 3 seconds.","7.65m","40.5m","10.35m","13.5m","None of the above",-1
+43,"A particle's parametric equations are x=e⁻ᵗ, y=2cos(5t), z=2sin(5t). Find its position vector at t=0.","(1,-50,0)m","(10,-500,0)m","(-1,0,10)m","(1,2,0)m","None of the above",3
+44,"Which is TRUE about Force (F)? (I) Rate of change of momentum (II) Change in momentum (III) Mass x acceleration (IV) Work done / displacement.","(I), (II), (III) and (IV)","(I), (II) and (III)","(I), (III) and (IV)","(I), (II) and (IV)","None of the above",2
+45,"Work done by a particle is...","the product of the Force and distance covered","the rate of change of momentum","impulse","the product of mass and acceleration","None of the above",0
+46,"A particle's velocity is v=(3t²+4t)m/s. Find the distance s at t=5s, with s=0 at t=0.","175m","200m","400m","800m","None of the above",0
+47,"A particle's position is s=5t³+3t² m. Find its acceleration at t=3s.","14 m/s²","96 m/s²","100 m/s²","90 m/s²","None of the above",1
+48,"A car's velocity is v=(3t+5t, 2t+3t³, t+5t²)m/s. Find its position at t=2s, from the origin.","(18, 16, 46/3)m","(5, 0, 5)m","(3, 1, 4)m","(18, 16, 46/2)m","None of the above",0
+49,"A particle's position is x=3t², y=8t, z=2t³. Find the magnitude of acceleration at t=2s.","612 m/s²","√880 m/s²","√612 m/s²","√784 m/s²","None of the above",-1
+50,"A particle of mass 30kg has position x=3t² and y=2t³+5t². Find the position vector at t=2s.","(12, 44)m","(12, 36)m","(180, 1020)m","(6, 24)m","None of the above",1
+51,"A particle (m=30kg) has position x=3t², y=2t³+5t². Find the work done at t=2s if F is inclined at 60° to the horizontal.","2160 Joules","36720 Joules","38880 Joules","19440 Joules","None of the above",-1
+52,"(Duplicate Question)","",,"",,"",-1
+53,"A particle (m=4kg) has position x=3t⁴-2t³ and y=4t³+5t. Calculate its velocity at 4s.","(528, 96) m/s","(672, 197) m/s","(768, 192) m/s","(704, 197) m/s","None of the above",-1
+54,"(Duplicate Question)","",,"",,"",-1
+55,"A particle (m=4kg) has position x=3t⁴-2t³ and y=4t³+5t. Calculate the Force (Resistance) at 4s.","(528, 96)N","(672, 197)N","(768, 192)N","(2688, 384)N","None of the above",-1
+56,"(Duplicate Question)","",,"",,"",-1
+57,"Find work done by a 25kg particle that ran up a staircase to (x,y)=(2,3)m in 3s (y is vertical height, g=9.8m/s²).","245 Joules","403.33 Joules","1225 Joules","735 Joules","None of the above",3
+58,"Calculate the Kinetic Energy of a 10kg particle with position x=5t and y=3t at t=2s.","45 Joules","170 Joules","170 Joules","6.8 Joules","None of the above",2
+59,"Which equation of motion is for a body of mass M shot upward against gravity (g) with air resistance Mkv?","dv/dt = g - kv","dv/dt = -g - kv","dv/dt = g + kv","dv/dt = mg - kv","none of the above",1
+60,"A 20kg particle moves with x=3t², y=8t, z=3t³. Find the velocity at t=2s.","(6,0,36) m/s","(12,8,36) m/s","(12,16,24) m/s","(120,0,720) m/s","None of the above",1
+61,"Find the equation of a straight line passing through P(0,3) and Q(2,0).","2y²+3x-6=0","y+3x-6=0","2y+3x-6=0","Close to each other","None of the above",2
+62,"Find the equation of a straight line with gradient 4 that passes through P(0,3).","y-4x-3=0","y-4x+3=0","y+4x-3=0","y+x-3=0","None of the above",0
+63,"If two lines with gradients m₁ and m₂ are perpendicular, then:","m₁m₂ = -1","m₁m₂ = 1","m₁m₂ = -2","m₁m₂ = 2","None of the above",0
+64,"If two lines with gradients m₁ and m₂ are parallel, then:","m₁ = m₂","m₁ = -m₂","m₁ = m₂²","m₁m₂ = 2","None of the above",0
+65,"Find the distance between the points (1/2, 1/2) and (-1/2, -1/2).","2√2","0","√2","√2/2","None of the above",2
+66,"Find the value of α²+β² if α+β=2 and the distance between (1,α) and (β,1) is 3 units.","7","9","13","11","None of the above",-1
+67,"If the midpoint of the line MN is (2,3) and point M is (-2,1), find the coordinate of N.","(5,5)","(5,6)","(6,6)","(6,5)","None of the above",3
+68,"Calculate the gradient of the line joining X(5,-7) and Z(-2,-3).","-4/7","4/7","-10/7","-7/4","None of the above",0
+69,"State the general equation of an ellipse.","x²/a² + y²/b² = 1","x/a² + y²/b = 1","a²/x² + b²/y² = 1","x²/a² + y²/b² = 0","None of the above",0
+70,"Find the focus and directrix of the parabola y² = -12x.","(-3,0) and x=3","(3,0) and x=-3","(-3,0) and x=-3","(-2,0) and x=2","None of the above",0
+71,"Obtain an equation for the ellipse with vertices (0,±8) and foci (0,±5).","y²/64 + x²/39 = 1","y²/64 - x²/39 = -1","y²/8 + x²/13 = 1","y²/64 - x²/39 = 1","None of the above",0
+72,"Find the equation of a hyperbola with foci (±4,0) and vertices (±2,0).","x²/4 - y²/12 = 1","x²/4 + y²/12 = 1","x²/4 - y²/12 = -1","x²/16 + y²/12 = 1","None of the above",0
+73,"Find the equation of a line parallel to y=-4x+2 and passing through (2,3).","y+4x-11=0","y-4x-11=0","y+4x+11=0","y+8x-11=0","None of the above",0
+74,"Find the equation of the line through (1,1) and perpendicular to 2x-3y=4.","2y+3x-5=0","2y-3x-5=0","3y+2x-5=0","3y-2x-5=0","None of the above",0
+75,"Find the equation of the circle whose diameter has endpoints (-5,1) and (3,-7).","x²-y²+2x+6y-22=0","x²+y²+2x+6y-22=0","x²+y²+2x+6y-22=0"," -x²-y²-2x+6y-22=0","None of the above",-1
+76,"Find the equation of the tangent to the parabola y²=12x at the point (3,6).","y=x-3","y=x+3","y=-x+3","y=-x-3","None of the above",1
+77,"Find the sum of the vector AB+BC-DC-AD.","BA","DC","AD","0","None of the above",-1
+78,"If the distance between (2,1) and (q,8) is 7 units, find the value of q.","2 (twice)","2 (twice)","1,2","2","None of the above",-1
+79,"Find the eccentricity of the hyperbola x²/9 - y²/16 = 1.","5/3","7/3","1","9","None of the above",0
+80,"Find the direction cosines [l,m,n] of r = 3i - 2j + 6k.","[3/7, 2/7, 6/7]","[3/7, -2/7, 6/7]","[-3/7, -2/7, -6/7]","[-3/7, 2/7, -6/7]","None of the above",1
+81,"Given a=2i+3k, b=5i-j+k, c=i+2j, evaluate 2a·(b+3c).","32","36","38","44","None of the above",-1
+82,"Find the vector product (cross product) of P=3i-4j+2k and Q=2i+5j-k.","-6i+7j+23k","6i-7j-23k","-6i-7j-23k","-6i+7j+23k","None of the above",0
+83,"Find the magnitude of the vector v = 3i+4j-12k.","13","14","15","16","None of the above",0
+84,"Given a=i-j+2k, b=2i+j+k, c=i+2j-k, find (a x b) x c.","-9i-9k","-9i+9k","9i-9k","9i+9k","None of the above",2
+85,"Given a=2i+3k, b=5i-j+k, c=i+2j, evaluate (a-c)·(b-c).","i-j+2k","i-j+3k","-1","i-j+2k","None of the above",-1
+86,"Given a=2i+3k, b=5i-j+k, c=i+2j, evaluate (a·c)b.","10i-2j-2k","-10i-2j+2k","10i-2j+2k","10i+2j+2k","None of the above",2
+87,"Given a=2i+3k, b=5i-j+k, c=i+2j, evaluate (a·c)(b·c).","10","8","4","12","None of the above",-1
+88,"Find the unit vector â of the vector a = 2i+5j-k.","(2i+5j-k)/√30","(2i-5j-k)/30","(2i-5j+k)/√30","(2i-5j)/√30","None of the above",0
+89,"State the general equation of a parabola opening to the right.","y²=-4ax","y³=4ax","y²=4ax","y-4ax=0","None of the above",2
+90,"State the general equation of a hyperbola.","x²/a² - y²/b² = 1","x²/a - y²/b = -1","x/a² - y/b² = 1","x²/a² - y²/b² = 0","None of the above",0
+
+Question Number,Question,Option A,Option B,Option C,Option D,Option E,correct_indices
+1,"Which of the following is not a vector quantity?","velocity","force","momentum","acceleration","none of the above",4
+2,"Which of the following is not correct?","A unit vector has a magnitude of 1.","Two or more vectors with the same initial point are coinitial.","Two vectors are equal if they have the same magnitude and direction.","Two or more vectors are collinear if they are perpendicular to the same line.","A zero vector has coinciding initial and terminal points.",3
+3,"If the length of the vector a = xi + 2j - k is 3, find the positive value of x.","2","4","5","1","7",0
+4,"Find the value(s) of x if the magnitude of a = xi + (3+x)j + 2k is 2x+1.","3, -2","5, 6","7, 4","-2, 6","0, 5",0
+5,"Evaluate 2x³+x+1, if the magnitude of a=3i+xj+2k is equal to the magnitude of b=6i+(x-4)j+3k.","432","439","216","532","539",4
+6,"Find the sum of the vectors AB + BC - DC - AD.","1","AB","AC","0","none of the above",3
+7,"If A = 3i+6j+12k and C = 3i-7j+8k, evaluate |2A-C|.","625","25.02","52.02","25.04","48",-1
+8,"If r₁=4i-3j+2k and r₂=3i+5j+4k, evaluate 2r₁+4r₂.","30i+41j-20k","20i+14j+20k","20i+14j+20k","18i+20j-24k","20i-14j-20k",2
+9,"If a=2i+3k, b=4i-6k and c=20i-6k, find the scalars λ and β if c is the resultant of λa and βb.","3, 4","6, 8","4, 3","4, 8","3, 2",2
+10,"Find the values of λ if the modulus of P is 7, where P is the resultant of A=λi+4j-k and B=i+2j-k.","6, 5","8, 4","2, -4","0, 9","3, 2",2
+11,"Find the value of λ if the magnitude of v=λi+6j-2k is the same as the magnitude of w=2i-3j+(3+λ)k.","6","7","4","9","3",4
+12,"If the unit vector of the resultant of A=i+j and B=j-xk is c = i/3 + 2j/3 - 2k/3, find the value of x.","6, -5","2","8, -4","5, -5","3, -3",1
+13,"If the unit vector of A=xi+2j and B=2k is equal to the unit vector of C=(x+1)j+k and D=i+k, find x.","4","1","6","3","8",-1
+14,"Find a unit vector parallel to the sum of A=2i+4j-5k, B=i+2j+3k, and C=2i+4j+10k.","(5i+10j+8k)/√189","(5i+10j+7k)/√174","(i+4j+17k)/7","(9i+8j+14k)/5","none of the above",-1
+15,"Evaluate (A+B)·(A-B), if A=2i-3j+5k and B=3i+j-2k.","-24","42","56","32","40",-1
+16,"Find the value of λ if 2i-3j+5k is orthogonal to 3i+λj-2k.","8","9","16","-3/4","-4/3",4
+17,"Find the angle between the two vectors a=i+j+k and b=-i+2j+3k.","82°","63°","73°","32°","52°",-1
+18,"Find the value of x if the cross product of i+2j+(x-2)k and -3i+j+xk is 7i-14j+7k.","7","5","8","4","3",-1
+19,"If a=2i-j+3k, b=3i+2j+k and c=i+mj+4k are coplanar, find the value of m.","-5","-4","-6","-8","-3",0
+20,"If a·(bxc) = 4 * d·(exf) for the given vectors, find x.","4,5","2, 4","7, 3","6, 8","4, 9",-1
+21,"Find the length of the straight line joining the points A(2,1) and B(5,5).","5","8","12","14","24",0
+22,"Find the gradient of the line joining the points A(4,3) and B(8,12).","9/4","10/11","6/7","2/3","1/2",0
+23,"Find the equation of a straight line through the point (-2,3), parallel to 3x-4y+7=0.","4y+3x+18=0","y-6x+5=0","4y-3x-18=0","7y-x+21=0","none of the above",2
+24,"Find the equation of the line joining (1,2) to the intersection of 3x+y=7 and 4x+2y=10.","y-x=3","y+3x=6","y+7x=5","y+x=3","y-2x=9",3
+25,"Find the equation of a circle with center (2,3) and radius 1.","x²+y²-4x-6y+12=0","4x²+4y²-16x+7y-4=0","8x²+8y²-x+y+9=0","x²+y²-x+y=0","2x²+2y²-6x+8y+9=0",0
+26,"Find the radius and center of the circle x²+y²+4x-6y+12=0.","r=9, C=(-2,3)","r=3, C=(8,5)","r=1, C=(-2,3)","r=5, C=(4,3)","r=2, C=(6,3)",2
+27,"Find the length of the tangent from the point (7,5) to the circle x²+y²-4x-6y+9=0.","7","8","12","4","5",4
+28,"Find the equation of the tangent to the parabola 4y²=64x at the point (3,5).","y=8x+24","7y=9x+3","y=3x-9","5y=-8x+24","y=x+24",-1
+29,"Find the equation of a hyperbola with foci (±9,0) and directrix x=±4.","x²/36 - y²/45 = 1","x²/49 - y²/54 = 1","x²/12 - y²/24 = 1","x²/8 - y²/16 = 1","x²/14 - y²/19 = 1",0
+30,"Find the values of x if the distance between A(x,1) and B(2,-3) is √41.","7, -3","8, 4","7, -7","7, -3","0, 8",-1
+31,"Find the mid-point coordinates of the line joining A(5,1) and B(3,-1).","(6,9)","(0,8)","(5,4)","(8,4)","(4,0)",4
+32,"Find the angle between the lines 3y-4x=2 and 7y=x+1.","54°","65°","75°","45°","15°",3
+33,"Find the equation of the straight line joining the points (-1,-4) and (4,-3).","y-5x=-19","y-x=28","5y-x=-19","8y-7x=25","6y-x=8",2
+34,"Find the equation of a line through (-2,-3) and perpendicular to the line 4x+3y-5=0.","4y-3x+6=0","y-3x+6=0","6y-7x+13=0","5y+7x=1","y+x=1",0
+35,"Which of the following does not represent a circle?","x²+y²+8x+7y-9=0","x²+y²-8x+2y+7=0","8x²-8y²-x+y-10=0","2x²+2y²-8=0","none of the above",2
+36,"Find the equation of the line passing through the points (2, 5) and (-4, 7).","y=8x-9","y=2x+1","y=-1/3x+17/3","y=9x-8","y=x+1",2
+37,"A curve passes through (-3,5) and its gradient is 6x²+10x-7. Find the equation.","2x³+5x²-7x-47","x³+5x²-9x","2x³+5x²-7x-7","x³-2x-7x","3x³-7x²-7x-67",-1
+38,"A line L passes through (6, -13) and is parallel to the line through (7,4) and (-3,9). Find the equation of L.","2y=-x-20","y=x-10","y=5x-15","y=12x-4","2y=-x-20",-1
+39,"Find the gradient of the curve y=2x²+5x-1 at x=4.","34","45","78","21","65",3
+40,"If the distance between (-3,9) and (x,3) is 2 times the distance between (x,-1) and (2,3), find x.","8","6","5","7","4",-1
+41,"A particle of mass 5kg, initially at rest, is acted upon by a force (7t+t²)N. Find the velocity.","(7t²/2 + t³/3) m/s","(7t²/10 + t³/15) m/s","(7t²/5 + t³/5) m/s","(7/5 + t/5) m/s","None of the above",1
+42,"A particle of mass 5kg, initially at rest, is acted upon by a force (7t+t²)N. Find the distance covered after 3 seconds.","7.65m","40.5m","10.35m","13.5m","None of the above",-1
+43,"A particle's parametric equations are x=e⁻ᵗ, y=2cos(5t), z=2sin(5t). Find its position vector at t=0.","(1,-50,0)m","(10,-500,0)m","(-1,0,10)m","(1,2,0)m","None of the above",3
+44,"Which is TRUE about Force (F)? (I) Rate of change of momentum (II) Change in momentum (III) Mass x acceleration (IV) Work done / displacement.","(I), (II), (III) and (IV)","(I), (II) and (III)","(I), (III) and (IV)","(I), (II) and (IV)","None of the above",2
+45,"Work done by a particle is...","the product of the Force and distance covered","the rate of change of momentum","impulse","the product of mass and acceleration","None of the above",0
+46,"A particle's velocity is v=(3t²+4t)m/s. Find the distance s at t=5s, with s=0 at t=0.","175m","200m","400m","800m","None of the above",0
+47,"A particle's position is s=5t³+3t² m. Find its acceleration at t=3s.","14 m/s²","96 m/s²","100 m/s²","90 m/s²","None of the above",1
+48,"A car's velocity is v=(3t+5t, 2t+3t³, t+5t²)m/s. Find its position at t=2s, from the origin.","(18, 16, 46/3)m","(5, 0, 5)m","(3, 1, 4)m","(18, 16, 46/2)m","None of the above",0
+49,"A particle's position is x=3t², y=8t, z=2t³. Find the magnitude of acceleration at t=2s.","612 m/s²","√880 m/s²","√612 m/s²","√784 m/s²","None of the above",-1
+50,"A particle of mass 30kg has position x=3t² and y=2t³+5t². Find the position vector at t=2s.","(12, 44)m","(12, 36)m","(180, 1020)m","(6, 24)m","None of the above",1
+51,"A particle (m=30kg) has position x=3t², y=2t³+5t². Find the work done at t=2s if F is inclined at 60° to the horizontal.","2160 Joules","36720 Joules","38880 Joules","19440 Joules","None of the above",-1
+52,"(Duplicate Question)","",,"",,"",-1
+53,"A particle (m=4kg) has position x=3t⁴-2t³ and y=4t³+5t. Calculate its velocity at 4s.","(528, 96) m/s","(672, 197) m/s","(768, 192) m/s","(704, 197) m/s","None of the above",-1
+54,"(Duplicate Question)","",,"",,"",-1
+55,"A particle (m=4kg) has position x=3t⁴-2t³ and y=4t³+5t. Calculate the Force (Resistance) at 4s.","(528, 96)N","(672, 197)N","(768, 192)N","(2688, 384)N","None of the above",-1
+56,"(Duplicate Question)","",,"",,"",-1
+57,"Find work done by a 25kg particle that ran up a staircase to (x,y)=(2,3)m in 3s (y is vertical height, g=9.8m/s²).","245 Joules","403.33 Joules","1225 Joules","735 Joules","None of the above",3
+58,"Calculate the Kinetic Energy of a 10kg particle with position x=5t and y=3t at t=2s.","45 Joules","170 Joules","170 Joules","6.8 Joules","None of the above",2
+59,"Which equation of motion is for a body of mass M shot upward against gravity (g) with air resistance Mkv?","dv/dt = g - kv","dv/dt = -g - kv","dv/dt = g + kv","dv/dt = mg - kv","none of the above",1
+60,"A 20kg particle moves with x=3t², y=8t, z=3t³. Find the velocity at t=2s.","(6,0,36) m/s","(12,8,36) m/s","(12,16,24) m/s","(120,0,720) m/s","None of the above",1
+61,"Find the equation of a straight line passing through P(0,3) and Q(2,0).","2y²+3x-6=0","y+3x-6=0","2y+3x-6=0","Close to each other","None of the above",2
+62,"Find the equation of a straight line with gradient 4 that passes through P(0,3).","y-4x-3=0","y-4x+3=0","y+4x-3=0","y+x-3=0","None of the above",0
+63,"If two lines with gradients m₁ and m₂ are perpendicular, then:","m₁m₂ = -1","m₁m₂ = 1","m₁m₂ = -2","m₁m₂ = 2","None of the above",0
+64,"If two lines with gradients m₁ and m₂ are parallel, then:","m₁ = m₂","m₁ = -m₂","m₁ = m₂²","m₁m₂ = 2","None of the above",0
+65,"Find the distance between the points (1/2, 1/2) and (-1/2, -1/2).","2√2","0","√2","√2/2","None of the above",2
+66,"Find the value of α²+β² if α+β=2 and the distance between (1,α) and (β,1) is 3 units.","7","9","13","11","None of the above",-1
+67,"If the midpoint of the line MN is (2,3) and point M is (-2,1), find the coordinate of N.","(5,5)","(5,6)","(6,6)","(6,5)","None of the above",3
+68,"Calculate the gradient of the line joining X(5,-7) and Z(-2,-3).","-4/7","4/7","-10/7","-7/4","None of the above",0
+69,"State the general equation of an ellipse.","x²/a² + y²/b² = 1","x/a² + y²/b = 1","a²/x² + b²/y² = 1","x²/a² + y²/b² = 0","None of the above",0
+70,"Find the focus and directrix of the parabola y² = -12x.","(-3,0) and x=3","(3,0) and x=-3","(-3,0) and x=-3","(-2,0) and x=2","None of the above",0
+71,"Obtain an equation for the ellipse with vertices (0,±8) and foci (0,±5).","y²/64 + x²/39 = 1","y²/64 - x²/39 = -1","y²/8 + x²/13 = 1","y²/64 - x²/39 = 1","None of the above",0
+72,"Find the equation of a hyperbola with foci (±4,0) and vertices (±2,0).","x²/4 - y²/12 = 1","x²/4 + y²/12 = 1","x²/4 - y²/12 = -1","x²/16 + y²/12 = 1","None of the above",0
+73,"Find the equation of a line parallel to y=-4x+2 and passing through (2,3).","y+4x-11=0","y-4x-11=0","y+4x+11=0","y+8x-11=0","None of the above",0
+74,"Find the equation of the line through (1,1) and perpendicular to 2x-3y=4.","2y+3x-5=0","2y-3x-5=0","3y+2x-5=0","3y-2x-5=0","None of the above",0
+75,"Find the equation of the circle whose diameter has endpoints (-5,1) and (3,-7).","x²-y²+2x+6y-22=0","x²+y²+2x+6y-22=0","x²+y²+2x+6y-22=0"," -x²-y²-2x+6y-22=0","None of the above",-1
+76,"Find the equation of the tangent to the parabola y²=12x at the point (3,6).","y=x-3","y=x+3","y=-x+3","y=-x-3","None of the above",1
+77,"Find the sum of the vector AB+BC-DC-AD.","BA","DC","AD","0","None of the above",-1
+78,"If the distance between (2,1) and (q,8) is 7 units, find the value of q.","2 (twice)","2 (twice)","1,2","2","None of the above",-1
+79,"Find the eccentricity of the hyperbola x²/9 - y²/16 = 1.","5/3","7/3","1","9","None of the above",0
+80,"Find the direction cosines [l,m,n] of r = 3i - 2j + 6k.","[3/7, 2/7, 6/7]","[3/7, -2/7, 6/7]","[-3/7, -2/7, -6/7]","[-3/7, 2/7, -6/7]","None of the above",1
+81,"Given a=2i+3k, b=5i-j+k, c=i+2j, evaluate 2a·(b+3c).","32","36","38","44","None of the above",-1
+82,"Find the vector product (cross product) of P=3i-4j+2k and Q=2i+5j-k.","-6i+7j+23k","6i-7j-23k","-6i-7j-23k","-6i+7j+23k","None of the above",0
+83,"Find the magnitude of the vector v = 3i+4j-12k.","13","14","15","16","None of the above",0
+84,"Given a=i-j+2k, b=2i+j+k, c=i+2j-k, find (a x b) x c.","-9i-9k","-9i+9k","9i-9k","9i+9k","None of the above",2
+85,"Given a=2i+3k, b=5i-j+k, c=i+2j, evaluate (a-c)·(b-c).","i-j+2k","i-j+3k","-1","i-j+2k","None of the above",-1
+86,"Given a=2i+3k, b=5i-j+k, c=i+2j, evaluate (a·c)b.","10i-2j-2k","-10i-2j+2k","10i-2j+2k","10i+2j+2k","None of the above",2
+87,"Given a=2i+3k, b=5i-j+k, c=i+2j, evaluate (a·c)(b·c).","10","8","4","12","None of the above",-1
+88,"Find the unit vector â of the vector a = 2i+5j-k.","(2i+5j-k)/√30","(2i-5j-k)/30","(2i-5j+k)/√30","(2i-5j)/√30","None of the above",0
+89,"State the general equation of a parabola opening to the right.","y²=-4ax","y³=4ax","y²=4ax","y-4ax=0","None of the above",2
+90,"State the general equation of a hyperbola.","x²/a² - y²/b² = 1","x²/a - y²/b = -1","x/a² - y/b² = 1","x²/a² - y²/b² = 0","None of the above",0
+91,"Resolve (x²+2)/((2x+1)(x²+2x+3)) into partial fractions.","1/(2x+1) - 1/(x²+2x+3)","1/(2x+1) + 1/(x²+2x+3)","1/(2x+1) - 3/(x²+2x+3)","1/(2x+1) - 4/(x²+2x+3)","None of the above",-1
+92,"Resolve (7x+2)/((2x-3)(x+1)²) into partial fractions.","2/(2x-3) - 1/(x+1) + 1/(x+1)²","2/(2x-3) + 1/(x+1) + 1/(x+1)²","2/(2x-3) + 1/(x+1) - 1/(x+1)²","2/(2x-3) - 1/(x+1) - 1/(x+1)²","None of the above",3
+93,"Resolve (x³-x²-4)/(x²-1) into partial fractions.","x-1 - 3/(2(x+1)) - 1/(2(x-1))","x-1 + 3/(x+1) - 2/(x-1)","x-1 - 3/(x+1) - 2/(x-1)","x-1 - 3/(x+1) + 2/(x-1)","None of the above",-1
+94,"Resolve (x²+4x-7)/((x+1)(x²+4)) into partial fractions.","(x-7)/(x²+4) - 2/(x+1)","(3x-1)/(x²+4) + 2/(x+1)","(x+1)/(x²+4) + 2/(x+1)","(3x+7)/(x²+4) - 1/(x+1)","None of the above",-1
+95,"Resolve x²/((x+1)³) into partial fractions.","1/(x+1) - 2/(x+1)² + 1/(x+1)³","1/(x+1) + 1/(x+1)² + 1/(x+1)³","1/(x+1) - 2/(x+1)² - 1/(x+1)³","1/(x+1) + 2/(x+1)² - 1/(x+1)³","None of the above",0
+96,"Resolve (4x+11)/(x²+4x-5) into partial fractions.","1/2 * (3/(x+5) + 5/(x-1))","1/2 * (3/(x-5) + 5/(x+1))","1/2 * (3/(x-5) + 5/(x-1))","1/2 * (3/(x+5) - 5/(x-1))","None of the above",3
+97,"Determine n and r if ⁿPᵣ = 10!/4!.","n=10, r=4","n=10, r=6","n=6, r=4","n=10, r=10","None of the above",1
+98,"How many 4-digit even numbers can be formed using 1, 6, 7, 8, 9 if repetition is not allowed?","80","120","60","48","None of the above",3
+99,"A committee of three boys and 4 girls is to be formed from 5 boys and 6 girls. How many committees are possible?","150","60","25","360","None of the above",-1
+100,"The set A={x | x is an integer, 2≤x<3} is","a singleton set","a set with two elements","an empty set","the universal set","None of the above",0
+101,"If a set A has n elements, then its power set has:","2ⁿ subsets","2ⁿ⁻¹ subsets","2ⁿ⁺¹ subsets","2n subsets","None of the above",0
+102,"If the set A={a,b,c}, then the power set of A has:","three elements","eight elements","seven elements","six elements","None of the above",1
+103,"Which of the following is false?","0 is an integer","0 is a natural number","0 is a real number","0 is a rational number","None of the above",1
+104,"List the elements of {x²+1 | x is an integer and 1<x<5}.","{2,5,10,17,26}","{5,10,17,26}","{2,5,10,17}","{5,10,17}","None of the above",3
+105,"Let U={x|1≤x≤20}, P={x-1|10≤x≤18, x is even}, Q={x|2<x≤15, x is odd}. Find P∩Q'.","{17}","{10,12,14,16}","{17,18}","∅","None of the above",-1
+106,"Let P={x-1|10≤x≤18, x is even}, Q={x|2<x≤15, x is odd}, R={x|1<x≤20, x is a multiple of 3}. Find P∩(Q∩R).","{3,9,15}","{9,15}","∅","{3,6,9,15}","None of the above",2
+107,"Find B-A for A={3,1} and B={4,1,6,3}.","{3,1}","{4,6}","{4,1}","{4,3}","None of the above",1
+108,"If A={1,2,3,4} and B={2,4}, then A∪B =","{2,4}","{1,2,2,3,4,4}","{1,2,3,4}","∅","None of the above",2
+109,"Given U={a,b,c,d,e,f,g}, P={a,b,d,f}, and Q={a,c,d,g}. Find P'∪Q'.","{b,e,f}","{a,b,d,c}","{b,c,e,f,g}","{a,b,d,e,f}","None of the above",-1
+110,"Given P={a,b,d,f}, Q={a,c,d}, and R={f,c,a,d}. Find P∪Q∪R.","{a,b,c,d,f}","{a,a,b,c,d}","{a,b,c,c,f}","{a,b,c,d,d}","None of the above",0
+111,"If A={1,2,3,6,8} and C={4,5,6,8}, find AΔC.","{1,2,3,4,5,6}","{1,2,3,4,5}","{1,2,3,4,5,8}","∅","None of the above",1
+112,"If A={1,2,3,6,8}, B={2,5,6,7,9}, and C={4,5,6,8}, find (AΔB)ΔC.","{1,3,7,9}","{4,6}","{1,3,4,6,7,9}","{1,3,4,7,9}","None of the above",-1
+113,"If A={1,2,3,6,8}, B={2,5,6,7,9}, and C={4,5,6,8}, find A∩(BΔC).","{2,7,9}","{4,7,8}","{2,8}","{2,8}","None of the above",3
+114,"If A={1,2,3,6,8}, B={2,5,6,7,9}, and C={4,5,6,8}, find C∪(AΔB).","{1,3,4,5,6,7,8,9}","{1,2,3,6,8,9}","{1,4,5,6,7,8,9}","{3,4,5,6,7,8,9}","None of the above",0
+115,"If A and B are any two sets, then (A∩B)' =","A'∩B'","A'∪B'","A∪B'","A'∩B","None of the above",1
+116,"If A and B are any two sets, then (A∪B)' =","A∪B'","A'∪B'","A'∩B'","A'∩B","None of the above",2
+117,"If U is the universal set and A is any set, then AΔU =","A","U","∅","A'","None of the above",3
+118,"For two sets A and B, n(A∪B) =","n(A)+n(B)−n(A∩B)","n(A)+n(B)−n(A∪B)","n(A)+n(B)+n(A∩B)","n(A)+n(B)+n(A∪B)","None of the above",0
+119,"In a gathering of 200 students, 60% like Economics while 77% like History. How many like both (assuming all like at least one)?","74","74","40","23","None of the above",0
+120,"In a class of 125 students, 4 belong to Music and Press only, 5 to Press and Drama only, 20 to Music and Drama. Press has 65 members. None are in Music only. Press only members = (All three)². 10 are in no club. How many belong to only Drama?","49","13","37","22","None of the above",1

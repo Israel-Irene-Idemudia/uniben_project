@@ -1,0 +1,70 @@
+Question Number,Question,Option A,Option B,Option C,Option D,Option E,correct_indices
+1,"The name of the chromosomal abnormality with XXY chromosomes is","Klinefelter's syndrome","Trisomy","Turner's syndrome","Down's syndrome","Huntington's disease",0
+2,"Which of the following is not one of the nucleotide bases?","guanine","Thiamine","Cytosine","Thymine","Adenine",1
+3,"Chromosomes house _____, which are sequences of _____ that code for proteins and other molecules essential for life.","DNA, genes","Genes, DNA","DNA, information","Genes, information","all of the above",1
+4,"Which of the following is not an asexual means of reproduction?","spore formation","binary fission","fragmentation","budding","none of the above",4
+5,"The haploid number of chromosomes in Sus scrofa domesticus (domestic pig) is","40","23","38","19","21",3
+6,"An example of a one-sided metabolic dependent relationship is","commensalism","mutualism","parasitism","predation","",2
+7,"The relationship between the sea anemone and the clownfish could best be described as","commensalism","competition","parasitoidism","carnivory","",0
+8,"Which of these best explains a ""phoresy"" relationship?","temporary attachment of one organism to another for transportation purposes","a relationship that involves direct interaction between individuals via aggression","occurs when organisms compete for new territory by being the first to occupy it","both organisms depend entirely on each other for survival and cannot live independently","",0
+9,"Which of these cause an immune response in their host?","predators","parasites","commensals","none of the above","",1
+10,"The following are saprotrophs except:","Molds","Bacillus","Fleas","Pseudomonas","",2
+11,"Lipid synthesis and detoxification is carried out by the","golgi bodies","ribosomes","lysosomes","smooth endoplasmic reticulum","rough endoplasmic reticulum",3
+12,"What is the gel-like substance inside the cell, excluding the nucleus, where cellular processes occur?","vacuole","cytoplasm","protoplasm","ribosome","none of the above",1
+13,"The gradual change in a population over time due to natural selection is called","genetic crossing","revolution","mutation","evolution","none of the above",3
+14,"The highest taxonomic rank is the _____, followed by _____.","kingdom, phylum","kingdom, domain","domain, kingdom","domain, phylum","none of the above",2
+15,"Currently, life is divided into three domains namely:","Animalia, plantae, fungi","Archaea, Bacteria, Eukarya","Protista, Animalia, Plantae","Archaea, Protista, fungi","none of the above",1
+16,"Saprotrophs have found their application in the following fields except:","Bioremediation","Agriculture","Medicine","All of the above are applications","",-1
+17,"The following are sex-linked traits except:","red-white eye color in drosophila","premature balding","hemophilia","height","",3
+18,"Which of these carry hereditary materials?","nucleus","chromosomes","cytoplasm","proteins","",1
+19,"Where is genetic information encoded?","DNA","RNA","ATP","ATD","",0
+20,"Common variations in DNA sequence that occur in a population without necessarily affecting health or development are known as","polymorphisms","sickle cell anemia","Mutation","Cystic fibrosis","none of the above",0
+21,"Which of the following is not a Protista?","Plasmodium falciparum","Saccharomyces cerevisiae","Amoeba proteus","Paramecium caudatum","Euglena gracilis",1
+22,"Which of the following is the odd one out?","Rattus norvegicus","Mus musculus","Zea mays","Panthera leo","Equus ferus caballus",2
+23,"Maintenance of a stable internal environment despite external changes is called","mutation","Homeostasis","Adaptation","response to stimuli","none of the above",1
+24,"Cell division that reduces the chromosome number by half, resulting in four daughter cells each with half the number of chromosomes of the parent cell is","Mitosis","Binary fission","Binary Fusion","Meiosis","none of the above",3
+25,"How many pairs of chromosomes are present in humans?","23","24","25","26","",0
+26,"Independent assortment of chromosomes and crossing over cause?","Genetic code","Genetic similarity","Genetic variation","Genetic recombination","",2
+27,"Another word for Lamarckism is","theory of possession","theory of inheritance of acquired characteristics","theory of dominance","theory of evolution","",1
+28,"Biotic interactions may be _____ or _____.","intro-specific or inter-specific","inter-specific or infra-specific","intra-specific or inter-specific","infra-specific or intra-specific","",2
+29,"_____ is a biological interaction where one organism hunts, kills and consumes another organism.","predator/prey relationship","predation","consumption","parasitoidism","",1
+30,"_____ contain digestive enzymes to break down waste materials and cellular debris.","peroxisomes","chloroplasts","Lysosomes","Vacuole","none of the above",2
+31,"Which of the following is not a characteristic of living things?","excretion","reproduction","respiration","feeding","growth",-1
+32,"One advantage of sexual reproduction is","genetic diversity","genetic variation","one type of sex cell is involved","beneficial mutations","none of the above",0
+33,"All of the following are parts of the compound microscope except: (i) eyepiece, (ii) Objective, (iii) Condenser, (iv) Fine & coarse adjustment (v) stage","v only","iii & iv","i & ii","none of the above","",3
+34,"In the natural system of classification, plants are classified based on:","their ultimate use","similarities and differences in morphological and reproductive characters","the evolutionary relationship reflecting genetic relationship","All of the above","",2
+35,"Based on species, competition can be _____ or _____.","intra-specific or inter-specific","infra-specific or intra-specific","intra-specific or inter-specific","interference or apparent","",2
+36,"_____ occurs when a resource used by one organism depletes the total amount available for other organisms.","intra-specific competition","inter-specific competition","interference competition","exploitative competition","",3
+37,"Types of mutualism include the following except:","obligatory","diffuse","inquilinism","facultative","",2
+38,"_____ is a form of feeding in which organisms get their nutrients from dead and decaying organic substances.","saprophytism","parasitism","metabiosis","saprophytic nutrition","",0
+39,"_____ is a type of commensalism in which one organism indirectly benefits from another species creating a suitable environment.","chemical","metabiosis","phoresy","inquilinism","",1
+40,"In the five kingdoms classification system, actinomycetes are placed in the kingdom _____, while Ulothrix and Acetabularia are placed in _____.","Monera, Plantae","Fungi, Protista","Monera, Protista","Bacteria, Protista","",2
+41,"Which of the statements is not true about viruses? (i) they lack ribosomes (ii) They contain both RNA and DNA (iii) Outside the host cell is a non-living viron (iv) the core is surrounded by a protein capsid (v) they contain either DNA or RNA.","ii only","v only","iii and iv","none of the above","",0
+42,"Carrageenan, a mucilaginous polysaccharide produced from _____, is useful in making agar for culturing media.","Rhodophyta","seaweeds","Phaeophyta","chlorophyta","a & b are correct",4
+43,"The club fungi and the sac fungi are also known as _____ and _____ respectively.","Ascomycota and Basidiomycota","Deuteromycota and Zygomycota","Basidiomycota and Ascomycota","Zygomycota and Saccharomycota","",2
+44,"The _____ were thought of as fungi because of their branched mycelium but are now known to be prokaryotes.","Acetabularia","chlamydias","Rickettsias","Actinomycetes","",3
+45,"A _____ is a segment of DNA that contains instructions for building a specific protein or set of proteins.","Genome","Gene","Allele","Genotype","",1
+46,"_____ refers to the tendency of genes located close to each other on the same chromosome to be inherited together.","genetic linkage","gene expression","gene mutation","none of the above","",0
+47,"_____ refers to changes in the DNA sequence, which introduces new genetic variations.","hybridization","genetic variation","mutation","DNA recombination","",2
+48,"Who is the father of heredity?","Jean Baptiste Lamarck","Robert Hooke","Charles Darwin","Johann Gregor Mendel","",3
+49,"Which of Mendel's laws states that each individual has two alleles and that only one allele is passed on to the progeny?","law of independent assortment","law of segregation","law of dominance and uniformity","none of the above","",1
+50,"One of the following is a unique feature among prokaryotic cells.","nucleoid","nucleus","peroxisome","microtubules","",0
+51,"The algae division is classified based on all but one of the following criteria.","pigmentation","food storage product","flagellation","mode of reproduction","",3
+52,"Which of these is common among only animals, plants and fungi?","cell has a defined nucleus","cell without membrane-bound organelles","cell wall components present","reproductive capacity","",0
+53,"The metabolic processes within an organism that result in the building up of materials is referred to as","catabolism","regulation","anabolism","development","",2
+54,"The classification of organisms is important for the following reasons except?","to provide unequivocal, unique names for organisms","to aid memory","to improve ability to explain relationships","to reveal order and harmony between organisms as originally pre-planned by God","",3
+55,"The process through which individuals that possess advantageous features have a higher probability of surviving and procreating is known as","speciation","natural selection","genetic drift","gene flow","",1
+56,"'Use and disuse' are terms associated with","Lamarckism","Darwinism","Mendelism","none of the above","",0
+57,"The process by which a new species evolves from a surviving ancestral species while both remain in the same geographic area is known as","sympatric speciation","parapatric speciation","peripatric speciation","allopatric speciation","",0
+58,"The assemblage of a group of individuals of the same species is called a","herd","population","flock","speciation","",1
+59,"One of the following terrestrial habitats is the most biologically diverse.","savannah","tundra","rainforest","mountains","",2
+60,"_____ is the system of classification based on the similarities and differences in morphological and reproductive characters.","artificial","natural","phylogenetic","taxonomic system","",1
+61,"Which of the following does not describe the habit of a plant?","herb","tree","tuber","shrub","",2
+62,"Modern classification of organisms incorporates the following except:","morphological analysis","doctrine of signature","phylogenetics","genetic analysis","",1
+63,"Choose the domain that contains the most primitive bacteria that live in extreme environments.","Eukarya","Protista","Eubacteria","Archaea","",3
+64,"Which of these is the correct scientific name of wheat derived from binomial nomenclature?","Oryza sativum","Triticum aestivum","Triticum vulgare","Zea mays","",2
+65,"One of the following is associated with low temperatures, permafrost, and limited vegetation.","montane","arctic tundra","alpine tundra","polar montane","",1
+66,"One of the following is a characteristic of boreal forests except:","cold climates","coniferous trees","located in northern regions","tropical","",3
+67,"An appropriate term for human resident flora is","commensals","parasites","pathogens","mutualism","",0
+68,"The characteristics of organisms involved in a symbiotic relationship have developed _____.","by chance","through co-evolution","by character displacement","through resource partitioning","",1
+69,"What will happen to a species when there is severe interspecific competition regarding the distribution of bird habitats?","birds' distribution is multidirectional","competition eliminates the species","the species spreads to the next habitats","animals are restricted to a narrow habitat range and optimum condition","",1
