@@ -1,0 +1,83 @@
+Question Number,Question,Option A,Option B,Option C,Option D,correct_indices
+1,"Which of the following is a global network of interconnected computer networks?","Intranet","World Wide Web","Internet","Extranet",2
+2,"Which service allows users to send and receive electronic messages?","FTP","Email","Telnet","Usenet",1
+3,"What does WWW stand for?","Wide World Web","World Wide Web","Web Wide World","Wireless World Web",1
+4,"Which of the following is a positive impact of computers on society?","Increased social isolation","Job displacement","Improved communication","Cybercrime",2
+5,"The term ""digital divide"" refers to:","The gap between urban and rural areas","The gap between those who have access to computers and the Internet and those who do not","The difference between hardware and software","The speed of internet connections",1
+6,"Which of the following is an ethical issue related to computer use?","Hardware malfunction","Software updates","Intellectual property rights","Data entry errors",2
+7,"What is Computer Ethics?","A set of laws governing computer use","A branch of philosophy dealing with moral problems related to computer technology","A type of computer virus","A programming language",1
+8,"Which step is typically the FIRST in the problem-solving process using a computer?","Coding","Testing","Defining the problem","Debugging",2
+9,"An algorithm is a:","Computer program","Set of step-by-step instructions","Hardware component","Type of data",1
+10,"What is the purpose of pseudocode?","To write machine code","To execute a program","To represent an algorithm in a human-readable format","To create a user interface",2
+11,"Which of the following is a binary digit?","2","1","A","10",1
+12,"What is a bit?","A group of 8 bytes","A single binary digit","A type of computer memory","A programming language",1
+13,"What is a byte?","A single binary digit","A group of 8 bits","A type of storage device","A unit of data representing a character",1
+14,"Which of the following represents the largest unit of data?","Kilobyte (KB)","Megabyte (MB)","Gigabyte (GB)","Terabyte (TB)",3
+15,"Which component is considered the ""brain"" of the computer?","Memory","Input devices","Central Processing Unit (CPU)","Output devices",2
+16,"Which type of memory is volatile?","ROM","RAM","Hard disk","Flash drive",1
+17,"Which of the following is an example of an input device?","Monitor","Printer","Keyboard","Speaker",2
+18,"Which of the following is an example of an output device?","Mouse","Scanner","Plotter","Touchpad",2
+19,"What is an operating system?","A type of application software","A set of programs that manage computer hardware and software resources","A programming language","A utility program",1
+20,"Which of the following is NOT a function of an operating system?","Memory management","File management","Virus creation","Process management",2
+21,"Which of the following is an application area of computers in education?","Weather forecasting","Online learning","Medical diagnosis","Traffic control",1
+22,"In which area are computers used for financial transactions?","Healthcare","Banking","Transportation","Entertainment",1
+23,"Which application area involves using computers to create visual effects and animations?","Engineering","Art and design","Telecommunications","Agriculture",1
+24,"Which of the following is a key characteristic of a computer?","Slow processing speed","Inaccuracy","Versatility","Limited storage capacity",2
+25,"Who is considered the ""father"" of the modern computer?","Bill Gates","Charles Babbage","Alan Turing","Steve Jobs",1
+26,"What was the first electronic digital computer called?","UNIVAC","ENIAC","MARK I","Z1",1
+27,"Which generation of computers used vacuum tubes?","First","Second","Third","Fourth",0
+28,"Which generation of computers is associated with integrated circuits?","First","Second","Third","Fourth",2
+29,"Which generation of computers saw the emergence of the microprocessor?","First","Second","Third","Fourth",3
+30,"Which generation of computers are we currently in?","Third","Fourth","Fifth","Sixth",2
+
+Question Number,Question,Option A,Option B,Option C,Option D,Option E,correct_indices
+1,"Converting the number 782₁₀ to its base 5 equivalent would give?","11135₅","32211₅","11112₅","10112₅","10411₅",-1
+2,"The protocol that is commonly used when you download programs for your computer from Internet sites or when you upload webpages to a web server is known as?","Telnet","FTP","Gopher","TCP/IP","HTTP",1
+3,"Which of these languages is considered as the first structured procedural language?","Oberon","MODULA-2","SmallTalk","LISP","ALGOL",4
+4,"Converting the number 3442₅ to its decimal equivalent would give?","648₁₀","818₁₀","713₁₀","666₁₀","497₁₀",4
+5,"Which protocol allows a user's computer once connected, to emulate a remote computer?","Telnet","FTP","Gopher","TCP/IP","HTTP",0
+6,"General-purpose or third generation languages are also called _______ languages.","Procedural","Problem-oriented","Natural","Object-oriented","Visual programming",0
+7,"These computers are often used by Engineers, scientists and other professionals who need to run complex programs and often refer to personal computers connected to a network.","Super Computer","Workstation","Notebooks","Personal Digital Assistant","iPad Mini",1
+8,"Converting the number 2314₅ to its octal or base 8 equivalent would give?","2362₈","3362₈","1476₈","3456₈","3361₈",-1
+9,"Expressing the number ABC₁₆ in base 7 would result in?","10014₇","31014₇","10104₇","11004₇","61041₇",-1
+10,"Which version of Microsoft Windows was also known by the codename 'Chicago'?","Windows 3.1","Windows XP","Windows Vista","Windows 95","Windows 98",3
+11,"_______ storage is used to store information permanently for future use.","Main memory","Random Access Memory","Secondary storage devices","Registers","variable",2
+12,"The Radar System used in the control tower of airports is an example of?","General Purpose Computer","Dual Purpose Computer","Tower System","Dedicated System","Multipurpose Computer",3
+13,"_______ retains its content until it is exposed to ultraviolet light.","PROM","EEPROM","DRAM","EPROM","none of the above",3
+14,"Fetching, Decoding, Executing and Storing are functions performed by the _______.","Registers","Control Unit","Arithmetic and Logical Unit","Input Unit","output unit",1
+15,"Converting 3442₅ to its decimal equivalent would give?","818₁₀","339₁₀","419₁₀","497₁₀","666₁₀",3
+16,"A method for representing instructions in a module with a language very similar to a computer program code is also referred to as?","Flowchart","Algorithm","Logic","Pseudocode","Program",3
+17,"Amplitude and Frequency are characteristics of _______.","Digital waves","Discrete Carrier waves","Analog Carrier Waves","Discrete waves","",2
+18,"The process of converting analog signals to digital signals is called _______.","Modulation","Demodulation","Analog encoding","Digital encoding","MODEM",0
+19,"The following are functions of communication software except _______.","establish connection among computers","data compression","Remote communication","Error correction","",2
+20,"Which of the following physical communication channels gives the best noise protection?","Shielded twisted pair cable","fiber optic cable","Coaxial cable","Unshielded twisted pair cable","Wireless",1
+21,"Which of the following links require an unobstructed view between transmitter and receiver?","Wireless systems","GPS systems","Fibre Optics","Microwave systems","",3
+22,"The bandwidth of a communication channel can best be described as _______.","The speed at which the channel transmits data","The range of frequencies within which the communication channel can operate","The strength of the communication medium","the efficiency and effectiveness of the communication medium","",1
+23,"The coding scheme that is commonly used in IBM mainframes and can represent 256 characters is?","ASCII","Unicode","EBCDIC","BCD","XS-3 code",2
+24,"Having an understanding of what a computer is and how it can be used as a resource is known as?","Computer Competency","Information Technology","Computer Literacy","Computer Science","Computer Education",2
+25,"A person who has a certain amount of experience and/or at least a two-year training in the technical aspects of using computers is known as?","Software Engineer","Computer Programmer","Computer Professional","Systems Analyst","Computer Scientist",2
+26,"Applying your skill with computers to meet your information needs and improve your productivity is called?","Computer Competency","Information Technology","Computer Literacy","Computer Science","Computer Education",0
+27,"Which of the following statements is not correct?","The word digit originally referred to the fingers people used to count with","One of the main characteristics of a computer is its digital nature","Examples of digital devices are humidity recorders and pressure sensors","Nonvolatile means data is not lost when power is turned off","The CPU controls and manipulates data to produce information",2
+28,"Software that performs tasks to directly benefit or assist the user is known as?","Applications Software","Systems Software","Control Software","Programming Software","Software Package",0
+29,"Which of the following is not a type of personal computer?","Tower systems","Work stations","laptops","Palmtop","mobile phones",4
+30,"_______ has evolved to become what we know today as the internet.","Telnet","Intranet","world wide web","ARPAnet","Wide Area Networks",3
+31,"What is (1B546)₁₆ in binary?","111101100110","1110101100110","1101011010010","1101011100110","101110110011",-1
+32,"Which of the following sets of software will help to tell the computer where and how to store and retrieve data used during the processing?","Applications Software","Systems Software","Control Software","Programming Software","Software Package",1
+33,"_______ is a binary programming language that the computer can run directly.","Assembly","High level","Machine","BITS","",2
+34,"1 million gigabytes is normally referred to as a?","Zigabyte","Terabyte","Petabyte","Quadbyte","Millabyte",2
+35,"The following are valid domain names except _______.","net","gov","dom","biz","org",2
+36,"Breaking data into packets that the internet can handle efficiently, verifying that all packets have arrived at their destination and reassembling packets into data are functions of _______.","Internet Protocol","Transmission Control Protocol","File Transfer Protocol","HTTP","Telnet",1
+37,"This language was considered a successor of Pascal and is used for developing systems software.","Oberon","MODULA-2","SmallTalk","LISP","ALGOL",1
+38,"Defining the tracks and sectors on a disk and preparing it so that the operating system can write information to it is known as?","Booting","Formatting","Backup","Initializing","Defragmentation",1
+39,"Converting the number 782₁₀ to its base 7 equivalent would give?","2056₇","22114₇","3165₇","2165₇","1056₇",2
+40,"The use of magnetic disks for secondary storage became widespread during which computer generation?","1st","2nd","3rd","4th","5th",2
+41,"Removable magnetic disk packs were introduced as storage devices during which computer generation?","1st","2nd","3rd","4th","5th",2
+42,"Data transmission from a PC's processor to a printer is an example of _______.","Parallel transmission","full duplex transmission","Serial transmission","half duplex transmission","Simplex",0
+43,"Concentrators and front end processors are examples of devices used to achieve _______.","Multiplexing","modulation","handshaking","none of the above","",0
+44,"Which of the following protocols is used to transfer web files?","http","ftp","telnet","web protocol","tcp",0
+45,"_______ is an interconnected system of sites on the internet that store information in multimedia form.","web site","world wide web","web browser","URL","",1
+46,"Which of the following is a protocol for controlling remote log on?","http","ftp","telnet","DNS","tcp",2
+47,"The collective name given to the set of software that aids the user and the programmer in writing programs, developing applications software and performing some special hardware/software functions related to programming is?","Utility programs","Programming Languages","Language Translators","Editors","Programming tools",4
+48,"Which of the following terms appropriately describes fourth generation computers?","Large Scale Integration Circuits","Microprocessor","Vacuum tubes","Magnetic Tape","Miniaturization",0
+49,"Software acquired to perform a general business function is often referred to as?","Applications Software","Systems Software","Control Software","Programming Software","Software Package",4
+50,"Adding 313₄ and 230₄ would result in?","2213₄","203₄","1103₄","1203₄","1002₄",-1

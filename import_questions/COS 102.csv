@@ -1,0 +1,51 @@
+Question Number,Question,Option A,Option B,Option C,Option D,Option E,correct_indices
+1,"What is the first step in solving a problem?","Brainstorming section","Identifying the problem","Coding the solution","Testing the code","",1
+2,"Which problem-solving strategy involves breaking down a problem into smaller, similar sub-problems?","Divide and Conquer","Trial and Error","Working Backwards","Pattern Recognition","",0
+3,"What is the primary goal of problem-solving?","To find a temporary solution","To identify the main cause of the problem","To implement a solution quickly","To find an effective solution","",3
+4,"Which of the following is a barrier to effective problem-solving?","Limited information","Insufficient resources","Lack of clear goals","All of the above","",3
+5,"Which of the following is true about CLS in the provided Code 1?","It is an instruction to the interpreter","It is an executable statement","It is an acronym for clear the screen","It is a command in C","",2
+6,"Which of the following is true about the program in Code 1?","program to compute complex roots","program to compute real root","program to compute the quadratic equation","program to compute a, b, c of the equations","",2
+7,"How many quadratic solutions will code 1 produce?","1","2","3","4","",2
+8,"What does 'DIM A, B, C, D, DS, AS DOUBLE' mean in the program?","In the variable declaration","To determine variable data type","Declare a variable to hold a double variable","Store numeric value having a decimal place","",1
+9,"In what language is algorithm written?","A programming language","An English-like language","Set of rules to solve a problem","A software tool","",1
+10,"Which of the following is a characteristic of an algorithm?","Finiteness","Generality","Uniqueness","All of the above","",3
+11,"Programming techniques involves breaking down a larger program into smaller parts.","Dynamic Programming","Divide and Conquer","Brute force","All of the above","",3
+12,"Which of the following is a type of problem solving strategy?","Abstraction","Brainstorming","Analogy","All of the above","",3
+13,"What is the role of testing in problem-solving?","To gather more information","To evaluate the effectiveness of a solution","To generate new solutions","To eliminate all solutions","",1
+14,"How many process symbols are in the flowchart?","4","3","5","6","None of the above",2
+15,"What is the value of COS102 at the 7th iteration?","21","15","8","13","None of the above",0
+16,"How many times will the loop be iterated?","7","8","9","10","None of the above",2
+17,"What is the purpose of COS102 in the flowchart?","counter","loop","assignment statement","input statement","",1
+18,"Which programming concept is used to hide implementation details and show only necessary information?","Encapsulation","Polymorphism","Inheritance","Data hiding","",0
+19,"What is true about the Python interpreter?","It translates code line by line","It is a compiler","Python is written only in English","It is a hardware device","",0
+20,"Which of the following is the correct extension of a Python file?","py","pyc","pyo","All of the above","",0
+21,"What is the first thing that will be printed by the code snippet: def greet(name): print('Hello, ' + name + '!') greet('John')?","Hello, John!","To print a message on the screen","To assign a value to a variable","To define the name John","",0
+22,"What would happen if the line 'print(greet, 'John'))' was added to the end of the code snippet?","'Hello, John!'","'greet' 'John'","Error, name is not defined","'Hello' 'John'","",-1
+23,"What would happen if the line 'greet(John)' was removed from the code snippet?","The function greet would not be defined","The function greet would not be called","The program would crash","The function greet would be deleted","",1
+24,"How would you modify the code snippet to print 'Goodbye John' instead of 'Hello John'?","Change print('Hello, ' + name + '!') to print('Goodbye, ' + name)","Change greet('John') to goodbye('John')","Add a new function goodbye() and call it","Remove the 'greet' function and call a new function 'goodbye'","",0
+25,"What is the difference between a flowchart and pseudocode?","A flowchart is textual, while pseudocode is graphical","A flowchart is graphical, while pseudocode is textual","A flowchart is used for algorithms, while pseudocode is used for data structures","A flowchart is used for data structures, while pseudocode is used for algorithms","",1
+26,"What is the purpose of the '#include' line in the code snippet?","To define a new function","To include the standard input/output library","To declare a variable","To run the code","",1
+27,"What will be the output of the code snippet?","The sum is: 12","The sum for x","The sum is: 15","The sum is: 20","",2
+28,"What is the purpose of the return 0; statement in the main() function?","To return the values of x and y","To indicate the end of the program","To print the sum","To display an error code","",1
+29,"What would happen if the 'int y=10;' was removed from the code snippet?","The program would not compile","The variable sum would be declared as a float","The code would print the value of x","The program will start","",0
+30,"How would you modify the code snippet to print 'The sum of x and y is 15' instead of 'The sum is 15'?","Change printf('The sum is: %d\n', sum); to printf('The sum of x and y is %d\n', sum);","Add a new variable declaration and assign it the value of 15","Change int sum = x + y; to int product = x * y; and print the product","Delete a new variable and assign it the value of 15","",0
+31,"What is the difference between pseudocode and code?","Pseudocode is textual, while code is graphical","Pseudocode is graphical, while code is textual","Pseudocode is not executable, while code is executable","Pseudocode is executable, while code is not executable","",2
+32,"What will the print(a) in Code 4 output?","'Mr Joseph', 'Mr. Idehen', 'Mr. Obas'","Mr Joseph, Mr. Idehen, Mr. Obas","('Mr Joseph', 'Mr. Idehen', 'Mr. Obas')","Mr Joseph Mr. Idehen Mr. Obas","",2
+33,"Which of the following is used to get user input?","sprintf()","gets()","scanf()","printf()","",2
+34,"Which of the following is a valid Python variable name?","123AB","for","_my_var","my-var","",2
+35,"What is the purpose of the 'if' statement in Python?","To skip a block of code","To execute a block of code if a condition is false","To execute a block of code if a condition is true","To execute a block of code repeatedly","",2
+36,"What is the purpose of the 'if' statement in the code snippet 'print(find_max(10, 20, 30))'?","To check if a is equal to b and c","To check if a is greater than or equal to b and c","To check if a is less than b and c","To check if a is less than c and b","",1
+37,"What will be the output of the code snippet if the input values are 5, 10, and 15? 'def modify_list(my_list): my_list[0] = 100'","[5, 10, 15]","[100, 10, 15]","[100, 5, 10, 15]","[10, 15]","",1
+38,"How would you modify the code snippet 'def find_max(a,b,c):' to find the minimum of three numbers instead of the maximum?","Change the > operators to < operators","Change the return statement to return the smallest value","Add a new function to find the minimum","Delete a new function to find the minimum","",0
+39,"What would happen if the input values are 10, 20, and 30, and the function would return an error? 'def find_max(a, b, c): ...'","The function would return 20","The function would return 10 and 20","The function would return 30","The function would return 10","",2
+40,"How would you modify the code snippet to find the maximum of four numbers instead of three?","Add a new function to find the maximum of four numbers","Use a loop to iterate through the numbers","Add a new elif statement to check the fourth number","Remove a new elif statement to check the fourth number","",2
+41,"Which of the following is a Python data type?","Integer","Float","String","All of the above","",3
+42,"What is the purpose of the 'for loop' in Python?","To execute a block of code repeatedly","To execute a block of code once","To skip a block of code","To exit a program","",0
+43,"How do you comment out a line of code in Python?","Using //","Using /* */","Using #","Using --","",2
+44,"What is the purpose of the def keyword in Python?","To define a variable","To define a module","To define a function","To define a class","",2
+45,"Which of the following is a valid Python function call?","function()","function[]","function{}","function<>","",0
+46,"What is the purpose of the import statement in Python?","To import a module","To export a module","To create a module","To delete a module","",0
+47,"Which of the following is a Python module?","Statistics","File Input/Output","Math","All of the above","",3
+48,"Which of the following is a valid C variable declaration?","int x y;","float x;","char x;","All of the above","",3
+49,"What is the purpose of a variable in programming?","To perform a calculation","To display output","To control program flow","To store a value","",3
+50,"Which programming language is known for its platform independence?","Java","Python","C++","JavaScript","",0

@@ -23,3 +23,13 @@ class PastEventsAPI(generics.ListAPIView):
     def get_queryset(self):
         return Event.objects.filter(end_time__lt=now()).order_by('-start_time')
 
+from .models import Event
+from notifications.utils import send_onesignal_notification
+
+def create_event(request):
+    event = Event.objects.create(title="Matric Party", date="2025-09-20")
+    send_onesignal_notification(
+        title="🎉 New Event",
+        message=f"{event.title} on {event.date}"
+    )
+    # continue with your logic...

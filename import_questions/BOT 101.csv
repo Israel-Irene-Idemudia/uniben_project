@@ -1,0 +1,70 @@
+Question Number,Question,Option A,Option B,Option C,Option D,Option E,correct_indices
+1,"The largest group of gymnosperms which includes pines and cedars is:","Coniferophyta","Welwitschia","Ginkgophyta","Cycadophyta","Lignophytic fungi",0
+2,"Cycads are plants that belong to the phylum","Coniferophyta","Welwitschia","Ginkgophyta","Cycadophyta","None of the above",3
+3,"A plant that will grow from the embryo and last for the entire life of the plant are","Conifers","Gnetum","Maidenhair","Welwitschia","Ephedra",0
+4,"Seeds of Gnetum planted in the dark will grow and become yellow and soon die because","they lack proper aeration","they cannot photosynthesize","no sunlight to manufacture food","there is excess water in the soil","",2
+5,"Bacteria have additional DNA fragments called","ribosomes","Plasmids","Plasmids","knobs","manufactotes",2
+6,"A student resolved the cell wall with the aid of a microscope as 0.5 mm, convert the cell measurement into micrometers (μm)","0.005 μm","500 μm","0.05 μm","50 μm","",1
+7,"Which of the following is true in relation to the plant cell?","The cell wall is mainly composed of plastic","It is mainly composed of protein","The cell wall is mainly composed of cellulose","The cell wall regulates the entry and exit of molecules","",2
+8,"Which of the following cell organelles regulates the entry and exit of molecules to and from the cell?","Cell wall","Cytoplasm","Vacuoles","Cell membrane","",3
+9,"Which of the following cell organelles is involved in the storage of food, and other nutrients, required for a cell to survive?","Golgi bodies","Cell membrane","Lysosomes","Vacuole","Mitochondria",3
+10,"Which of the following cell organelles is present in plant cells and absent in animal cells?","Nucleus","Vacuole","Chloroplast","Cytoplasm","",2
+11,"Which of the following statements is true about the Nucleus?","It is absent in prokaryotes","It is called the brain of the cell","It contains DNA and other genetic materials","All of the above","",3
+12,"Difference between gram-positive and gram-negative bacteria is due to","cell wall","ribosomes","cell membrane","cytoplasm","",0
+13,"Bacteria which retain purple colour after staining is called","Gram-positive","Gram-negative","Gram-stain","Gram-dye","Trichod",0
+14,"Bacteria was first observed by","Carolus Linnaeus","Zygomycota","Anton van Leeuwenhoek","Robert Brown","",2
+15,"Which fungi division is also called club fungi?","Zygomycota","Deuteromycota","Basidiomycota","Ascomycota","",2
+16,"What is the name of the special hyphal tips through which parasitic fungi absorb nutrient directly from the cytoplasm of the living host?","Haustoria","Mitosome","Conidia","Mycelium","Coenocytic",0
+17,"The living host with haustoria is said to","acetate","mycelium","rhizoid","ecoenocytic","parasite",4
+18,"All fungi are _____.","saprophytes without chlorophylls are said to be saprotrophs","saprophytes","heterotrophs","saprophytes","aerial",1
+19,"Bryophytes are _____.","Atriculae","Amphibious","Atracheophytes","terrestrial","aerial",2
+20,"Which of the following groups would you place a plant that produces spores, lacks seeds and has vascular tissue?","Bryophyta","Algae","Pteridophyta","Gymnosperm","",2
+21,"In which of the following groups is the gametophyte dominant?","Bryophyta","Algae","Pteridophyta","Gymnosperm","",0
+22,"In Pteridophytes, the dominant generation is","gametophyte","haploid","diploid","Sporophyte","",3
+23,"Pteridophytes and Bryophytes differ in having _____.","conducting system","Spermatozoids","Archegonia","Separate gametophytes","",0
+24,"Sporophytic and gametophytic phases are independent in _____.","Gymnosperms","Fungi","Algae","Bryophytes","Pteridophytes",4
+25,"Club moss belongs to","Fungi","Algae","Bryophyta","Pteridophyta","",3
+26,"Phloem is without _____.","Pteridophytes","Past fibres","Companion cells","Phloem parenchyma","sieve cells",-1
+27,"Organisms that use the energy of the sun to fix inorganic compounds to carbohydrates are called","chemoautotrophs","photoautotrophs","photoheterotrophs","chemoheterotrophs","",1
+28,"All of the following are types of heterotrophic nutrition except","holozoic","parasitic","mutualistic","none of the above","green plants",4
+29,"Extra-cellular digestion occurs in _____.","green plants","algae","saprophytes","viruses","",2
+30,"An association where one organism benefits while the other neither benefits nor is harmed is _____.","commensalism","parasitic","holozoic","symbiosis","mutualism",0
+31,"A woody plant with many branches of about the same size close to the ground is a","tree","shrub","herb","grasses","",1
+32,"Ipomoea batatas belongs to which family?","Poaceae","Solanaceae","Convolvulaceae","Musaceae","",2
+33,"Musa paradisiaca belongs to which family?","Poaceae","Solanaceae","Convolvulaceae","Musaceae","",3
+34,"Who laid the foundation for the consistent and extensive use of the binomial system of nomenclature?","De Candolle","Adolf Engler","Karl Prantl","Carolus Linnaeus","",3
+35,"The two knobs used for focusing the image include fine adjustment knob and _____.","coarse adjustment knob","diaphragm","stage","objective lens","",0
+36,"When the power of ocular lens is X 10 and objective lens is X 20, the magnification is _____.","X 2","X 30","X 200","X 10","",2
+37,"Penicillin kills bacteria by making holes in their cell wall.","true","false","","","",0
+38,"Actinomycetes are fungi.","true","false","","","",1
+39,"Cyanobacteria were the first organisms on earth to do modern photosynthesis.","true","false","","","",0
+40,"Both generations are conspicuous in a haplontic life cycle.","true","false","","","",1
+41,"Diplontic life cycle is characterized by gametic meiosis.","true","false","","","",0
+42,"Diplontic life cycle is exhibited by some green algae, brown algae and all seed bearing plants.","true","false","","","",1
+43,"Algae are classified on the basis of colour/pigmentation only.","true","false","","","",0
+44,"All Protists are algae.","true","false","","","",1
+45,"Both green algae and land plants have chlorophyll a and b as well as carotenoids and store food as starch.","true","false","","","",0
+46,"Green algae have cell walls made of carrageenan which is used in cosmetics, gelatin capsules and some cheeses.","true","false","","","",1
+47,"Fungi have cell walls made of chitin.","true","false","","","",0
+48,"All members of the Kingdom Protista are related phylogenetically.","true","false","","","",1
+49,"In bryophytes, porous leprous plants are Hydrotrix.","true","false","","","",-1
+50,"Division deuteromycota are also called “imperfect fungi” because the fungus are unhealthy.","true","false","","","",-1
+51,"Mycorrhiza is a relationship of roots of Pinus and a _____.","gametophyte","fungus","alga","bacteria","",1
+52,"In Pteridophytes, the main plant is _____.","gametophyte","haploid","diploid","diploid sporophyte","",3
+53,"Leaves bearing sporangia are called _____.","sporophylls","pteridophylls","spores","sporophytes","",0
+54,"The type of heterotrophic nutrition that occurs in animals is called _____.","commensalism","mutualistic","holozoic","symbiotic",2
+55,"Weak-stemmed small plants which complete their life cycle in two growing seasons are called","climbers","shrubs","herbaceous biennials","herbs","",2
+56,"The grouping into morphological techniques made up of _____.","thelodomyter","bryophytes","tracheophytes","chlorophyta","",-1
+57,"Eubacteria have cell walls made up of _____.","peptidoglycan","starch","cellulose","floridean","",0
+58,"Nitrogen fixation occurs in _____.","blue green algae","rhodophyta","phaeophyta","all of the above","",-1
+59,"There exists a matrilinial relationship in _____.","Bryophytes","Algae","Pteridophyta","Fungi","",0
+60,"Figure II relates to the Kingdom _____.","Plantae","Fungi","Protista","Monera","",0
+61,"Figure III is an _____ of the division _____.","ascus; Basidiomycota","fungi; Kingdom","ascus; Fungi","ascocarp; Ascomycota","",-1
+62,"The image in Figure IV is a(n) _____.","virus","fungus","bacterium","alga","",0
+63,"A _____ is a sub microscopic entity consisting of a single nucleic acid surrounded by a protein coat and capable of replication only within the living cells of bacteria, animals or plants.","virus","alga","bacterium","fungi","",0
+64,"_____ is a Bryophyte.","I","II","III","IV","",-1
+65,"_____ is a primitive plant.","I","II","III","IV","",-1
+66,"Figure IV represents _____.","Life cycle","Life cycle of alternation of generations","Viral cycle","none of the above","",2
+67,"Diplontic life cycle of generations is a _____.","Haplontic","Diplontic","Haplodiplontic","alternation of generations","none of the above",-1
+68,"Diplontic alternation of generations is _____.","Haplontic","Diplontic","Haplodiplontic alternation of generations","none of the above","",-1
+69,"_____ is a non-living entity that acts like a living organism.","I","II","III","IV","",-1

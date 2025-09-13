@@ -1,0 +1,434 @@
+Question Number,Question,Option A,Option B,Option C,Option D,Option E,correct_indices
+1,"With the use of VSEPR theory, predict the geometry of Cl₂PF₃.","bent","seesaw shaped","trigonal pyramidal","trigonal bipyramidal","octahedral",1
+2,"An element Z contains 90% ¹⁶₈Z and 10% ¹⁸₈Z. Its relative atomic mass is","16.0","16.2","17.0","17.2","18.8",1
+3,"CsO₂ is an example of a:","an oxide","a peroxide","a superoxide","acidic oxide","c and d",2
+4,"Find the number of molecules in 4.48 cm³ of carbon dioxide gas at STP, given the molar volume of a gas at STP is 22.4 dm³/mol and Avogadro's constant = 6.022x10²³.","1.311x10²⁰","1.204x10²⁰","3.320x10²⁰","0.204x10²⁰","0.332x10²⁰",1
+5,"Calculate the wavelength in nm of the Balmer line of the hydrogen spectrum in which the initial n quantum number is 6 and the final n quantum number is 2. [Rydberg constant = 109678 cm⁻¹]","354","397","410","435","468",2
+6,"A moth repellant has a composition of 49.1% C, 2.7% H, and 48.2% Cl. Its molecular weight is 147 amu. What is the molecular formula? [C=12.0; H=1.0; Cl=35.5]","C₆H₅Cl","C₆H₄Cl₂","C₆H₃Cl₃","C₆H₂Cl₄","C₅H₃Cl₂",1
+7,"The following are group 1 elements except:","Fr","Rb","Cs","Sr","K",3
+8,"How many moles of hydrogen gas (H₂) are in 27.0 g of hydrogen? [H=1.008]","46.74","20.25","27.25","19.25","13.40",4
+9,"Natural hydrogen consists of how many isotopes?","1","2","3","4","5",2
+10,"The following are examples of basic oxides except:","MgO","Na₂O","CaO","RbO₂","CO₂",4
+11,"Element X (1s²2s²2p⁴) and Y (1s²2s²2p⁶3s²3p¹) combine. The formula of the compound is","XY","YX","X₂Y₃","Y₂X₃","Y₄X₃",3
+12,"The plum pudding model of an atom is attributed to:","J.J. Thompson","E. Goldstein","J. Chadwick","E. Rutherford","N. Bohr",0
+13,"A quantity of gas weighing 7.10 g at 741 torr and 44°C occupies a volume of 5.40 L. What is its molar mass?","17.6 g/mol","29.3 g/mol","35.1 g/mol","52.7 g/mol","70.2 g/mol",2
+14,"The max safe pressure a 4.00 L vessel can hold is 3.50 atm. If the vessel contains 0.410 mol of gas, calculate the maximum temperature (in °C).","134°C","143°C","208°C","268°C","286°C",1
+15,"Calculate the mass in grams of a sample of cobalt containing 4.00x10²⁰ atoms. [Co=58.93 g/mol]","0.0489 g","0.1354 g","0.0391 g","0.0876 g","0.0145 g",2
+16,"Calculate the density (in g/L) of ammonia gas at 31°C and 751 mmHg. [R=0.0821 L·atm·K⁻¹mol⁻¹]","0.338","0.576","0.675","0.765","1.350",2
+17,"If 0.10 mol of I₂ vapour effuses in 39s, how long will it take 0.10 mol of H₂ to effuse under the same conditions? [H=1.0, I=127.0]","3.5s","3.7s","3.9s","35s","39s",0
+18,"Which of the following gases will diffuse fastest? (Molar masses: C₃H₈=44, O₂=32, CH₄=16, NH₃=17, N₂=28)","propane","oxygen","methane","ammonia","nitrogen",2
+19,"What is the hybrid orbital used by the N-atom in ammonia?","sp","sp²","sp³","sp³d","sp³d²",2
+20,"To which period, group and block does an element with electron configuration 1s²2s²2p⁶3s²3p⁶ belong?","2, 18, p-block","2, 18, s-block","2, 10, s-block","3, 18, s-block","3, 18, p-block",4
+21,"How many electrons are allowed in an atom where the principal quantum number n=5?","18","32","2","50","12",3
+22,"5 moles of NH₃ are enclosed in a 6 L flask at 23°C. Calculate the pressure exerted by the gas assuming it behaves ideally.","13.15 atm","12.15 atm","20.28 atm","25.28 atm","15.12 atm",2
+23,"Arrange the following in order of increasing atomic radius: Be, Li, C, O, F.","Be<Li<C<O<F","F<C<O<Li<Be","F<O<C<Li<Be","F<O<C<Be<Li","Li<Be<C<O<F",3
+24,"Which orbitals are hybridized to form an octahedral geometry?","s and f-orbitals","s and p-orbitals","s, p and d orbitals","p and d-orbitals","s and d-orbitals",2
+25,"An element X forms compounds XCl₄, XCl₃, XCl₂. This illustrates the law of:","multiple proportions","chemical composition","simple proportion","conservation of mass","definite proportion",0
+26,"Calculate the volume occupied by 35g of nitrogen gas (N₂) at 37°C and 750 mmHg pressure. [N=14 g/mol]","32.24 L","13.93 L","64.48 L","27.60 L","10.93 L",0
+27,"Which of the following is an example of an acid salt?","(NH₄)₂SO₄·FeSO₄·6H₂O","ZnSO₄","MgSO₄","KNO₃","KHSO₄",4
+28,"What is the molecular weight of a pure gaseous compound having a density of 4.95 g/L at -35°C and 1020 torr?","24","11","72","120","44",2
+29,"A gaseous mixture of O₂, N₂, and H₂ exerts a total pressure of 1.50 atm and contains 5.00g of each gas. Find the partial pressure of nitrogen gas. [H=1, N=14, O=16]","0.043 atm","0.053 atm","0.063 atm","0.073 atm","0.083 atm",2
+30,"Which element of the periodic table forms the most compounds?","C","H","N","S","P",0
+31,"The following are elements in the p-block except:","Rb","Si","C","Ge","Te",0
+32,"CaH₂ is an example of:","covalent hydride","interstitial hydride","ionic hydride","b and c","all of the above",2
+33,"A sample of H₂ collected over water occupied 30.0 mL at 24°C and 736 torr. What volume would it occupy dry at STP? (Vapour pressure of water at 24°C is 22.4 torr)","32.4 mL","21.6 mL","36.8 mL","25.9 mL","27.6mL",3
+34,"Which of the following electron configurations are possible for an atom in its ground state? (I)1s¹2s²2p⁶ (II)1s²2s²2p⁶3s¹ (III)1s²2s²2p⁵ (IV)1s²2s²2p⁶3s²3p⁷ (V)1s²2s²2p⁶3s²3p⁶4s²3d⁸","III and V only","II, III and V only","I, II and III only","I and II only","all of the above",1
+35,"The following are examples of representative elements except:","Te","Tc","Cs","Na","Ca",1
+36,"An element X has 127 neutrons and 82 electrons in its neutral atom. Its atomic number is:","209","45","105","82","127",3
+37,"List all possible subshells associated with the principal quantum number n=5.","4s, 4p, 4d, 4f","4s, 4p, 4d, 4f, 4g","5s, 5p, 5d, 5f, 5g","6s, 6p, 6d, 6f, 6g, 6h","none of the above",2
+38,"Which of the following is not a variable typically used to describe gas behavior?","volume","mass","pressure","temperature","all are used",1
+39,"Calculate the number of moles of Na⁺ ions present in 30 cm³ of 1.50 M of NaCl solution.","0.031 mol","0.045 mol","0.015 mol","0.025 mol","0.034 mol",1
+40,"Calculate the binding energy per nucleon (in MeV) for a ⁴He atom (mass 4.00260 amu). [mass of neutron=1.008665 amu, mass of H atom=1.007825 amu, 1 amu=931.5 MeV]","7.0745 MeV","28.2980 MeV","27.2980 MeV","8.0745 MeV","6.0745 MeV",0
+41,"What is the mass of one Beryllium (⁴Be) atom? (Be = 9.01 amu, 1 amu = 1.6605x10⁻²⁴ g)","2.99x10⁻²³ g","1.49x10⁻²³ g","2.99x10⁻²² g","5.98x10⁻²² g","3.50x10⁻²² g",-1
+42,"A nucleus of mass number 81 contains 46 neutrons. An atomic ion of this element has 36 electrons. Write the symbol of this ion.","⁸¹₃₆Kr","⁸¹₃₅Br⁻","⁸¹₃₅Kr⁺","⁸¹₃₅Br⁺","⁸¹₃₅Br",3
+43,"Calculate the wavelength in nm of light emitted when an electron drops from the 4th to the 2nd energy level in hydrogen. [Rydberg constant R_H = 1.0974x10⁷ m⁻¹]","385","394","477","374","486",4
+44,"An old wooden article shows 2.0 counts/min/g. A fresh sample shows 15.2 counts/min/g. Calculate the age of the article (t½ for ¹⁴C = 5760 years).","30 years","12,693 years","400 years","16,862 years","11,391 years",3
+45,"Arrange in order of increasing first ionization energy: Cl, Ar, P, Na, S, Mg.","Cl<Ar<P<Na<S<Mg","Na<Mg<P<S<Cl<Ar","S<P<Mg<Na<Cl<Ar","Ar<Cl<P<S<Mg<Na","Ar<Cl<S<P<Mg<Na",1
+46,"In the nuclear reaction ¹⁹⁵₇₉Au + ? → ¹⁹⁵₇₈Pt, what is the missing particle?","α-particle","neutron","electron capture","negatron","gamma ray",2
+47,"What is the hybridization about the central selenium atom in selenium hexafluoride (SeF₆)?","sp","sp²","sp³","sp³d","sp³d²",4
+48,"A 200.0 mL flask contains 1.03 mg O₂ and 0.56 mg He at 15°C. What is the total pressure? [He=4, O=16]","0.0038 atm","0.017 atm","0.020 atm","0.037 atm","0.040 atm",-1
+49,"Balance the equation ¹¹₆C → ? + ¹¹₅B. The missing particle is a:","⁴₂He","positron (⁰₁e)","¹₀n","¹₁H","negatron (⁰₋₁e)",1
+50,"What is the number of orbitals in a 5g subshell?","1","3","5","7","9",4
+51,"What is the bond angle in a square planar molecule?","180°","120°","109.5°","107.3°","90°",4
+52,"Helium gas at 22°C and 1.00 atm occupied 2.54 L. Calculate the volume it would occupy if cooled to -197°C.","0.65 L","0.56 L","0.65 L","1.30 L","1.95L",-1
+53,"The energy needed to remove a single electron from an isolated gaseous atom is called:","kinetic energy","electronegativity","ionization energy","electron affinity","all of the above",2
+54,"The gold foil experiment was conducted by:","E. Goldstein","J. Chadwick","N. Bohr","E. Rutherford","J. J. Thompson",3
+55,"How many neutrons are present in an atom of ¹⁹⁷₇₉Au?","79","197","118","115","117",2
+56,"The spectrum of a hydrogen atom is similar to that of:","H⁺ ion","He⁺ ion","Li⁺ ion","Na⁺ ion","none of these",1
+57,"An atom of calcium ⁴⁰₂₀Ca has how many electrons in the third energy level (n=3)?","2","8","10","18","40",1
+58,"Atoms with the same mass number but different atomic numbers are called:","isotones","isotopes","isobars","isomers","none of the above",2
+59,"Complete the nuclear reaction ¹⁵₈O → ⁰₁e + ?","¹⁶₈O","¹⁴₈O","¹⁵₇N","¹⁴₇N","¹⁷₇O",2
+60,"How many α and β particles are emitted when ²¹⁸₈₄A changes to the stable isotope ²⁰⁶₈₂B?","1α, 2β","2α, 2β","3α, 4β","3α, 2β","3α, 3β",2
+61,"The curie is a measure of the:","lethal threshold for radiation exposure","number of alpha particles emitted by 1g of a substance","number of disintegrations per second of a radioactive substance","total energy absorbed by an object","all of the above",2
+62,"What would be the immediate product of a neutron absorption by ¹⁰⁷Ag?","¹⁰⁷Pd","¹⁰⁹In","¹⁰⁸Cd","¹⁰⁸Ag","all of the above",3
+63,"When Xenon-123 (¹²³₅₄Xe) emits a gamma ray, what is the product?","¹²³₅₄Xe","¹²³₅₃I","¹¹⁹₅₂Te","¹²³₅₅Cs","all of the above",0
+64,"Predict the geometry of the H₂Se molecule using VSEPR theory. [Se is in Group 16]","Linear","bent","see-saw","tetrahedral","trigonal pyramid",1
+65,"Which pair of elements has the same number of valence electrons?","helium and lithium","boron and carbon","carbon and silicon","lithium and hydrogen","sodium and neon",-1
+66,"With the use of VSEPR theory, predict the geometry of BrF₃.","Bent","See-saw","Trigonal planar","Linear","Square planar",1
+67,"Write the balanced equation for the nuclear reaction ⁵⁶₂₆Fe(d,α)⁵⁴₂₅Mn.","⁵⁶₂₆Fe + ²₁H → ⁴₂He + ⁵⁴₂₅Mn","⁴₂He + ⁵⁴₂₅Mn → ⁵⁶₂₆Fe + ²₁H","⁵⁶₂₆Fe + ¹₁H → ⁴₂He + ⁵⁴₂₅Mn","⁴₂He + ⁵⁴₂₅Mn → ⁵⁶₂₆Fe + ¹₁H","⁴₂He + ⁵⁴₂₅Mn → ⁵⁶₂₆Fe + ¹₀n",0
+68,"Starting with a 4.00 mg sample, how much ¹⁹⁸₇₉Au remains after 7 days (168 hours), given its half-life is 64.8 hours?","0.66 mg","0.66 mg","0.25 mg","3.15 mg","1.15 mg",0
+69,"How many electrons, neutrons and protons are there in ⁷⁰₃₁Ga?","31, 39, 31","30, 38, 32","39, 31, 31","38, 30, 31","32, 38, 32",0
+70,"For the reaction 2NO₂(g) ⇌ 2NO(g) + O₂(g), equilibrium pressures are P_NO₂=0.55 atm, P_NO=6.5x10⁻⁵ atm, P_O₂=4.5x10⁻⁵ atm. Calculate Kp.","9.45x10⁻¹³","6.30x10⁻¹²","9.45x10⁻¹²","6.30x10⁻¹³","3.15x10⁻¹³",3
+71,"Which of these is not a buffer solution?","KF/HF","C₅H₅N/C₅H₅NHCl","NaH₂PO₄/H₃PO₄","Na₂CO₃/NaHCO₃","NaClO₄/HClO₄",4
+72,"Determine the mass of CO₂ produced from burning 21.5 g of ethyne C₂H₂. [C=12, H=1, O=16]","73.5 g","16.54 g","8.27 g","14.00 g","12.25 g",-1
+73,"The osmotic pressure of a solution containing 0.1 g/L of a substance is 50.0 torr at 27°C. Calculate the molar mass of the substance.","37.6 g/mol","18.66 g/mol","20.55 g/mol","16.02 g/mol","180.16 g/mol",-1
+74,"Calculate the pH of a buffer solution composed of 0.18 M benzoic acid and 0.20 M sodium benzoate. (Ka=6.5x10⁻⁵).","3.74","4.23","4.23","4.41","4.19",1
+75,"Write the equilibrium expression for the reaction SiH₄(g) + 2Cl₂(g) ⇌ SiCl₄(g) + 2H₂(g).","K = [SiCl₄]²[H₂]/[SiH₄]²[Cl₂]","K = [SiCl₄]²[H₂]/[SiH₄][Cl₂]²","K = [SiCl₄][H₂]²/[SiH₄][Cl₂]²","K = [SiH₄][Cl₂]²/[SiCl₄][H₂]²","K = [SiH₄]²[Cl₂]/[SiCl₄]²[H₂]",2
+76,"A solution of 10.0g solute in 0.1kg benzene freezes at 4.2°C. What is the molality of the solution if pure benzene freezes at 5.5°C? (kf=5.12°C·kg·mol⁻¹)","0.15 m","0.15 M","0.25 M","0.25 m","0.32 m",3
+77,"At 25°C, Kc = 3.7x10⁹ for CO(g) + Cl₂(g) ⇌ COCl₂(g). Calculate Kp. (R=0.0821 L·atm·K⁻¹mol⁻¹)","1.51x10⁸","3.02x10⁸","4.50x10¹⁰","6.01x10¹⁰","9.00x10¹⁰",0
+78,"Arrange in order of increasing acid strength: HCl, HBr, HF, HClO₄.","HCl>HBr>HF>HClO₄","HCl<HBr<HF<HClO₄","HF<HCl<HBr<HClO₄","HClO₄<HBr<HCl<HF","HF>HCl>HBr>HClO₄",2
+79,"How many moles of nitrogen gas (N₂) are in 48 g of nitrogen? [¹⁴₇N]","6.86","3.43","6.00","1.71","3.20",3
+80,"What is the molality of a solution made by dissolving 25g of I₂ in 150g of CCl₄? [I=127, C=12, Cl=35.5]","0.19 m","0.17 m","0.39 m","0.66 m","0.46 m",3
+81,"Calculate the molality of a solution containing 6.59 g of glycerol (C₃H₈O₃) in 75.0 g of ethanol. [C=12, H=1, O=16]","2.54 m","9.55 m","0.955 m","1.29 m","1.54 m",2
+82,"Calculate the mass of carbon in 30 g of pent-1-ene (C₅H₁₀). [C=12, H=1]","4.29 g","5.87 g","25.71 g","20.48 g","17.04 g",2
+83,"Which of the following 0.10 M solutions is the most acidic?","CH₃COOH, ka=1.8x10⁻⁵","Cl₃CCOOH, ka=0.23","HCOOH, ka=1.8x10⁻⁴","Cl₂CHCOOH, ka=5.1x10⁻²","They have equal acidity.",-1
+84,"Which of the following is the strongest oxidizing agent?","MnO₄⁻ in acid","MnO₄⁻ in base","MnO₂ in base","Cr₂O₇²⁻ in base","Cr₂O₇²⁻ in acid",0
+85,"What volume of a 0.100 M solution of NaHCO₃ contains 0.350 g of NaHCO₃? [Na=23, C=12, O=16, H=1]","17.4 mL","41.7 mL","20.9 mL","38.3 mL","59.1 mL",1
+86,"Which of the following is the strongest Brønsted acid?","H₃O⁺","HF","NH₃","NaHSO₄","NaOH",0
+87,"Kp for SO₂Cl₂(g) ⇌ SO₂(g) + Cl₂(g) at 373 K is 2.65. If P(SO₂Cl₂) = 0.85 atm, calculate P(SO₂) and P(Cl₂).","1.09 atm","1.29 atm","1.40 atm","1.35 atm","1.50 atm",4
+88,"Calculate the pH of a buffer that is 0.15M chloroacetic acid and 0.10M sodium chloroacetate. [Ka=1.3x10⁻³]","6.82","5.36","4.48","3.31","2.68",4
+89,"Which of the following is a disproportionation reaction?","3K₂MnO₄+4HCl→2KMnO₄+MnO₂+4KCl+2H₂O","K₂Cr₂O₇+14HCl→2CrCl₃+3Cl₂+2KCl+7H₂O","2KMnO₄+3KNO₂+H₂O→2MnO₂+3KNO₃+2KOH","KIO₃+Cl₂+2KOH→KIO₄+2KCl+H₂O","none of the above",0
+90,"A solution is prepared by dissolving 50.0 g CsCl in 50.0 g water. The volume is 63.3 mL. Calculate the molarity of CsCl. [Cs=133, Cl=35.5]","4.95 M","5.32 M","4.69 M","5.94 M","6.49 M",2
+91,"A 3.00 L flask contains 3.50 mol HI, 4.10 mol H₂, and 0.30 mol I₂ in equilibrium. Calculate Kc for H₂(g)+I₂(g)⇌2HI(g).","9.97","0.10","7.92","8.54","10.0",-1
+92,"What is the oxidation state of copper in Cu₃N₂? [N is typically -3]","+2","-2","+3","+1"," -1",-1
+93,"Which of the following is the strongest Brønsted base?","OH⁻","S²⁻","O²⁻","H₂O","SH⁻",2
+94,"Identify the oxidizing agent in the redox reaction: 3Mg + N₂ → Mg₃N₂.","Mg₃N₂","Mg³⁺","Mg","N₂","Mg and N₂",3
+95,"Which is true about the reaction FeCl₃ + Cl⁻ ⇌ FeCl₄⁻?","FeCl₃ is a Lewis base","Cl⁻ is a Lewis acid","FeCl₃ is a Lewis acid","b & c","none of these",2
+96,"Calculate the pH of a buffer that is 0.150 M in formic acid (HCOOH) and 0.100 M in sodium formate (HCOONa). Ka=1.8x10⁻⁴.","3.17","3.35","3.57","2.52","2.18",2
+97,"Which of the following compounds can be a Lewis acid?","CH₄","CH₃⁻","BF₃","Cl₂","Cl⁻",2
+98,"The reaction Cl₂(g)+2NaOH(aq)→NaClO(aq)+NaCl(aq)+H₂O(l) is an example of which reaction?","displacement redox reaction","decomposition redox reaction","disproportionation redox reaction","combination redox reaction","equilibrium reaction",2
+99,"Calculate the solubility (mol/L) of Fe(OH)₃ (Ksp=4x10⁻³⁸) in water.","2.0x10⁻¹⁰","4.0x10⁻¹⁸","2.0x10⁻¹⁷","1.4x10⁻¹⁰","4.0x10⁻¹⁷",-1
+100,"Calculate the osmotic pressure (atm) of an aqueous solution with 15 g of urea in 800 cm³ at 12°C. [Molar mass of urea=60 g/mol, R=0.0821 L·atm·K⁻¹mol⁻¹]","7.82","7.05","7.31","0.31","2.31",2
+101,"Which of these is not an example of an auto-ionization reaction?","PCl₅+PCl₅⇌[PCl₄⁺][PCl₆⁻]","H₂O+H₂O⇌H₃O⁺+OH⁻","N₂H₄+NH₄⁺⇌N₂H₅⁺+NH₃","H₂SO₄+H₂SO₄⇌H₃SO₄⁺+HSO₄⁻","none of these",2
+102,"Calculate the pH of a 0.060 M aqueous solution of methylamine, CH₃NH₂. [Kb=4.4x10⁻⁴]","10.83","11.69","12.31","2.31","9.62",1
+103,"Which of the following compounds can be used as a Lewis base?","NH₃","NaCl","KH","HCl","CaCl₂",0
+104,"Which of the following is the weakest Brønsted acid?","H₂CO₃","Al(OH)₃","H₂SO₄","HClO₄","H₃PO₄",1
+105,"How many moles of butane (C₄H₁₀) are present in 0.334 g of the compound? [C=12, H=1]","0.0035 mol","0.0014 mol","0.0058 mol","0.0111 mol","0.0222 mol",2
+106,"What is the oxidation state of iron in K₄[Fe(CN)₆]?","+1","+2","+3","+4","+5",1
+107,"Calculate the concentration of acetic acid, C₂H₄O₂, whose pH is 2.68. [Ka=1.8x10⁻⁵]","0.65 M","0.52 M","0.26 M","0.44 M","0.36 M",2
+108,"For N₂(g)+3H₂(g)⇌2NH₃(g), Kp at 500°C is 1.50x10⁻⁵. Calculate Kc.","0.5140","1.3121","0.4015","0.0514","0.0604",-1
+109,"What is the oxidation state of chlorine in the perchlorate anion (ClO₄⁻)?","+1","+3","+5","+7","+9",3
+110,"The equation Ce⁴⁺ + e⁻ → Ce³⁺ is an example of a:","balanced redox reaction","stoichiometric reaction","oxidation half-reaction","reduction half-reaction","none of the above",3
+111,"The hydrogen ion concentration of a fruit juice is 3.3x10⁻³ M. What is the pH of the juice?","2.48","4.52","3.48","1.48","1.52",0
+112,"Write the oxidation half-reaction for the redox equation CN⁻ + MnO₄⁻ → CNO⁻ + MnO₂ (in basic solution).","MnO₄⁻ → MnO₂","CN⁻ + MnO₄⁻ → CNO⁻","CN⁻ + MnO₄⁻ → CNO⁻ + MnO₂","CN⁻ → CNO⁻","MnO₄⁻ → CNO⁻ + MnO₂",3
+113,"What is the pH of a 0.8 M NaOH solution that is diluted 5-fold?","13.00","13.40","13.20","12.40","12.70",-1
+114,"Identify the reducing agent in the reaction: Zn + I₂ → ZnI₂.","Zn and I₂","ZnI₂ and I₂","ZnI₂","I₂","Zn",4
+115,"A 4.00L gas sample at 27°C and 748mmHg is condensed into 58.0g of benzene. Calculate the freezing point of the solution. [FP of benzene=5.5°C, kf=5.12°C/m, Molar mass of gas=86.2 g/mol]","8.60°C","-8.60°C","-6.86°C","-5.12°C","5.12°C",-1
+116,"Calculate the pH of a 0.050 M Ca(OH)₂ solution.","1.40","13.00","12.60","3.20","11.00",1
+117,"Write the solubility product expression for calcium phosphate, Ca₃(PO₄)₂.","Ksp = [3Ca²⁺][2PO₄³⁻]","Ksp = [Ca²⁺]²[PO₄³⁻]³","Ksp = [Ca²⁺]³[PO₄³⁻]²","Ksp = [Ca²⁺][PO₄³⁻]² / [Ca₃(PO₄)₂]","Ksp = [Ca₃(PO₄)₂] / [Ca²⁺][PO₄³⁻]",2
+118,"A chemical species that can accept a lone pair of electrons to form a dative bond is a","Lewis acid","Brønsted-Lowry base","Lewis base","Brønsted-Lowry acid","Arrhenius acid",0
+119,"Which of these factors will not shift a system in chemical equilibrium?","change in volume","change in temperature","change in concentration","change in pressure","addition of a catalyst",4
+120,"Calculate the freezing point of a solution that contains 2.00 g of ethanol (C₂H₅OH) in 50 g of water. [Kf for water=1.86°C/m, C=12, H=1, O=16].","2.33°C","-2.33°C","-1.62°C","1.62°C","-1.62°C",4
+121,"Calculate the molar solubility of copper(II) iodate, Cu(IO₃)₂, in water at 25°C. [Ksp=1.4x10⁻⁷]","3.30x10⁻³ M","1.65x10⁻⁴ M","1.65x10⁻³ M","4.95x10⁻³ M","3.27x10⁻³ M",-1
+122,"A colligative property depends upon the:","chemical nature of the particle","size of the particle","number of solute particles","temperature of the solution","all of the above",2
+123,"For which one of the following equations will Kp equal Kc?","PCl₅(g)⇌PCl₃(g)+Cl₂(g)","COCl₂(g)⇌CO(g)+Cl₂(g)","H₂(g)+I₂(g)⇌2HI(g)","3H₂(g)+N₂(g)⇌2NH₃(g)","N₂O₄(g)⇌2NO₂(g)",2
+124,"Identify the conjugate acid of NH₃ in the reaction: N₂H₄ + NH₄⁺ ⇌ N₂H₅⁺ + NH₃.","N₂H₄ and NH₄⁺","N₂H₄","NH₄⁺","N₂H₅⁺","NH₃",2
+125,"A liquid boils when its vapour pressure becomes","equal to the external atmospheric pressure","equal to zero","very high","very low","equal to one hundred",0
+126,"Calculate the concentration of sodium benzoate needed in a 0.20 M solution of benzoic acid (C₆H₅COOH) to produce a pH of 4.0. [Ka=6.5x10⁻⁵]","1.02 M","2.22 M","0.13 M","0.50 M","3.14 M",2
+127,"The law of relative lowering of vapour pressure was given by:","Raoult","Le Châtelier","Van't Hoff","Ostwald","Henry",0
+128,"When a non-volatile solute is added to a solvent, the freezing point of the solvent:","decreases","increases","becomes zero degrees","remains the same","all of the above",0
+129,"Which of the following is a colligative property?","molar refractivity","optical rotation","depression of freezing point","viscosity","all of the above",2
+130,"The following are either an Arrhenius acid or base except: NH₃, HBr, NaOH, Ca(OH)₂.","Ca(OH)₂","HBr","NH₃","NaOH","none of these",2
+
+
+Question Number,Question,Option A,Option B,Option C,Option D,Option E,correct_indices
+1,"Which of the following pairs represents isotones?","¹H and ²H","³⁹K and ⁴⁰Ca","¹⁴C and ¹⁶O","²³Ne and ²³Na","³⁵Cl and ³⁷Cl",2
+2,"The europium nucleus has a charge of +63. How many electrons are there in the Eu³⁺ ion?","66","63","62","61","60",-1
+3,"From the hydrides LiH, BeH₂, B₂H₆, NH₃, H₂O, and HF, which will be basic in water?","NH₃ and LiH","B₂H₆ and HF","H₂O","H₂O and HF","HF",0
+4,"A gas has a volume of 241m³ at 18°C and 100400 Nm⁻² pressure. What would its volume be at STP?","1180 m³","224.04 m³","234.00 m³","230.05 m³","180.10 m³",1
+5,"The mole fraction of oxygen in the atmosphere is 0.2094. Calculate the partial pressure of oxygen in air when the atmospheric pressure is 760 Torr.","1120 Torr","760 Torr","520 Torr","159 Torr","219 Torr",3
+6,"Calculate the density of butane (C₄H₁₀) at a pressure of 117.4 kPa and a temperature of 125°C.","2.06 g/L","4.20 g/L","3.08 g/L","5.00 g/L","1.15 g/L",0
+7,"What is the total number of orbitals associated with the principal quantum number n=3?","3","9","4","8","7",1
+8,"Calculate the energy required to remove the electron from a hydrogen atom in its ground state (E₁ = -2.178 x 10⁻¹⁸ J).","2.178x10⁻¹³ J","-2.178x10⁻¹⁸ J","2.178x10¹⁸ J","-3.178x10⁻¹⁸ J","2.178x10⁻¹⁸ J",-1
+9,"The simplest formula of a compound containing 50% of element X (atomic mass 10 g/mol) and 50% of element Y (atomic mass 20 g/mol) is:","XY₂","X₂Y₂","X₂Y","XY₂","XY",2
+10,"Which one of the following statements about s orbitals is incorrect?","they are found in all principal energy levels","they are spherical in shape","they can only hold one electron","the maximum number of s orbitals in any principal quantum number is 1","none of the above",2
+11,"What particle would be produced when plutonium-242 decays to uranium-238?","gamma","alpha","positron","beta","negatron",1
+12,"What is the binding energy for a B-11 nucleus, if its mass defect is 0.08181 amu? (1 amu = 1.492x10⁻³ erg)","1.7x10⁻⁵ erg/nucleus","1.2x10⁻⁴ erg/nucleus","3.7x10⁻⁵ erg/nucleus","3.2x10⁻⁴ erg/nucleus","4.5x10⁻⁵ erg/nucleus",1
+13,"Which equation represents the industrial production of hydrogen from iron and steam at elevated temperatures?","3Fe(s) + 4H₂O(g) → Fe₃O₄(s) + 3H₂(g)","2Fe(s) + 4H₂O(g) → Fe₃O₄(s) + 3H₂(g)","3Fe(s) + 3H₂O(g) → Fe₃O₄(s) + H₂(g)","3Fe(s) + 4H₂O(g) → Fe₃O₄(s) + 4H₂(g)","",3
+14,"What is the number of electrons and neutrons present in a silver(I) ion, ¹⁰⁸₄₇Ag⁺?","47 and 61","46 and 60","46 and 61","47 and 62","47 and 60",2
+15,"20 ml of a gas at 17°C is cooled to -13°C at constant pressure. Determine the new volume.","17.9 ml","290 ml","260 ml","270 ml","300 ml",-1
+16,"The following are natural radioactive decay series except:","Polonium series","Uranium series","Thorium series","Actinium series","All of the above",0
+17,"Which property increases down the group of the alkali metals?","ionization energy","atomic number","electronegativity","melting point","all of the above",1
+18,"The half-life of Rn-222 is 3.825 days. Calculate the activity of 1g of Rn.","6.51x10⁻¹² g Curie","6.51x10⁻⁶ g Curie","5.32x10⁻¹² g Curie","5.32x10⁻⁶ g Curie","14.51x10⁻⁴ g Curie",-1
+19,"The reaction of sodium with excess oxygen results in the formation of:","oxides","peroxides","superoxides","sesquioxides","none of the above",1
+20,"How much time would it take for a sample of cobalt-60 to disintegrate so that only 2% remains? (k=0.13 yr⁻¹)","10 years","5 years","15 years","30 years","45 years",3
+21,"Calculate the percentage by mass of chlorine in DDT, C₁₄H₉Cl₅. [H=1.0, C=12.0, Cl=35.5]","2.56%","38.68%","44.00%","46.56%","50.07%",4
+22,"The electronic configuration for an element in the halogen group should always end with:","ns²np⁶","ns²np⁵","ns²np⁴","ns²np²","none of the above",1
+23,"What is the maximum number of electrons in an atom that can have the quantum numbers n=5 and mₛ=+1/2?","6","8","10","25","32",3
+24,"If it takes 1.25 minutes for 0.010 mol of He to effuse, how long will it take for the same amount of ethane gas (C₂H₆) to effuse? [H=1.0, C=12.0, He=4.0]","1.72 mins","2.74 mins","3.43 mins","3.88 mins","4.33 mins",-1
+25,"What is the geometry of the molecule XeF₄?","trigonal planar","tetrahedral","square planar","trigonal bipyramid","trigonal pyramid",2
+26,"Calculate the half-life of radium-226, if 1g of it emits 3.7x10¹⁰ alpha particles per second.","1000 years","200 years","1843 years","1583 years","none of the above",3
+27,"The following properties generally increase across a period except:","electron affinity","ionization energy","atomic radius","electronegativity","all of the above",2
+28,"Which equation depicts the formation of a phosphide from an alkali metal?","12Na + N₂ → 3Na₄N","6Ca + P₄ → 3Ca₂P₂","12Ca + N₂ → 4Ca₃N₂","12Na + P₄ → 6Na₂P₂","12Na + P₄ → 4Na₃P",4
+29,"Complete and balance: ²⁵²₉₈Cf + ¹⁰₅B → 3 ¹₀n + ?","²⁵⁹₁₀₃Lr","²⁵⁹₁₀₃Lr","²³⁹₉₃Np","²⁴¹₉₃Np","none of the above",-1
+30,"If a gas diffuses at a rate one-half as fast as O₂ gas, find the molecular mass of the gas.","158","148","138","128","118",3
+31,"What pressure is exerted by 200g of Xe gas in a 1.0 dm³ vessel at 25°C, behaving as an ideal gas? [Xe=131.29 g/mol]","37.24 atm","30.54 atm","25.65 atm","28.51 atm","10.21 atm",0
+32,"What pressure (in bar) would be exerted by 35g of Ar gas in a 1.5 dm³ vessel at 35°C, behaving as an ideal gas? [Ar=39.948 g/mol]","18.70","13.95","20.75","10.51","15.00",-1
+33,"'Hydrogen economy' refers to:","the different methods of producing H₂","the industrial production of H₂","the chemical reactions of H₂","the cheap and easy method of producing, storing, and using H₂ as an energy carrier","all of the above",3
+34,"Which is the correct mathematical relation for Charles's law at constant pressure?","V ∝ T","V ∝ 1/T","V = kT","V ∝ P","none of the above",0
+35,"50 mL of gas A effuses in 146 seconds. The same volume of CO₂ effuses in 115 seconds. Calculate the molecular mass of A.","59","61","108","71","84",3
+36,"A compound with boron and hydrogen (6.444g B, 1.803g H) has a molar mass of about 30g. What is its molecular formula?","BH₃","B₂H₆","B₃H₆","B₂H₁₀","B₃H₅",1
+37,"How many atoms are bonded to the central atom in a molecule with an octahedral geometry?","4","5","6","7","8",2
+38,"The idea that an atom is indivisible was proposed by:","Einstein","Lavoisier","Dalton","Proust","none of the above",2
+39,"The atomic mass of calcium is 40. Calculate the number of moles in 16g of calcium.","0.40 mole","4.00 moles","0.25 moles","6.40 moles","1.20 moles",0
+40,"Principal, azimuthal, and magnetic quantum numbers are respectively related to:","size, shape, and orientation","shape, size, and orientation","size, orientation, and shape","orientation, size, and shape","none of the above",0
+41,"For the azimuthal quantum number l=3, the maximum number of electrons will be:","2","6","0","14","18",3
+42,"A compound with 69.5% oxygen and 30.5% nitrogen has a molecular mass of 92 g/mol. What is its molecular formula?","N₂O","NO₂","N₂O₅","N₂O₄","N₃O₄",3
+43,"'In a given atom, no two electrons can have the same values for all four quantum numbers.' This is a statement of:","Hund's rule","Aufbau's principle","Uncertainty principle","Pauli's exclusion principle","all of the above",3
+44,"If the possible values of l are 0, 1, 2, and 3, what is the corresponding value of n?","2","3","4","5","6",2
+45,"'The number of unpaired electrons in a given energy level must be maximum.' This statement is accredited to whom?","Dalton","Aufbau","Hund","Bohr","Pauli",2
+46,"The correct ground state electronic configuration for a chromium atom [At. No. = 24] is:","[Ar]3d⁵4s¹","[Ar]3d⁴4s²","[Ar]3d⁶4s⁰","[Ar]3d⁵4s⁰","[Ar]3d⁵4s²",0
+47,"According to Aufbau's principle, the energies of 3p, 3d, 4s, and 4p orbitals are in the order:","3p<3d<4s<4p","3p<4s<3d<4p","3d<3p<4s<4p","3d<3p<4p<4s","3p<4p<3d<4s",1
+48,"What mass of F is in 24.5g of tin(II) fluoride (SnF₂)? [F=19.0, Sn=118.7]","9.57g","9.75g","5.97 g","5.79 g","7.59 g",-1
+49,"Vanillin is 63.2% C, 5.26% H, and 31.6% O by mass. What is its empirical formula? [H=1.0, C=12.0, O=16.0]","C₈H₇O₃","C₃H₃O","C₈H₈O₃","C₄H₅O₂","C₄H₃O₇",2
+50,"Find the wavelength of a line in the Balmer series for an electron drop from the fourth orbit (n=4 to n=2). [Rydberg constant=109,678 cm⁻¹]","486 nm","565 nm","656 nm","670 nm","760 nm",0
+51,"Predict the geometry and hybridization of the central atom in SCl₆.","octahedral, sp³d","square planar, sp³d²","octahedral, sp³d²","square planar, sp³d","trigonal bipyramid, sp³d",2
+52,"Calculate the average atomic mass for chlorine if the isotopes are Cl-35 (75.77%, 34.97 amu) and Cl-37 (24.23%, 36.97 amu).","34.55","33.55","35.35","35.45","35.01",3
+53,"Give the number of protons, neutrons, and electrons in ²⁰⁰₈₀Hg.","80, 80, 119","119, 80, 80","80, 120, 80","120, 80, 80","120, 120, 80",2
+54,"Predict the electronic configuration for Ti³⁺. [Ti, Z=22]","[Ar]3d¹","[Ar]3d³","[Ar]3d²","[Kr]4d¹⁰5s²","[Kr]4d⁹",0
+55,"A trigonal bipyramid molecule has how many hybrid orbitals?","6","5","4","3","2",1
+56,"Express 0.975 bar in atmospheres. (1 bar = 0.987 atm)","0.872","0.862","0.972","0.962","0.772",3
+57,"A sample of 225mg of neon occupies 3.00 dm³ at 122K. What is the pressure exerted? [Ne=20.18g/mol, R=8.3145x10⁻² dm³·bar·K⁻¹·mol⁻¹]","0.0376 bar","0.0427 atm","0.0247 bar","0.0247 atm","0.07 bar",-1
+58,"State the period and group for an element with the electronic configuration 1s²2s²2p⁶3s²3p⁶.","period 2, group VIIIA","period 2, group VIIA","period 3, group VIIIA","period 3, group VIIA","period 3, group VIA",2
+59,"Express 108 kPa in torr. (1 atm = 101.325 kPa = 760 torr)","710","810","910","610","510",1
+60,"Which scientist determined the charge of an electron?","R. Millikan","J. Dalton","J.J. Thompson","W. Rontgen","E. Rutherford",0
+61,"Predict the geometry and bond angle of a molecule with sp³d² hybridized orbitals on the central atom.","trigonal planar, 120°","tetrahedral, 109.5°","square planar, 90°","octahedral, 90°","octahedral, 120°",3
+62,"What is the total number of electrons allowed in an 'L' shell (n=2)?","36","18","8","6","2",2
+63,"Calculate the volume occupied by 7g of nitrogen gas at 27°C and 750 mmHg pressure. [N=14 g/mol]","6.24 L","12.48 L","11.48 L","7.24 L","10.24 L",0
+64,"The following are examples of interstitial hydrides except:","TiH₁.₈","FeH₂","YbH₂","CsH","NiH₂",3
+65,"The arrangement of elements in the periodic table is in order of increasing:","mass number","neutron numbers","proton numbers","molar mass","electron and neutron numbers",2
+66,"The half-life of ⁴⁵Ca is 165 days. After 1.0 year (365 days), what percentage of the original sample remains?","10.9%","99.6%","2.16%","21.6%","96.9%",-1
+67,"All the following are representative elements except:","Ca","Ga","Sr","Zr","Cl",3
+68,"Calculate the volume occupied by 5g of acetylene (C₂H₂) gas at 50°C and 740 mmHg pressure. [C=12, H=1.0]","3.2377 L","4.2377 L","5.2377 L","6.2377L","7.2377 L",2
+69,"How many empty p orbitals are there in a neutral carbon atom?","1","2","3","4","5",-1
+70,"8g of methane gas and 2g of hydrogen gas are mixed at 760 mmHg and 273K. What is the total volume?","11.2 L","22.4 L","33.6 L","44.8 L","55.0 L",2
+71,"Which equation represents alpha emission from ¹⁹⁶₈₄Po?","¹⁹⁶₈₄Po → ¹⁹²₈₂Pb + ⁴₂He","¹⁹⁶₈₄Po + ⁴₂He → ¹⁹²₈₂Pb","¹⁹⁶₈₄Po → ²⁰⁰₈₆Rn + ⁴₂He","¹⁹⁶₈₄Po + ⁴₂He → ²⁰⁰₈₆Rn","none of the above",0
+72,"Which atomic orbital has values of n=4, l=2?","4s","4p","4d","4f","4g",2
+73,"What is the missing particle in the bombardment reaction? ²⁷Al + ? → ³⁰P + ¹n","neutron","proton","beta","alpha","gamma",3
+74,"Which of the following is not an example of an ionic hydride?","LiH","CaH₂","SrH₂","ZrH₂","NaH",3
+75,"Of the following processes, which one does not change the atomic number?","gamma emission","alpha emission","positron emission","beta emission","none of the above",0
+76,"Which of the following pairs represents isobars?","¹⁷₈O and ¹⁸₈O","⁴⁰₁₉K and ⁴⁰₂₀Ca","¹⁵₇N and ¹⁶₈O","²³⁵₉₂U and ²³⁸₉₂U","none of the above",1
+77,"Which of the following elements has the lowest first ionization energy: P, Na, Si, Mg, Al?","P","Mg","Al","Na","Si",3
+78,"Complete and balance the nuclear equation: ²⁴₁₂Mg + ²₁H → ⁴₂He + ?","²²₁₃Al","²²₁₁Na","²⁶₁₃Al","²⁰₁₀Ne","none of the above",1
+79,"'The total pressure of a mixture of non-reacting gases is equal to the sum of the partial pressures of all the gases present' is a statement of:","Graham's law of diffusion","Dalton's law of partial pressure","Avogadro's law","Ideal gas law","none of the above",1
+80,"An atom of ______ contains no neutrons.","hydrogen (protium)","deuterium","tritium","helium","sodium",0
+81,"A single bond consists of:","one σ-bond","one π-bond","one σ-bond and one π-bond","one σ-bond and two π-bonds","one π-bond and two σ-bonds",0
+82,"How many moles are present in 52g of Cr? [Cr=52g/mol]","10.00 mol","1.00 mol","1.5 mol","10.52 mol","None of the above",1
+83,"What is the total number of orbitals associated with the principal quantum number n=3?","6","12","18","9","None of the above",3
+84,"How many oxygen atoms are present in 0.025 mol of aspirin (C₉H₈O₄)? [Nₐ = 6.02x10²³]","3.0x10²²","6.0x10²⁴","5.63x10²²","6.0x10²²","None of the above",3
+85,"How many atoms are in 32.6g of sulphur? (S=32.07)","1.52x10²⁴","1.12x10²⁴","8.42x10²³","6.12x10²³","3.06x10²³",3
+86,"Which of the following is paramagnetic?","Zn","Ni","Cu⁺","none of the above","Ni²⁺",-1
+87,"Calculate the density of butane (C₄H₁₀) at a pressure of 117.4 kPa and a temperature of 125°C. (R=8.314 Pa·m³/mol/K)","2.60 g/L","2.65 g/m³","2.06 g/L","none of the above","2.06 g/m³",2
+88,"All of these are neutral oxides except:","CO","N₂O","MgO","H₂O","None of the above",2
+89,"The magnetic quantum number mₗ gives the number of orbitals as:","2l","2l-1","2l+1","n-1","None of the above",2
+90,"What is the total number of electrons that can be held in all orbitals having the same principal quantum number n?","2n","2n+1","2n²","2n²+1","2n²-1",2
+91,"Predict the molecular geometry of the species PCl₆⁻.","Linear","Tetrahedral","Octahedral","Trigonal Planar","None of the above",2
+92,"Using the ideal gas law, calculate the pressure exerted by 5g of methane in a 0.1L container at 25°C.","76.4 atm","4.80 atm","13.8 atm","none of the above","7.64 atm",-1
+93,"A species with 24 protons, 26 neutrons, and 22 electrons is represented by:","⁵⁰₂₄V³⁺","⁵⁰₂₄Cr²⁺","⁵⁰₂₂Mn²⁺","⁵⁰₂₄Cr²⁺","none of the above",-1
+94,"Convert a pressure of 0.657 atm to mmHg.","250 mmHg","500 mmHg","750 mmHg","120 mmHg","None of the above",1
+95,"How many valence electrons are in the ICl₄⁻ molecule?","36","21","18","none of the above","35",-1
+96,"Which of the following is FALSE?","the angular momentum quantum number tells us the shape","The magnetic quantum number describes the orientation of the orbital","the value for the electron spin quantum number is ±1/2","none of the above","All are true",4
+97,"If it takes 1.25 minutes for 0.010mol of He to effuse, how long for the same amount of ethane (C₂H₆)?","1.72 min","2.74 min","3.43 min","3.88 min","None of the above",-1
+98,"Oxalic acid (EF = CHO₂) has a molar mass of 90.0 g/mol. What is its molecular formula?","C₂H₂O₄","C₂H₂O₂","CHO₂","C₄H₄O₂","C₂H₂O",0
+99,"State the number of unpaired electrons in the electronic configuration of Chromium.","2","4","3","6","None of the above",3
+100,"How many electrons can be placed into the M shell (n=3) of an atom?","14","16","18","20","22",2
+101,"Predict the geometry of SnCl₂.","tetrahedral","trigonal planar","bent or angular","trigonal bi-pyramidal","circular",2
+102,"Calculate the energy required to remove the electron from a hydrogen atom in its ground state (E₁ = -2.18x10⁻¹⁸ J).","-4.36x10⁻¹⁸ J","-3.27x10⁻¹⁸ J","-2.18x10⁻¹⁸ J","2.18x10⁻¹⁸ J","4.36x10⁻¹⁸ J",3
+103,"The number of orbitals in a d-subshell (l=2) is:","5","3","1","7","10",0
+104,"Which of the following elements is a metalloid?","Li","Be","B","C","None of the above",2
+105,"Given the electronic configuration of Z²⁺ as 1s²2s²2p⁶3s²3p⁶4s⁰3d¹, what is the atomic number of Z?","24","23","18","20","None of the above",-1
+106,"Which of the following particles will not be deflected by charged plates?","γ-particles","β-particles","α-particles","protons","None of the above",0
+107,"Starting with a 4.00mg sample, how much ¹⁹⁸Au remains after 7 days? (t½=2.7 days)","0.66 mg","1.00mg","1.28mg","0.35mg","None of the above",-1
+108,"What is the number of orbitals in a 5g subshell?","1","3","5","7","9",4
+109,"What is the half-life of a nucleus that takes 15 min to decay to 90% of its original activity?","180 min","99 min","210 min","5 min","None of the above",1
+110,"Lindane (molar mass 290.85 g/mol) is 24.78% C, 2.08% H, and 73.14% Cl. What is its molecular formula?","C₆H₆Cl","C₆H₄Cl₆","C₂H₂Cl₂","C₄H₆Cl₄","C₆H₆Cl₆",4
+111,"Nuclides with different mass and atomic numbers but the same number of neutrons are called?","isotopes","isobars","isotones","allotropes","None of the above",2
+112,"Balance the nuclear reaction: ²³⁴₉₀Th → ⁰₋₁β + X.","²³³₉₁X","²³⁰₉₁X","²³⁴₈₈X","²³⁴₉₁X","None of the above",3
+113,"A substance on decomposition gives 0.6 mole of Fe and 0.90 mole of S. What is its empirical formula?","Fe₂S₃","FeS","FeS₂","FeS₃","None of the above",-1
+114,"How many electrons are in the p-orbitals in Ru? [Z=44]","6","18","12","10","None of the above",-1
+115,"A nucleus of mass number 81 contains 46 neutrons. An ion of this element has 36 electrons. Write the symbol for this ion.","⁸¹₃₆Br","⁸¹₃₅Br⁻","⁸¹₃₆Br⁺","⁸¹₃₅Br⁺","None of the above",3
+116,"Helium gas at 22°C and 1.00 atm occupies 2.54L. What is its volume if cooled to -197°C?","0.33L","0.56L","0.65L","1.30L","None of the above",-1
+117,"Calculate the wavelength (nm) of a spectral line of hydrogen for n₂=6 and n₁=3. (R=109,678 cm⁻¹)","1737 nm","1358 nm","1094 nm","978 nm","656 nm",2
+118,"Which of the following contains the largest number of molecules?","0.2 mol of H₂","8g of H₂","17g of H₂O","6g of CO₂","None of the above",1
+119,"Caffeine (MW=194.2) is 49.48% C, 5.19% H, 28.85% N, and 16.48% O. What is its molecular formula?","C₁₄H₁₈N₂O₂","C₇H₉N₂O₅","C₈H₁₀N₄O₂","C₉H₁₁N₄O₂","C₁₆H₂₀N₄O₅",2
+120,"The species ⁵²₂₄Cr³⁺ contains:","24p, 24n, 24e","24p, 28n, 24e","24p, 28n, 21e","52p, 52n, 21e","21p, 31n, 21e",2
+121,"Which of the following is paramagnetic?","Zn","Ni²⁺","Cu⁺","Cu","none of the above",1
+122,"⁵⁹₂₇Co has how many unpaired electrons?","1","2","3","4","None of the above",2
+123,"The volume of a gas at STP is 488mL. Calculate its volume at 22.5 atm and 150°C.","33.6mL","63.3mL","67.2 mL","50.4 mL","None of the above",0
+124,"What are the allowed angular momentum (l) values for n=4?","0,1,2,3,4","0,1,2,3","0,1,2,4","0,1,3,4","None of the above",1
+125,"What is the maximum number of electrons for an n=3 shell?","10","6","18","8","2",2
+126,"Caffeine contains 28.9% nitrogen by mass. If its molecular weight is 194, how many nitrogen atoms are in one molecule?","3","4","5","6","None of the above",1
+127,"What did Bohr assume about the motion of electrons?","They travel in straight paths","They travel in circular paths around the nucleus","Electrons and neutrons are in the nucleus","Protons and neutrons are in the nucleus","none of the above",1
+128,"Which of the following contains more electrons than neutrons?","²⁵₁₂X²⁺","³³₁₆X²⁻","⁷⁵₃₃X³⁻","²⁶₁₃X","none of these",1
+129,"How many atoms are bonded to the central atom in a trigonal bipyramidal molecule?","4","5","6","7","None of the above",1
+130,"The arrangement of elements in the periodic table is in order of their increasing:","atomic weight","isotopic weight","atomic number","molecular weight","None of the above",2
+131,"The reaction ²H + ³H → ⁴He + ¹n is an example of:","nuclear fission","nuclear fusion","alpha emission","combination reaction","None of the above",1
+132,"What is the bond angle in a tetrahedral molecule?","180°","120°","109.5°","107.3°","None of the above",2
+133,"A gas weighing 7.10g at 741 torr and 44°C occupies 5.40L. What is its molar mass?","17.6 g/mol","29.3 g/mol","35.1 g/mol","52.7 g/mol","None of the above",2
+134,"Calculate the energy (J) of an electron in the n=2 level of a hydrogen atom (R_H = 2.18x10⁻¹⁸ J).","-5.45x10⁻¹⁹ J","-1.09x10⁻¹⁰ J","-1.09x10⁻¹⁸ J","-5.45x10⁻¹⁸ J","None of the above",0
+135,"What is the frequency of a photon emitted when an electron falls from n=4 to n=3 in a hydrogen atom?","-1.59x10¹⁴ /s","2.598x10¹⁵ /s","1.598x10¹⁴ /s","1.34x10⁻²¹ /s","2.582x10¹⁴ /s",-1
+136,"How many unpaired electrons are there in the Mn atom? (Z=25)","5","1","2","3","None of the above",0
+137,"How many orbitals are there in the shell with n=5?","18","21","25","22","None of the above",2
+138,"Calculate the binding energy of ⁶⁰₂₈Ni in MeV per nucleon if its exact mass is 59.9332 amu. [p=1.00728, n=1.00867 amu]","8.78 MeV","7.80 MeV","6.98 MeV","5.25 MeV","524.81 MeV",-1
+139,"The transition metals are elements in which the differentiating electrons go into the:","s-orbital","p-orbital","d-orbital","f-orbital","None of the above",2
+140,"An oxide of manganese is 36.8% O and 63.2% Mn. What is its empirical formula? [O=16.0, Mn=55.0]","MnO","MnO₂","MnO₃","Mn₂O₃","Mn₂O₇",1
+141,"A species with 24 protons, 26 neutrons, and 23 electrons would be represented by:","⁵⁰₂₄V³⁺","⁵⁰₂₄Cr⁺","⁵⁰₂₂Mn²⁺","⁵⁰₂₄V⁺","None of the above",-1
+142,"A 200.0mL flask contains 1.03mg O₂ and 0.56mg He at 15°C. What is the total pressure?","0.0038atm","0.017atm","0.020atm","0.040atm","None of the above",2
+143,"An element with atomic number 12 is likely to have the same chemical properties as elements in:","Group IIB","Group IIA","Group IIIA","Group IVA","None of the above",1
+144,"Calculate the ratio of the diffusion rate of hydrogen to that of oxygen.","4:1","2:1","3:1","6:1","3:2",0
+145,"What hybrid orbitals would be expected for the central atom in BrF₅?","sp","sp²","sp³","sp³d","sp³d²",4
+146,"How many unpaired electrons would there be in the ion Gd³⁺? [Z=64]","3","5","7","9","11",2
+147,"Calculate the density (g/L) of ammonia gas (NH₃) at 31°C and 751 mmHg. [R=0.0821 Latm/K/mol]","0.338 g/L","0.57 g/L","0.675 g/L","0.765g/L","None of the above",2
+148,"Which of these is an acidic oxide?","SO₂","CaO","MgO","Na₂O","None of the above",0
+149,"Electron affinity is the:","energy released when an electron is added to an isolated gaseous atom","energy absorbed when an electron is added to an isolated gaseous atom","energy to take out an electron from an isolated gaseous atom","power of an atom to attract an electron to itself","None of the above",0
+150,"How many molecules are present in one gram of hydrogen gas?","6.02x10²³","3.01x10²³","5x10²³","1.5x10²³","None of the above",1
+151,"A compound is 2.0g C, 0.34g H, and 2.67g O. If its RMM is 60, what is its molecular formula?","CH₂O","C₂H₄O₂","C₂O₂H₄","CHO₂","None of the above",-1
+152,"Group II elements of the periodic table are also referred to as?","halogens","alkali metals","metalloids","alkaline earth metals","None of the above",3
+153,"The ground state electronic configuration of ₈₀Hg is:","[Ar]6s²4f¹⁴5d¹⁰","[Kr]6s²4f¹⁴5d¹⁰","[Xe]6s²4f¹⁴5d¹⁰","[Xe]6s²4f¹⁴6p⁶5d¹⁰","[Rn]6s²4f¹⁴5d¹⁰",2
+154,"Magnesium has isotopes: ⁷⁸.⁹⁹% ²⁴Mg (23.99 amu), ¹⁰.⁰⁰% ²⁵Mg (24.99 amu), ¹¹.⁰¹% ²⁶Mg (25.98 amu). What is its atomic mass?","26.31 g/mol","24.62 g/mol","24.31 g/mol","26.62 g/mol","23.41 g/mol",2
+155,"A compound with empirical formula C₂H₃Cl has a molecular mass of about 190. Its molecular formula is:","C₂H₃Cl","C₆H₉Cl₃","C₆H₁₂Cl₃","C₄H₆Cl₂","None of the above",1
+156,"What are the quantum numbers of the electron lost when a copper atom forms the Cu⁺ ion? (Z=29)","n=3, l=2, mₗ=2, mₛ=+1/2","n=3, l=2, mₗ=0, mₛ=-1/2","n=4, l=0, mₗ=0, mₛ=+1/2","n=4, l=2, mₗ=0, mₛ=+1/2","n=4, l=2, mₗ=1, mₛ=-1/2",2
+157,"A gas diffuses at 16.0 mL/s, while another gas (MW=28.0) diffuses at 24.2 mL/s. What is the MW of the first gas?","46.50 g/mol","64.05 g/mol","45.60 g/mol","66.00 g/mol","65.05 g/mol",-1
+158,"The density of water is 1.0 g/mL at 4°C. How many molecules are present in 2.5 mL?","8.36x10²²","3.28x10²²","2.38x10²²","6.02x10²³","None of the above",0
+159,"Which of the following contains more electrons than neutrons?","²⁵₁₂X²⁺","³³₁₆X²⁻","⁷⁵₃₃X³⁻","²⁶₁₃X","none of these",1
+160,"Calculate the percentage of oxygen in CaSO₄. [Ca=40.08, S=32.06, O=16]","47.03%","11.75%","29.44%","17.01%","None of the above",-1
+161,"Which of the following does not have sp² hybridization?","C₆H₆","C₂H₄","BeCl₂","C₂H₂","BF₃",3
+162,"Which of the following contains the largest number of molecules?","0.2 mol H₂","8.0g H₂","17g of H₂O","6g of CO₂","None of the above",1
+163,"The H-O-H bond angle in the H₂O molecule is 104.5° instead of 90° because:","H₂O is sp² hybridized","the OH bonds and H atoms occupy the same sphere","there is overcrowding between the OH and the H bonds","H₂O is sp³ hybridized and has two lone pairs","The OH bonds spread apart to avoid overcrowding",3
+164,"Which of the following is correct for the H-N-H bond angle in the NH₃ molecule?","109.5°","104.5°","90°","180°","107.3°",4
+165,"An electron with quantum numbers n=4, l=2, m=0, s=-1/2 would be a:","3d electron","4d electron","3p electron","4p electron","4s electron",1
+166,"If 10.0g of Na and 20.0g of Cl₂ react to form 25.4g of NaCl, what mass of chlorine does not react?","4.57g","2.3g","1.15g","None of the above","4.6g",-1
+167,"A compound is 85.7% C and 14.3% H with a molar mass of 98 g/mol. What is its molecular formula?","C₂H₄","C₆H₁₂","C₇H₁₄","C₇H₈","None of the above",-1
+168,"The volume occupied by 0.5 mole of CO₂ at 150 kPa and 19°C is?","8.09 dm³","8.89 dm³","9.09 dm³","8.13 dm³","None of the above",-1
+169,"Determine the empirical formula of a compound with 29.09% Na, 40.55% S, and 30.36% O.","NaS₂O₃","NaSO₄","Na₂S₂O₃","none of the above","Na₂SO₃",-1
+170,"Elements in the periodic table are arranged based on?","Boiling point","atomic number","atomic mass","chemical symbols","none of the above",1
+171,"When there is a gamma decay process, the mass number of a radionuclide is:","Reduced by two","increased by one","not changed","increased by two","reduced by one",2
+172,"Which of the central atoms in the following molecules is not sp² hybridized?","C₆H₆","C₂H₄","BeCl₂","C₂H₂","BF₃",3
+173,"A sample of an ideal gas occupies 2L at 27°C. If the temperature is increased to 327°C at constant pressure, the new volume is:","3L","6L","4L","8L","4.5L",2
+174,"Which of the following sets of quantum numbers is unacceptable?","[1,0,0,+1/2]","[3,0,0,+1/2]","[3,2,1,-1/2]","[4,3,-2,+1/2]","[1,1,0,+1/2]",-1
+175,"The volume occupied by 4.4g of CO₂ at STP is:","22.4 L","2.24 L","0.224 L","0.1 L","None of the above",1
+176,"The stability and inertness of N₂ can be attributed to its:","two lone pair of electrons","completely filled p-orbital","triple bond","Three unpaired electrons","None of the above",-1
+177,"A charcoal bone has a ¹⁴C/¹²C ratio 0.617 times that of a living organism. How old is it? (t½ for ¹⁴C is 5730 years)","4730 years","4033 years","4030 years","4300 years","None of the above",-1
+178,"Which is NOT a possible value for the quantum numbers for an electron in a 3p-orbital?","(3,1,1,-1/2)","(3,1,0,-1/2)","(3,1,-1,-1/2)","(3,1,1,-1/2)","None of the above",-1
+179,"The number of molecules in 4.25g of ammonia is approximately:","1.0x10²³","1.5x10²³","2.0x10²³","3.5x10²³","None of the above",1
+180,"Which of the following metals reacts slowly with steam?","strontium","barium","magnesium","beryllium","None of the above",2
+181,"A gaseous compound of C and H diffuses 0.1826 times as fast as H₂. What is its correct formula?","C₂H₂","C₂H₄","C₂H₆","C₄H₁₀","none of above",-1
+182,"What is the pH of a 0.001M solution of HCl?","3","5","7","10","None of the above",0
+183,"A buffer is made from equal concentrations of a weak acid and its conjugate base. Doubling the volume by adding water has what effect on its pH?","It has little effect","it significantly neutralizes the pH","It significantly decreases the pH","It changes the pH asymptotically to the pKa","It changes the pH asymptotically to the pKb",0
+184,"Which of the given compounds is not a Lewis acid?","AlCl₃","C₅H₅N","ZnCl₂","FeCl₃","none of the above",1
+185,"Calculate the hydronium ion concentration of a 0.2 mol/L CH₃COOH solution. (Ka=1.8x10⁻⁵)","1.89x10⁻³ M","1.8x10⁻⁵ M","1.4x10⁻⁵ M","1.8x10⁻⁶ M","None of the above",0
+186,"Calculate the molality of a solution that contains 51.2 g of naphthalene (C₁₀H₈) in 500 mL of CCl₄. (Density of CCl₄ is 1.60 g/mL)","0.250 m","0.500 m","0.750 m","0.840 m","1.69 m",1
+187,"For which reaction is Kc numerically equal to Kp?","N₂+3H₂→2NH₃","2SO₂+O₂→2SO₃","H₂+Cl₂→2HCl","N₂O₄→2NO₂","None of the above",2
+188,"The Ksp for PbI₂ is 8.7x10⁻⁹. What is its molar solubility?","1.3x10⁻³ M","8.7x10⁻⁵ M","9.3x10⁻⁵ M","1.0x10⁻⁴ M","None of the above",0
+189,"For the equilibrium 2NO₂(g) ⇌ N₂O₄(g) + Energy, the equilibrium will shift to the left as a result of:","adding a catalyst","increasing the volume","removing some N₂O₄","decreasing the temperature","None of the above",1
+190,"What is the molality of a solution labeled ""8.6% glucose (C₆H₁₂O₆) by weight?""","0.26 m","0.34 m","0.44 m","0.52 m","0.67 m",3
+191,"2.82g of glucose (mol mass=180) are dissolved in 30g of water. Calculate the mole fraction of glucose.","0.0093","0.0930","0.9070","0.9907","1.243",-1
+192,"In which case is the solution of BaSO₄ supersaturated?","[Ba²⁺][SO₄²⁻] < Ksp","[Ba²⁺][SO₄²⁻] = Ksp","[Ba²⁺][SO₄²⁻] > Ksp","[Ba²⁺] + [SO₄²⁻] = Ksp","[Ba²⁺] + [SO₄²⁻] < Ksp",2
+193,"A stock solution of K₂Cr₂O₇ is made by dissolving 89.3g in 1.0L. How many mL are required to prepare 1.00L of 0.100M K₂Cr₂O₇?","110ml","165ml","274ml","329ml","494ml",-1
+194,"A 1.00L flask contains 0.0200 mol PCl₅, 0.0500 mol PCl₃, and 0.0500 mol Cl₂ at equilibrium. The value of Keq is:","0.125","2.50","5.00","8.00","None of the above",0
+195,"What is the equilibrium partial pressure of PCl₅ in a 3.00L vessel charged with 0.123 atm of PCl₅? Kp=0.0121 for PCl₅⇌PCl₃+Cl₂.","0.123 atm","0.011 atm","0.0380 atm","0.0900 atm","None of the above",3
+196,"How many grams of AgNO₃ are required to prepare 10g of a 2% solution?","10","20","0.2","0.1","None of the above",2
+197,"What is the molarity of a solution containing 9.8g of H₂SO₄ in a 200 mL solution?","0.50","0.75","1.00","0.25","0.1019",0
+198,"Calculate the pH of a 0.5 mol/L NaOH solution if it is diluted 10-fold.","12.0","12.7","13.4","11.6","None of the above",1
+199,"Which equation depicts a disproportionation reaction?","MnO₂+HCl→MnCl₂+Cl₂+H₂O","FeCl₂+Cl₂→FeCl₃","S+KOH→K₂SO₃+K₂S+H₂O","Au₂O₃→Au+O₂","None of the above",2
+200,"How many moles of calcium chloride (CaCl₂) can be obtained from 25g of limestone (CaCO₃) reacting with excess HCl?","0.20 mole","0.30 mole","0.25 mole","0.35 mole","None of the above",2
+201,"Calculate the freezing point of a solution that contains 2g of methyl alcohol (CH₃OH) in 50g of water. (Kf=1.86)","1.25°C","-2.32°C","2.32°C","-1.25°C","None of the above",1
+202,"What is the oxidation number of Cr in the compound HgCr₂O₇?","+1","+2","+4","+5","+6",4
+203,"Calculate the molarity of a solution prepared by dissolving 15g of solid NaOH in enough water to make 2.5 L of solution.","0.15 M","0.375 M","0.075 M","0.188 M","None of the above",0
+204,"What is the molality of a solution prepared by dissolving 15g of I₂ in 150g of CCl₄?","0.64 m","0.53 m","0.78 m","0.394 m","None of the above",3
+205,"Which of the following is classified as a conjugate acid-base pair?","HCl/NaOH","H₂O/H₃O⁺","O₂/H₂O","H⁺/Cl⁻","NaCl/NaOH",-1
+206,"Which of the following is the strongest acid?","HClO₂","HClO","HClO₃","HClO₄","chlorous acid",3
+207,"Which of the following is a Lewis acid?","NH₃","BCl₃","H₂O","OH⁻","None of the above",1
+208,"A solution contains 6.00% by mass NaBr. The density is 1.046 g/cm³. What is the molarity? [Na=23.0, Br=80.0]","0.310 M","0.513 M","0.610 M","0.765 M","0.920 M",-1
+209,"Colligative properties depend on:","nature of the solvent","number of solute particles","percent of ionization","nature of solute","temperature",1
+210,"What volume of a 0.100 M solution of NaHCO₃ contains 0.350g of NaHCO₃? [Na=23, C=12, O=16, H=1]","17.4 mL","20.9 mL","38.3 mL","41.7 mL","59.1 mL",3
+211,"What is the molarity of a solution containing 5.6g of KOH in a 400 mL solution?","1.0","0.75","0.10","0.25","0.50",3
+212,"Calculate the mole fraction of NaCl in a 40% wt NaCl solution.","0.13","4.017","3.333","1.70","no answer",-1
+213,"What is the oxidation number of phosphorus in ammonium phosphate, (NH₄)₃PO₄?","+1","+4","+3","+2","+5",4
+214,"When equal volumes of four 0.1 mol/dm³ solutions are arranged in order of increasing pH, what is the correct order?","CH₃COOH<HNO₃<CH₃CH₂NH₂<KOH","HNO₃<CH₃COOH<CH₃CH₂NH₂<KOH","CH₃CH₂NH₂<HNO₃<CH₃COOH<KOH","KOH<CH₃CH₂NH₂<CH₃COOH<HNO₃","None of the above",1
+215,"What mass of CO₂ could be formed by the reaction of 16.0g of CH₄ with 48.0g of O₂?","44g","1.5 g","33g","16g","None of the above",2
+216,"What mass of AgNO₃ (169.9 g/mol) is needed to convert 2.33g of Na₂CO₃ (106 g/mol) to Ag₂CO₃?","0.047g","6.06g","3.47g","7.47g","None of the above",3
+217,"Calculate the mass percent of NaCl if 1.75g of NaCl is dissolved in 5.85g of water.","23.0%","32.0%","55.0%","68.0%","77.0%",-1
+218,"Which of the following is not a Brønsted-Lowry base?","H₂O","NH₃","OH⁻","BF₃","None of the above",3
+219,"What osmotic pressure would a 1.25 m sucrose solution exhibit at 25°C if its density is 1.34 g/mL?","28.6 atm","15 atm","14.3 atm","1.675 atm","None of the above",-1
+220,"For 3O₂(g) ⇌ 2O₃(g), Kc=2.9x10⁻⁵⁹. If at equilibrium, [O₃]=0.04M, what is [O₂]?","1.92x10⁻⁵³ M","4.3x10⁻³² M","2.3x10⁻²⁰ M","1.2x10²¹ M","None of the above",-1
+221,"What is the molality of a 0.50M H₂SO₄ solution with a density of 1.18 g/mL?","0.442","0.340","0.560","0.470","0.442 m",-1
+222,"Calculate the mole fraction of HCl in a 36% by weight HCl solution.","0.182","0.218","0.500","0.782","0.827",-1
+223,"Calculate the molarity of concentrated HCl that is 37.7% HCl by mass and has a density of 1.19 g/mL.","11.8 M","12.3 M","13.3 M","15.2 M","16.2 M",-1
+224,"What is the pH of a 0.4 M NH₃ solution? (Kb=1.8x10⁻⁵)","0.45","0.55","3.27","11.43","no answer",-1
+225,"Calculate the pH of a buffer containing 0.1 M H₃BO₃ and 0.18M NaH₂BO₃. (Ka for H₃BO₃=5.8x10⁻¹⁰)","5.46","9.49","7.4","12.5","None of the above",-1
+226,"Which of the given species is a Lewis base?","CO₂","Ca²⁺","F⁻","CH₄","H⁺",2
+227,"Which base is the weakest electrolyte?","NaOH","Ca(OH)₂","Mg(OH)₂","Ba(OH)₂","KOH",2
+228,"In a pilot study, 10.6g of ethylene (C₂H₄) gave 9.91g of ethylene oxide (C₂H₄O). What is the percentage yield?","37.19%","44.63%","59.50%","67.00%","74.39%",-1
+229,"For H₂(g)+I₂(g)⇌2HI(g), at equilibrium [H₂]=0.00220, [I₂]=0.00220, [HI]=0.0156. The value of Kc is:","3.10x10⁻³","1.99x10⁻²","50.3","3.22x10³","None of the above",2
+230,"Calculate the pH of a buffer of 0.12 M benzoic acid and 0.2 M sodium benzoate (Ka=6.5x10⁻⁵).","4.00","4.41","4.67","4.33","None of the above",1
+231,"How many grams of Na are in 25g of Na₂SO₄? [Na=23, S=32, O=16]","2.10g Na","8.10g Na","8.10g Na","None of the above","None of the above",-1
+232,"Which reaction is a disproportionation reaction?","Zn+CuSO₄→ZnSO₄+Cu","2Na+2H₂O→2NaOH+H₂","Cl₂+2NaOH→NaClO+NaCl+H₂O","2NaH→2Na+H₂","None of the above",2
+233,"Which of the following does not act as a Brønsted acid?","NH₄⁺","CH₃COO⁻","HCO₃⁻","HSO₄⁻","None of the above",1
+234,"What is the concentration of hydroxide ion in a solution if pOH=9?","10⁻⁷","10⁻³","10⁻⁹","10⁻⁵","10⁻¹¹",2
+235,"2.82g of glucose (C₆H₁₂O₆) are dissolved in 30g of water. Calculate the mole fraction of glucose.","0.0093","0.0930","0.9079","0.9907","0.3900",0
+236,"438mg of limestone (CaCO₃) is treated with oxalic acid to give 472mg of calcium oxalate (CaC₂O₄). What is the % of CaCO₃?","88.7%","84.2%","78.3%","69.6%","84.2%",-1
+237,"Which of the following is NOT a redox reaction?","2CrO₄²⁻+2H⁺→Cr₂O₇²⁻+H₂O","Cr₂O₇²⁻+6Fe²⁺+14H⁺→...","2IO₃⁻+12H⁺+10I⁻→...","2MnO₄⁻+6H⁺+5NO₂⁻→...","None of the above",0
+238,"For ZnO+CO→Zn+CO₂, what is the max amount of Zn from 75g ZnO and 50g CO? [Zn=65.4, O=16, C=12]","30.1g","45.2g","52.7g","60.3g","62.5g",-1
+239,"The transformation Cr³⁺→CrO₄²⁻ is via:","oxidation in basic solution","reduction in acidic solution","reduction in basic solution","oxidation in acidic solution","None of the above",0
+240,"A 0.500g mixture of Cu₂O and CuO contains 0.425g Cu. What is the mass of CuO? [O=16, Cu=63.55]","0.18g","0.21g","0.28g","0.32g","0.42g",-1
+241,"A 1.37 M citric acid solution in water has a density of 1.10g/cm³. Calculate its molality.","1.37 m","1.60 m","2.30 m","2.70 m","3.00 m",-1
+242,"What volume of 0.120M CuSO₄ is required to give 0.150mol of CuSO₄?","12.5 mL","125.00 mL","625 mL","750 mL","1.25 L",4
+243,"Calculate the concentration of sodium benzoate needed in a 0.20M benzoic acid solution to produce a pH of 4.0 (Ka=6.5x10⁻⁵).","0.10 M","0.12 M","0.13 M","0.14 M","None of the above",2
+244,"The vapor pressure of water at 25°C is 23.8 mmHg. What is the vapor pressure of a solution of 5.67g glucose in 25.2g water?","23.3 mmHg","0.524 mmHg","23.8 mmHg","24 mmHg","22.3 mmHg",0
+245,"A substance (0.131g) dissolved in 25.4g water has a molality of 0.056m. What is its molecular weight?","92 amu","96 amu","106 amu","92 amu","None of the above",-1
+246,"For 2HI(g)⇌H₂(g)+I₂(g), at equilibrium [HI]=0.078M in a 2.00L flask initially with 0.200mol HI. Calculate Kc.","0.30","0.02","0.4","0.04","0.20",-1
+247,"Which reaction is a disproportionation reaction?","3K₂MnO₄+4HCl→2KMnO₄+...","K₂Cr₂O₇+14HCl→...","2KMnO₄+3KNO₂+H₂O→...","KIO₃+Cl₂+2KOH→...","None of the above",0
+248,"How many grams of N₂ form when 1.00x10²g of N₂H₄ and 2.00x10²g of N₂O₄ are mixed?","141g N₂","151g N₂","131g N₂","131g N₂","None of the above",-1
+249,"How many kilograms of oxygen are required to form 2.80kg of copper(I) oxide (Cu₂O)?","2.15 kg O₂","0.960 kg O₂","1.96 kg O₂","1.98 kg O₂","0.31 kg O₂",-1
+250,"For Fe(s)+Cu²⁺→Cu(s)+Fe²⁺, it can be said that:","Fe is the oxidizing agent","Fe is reduced","Cu²⁺ loses electrons","Cu²⁺ is an oxidizing agent","Fe gains electrons",3
+251,"In acidic solution, ClO₃⁻ reacts with I₂ to form IO₃⁻ and Cl⁻. The oxidizing agent is:","ClO₃⁻","I₂","Cl⁻","IO₃⁻","none of the above",0
+252,"In the balanced reaction of CrO₄²⁻ and HSnO₂⁻ in basic medium, the coefficients for CrO₄²⁻ and HSnO₂⁻ are:","1 and 3","1 and 2","2 and 1","2 and 3","None of the above",3
+253,"Calculate the percentage of magnesium in magnesium nitrate, Mg(NO₃)₂ (FW=148.33).","12.5%","16.39%","11.259%","18.359%","None of the above",1
+254,"What is the correct solubility product expression for Ag₃PO₄?","Ksp=[3Ag⁺]³[PO₄³⁻]","Ksp=[Ag⁺]³[PO₄³⁻]","Ksp=3[Ag⁺][PO₄³⁻]","Ksp=3[3Ag⁺][PO₄³⁻]","Ksp=[Ag⁺][PO₄³⁻]",1
+255,"All of the following are colligative properties except:","lowering of vapour pressure","elevation of boiling point","depression of the freezing point","exhibition of solvent pressure","osmotic pressure",3
+256,"Calculate the change in boiling point of water if 1.5g of glycerin (C₃H₈O₃) is dissolved in 47.8g of water. (Kb=0.512°C/m)","0.174°C","0.170°C","0.117°C","0.147°C","None of the above",-1
+257,"Which among the following is the strongest base?","ClCH₂CH₂NH₂","BrCH₂CH₂NH₂","FCH₂CH₂NH₂","ICH₂CH₂NH₂","CH₃CH₂NH₂",-1
+258,"Which aqueous solution will have the highest pH value?","NaCl","KNO₃","ZnCl₂","Na₂CO₃","None of the above",3
+259,"A solution of AlCl₃ in H₂O is:","acidic","basic","neutral","normal","None of the above",0
+260,"Calculate the H₃O⁺ concentration of a 0.2M HC₂H₃O₂ solution. (Ka=1.8x10⁻⁵)","1.89x10⁻³ M","4.0x10⁻² M","5.0x10⁻³ M","2.67x10⁻² M","None of the above",0
+261,"Which of the following is a buffer?","NaOH + CH₃COONa","NaOH + Na₂SO₄","FeSO₄ + H₂SO₄","NaCN + HCN","None of the above",3
+262,"A solution has [H₃O⁺]=3.0x10⁻⁴M. Calculate [OH⁻].","6.01 M","4.656x10⁻¹¹ M","6.01x10⁻¹¹ M","3.3x10⁻¹¹ M","None of the above",3
+263,"What is the [H₃O⁺] of 0.1M propanoic acid? (Ka=1.3x10⁻⁵)","1.1x10⁻³ M","3.0x10⁻⁴ M","1.39x10⁻³ M","2.5x10⁻³ M","None of the above",-1
+264,"Dimethylamine has a Kb of 5.9x10⁻⁴. What is the pH of 1.5M (CH₃)₂NH?","12.48","10.58","11.65","12.47","None of the above",-1
+265,"100g of ethylene glycol (C₂H₆O₂) is added to 4450g of water. What is the boiling point of the solution?","97°C","100.18°C","90°C","100°C","None of the above",1
+266,"A reaction A⇌B is in equilibrium when:","complete conversion of A to B has occurred","conversion of A to B is 50% complete","only 10% conversion of A to B has occurred","the rate of transformation of A to B equals the rate of B to A","None of the above",3
+267,"According to Le Châtelier's principle, adding heat to a solid and liquid in equilibrium (melting) will cause the:","amount of solid to decrease","amount of liquid to decrease","temperature to rise","temperature to fall","None of the above",0
+268,"Which of the following statements is correct?","all Arrhenius acids are Brønsted-Lowry acids","all Brønsted-Lowry bases are Arrhenius bases","all Arrhenius bases are not Brønsted-Lowry bases","All Brønsted-Lowry acids are Lewis acids","an acid-base reaction is a proton acceptor",0
+269,"Calculate the volume of 0.30 M HNO₃ required to supply 2.0 mole of HNO₃.","6.7 L","7.0 L","5.6 L","4.9 L","None of the above",0
+270,"If glycine exists as NH₃⁺CH₂COO⁻, its conjugate base would be:","NH₃⁺CH₂COOH","NH₂CH₂COO⁻","NH₂CH₂COO⁻","NH₂CH₂COOH","None of the above",1
+271,"Calculate the mass of NaOH in 5.0 mL of a 1.0% (m/v) NaOH solution.","0.050g","0.10g","0.50g","1.0 g","None of the above",0
+272,"Acrylic acid is 50% C, 5.6% H, and 44.4% O. What is its empirical formula?","C₂H₂O₄","C₂H₃O₂","C₃H₄O₂","C₃H₅O₂","C₃H₄O",-1
+273,"A white powder has an empirical formula P₂O₅ and a molar mass of 283.88 g/mol. What is its molecular formula?","P₂O₅","P₂O₁₀","P₄O₁₀","P₅O₁₀","P₁₀O₄",2
+274,"The vapor pressure of water at 25°C is 23.8 mmHg. What is the vapor pressure of a solution of 100g sucrose in 1000g water?","0.92 mmHg","55.5 mmHg","23.7 mmHg","1.25 mmHg","no answer",-1
+275,"Calculate the moles of Na⁺ ions in 30 cm³ of 1.50M NaCl solution.","0.03 mol","0.045 mol","0.015 mol","0.025 mol","None of the above",1
+276,"Which 0.1M aqueous solution has the lowest pH?","Na₂CO₃","Na₃PO₄","Na₂S","NaCl","CH₃COONa",3
+277,"Identify the reducing agent in Zn + I₂ → ZnI₂.","Zn","I₂","ZnI₂","none of the above","None of the above",0
+278,"What is the molarity of K⁺ in a solution that contains 63.3 mg/L of K₃[Fe(CN)₆]? (Molar mass=329.3 g/mol)","6.22x10⁻³ M","5.77x10⁻⁴ M","6.22x10⁻⁴ M","3.26x10⁻⁴ M","None of the above",-1
+279,"In which reaction is a metal not oxidized?","2Na+2H₂O→2NaOH+H₂","Cu→Cu²⁺+2e⁻","Cu²⁺+2e⁻→Cu","Pb+Cu²⁺→Pb²⁺+Cu","None of the above",2
+280,"Which is the correct increasing order of acid strength: HF, HCl, HI, HBr?","HCl>HBr>HI>HF","HF<HCl<HBr<HI","HI>HBr>HCl>HF","HBr>HCl>HF>HI","None of the above",1
+281,"What is the oxidation state of the underlined element Ba₂XeO₆?","+5","+8","+3","0","None of the above",1
+282,"How many grams of Na are in 25g of Na₂SO₄? [Na=23, S=32, O=16]","8.10g","7.08 g","8.10 g","None of the above","None of the above",-1
+283,"What is the molarity of K⁺ in a solution that contains 63.3 mg/L of K₃[Fe(CN)₆]? (Molar mass=329.3 g/mol)","6.22x10⁻³ M","5.77x10⁻⁴ M","6.22x10⁻⁴ M","3.26x10⁻⁴ M","None of the above",-1
+284,"(Duplicate Question)","",,"",,"",-1
+285,"(Duplicate Question)","",,"",,"",-1
+286,"(Duplicate Question)","",,"",,"",-1
+287,"(Duplicate Question)","",,"",,"",-1
+288,"Which set of quantum numbers is not allowed?","n=2, l=1, mₗ=0, mₛ=+1/2","n=1, l=1, mₗ=0, mₛ=+1/2","n=8, l=7, mₗ=-6, mₛ=+1/2","n=1, l=0, mₗ=0, mₛ=+1/2","None of the above",1
+289,"How many atoms are bonded to the central atom in a trigonal bipyramidal shape?","3","4","5","7","8",-1
+290,"Predict the molecular geometry of PCl₆⁻.","Linear","Tetrahedral","Trigonal bipyramidal","Square planar","Octahedral",4
+291,"What is the oxidation number of Cr in HgCr₂O₇?","+1","+2","+4","+5","+6",4
+292,"Which reaction is a disproportionation reaction?","3K₂MnO₄+4HCl→...","K₂Cr₂O₇+14HCl→...","2KMnO₄+3KNO₂+H₂O→...","KIO₃+Cl₂+2KOH→...","None of the above",0
+293,"What is the empirical formula of a compound with 43.7% P and 56.3% O? [P=31, O=16]","PO₂","P₂O₃","P₃O₅","P₃O","P₂O₅",4
+294,"How many grams of Zn are in 0.456 mol of Zn? [Zn=65.39]","29.8g","23.30 g","13.68 g","10.63 g","15.64 g",-1
+295,"Which quantum number describes the shape of the orbital?","principal quantum number","azimuthal quantum number","magnetic quantum number","spin quantum number","all of the above",1
+296,"NaHSO₄ is an example of a(n):","normal salt","acid salt","basic salt","double salt","complex salt",1
+297,"Arrange in order of increasing acidity: NH₃, CH₄, H₂O, HF.","NH₃<CH₄<H₂O<HF","CH₄<NH₃<H₂O<HF","HF<H₂O<NH₃<CH₄","HF<H₂O<CH₄<NH₃","H₂O<HF<NH₃<CH₄",1
+298,"Identify the Lewis acid in Ag⁺ + 2NH₃ ⇌ [Ag(NH₃)₂]⁺.","[Ag(NH₃)₂]⁺","(NH₃)₂","Ag⁺","NH₃","none of the above",2
+299,"What is the degeneracy of the d-orbital?","1","2","3","5","7",3
+300,"The following are covalent hydrides except:","NH₃","CH₄","PH₃","SeH₂","TiH₂",-1

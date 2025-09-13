@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework.authtoken',
     'accounts',
+    'notifications',
 ]
 
 MIDDLEWARE = [
@@ -149,5 +150,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ONESIGNAL_APP_ID = "YOUR-ONESIGNAL-APP-ID"
-ONESIGNAL_API_KEY = "YOUR-ONESIGNAL-REST-API-KEY"
+
+import os
+
+ONESIGNAL_APP_ID = "34ebccc1-0042-4256-ad0e-0d2dd167da43"
+ONESIGNAL_REST_API_KEY = "os_v2_app_gtv4zqiaijbfnliobuw5cz62ionoo2yiekbu43fnqodkxoc6bsjrfloge2aeomukcdrtsvfvxrfru2vzj5pyi5xkv4eelnwwf4lrc5q"
+

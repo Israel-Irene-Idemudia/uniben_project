@@ -88,7 +88,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 200 Level,Second Semester,EDU221,Method of Teaching,Geography Education,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,EDU222,Sociology of Education,Geography Education,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,EDU223,Instructional Technology,Geography Education,Department of Educational Management,Faculty of Education
-200 Level,Second Semester,GEO224,"Introduction to Climatology and Biogeography",Geography Education,Department of Educational Management,Faculty of Education
+200 Level,Second Semester,GEO224,Introduction to Climatology and Biogeography,Geography Education,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,GEO225,Introduction to Population Studies,Geography Education,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,GEO226,Introduction to Cartography,Geography Education,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,GEO228,Introduction to Geographic Thought Theory,Geography Education,Department of Educational Management,Faculty of Education
@@ -115,15 +115,15 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 400 Level,First Semester,EDU411,Measurement and Evaluation,Geography Education,Department of Educational Management,Faculty of Education
 400 Level,First Semester,EDU412,Introduction to Education Management,Geography Education,Department of Educational Management,Faculty of Education
 400 Level,First Semester,GEO411,History of Geography Thought,Geography Education,Department of Educational Management,Faculty of Education
-400 Level,First Semester,GEO412,"Geography of the 3rd world (Latin America)",Geography Education,Department of Educational Management,Faculty of Education
+400 Level,First Semester,GEO412,Geography of the 3rd world (Latin America),Geography Education,Department of Educational Management,Faculty of Education
 400 Level,First Semester,GEO413,Introduction to Remote Sensing,Geography Education,Department of Educational Management,Faculty of Education
 400 Level,First Semester,GEO414,Regional Geography of Nigeria,Geography Education,Department of Educational Management,Faculty of Education
 400 Level,First Semester,GEO415,Regional Planning and Development,Geography Education,Department of Educational Management,Faculty of Education
 400 Level,First Semester,GEO416,Rural Land Resource Evaluation,Geography Education,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,EDU421,Guidance and Counseling,Geography Education,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,EDU499,Project,Geography Education,Department of Educational Management,Faculty of Education
-400 Level,Second Semester,GEO421,"Geography of the Developed world Europe/North",Geography Education,Department of Educational Management,Faculty of Education
-400 Level,Second Semester,GEO422,"Contemporary Philosophy & Methodology in Geography",Geography Education,Department of Educational Management,Faculty of Education
+400 Level,Second Semester,GEO421,Geography of the Developed world Europe/North,Geography Education,Department of Educational Management,Faculty of Education
+400 Level,Second Semester,GEO422,Contemporary Philosophy & Methodology in Geography,Geography Education,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,GEO427,Geomorphology in Environmental Management,Geography Education,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,GEO428,Urban Geography,Geography Education,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,GEO433,Approaches to Regional Growth Analysis,Geography Education,Department of Educational Management,Faculty of Education
@@ -189,7 +189,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 400 Level,Second Semester,POL425,Comparative Public Administration,Education and Political Science,Department of Educational Management,Faculty of Education
 100 Level,First Semester,EDU111,History of Education,Educational Management,Department of Educational Management,Faculty of Education
 100 Level,First Semester,EDM110,History of Educational Management,Educational Management,Department of Educational Management,Faculty of Education
-100 Level,First Semester,EDM111,"Introduction to Educational Policies in Nigeria",Educational Management,Department of Educational Management,Faculty of Education
+100 Level,First Semester,EDM111,Introduction to Educational Policies in Nigeria,Educational Management,Department of Educational Management,Faculty of Education
 100 Level,First Semester,EDM114,Communication Skills in Education Management,Educational Management,Department of Educational Management,Faculty of Education
 100 Level,First Semester,EDM115,Change and Innovative Process in Formal Edu.,Educational Management,Department of Educational Management,Faculty of Education
 100 Level,First Semester,ECO111,Principles of Economics I (Micro),Educational Management,Department of Educational Management,Faculty of Education
@@ -213,7 +213,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 200 Level,First Semester,EDM210,Introduction to Educational Management,Educational Management,Department of Educational Management,Faculty of Education
 200 Level,First Semester,EDM211,Principles of Educational Management,Educational Management,Department of Educational Management,Faculty of Education
 200 Level,First Semester,EDM212,Introduction to Interpersonal Relationship,Educational Management,Department of Educational Management,Faculty of Education
-200 Level,First Semester,EDM213,"Management of Primary & Secondary Education",Educational Management,Department of Educational Management,Faculty of Education
+200 Level,First Semester,EDM213,Management of Primary & Secondary Education,Educational Management,Department of Educational Management,Faculty of Education
 200 Level,First Semester,EDM214,Fundamentals of Educational Planning,Educational Management,Department of Educational Management,Faculty of Education
 200 Level,First Semester,EDM215,Planning Educational Facilities,Educational Management,Department of Educational Management,Faculty of Education
 200 Level,First Semester,ECO213,Mathematics for Economists I,Educational Management,Department of Educational Management,Faculty of Education
@@ -222,7 +222,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 200 Level,Second Semester,EDU222,Sociology of Education,Educational Management,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,EDU223,Instructional Technology,Educational Management,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,EDM220,Educational Policies in Nigeria,Educational Management,Department of Educational Management,Faculty of Education
-200 Level,Second Semester,EDM221,"Programme Organization & Time Tabling",Educational Management,Department of Educational Management,Faculty of Education
+200 Level,Second Semester,EDM221,Programme Organization & Time Tabling,Educational Management,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,EDM224,Quantitative Analysis in Educational Management,Educational Management,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,ECO223,Mathematics for Economists II,Educational Management,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,POL222,Foundation of Political Economics,Educational Management,Department of Educational Management,Faculty of Education
@@ -230,21 +230,21 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 300 Level,First Semester,EDU311,Curriculum Studies,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,First Semester,EDU312,Educational Psychology,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,First Semester,EDU313,Integrated Social Studies,Educational Management,Department of Educational Management,Faculty of Education
-300 Level,First Semester,EDM310,"Problems and Issues in Planning Education in Nigeria",Educational Management,Department of Educational Management,Faculty of Education
+300 Level,First Semester,EDM310,Problems and Issues in Planning Education in Nigeria,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,First Semester,EDM312,Leadership in Formal Organization,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,First Semester,EDM313,Project Management in Education Organization,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,First Semester,EDM314,Human Resource Management,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,First Semester,EDM315,Budget in Education,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,First Semester,ECO313,Econometrics I,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,First Semester,POL312,History of Political Thought I,Educational Management,Department of Educational Management,Faculty of Education
-300 Level,Second Semester,EDU321,"Introduction to Educational Research & Statistics",Educational Management,Department of Educational Management,Faculty of Education
+300 Level,Second Semester,EDU321,Introduction to Educational Research & Statistics,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,EDU322,Comparative Education,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,EDM320,Economics of Education,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,EDM321,Education Supervision in Nigeria,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,EDM322,Educational Finance and Evaluation,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,EDM323,Introduction to Administrative Theory,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,EDM324,Educational Agencies,Educational Management,Department of Educational Management,Faculty of Education
-300 Level,Second Semester,EDM325,"The Application of Educational Law to School Management",Educational Management,Department of Educational Management,Faculty of Education
+300 Level,Second Semester,EDM325,The Application of Educational Law to School Management,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,CED300,Entrepreneurship,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,ECO325,Econometrics II,Educational Management,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,POL322,History of Political Thought II,Educational Management,Department of Educational Management,Faculty of Education
@@ -255,13 +255,13 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 400 Level,First Semester,EDM411,School business management,Educational Management,Department of Educational Management,Faculty of Education
 400 Level,First Semester,EDM412,Educational Cost and Financial Management,Educational Management,Department of Educational Management,Faculty of Education
 400 Level,First Semester,EDM413,Personnel Management and Evaluation,Educational Management,Department of Educational Management,Faculty of Education
-400 Level,First Semester,EDM414,"National and International Perspective in Educational Mgt.",Educational Management,Department of Educational Management,Faculty of Education
+400 Level,First Semester,EDM414,National and International Perspective in Educational Mgt.,Educational Management,Department of Educational Management,Faculty of Education
 400 Level,First Semester,ECO412,History of Economic Thought,Educational Management,Department of Educational Management,Faculty of Education
 400 Level,First Semester,POL412,Contemporary Nigerian Government & Politics,Educational Management,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,EDU421,Guidance and Counseling,Educational Management,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,EDU499,Project,Educational Management,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,EDM420,Education Systems Analysis,Educational Management,Department of Educational Management,Faculty of Education
-400 Level,Second Semester,EDM421,"Emerging Problems in Nigeria Education",Educational Management,Department of Educational Management,Faculty of Education
+400 Level,Second Semester,EDM421,Emerging Problems in Nigeria Education,Educational Management,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,EDM422,Policy Analysis in Educational Management,Educational Management,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,EDM423,Office Management and Record Keeping,Educational Management,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,ECO424,Public Sector Economics,Educational Management,Department of Educational Management,Faculty of Education
@@ -271,14 +271,14 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 100 Level,First Semester,LIS112,Introduction to Library & Information Resources,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,First Semester,LIS113,History of Libraries and Information Centres,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,First Semester,LIS114,Library and Information Centre Visit,Library and Information Science,Department of Educational Management,Faculty of Education
-100 Level,First Semester,LIS115,"Introduction to Cataloguing & Classification",Library and Information Science,Department of Educational Management,Faculty of Education
+100 Level,First Semester,LIS115,Introduction to Cataloguing & Classification,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,First Semester,FOL116,Introduction to Practical French,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,First Semester,GST111,Use of English I,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,First Semester,GST112,Philosophy and Logic,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,First Semester,CSC110,Introduction to Computing,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,Second Semester,LIS124,Library Routine,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,Second Semester,LIS125,Information and Development,Library and Information Science,Department of Educational Management,Faculty of Education
-100 Level,Second Semester,LIS126,"Introduction to Library & Information Studies",Library and Information Science,Department of Educational Management,Faculty of Education
+100 Level,Second Semester,LIS126,Introduction to Library & Information Studies,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,Second Semester,LIS127,Introduction to Information Science,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,Second Semester,LIS128,Introduction to internet and web design,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,Second Semester,FOL126,Intermediate Practical French Structure,Library and Information Science,Department of Educational Management,Faculty of Education
@@ -291,7 +291,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 200 Level,First Semester,LIS212,Organization of Knowledge I,Library and Information Science,Department of Educational Management,Faculty of Education
 200 Level,First Semester,LIS213,Library and Information Services to the Rural Community,Library and Information Science,Department of Educational Management,Faculty of Education
 200 Level,First Semester,LIS214,Management of Library and Information Centres,Library and Information Science,Department of Educational Management,Faculty of Education
-200 Level,First Semester,LIS215,"Libraries and Information Services to Children and Adolescents",Library and Information Science,Department of Educational Management,Faculty of Education
+200 Level,First Semester,LIS215,Libraries and Information Services to Children and Adolescents,Library and Information Science,Department of Educational Management,Faculty of Education
 200 Level,First Semester,LIS216,Serials Management,Library and Information Science,Department of Educational Management,Faculty of Education
 200 Level,First Semester,LIS217,The Information User,Library and Information Science,Department of Educational Management,Faculty of Education
 200 Level,First Semester,PSY211,Psychology,Library and Information Science,Department of Educational Management,Faculty of Education
@@ -305,37 +305,37 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 200 Level,Second Semester,LIS227,Software Packages,Library and Information Science,Department of Educational Management,Faculty of Education
 200 Level,Second Semester,LIS228,Information Literacy,Library and Information Science,Department of Educational Management,Faculty of Education
 300 Level,First Semester,LIS311,Organization of Knowledge II,Library and Information Science,Department of Educational Management,Faculty of Education
-300 Level,First Semester,LIS312,"Collection Development and Management",Library and Information Science,Department of Educational Management,Faculty of Education
+300 Level,First Semester,LIS312,Collection Development and Management,Library and Information Science,Department of Educational Management,Faculty of Education
 300 Level,First Semester,LIS313,Reference and Information Services in LIS,Library and Information Science,Department of Educational Management,Faculty of Education
-300 Level,First Semester,LIS314,"Technical Services in Library & Information Centres",Library and Information Science,Department of Educational Management,Faculty of Education
+300 Level,First Semester,LIS314,Technical Services in Library & Information Centres,Library and Information Science,Department of Educational Management,Faculty of Education
 300 Level,First Semester,LIS315,Library Environment and Buildings,Library and Information Science,Department of Educational Management,Faculty of Education
-300 Level,First Semester,LIS316,"National & Public Libraries and information Centres",Library and Information Science,Department of Educational Management,Faculty of Education
+300 Level,First Semester,LIS316,National & Public Libraries and information Centres,Library and Information Science,Department of Educational Management,Faculty of Education
 300 Level,First Semester,LIS317,School Library and Media Resources Centres,Library and Information Science,Department of Educational Management,Faculty of Education
-300 Level,First Semester,LIS318,"Academic and Special Library and information Centres",Library and Information Science,Department of Educational Management,Faculty of Education
-300 Level,First Semester,LIS319,"Planning and Repackaging of Info. Products & Services",Library and Information Science,Department of Educational Management,Faculty of Education
+300 Level,First Semester,LIS318,Academic and Special Library and information Centres,Library and Information Science,Department of Educational Management,Faculty of Education
+300 Level,First Semester,LIS319,Planning and Repackaging of Info. Products & Services,Library and Information Science,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,LIS321,Preservation and Conservation of Library Materials,Library and Information Science,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,LIS322,Digital Library,Library and Information Science,Department of Educational Management,Faculty of Education
-300 Level,Second Semester,LIS323,"Research and Statistical Methods",Library and Information Science,Department of Educational Management,Faculty of Education
-300 Level,Second Semester,LIS324,"Information Management and Marketing",Library and Information Science,Department of Educational Management,Faculty of Education
-300 Level,Second Semester,LIS325,"Community Needs Analysis & Information Service",Library and Information Science,Department of Educational Management,Faculty of Education
+300 Level,Second Semester,LIS323,Research and Statistical Methods,Library and Information Science,Department of Educational Management,Faculty of Education
+300 Level,Second Semester,LIS324,Information Management and Marketing,Library and Information Science,Department of Educational Management,Faculty of Education
+300 Level,Second Semester,LIS325,Community Needs Analysis & Information Service,Library and Information Science,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,LIS326,SIWES (Field Experience),Library and Information Science,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,LIS327,Knowledge Management,Library and Information Science,Department of Educational Management,Faculty of Education
 300 Level,Second Semester,CED300,Entrepreneurship,Library and Information Science,Department of Educational Management,Faculty of Education
 400 Level,First Semester,LIS411,Research Project,Library and Information Science,Department of Educational Management,Faculty of Education
 400 Level,First Semester,LIS412,Information Ethics and Law,Library and Information Science,Department of Educational Management,Faculty of Education
 400 Level,First Semester,LIS413,Indexing and Abstracting,Library and Information Science,Department of Educational Management,Faculty of Education
-400 Level,First Semester,LIS414,"Automation in Library and Information Centres",Library and Information Science,Department of Educational Management,Faculty of Education
-400 Level,First Semester,LIS415,"Government Publications",Library and Information Science,Department of Educational Management,Faculty of Education
-400 Level,First Semester,LIS416,"Archives and Records Management",Library and Information Science,Department of Educational Management,Faculty of Education
-400 Level,First Semester,LIS417,"Publishing and Book Trade/Information Network",Library and Information Science,Department of Educational Management,Faculty of Education
-400 Level,First Semester,LIS418,"Bibliography and literature of the Social Sciences and Humanities",Library and Information Science,Department of Educational Management,Faculty of Education
+400 Level,First Semester,LIS414,Automation in Library and Information Centres,Library and Information Science,Department of Educational Management,Faculty of Education
+400 Level,First Semester,LIS415,Government Publications,Library and Information Science,Department of Educational Management,Faculty of Education
+400 Level,First Semester,LIS416,Archives and Records Management,Library and Information Science,Department of Educational Management,Faculty of Education
+400 Level,First Semester,LIS417,Publishing and Book Trade/Information Network,Library and Information Science,Department of Educational Management,Faculty of Education
+400 Level,First Semester,LIS418,Bibliography and literature of the Social Sciences and Humanities,Library and Information Science,Department of Educational Management,Faculty of Education
 400 Level,First Semester,LIS419,Infopreneurship,Library and Information Science,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,EDU421,Guidance and Counseling,Library and Information Science,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,LIS421,Bibliography and Literature of Humanities,Library and Information Science,Department of Educational Management,Faculty of Education
-400 Level,Second Semester,LIS422,"Bibliography and Literature of Science & Tech.",Library and Information Science,Department of Educational Management,Faculty of Education
+400 Level,Second Semester,LIS422,Bibliography and Literature of Science & Tech.,Library and Information Science,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,LIS423,"Publishing, Book Production and Trade",Library and Information Science,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,LIS424,African Bibliography,Library and Information Science,Department of Educational Management,Faculty of Education
-400 Level,Second Semester,LIS425,"Editing technical writing & journal",Library and Information Science,Department of Educational Management,Faculty of Education
+400 Level,Second Semester,LIS425,Editing technical writing & journal,Library and Information Science,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,LIS426,Current Issues in ICT Practices in LIS (Seminar),Library and Information Science,Department of Educational Management,Faculty of Education
 400 Level,Second Semester,LIS427,ICT in Libraries and Information Centres,Library and Information Science,Department of Educational Management,Faculty of Education
 100 Level,First Semester,EDU 111,History of Education,Education Biology,Curriculum and Instruction Technology,Faculty of Education
@@ -348,7 +348,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 100 Level,First Semester,CHM 101,General Chemistry I (Inorganic),Education Biology,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,MTH 101,General Mathematics I,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,PHY 101,General Physics I,Education Biology,Curriculum and Instruction Technology,Faculty of Education
-100 Level,Second Semester,EDU 101,"Introduction to Teaching and Foundations of Education",Education Biology,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,EDU 101,Introduction to Teaching and Foundations of Education,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,BIO 107,General Biology Practical I,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,BIO 108,General Biology Practical II,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,CHM 102,General Chemistry II (Organic),Education Biology,Curriculum and Instruction Technology,Faculty of Education
@@ -367,7 +367,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 200 Level,First Semester,SED 202,General Biology Methods I,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,EDU 221,Teaching Method I,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,EDU 222,Philosophy of Education,Education Biology,Curriculum and Instruction Technology,Faculty of Education
-200 Level,Second Semester,EDU 223,"Instructional Technology and Computer Education",Education Biology,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EDU 223,Instructional Technology and Computer Education,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,CIT 223,Micro Teaching in Biology Education,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,BIO 204,Biological Techniques,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,BIO 205,Introductory Developmental/Cell Biology,Education Biology,Curriculum and Instruction Technology,Faculty of Education
@@ -394,7 +394,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 400 Level,First Semester,SED 402,"Science, Technology and Society",Education Biology,Curriculum and Instruction Technology,Faculty of Education
 400 Level,First Semester,BIO 402,Principles of Plant and Animal Breeding,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 400 Level,First Semester,BIO 403,Wildlife Conservation and Management,Education Biology,Curriculum and Instruction Technology,Faculty of Education
-400 Level,First Semester,BIO 404,"Nigerian Plants and Animals in Prophylactics & Therapeutics",Education Biology,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,BIO 404,Nigerian Plants and Animals in Prophylactics & Therapeutics,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 400 Level,First Semester,BIO 406,Principles of Pest Management,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 400 Level,Second Semester,EDU 400,Project,Education Biology,Curriculum and Instruction Technology,Faculty of Education
 400 Level,Second Semester,CIT 421,Biology Laboratory and Management,Education Biology,Curriculum and Instruction Technology,Faculty of Education
@@ -414,7 +414,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 100 Level,First Semester,CHM 102,General Chemistry II,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,MTH 101,General Mathematics I,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,PHY 101,General Physics I,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
-100 Level,Second Semester,EDU 101,"Introduction to Teaching and Foundations of Education",Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,EDU 101,Introduction to Teaching and Foundations of Education,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,BIO 107,General Biology Practical I,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,BIO 108,General Biology Practical II,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,CHM 107,General Chemistry Practical I,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
@@ -435,9 +435,9 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 200 Level,First Semester,SED 202,Chemistry Methods I,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,EDU 221,Teaching Method I,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,EDU 222,Philosophy of Education,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
-200 Level,Second Semester,EDU 223,"Instructional Technology and Computer Education",Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EDU 223,Instructional Technology and Computer Education,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,CIT 222,Micro Teaching in Chemistry Education,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
-200 Level,Second Semester,STA 202,"Statistics for Physical Sciences & Engineering",Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,STA 202,Statistics for Physical Sciences & Engineering,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,CHM 212,Inorganic Chemistry I,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,CHM 213,Analytical Chemistry I,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,CHM 214,Structure and Bonding,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
@@ -449,72 +449,72 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 300 Level,First Semester,CHM 301,Physical Chemistry II,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,First Semester,CHM 302,Inorganic Chemistry II,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,First Semester,CHM 303,Organic Chemistry II,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
-300 Level,First Semester,CHM 304,"Atomic & Molecular Structure & Symmetry",Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,CHM 304,Atomic & Molecular Structure & Symmetry,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,Second Semester,EDU 321,Research Methods and Statistics,Chemistry Education,Curriculum and Instruction Technology,Faculty of Education
-100 Level,First Semester,EDU111,History of Education,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,GST111,Communication in English,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,GST112,Nigerian People and Culture,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,COS101,Introduction to Computing Sciences,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,CSC110,Introduction to Computing,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,MTH101,General Mathematics I,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,MTH112,General Mathematics II (Calculus),"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,PHY101,General Physics I (Mechanics),"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,PHY107,General Physics Practical I,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,SED 101,Introduction to Computer and Computer Education,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,EDU101,"Introduction to Teaching and Foundations of Education","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,GST121,Use of English II,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,COS102,Problem Solving,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,CSC112,"Computer Appreciation and Packages","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,PHY102,General Physics II,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,PHY108,General Physics Practical II,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,EDU211,Education Psychology,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,EDU212,Sociology of Education,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,EDU 201,"Curriculum and Curriculum Delivery","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,GST212,"Philosophy, Logic and Human Existence","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,GST312,Peace Studies & Conflict Resolution,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,CSC201,Computing Programming I,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,CSC203,Discrete Structures,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,IFT211,Digital Logic Design,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,MTH 201,Mathematics Methods I,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,SEN201,Introduction to Software Engineering,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,CSC299,SIWES I,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,CSC211,Computing Practice and Ethics,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,ENT211,"Entrepreneurship and Innovation","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,EDU 221,Teaching Methods I,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,EDU 222,Philosophy of Education,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,EDU 223,"Instructional Technology & Computer Education","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,CSC202,Computing Programming II,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,IFT 212,"Computer Architecture and Organization","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,MTH 202,Mathematics Methods II,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,EDU 301,Teaching Practice I,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,EDU 312,Teaching Methods II,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,ENT 312,Venture Creation,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,CSC 301,Data Structures,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,CSC 308,Operating Systems,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,CSC 313,Data Science and Analytics,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,EDU 321,"Educational Research and Statistics","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,EDU 323,Guidance and Counselling,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,CSC309,Artificial Intelligence,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,CSC 322,"Computer Science Innovation and New Technologies","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,CYB 311,"Introduction to Cyber Security and Strategy","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,DTS304,Database Management System,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,ICT 305,"Data Communication system & Network","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,CSC 399,SIWES II,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,EDU401,Teaching Practice II,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,EDU411,Introduction to Educational Measurement and Evaluation,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,EDU 412,Educational Management,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,CSC401,Algorithms and Complexity Analysis,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,CSC403,Project Management,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,CSC411,Assembly Language and System,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,CSC413,Software Testing,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,COS409,Research Methodology,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,CSC415,Technical Report Writing,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,IFT402,"Computer studies Laboratory Practicals","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,EDU400,Research Project,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,EDU421,Ethics and Legal Issues in Computer Science,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,CSC402,"Compiler, Technology and Design","Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,CSC422,Computer Vision,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
-4agencies00 Level,Second Semester,CSC424,Natural Language Processing,"Education and Computer Science","Curriculum and Instruction Technology","Faculty of Education"
+100 Level,First Semester,EDU111,History of Education,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,GST111,Communication in English,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,GST112,Nigerian People and Culture,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,COS101,Introduction to Computing Sciences,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,CSC110,Introduction to Computing,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,MTH101,General Mathematics I,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,MTH112,General Mathematics II (Calculus),Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,PHY101,General Physics I (Mechanics),Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,PHY107,General Physics Practical I,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,SED 101,Introduction to Computer and Computer Education,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,EDU101,Introduction to Teaching and Foundations of Education,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,GST121,Use of English II,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,COS102,Problem Solving,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,CSC112,Computer Appreciation and Packages,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,PHY102,General Physics II,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,PHY108,General Physics Practical II,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,EDU211,Education Psychology,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,EDU212,Sociology of Education,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,EDU 201,Curriculum and Curriculum Delivery,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,GST212,"Philosophy, Logic and Human Existence",Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,GST312,Peace Studies & Conflict Resolution,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,CSC201,Computing Programming I,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,CSC203,Discrete Structures,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,IFT211,Digital Logic Design,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,MTH 201,Mathematics Methods I,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,SEN201,Introduction to Software Engineering,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,CSC299,SIWES I,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,CSC211,Computing Practice and Ethics,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,ENT211,Entrepreneurship and Innovation,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EDU 221,Teaching Methods I,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EDU 222,Philosophy of Education,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EDU 223,Instructional Technology & Computer Education,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,CSC202,Computing Programming II,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,IFT 212,Computer Architecture and Organization,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,MTH 202,Mathematics Methods II,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,EDU 301,Teaching Practice I,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,EDU 312,Teaching Methods II,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,ENT 312,Venture Creation,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,CSC 301,Data Structures,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,CSC 308,Operating Systems,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,CSC 313,Data Science and Analytics,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,EDU 321,Educational Research and Statistics,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,EDU 323,Guidance and Counselling,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,CSC309,Artificial Intelligence,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,CSC 322,Computer Science Innovation and New Technologies,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,CYB 311,Introduction to Cyber Security and Strategy,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,DTS304,Database Management System,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,ICT 305,Data Communication system & Network,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,CSC 399,SIWES II,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,EDU401,Teaching Practice II,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,EDU411,Introduction to Educational Measurement and Evaluation,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,EDU 412,Educational Management,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,CSC401,Algorithms and Complexity Analysis,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,CSC403,Project Management,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,CSC411,Assembly Language and System,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,CSC413,Software Testing,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,COS409,Research Methodology,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,CSC415,Technical Report Writing,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,IFT402,Computer studies Laboratory Practicals,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,EDU400,Research Project,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,EDU421,Ethics and Legal Issues in Computer Science,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,CSC402,"Compiler, Technology and Design",Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,CSC422,Computer Vision,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
+4agencies00 Level,Second Semester,CSC424,Natural Language Processing,Education and Computer Science,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,EDU 111,History of Education,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,GST 111,Communication in English,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,GST 112,Nigeria People and Culture,Physics Education,Curriculum and Instruction Technology,Faculty of Education
@@ -524,7 +524,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 100 Level,First Semester,PHY 101,General Physics I,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,PHY 102,General Physics II,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,PHY 103,General Physics III,Physics Education,Curriculum and Instruction Technology,Faculty of Education
-100 Level,Second Semester,EDU 101,"Introduction to Teaching and Foundations of Education",Physics Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,EDU 101,Introduction to Teaching and Foundations of Education,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,MTH 102,Elementary Mathematics II (Calculus),Physics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,PHY 104,General Physics IV,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,PHY 107,General Physics Practical I,Physics Education,Curriculum and Instruction Technology,Faculty of Education
@@ -532,7 +532,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 200 Level,First Semester,EDU 211,Educational Psychology,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,First Semester,EDU 212,Sociology of Education,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,First Semester,EDU 201,Curriculum and Curriculum Delivery,Physics Education,Curriculum and Instruction Technology,Faculty of Education
-200 Level,First Semester,GST 212,"Philosophy Logic and Human Existence",Physics Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,GST 212,Philosophy Logic and Human Existence,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,First Semester,GST 312,Peace and Conflict,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,First Semester,CIT 211,Instructional Materials for Teaching Physics,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,First Semester,ENT 211,Entrepreneurship and Innovation,Physics Education,Curriculum and Instruction Technology,Faculty of Education
@@ -540,11 +540,11 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 200 Level,First Semester,PHY 202,Introduction to Electric Circuits and Electronics,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,EDU221,Teaching Methods I,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,EDU222,Philosophy of Education,Physics Education,Curriculum and Instruction Technology,Faculty of Education
-200 Level,Second Semester,EDU223,"Instructional Technology and Computer in Education",Physics Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EDU223,Instructional Technology and Computer in Education,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,CIT222,Micro Teaching in Physic Education,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,PHY 204,General Physics VI (Waves and Optics),Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,PHY 205,Thermal Physics,Physics Education,Curriculum and Instruction Technology,Faculty of Education
-200 Level,Second Semester,PHY 206,"General Physics VII (Energy & Environment)",Physics Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,PHY 206,General Physics VII (Energy & Environment),Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,PHY 207,Practical Physics III,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,PHY 208,General Physics Practical,Physics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,PHY 211,Workshop Practice,Physics Education,Curriculum and Instruction Technology,Faculty of Education
@@ -598,7 +598,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 400 Level,First Semester,EDU 401,Supervised Teaching Practice II,Integrated Science Education,Curriculum and Instruction Technology,Faculty of Education
 400 Level,First Semester,EDU411,Educational Measurement and Evaluation,Integrated Science Education,Curriculum and Instruction Technology,Faculty of Education
 400 Level,First Semester,EDU412,Introduction to Educational Management,Integrated Science Education,Curriculum and Instruction Technology,Faculty of Education
-400 Level,First Semester,EIS 412,Science, Society and Technology,Integrated Science Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,EIS 412,Science Society and Technology,Integrated Science Education,Curriculum and Instruction Technology,Faculty of Education
 400 Level,First Semester,CIT 412,Pedagogic Technique for Teaching Integrated Science,Integrated Science Education,Curriculum and Instruction Technology,Faculty of Education
 400 Level,Second Semester,EDU400,Project,Integrated Science Education,Curriculum and Instruction Technology,Faculty of Education
 4agencies00 Level,Second Semester,CIT 421,Integrated Science Laboratory and Management,Integrated Science Education,Curriculum and Instruction Technology,Faculty of Education
@@ -613,12 +613,12 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 100 Level,First Semester,MTH 102,Elementary Mathematics I,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,CSC 101,Introduction to Computer Science,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,First Semester,STA 111,Probability,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
-100 Level,First Semester,VARIOUS,"2 Courses from Physics or Chemistry or Economics",Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
-100 Level,Second Semester,EDU 101,"Introduction to Teaching and Foundations of Education",Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,VARIOUS,2 Courses from Physics or Chemistry or Economics,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,EDU 101,Introduction to Teaching and Foundations of Education,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,CIT 121,Secondary School Mathematics I,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,MTH 103,Elementary Mathematics III,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 100 Level,Second Semester,STA 121,Statistical Inference,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
-100 Level,Second Semester,VARIOUS,"2 Courses from Physics or Chemistry or Economics",Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,VARIOUS,2 Courses from Physics or Chemistry or Economics,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,First Semester,EDU 211,Educational Psychology,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,First Semester,EDU 212,Sociology of Education,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,First Semester,EDU 201,Curriculum and Curriculum Delivery,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
@@ -633,7 +633,7 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 200 Level,First Semester,STA 211,Probability II,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,EDU 221,Teaching Method I,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,EDU 222,Philosophy of Education,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
-200 Level,Second Semester,EDU 223,"Instructional Technology and Computer Education",Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EDU 223,Instructional Technology and Computer Education,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,CIT 222,Secondary School Mathematics II,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,MTH 205,Linear Algebra II,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 200 Level,Second Semester,MTH 207,Real Analysis I,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
@@ -647,11 +647,11 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 300 Level,First Semester,MTH 300,Abstract Algebra I,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,First Semester,MTH 301,Metric Space Topology,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,First Semester,MTH 302,Ordinary Differential Equation,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
-300 Level,First Semester,MTH 303,"Vector and Tensor Analysis",Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,MTH 303,Vector and Tensor Analysis,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,First Semester,MTH 304,Complex Analysis I,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,First Semester,STA 311,Probability III,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,First Semester,STA 312,Distribution Theory,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
-300 Level,Second Semester,EDU 321,"Research Methods and Statistics",Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,EDU 321,Research Methods and Statistics,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,Second Semester,EDU 322,Guidance and Counselling,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,Second Semester,CIT 323,Secondary School Mathematics III,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 300 Level,Second Semester,MTH 305,Complex Analysis II,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
@@ -675,214 +675,72 @@ Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
 400 Level,Second Semester,MTH 407,Mathematical Methods,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 400 Level,Second Semester,MTH 408,Entrepreneurship in Mathematics,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
 400 Level,Second Semester,STA 413,Statistical Inference IV,Mathematics Education,Curriculum and Instruction Technology,Faculty of Education
-100 Level,First Semester,EDU111,History of Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,GST111,Communication in English,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,GST112,Nigerian Peoples and Culture,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,CSC110,Introduction to Computer Science,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,ESS101,"Introduction to Nigerian Social Life and Culture","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,ESS102,Introduction to Sociology,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,SAA101,Ethnography of Nigeria,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,SAA102,Introduction to Physical Geography,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,First Semester,GEO101,Introduction to Teaching and Foundations of Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,EDU101,Introduction to Civic Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,ESS111,Socio-economic Environment in Nigeria,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,ESS112,"Introduction to Democracy and Democratic Values","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,ESS115,History of World Democracy,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,ESS116,"Family Base and Structure of Society","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,ESS117,Total,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-100 Level,Second Semester,ESS122,Total,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,EDU 211,Educational Psychology,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,EDU 212,Sociology of Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,EDU 201,Curriculum and Curriculum Delivery,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,GST 212,Philosophy-Logic and Human Existence,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,GST 211,Peace and Conflict,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,ENT 211,Entrepreneurship and innovation,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,ESS211,"Problems of Ethics and Value Education","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,ESS212,"Social Change, Education and Patterns of Nation Building","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,ESS213,Social Issues and Problems in Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,First Semester,ESS214,Environmental Education and Sustainability,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,EDU221,Teaching Methods I (Teaching Social Studies),"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,EDU222,Philosophy of Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,EDU223,Instructional Technology and Computer in Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,ESS221,Nigeria Socio Political Institutions,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,ESS222,Consumer Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,ESS223,Teaching Social Studies and Civic Education in Nigerian Schools,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,ESS224,Democracy in Nigeria,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,ESS225,Citizenship,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,ESS226,Sexuality and Population Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-200 Level,Second Semester,EHE222,"Emotional, Mental and Social Health","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,EDU 301,Teaching Practice I,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,EDU 312,Teaching Methods II,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,ESS312,"Politics, Power and Government in Nigeria","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,ESS313,Security and Law Related Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,ESS314,Introduction To Social Care I,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,First Semester,ENT312,Venture creation,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,EDU321,Educational Research and Statistics,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,EDU322,Guidance and Counseling,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,ESS321,Nationalism and Patriotism in Nigeria,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,ESS322,"Social Studies and Civic Education Theories of Nation Building","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,ESS323,Teaching Methods in Civic and Social Studies Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,ESS324,"Creating and Managing Resource Room for Civic and Social Studies Education","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,ESS325,Entrepreneurship,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,ESS326,"Leadership, Followership and Electoral Processes in Nigeria","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,ESS327,Introduction To Social Care II,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,ESS328,Socialization and Family Life Education,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-300 Level,Second Semester,SAA324,Urban Sociology,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,EDU 401,Supervised Teaching Practice II,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,EDU411,Educational Measurement and Evaluation,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,EDU 412,Introduction to Educational Management,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,ESS411,International Relations,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,ESS412,Issues in National Development,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,ESS413,"Emerging Social Issues as Priorities and Contents in Civic and Social Studies Education","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,First Semester,ESS414,The Nigerian Economy,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,EDU400,Research Project,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,ESS421,Social Life and Party Politics in Nigeria,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,ESS422,Nigeria in International Organization,"Social Studies and Civic Education","Curriculm and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,ESS423,Field Trip and Long Essay,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,ESS424,Global Development Agenda,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,ESS425,"Challenges and Prospects for Teaching Civic Education in Secondary Schools","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,ESS426,"Colonial Experiences and Development in Africa","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,ESS427,Political History of Nigeria,"Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-400 Level,Second Semester,ESS428,"Community, Culture and Social Stability","Social Studies and Civic Education","Curriculum and Instruction Technology","Faculty of Education"
-Level,Semester,Course Code,Course Title,Course Area,Department,Faculty
-100 Level,First Semester,GST 111,Communication in English,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,GST 112,Nigeria Peoples and Culture,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,COS101,Introduction to Computer Science,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,EDU111,History of Education,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,EHE 101,General Biology,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,EHE 111,Foundations of Health Education,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,EHE 112,Adult and Adolescent Health,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,HED 112,Stress Management,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,HED 113,Wellness I,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,HED 114,Health Psychology,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,EDU101,"Introduction to Teaching and Foundations of Education",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,EHE 114,Environmental Health,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,EHE 117,Human Growth and Development,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,EHE 120,"Introduction to Community and Public Health",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,EHE 113,"Personal Health and Dental Education",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,HSE 121,Wellness II,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,HED 123,Healthcare Delivery Systems,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,HED 124,Health Problems of the School Child,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,GST212,Philosophy Logic and Human Existence,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EDU211,Education Psychology,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EDU212,Sociology of Education,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EDU201,"Curriculum, Curriculum Delivery and General Teaching Method",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EHE 213,Human Anatomy and Physiology,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EHE 215,"Family Life, Reproductive Health and Population Education",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EHE 220,Food and Human Nutrition,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EHE 222,"Emotional, Mental and Social Health",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,HSE222,"Career Opportunities in Health and Environmental Education",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EDU221,"Teaching Methods I: Planning for Teaching and Learning Health Education in the Classroom",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EDU222,Philosophy of Education,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EDU223,"Instructional Technology and Computer in Education",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EHE 211,Methods and Resources in Health Education,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EHE 212,School Health Education Programme,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EHE 218,Human Diseases and Health Protection,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,GST312,Peace and Conflict Resolutions,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EDU 301,Teaching Practice I,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EDU312,"Teaching Methods II: Planning for Teaching and Learning Health Education in the Classroom",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EHE 313,Research Methods in Health Education,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EHE 314,Substance Use and Abuse Prevention,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EHE 321,"Application of Computer Skills & Health Informatics",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,HED 311,Health and Illness Behaviour,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,HED 312,Primary Healthcare,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,HSE 312,"Health and Environmental Education Practicals",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,GST 311,Entrepreneurship,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EDU 302,"Educational Measurements, Tests, Research Methods and Statistics",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EDU 323,Guidance and Counseling,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EHE 315,"Maternal, Infant and Child Health",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EHE 317,Health Promotion and Counselling,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EHE 320,"First Aid, Accident Prevention and Safety Education",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EHE 322,"Life Skills and Skilled-Based Health Education",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EDU 401,Teaching Practice II,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EDU411,Educational Measurement and Evaluation,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EDU412,Educational Management,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EHE 402,Occupational and Industrial Health Education,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EHE 403,Health Economics and Consumerism,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EHE 407,Seminar in Health Education,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EHE 409,"Curriculum Development and Innovation in Health Education",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EHE 410,Geriatrics and Death Education,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,HSE 412,Community and Environmental Health,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,HED 411,"Intervention Strategies for Health Promotion and Disease Prevention",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,EDU 404,Project,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,EHE 401,"Contemporary National Health Programmes, Issues and Problems in Health Education",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,EHE 404,"Organisation, Planning and Evaluation of Health Education Programmes",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,EHE 408,"Global Health, National Health Laws, Policies and Advocacy",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,HED 423,"Public Health Tools and Communication Strategies",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,HED 421,Models and Theories of Behaviour Change,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,HED 422,"Development of Safety and Health Attitudes and Contemporary Issues",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,EHE 324,Epidemiology of Public Health and Human Biostatistics,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,HED 321,Basic Statistics in Health Education,Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,HED 322,"Communicable and Non-communicable Diseases",Health Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,EDU111,History of Education,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,GST111,Communication in English,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,GST112,Philosophy and Logic,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,COS101,Introduction to Computer Science,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,CHM101,General Chemistry I,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,GEO101,Introduction to Geography Man,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,BIO111,Introduction to Animal Environmental Biology,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,EED111,Foundation of Environmental Education,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,First Semester,HSE113,Wellness I,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,EDU101,"Introduction to Teaching and Foundations of Education",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,GEO 102,"Introduction to Geography Man & His Cultural Env.",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,EED121,Introductory Techniques in Env. Science,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,EED122,"Introduction to Env. Philosophy",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,CHM102,General Chemistry II,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-100 Level,Second Semester,HSE123,Wellness II,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EDU211,Educational Psychology,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EDU212,Sociology of Education,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EDU201,"Curriculum, Curriculum Delivery and General Teaching Methods",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,GST212,Philosophy Logic and Human Existence,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,BIO202,Environmental Ecology,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,MCB221,Introduction to Microbiology,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EMT201,Introduction to Environmental Science,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EMT202,Method of Environmental Analysis,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,GEO206,Introductory GIS,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,EED211,"Entrepreneurship and Innovation in Environmental Education",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,CHM 214,Introduction to Environmental Chemistry,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,First Semester,HSE 211,"Environmental Need Assessment & Introduction",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EDU221,"Teaching Methods I Environmental Education",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EDU 222,Philosophy of Education,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EDU223,"Instructional Technology and Computer in Education",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,HSE222,"Career Opportunities in Health and Environmental Education",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EED223,"Biosphere and Sustainability",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EED 224,"Environment and Politics",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-200 Level,Second Semester,EED 225,Introduction to Environmental Psychology,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EDU 301,Teaching Practice I,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EDU312,"Teaching Methods II Environmental Education",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,GST312,Peace and Conflict Resolutions,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EED301,Principles of Natural Resources Management,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EET302,Hazardous Substance Management,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EMT303,Metal and Environment Pollution,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EED305,Environmental Studies,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EMT306,"Environmental Aspects of Agrochemicals & Other Toxicants",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EMT307,Remote Sensing Techniques,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,EED312,Venture Creation,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,FOW311,"Environmental Ecosystem & Man",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,HSE 318,Health and Environmental Education Practices,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,First Semester,HSE 313,Population Education,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EDU302,"Educational Research Methods and Statistics",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EDU 323,Guidance and Counselling,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,GST321,Entrepreneurship,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EMT322,Introductory to Climatology & Meteorology,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EED323,"Coastal Resource Management",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,SLM321,"Soil Chemistry and Microbiology",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EED324,"Environmental Impact Analysis",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-300 Level,Second Semester,EED326,"Introduction to Environmental Safety and Environmental Sanitation",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EDU 401,Teaching Practice II,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EDU 411,Educational Measurement and Evaluation,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EDU 412,Educational Management,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EED 411,Environmental Tools & Communication Strategies,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,HSE 412,Environmental and Community Health,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,FOW414,Multiple Land use,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,PUL411,Environmental Law,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EED401,Environmental Monitoring Systems and Techniques,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EED403,"Science, Technology, and Society",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EED405,Rural and Urban Regional Planning,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,First Semester,EED407,"Environmental Education and Awareness (environmental Literacy)",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,EDU404,Project,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,EED421,Contemporary issues in Environmental Education,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,EED422,Assessment and Evaluation of environmental issues,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,EED423,Tropical Resources Management,Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,EED424,"Parks, Eco-tourism & Environmental Science",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
-400 Level,Second Semester,HSE424,"Behavioral theories in environmental and health education",Environmental Education,"HEALTH, SAFETY AND ENVIRONMENTAL EDUCATION","Faculty of Education"
+100 Level,First Semester,EDU111,History of Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,GST111,Communication in English,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,GST112,Nigerian Peoples and Culture,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,CSC110,Introduction to Computer Science,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,ESS101,Introduction to Nigerian Social Life and Culture,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,ESS102,Introduction to Sociology,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,SAA101,Ethnography of Nigeria,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,SAA102,Introduction to Physical Geography,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,First Semester,GEO101,Introduction to Teaching and Foundations of Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,EDU101,Introduction to Civic Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,ESS111,Socio-economic Environment in Nigeria,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,ESS112,Introduction to Democracy and Democratic Values,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,ESS115,History of World Democracy,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,ESS116,Family Base and Structure of Society,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,ESS117,Total,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+100 Level,Second Semester,ESS122,Total,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,EDU 211,Educational Psychology,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,EDU 212,Sociology of Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,EDU 201,Curriculum and Curriculum Delivery,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,GST 212,Philosophy-Logic and Human Existence,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,GST 211,Peace and Conflict,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,ENT 211,Entrepreneurship and innovation,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,ESS211,Problems of Ethics and Value Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,ESS212,"Social Change, Education and Patterns of Nation Building",Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,ESS213,Social Issues and Problems in Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,First Semester,ESS214,Environmental Education and Sustainability,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EDU221,Teaching Methods I (Teaching Social Studies),Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EDU222,Philosophy of Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EDU223,Instructional Technology and Computer in Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,ESS221,Nigeria Socio Political Institutions,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,ESS222,Consumer Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,ESS223,Teaching Social Studies and Civic Education in Nigerian Schools,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,ESS224,Democracy in Nigeria,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,ESS225,Citizenship,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,ESS226,Sexuality and Population Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+200 Level,Second Semester,EHE222,"Emotional, Mental and Social Health",Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,EDU 301,Teaching Practice I,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,EDU 312,Teaching Methods II,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,ESS312,"Politics, Power and Government in Nigeria",Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,ESS313,Security and Law Related Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,ESS314,Introduction To Social Care I,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,First Semester,ENT312,Venture creation,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,EDU321,Educational Research and Statistics,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,EDU322,Guidance and Counseling,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,ESS321,Nationalism and Patriotism in Nigeria,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,ESS322,Social Studies and Civic Education Theories of Nation Building,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,ESS323,Teaching Methods in Civic and Social Studies Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,ESS324,Creating and Managing Resource Room for Civic and Social Studies Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,ESS325,Entrepreneurship,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,ESS326,"Leadership, Followership and Electoral Processes in Nigeria",Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,ESS327,Introduction To Social Care II,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,ESS328,Socialization and Family Life Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+300 Level,Second Semester,SAA324,Urban Sociology,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,EDU 401,Supervised Teaching Practice II,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,EDU411,Educational Measurement and Evaluation,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,EDU 412,Introduction to Educational Management,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,ESS411,International Relations,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,ESS412,Issues in National Development,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,ESS413,Emerging Social Issues as Priorities and Contents in Civic and Social Studies Education,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,First Semester,ESS414,The Nigerian Economy,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,EDU400,Research Project,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,ESS421,Social Life and Party Politics in Nigeria,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,ESS422,Nigeria in International Organization,Social Studies and Civic Education,Curriculm and Instruction Technology,Faculty of Education
+400 Level,Second Semester,ESS423,Field Trip and Long Essay,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,ESS424,Global Development Agenda,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,ESS425,Challenges and Prospects for Teaching Civic Education in Secondary Schools,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,ESS426,Colonial Experiences and Development in Africa,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,ESS427,Political History of Nigeria,Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
+400 Level,Second Semester,ESS428,"Community, Culture and Social Stability",Social Studies and Civic Education,Curriculum and Instruction Technology,Faculty of Education
