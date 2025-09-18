@@ -30,4 +30,6 @@ urlpatterns = [
     path("api/", include("api.urls")),
     path("api/core/", include("core.urls")),   # if you have a courses app
     path("api/accounts/", include("accounts.urls")),   # if you create accounts app below
+    path("ai/", include("aiassistant.urls")),
 ]
+

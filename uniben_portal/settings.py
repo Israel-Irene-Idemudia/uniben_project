@@ -156,3 +156,6 @@ import os
 ONESIGNAL_APP_ID = "34ebccc1-0042-4256-ad0e-0d2dd167da43"
 ONESIGNAL_REST_API_KEY = "os_v2_app_gtv4zqiaijbfnliobuw5cz62ionoo2yiekbu43fnqodkxoc6bsjrfloge2aeomukcdrtsvfvxrfru2vzj5pyi5xkv4eelnwwf4lrc5q"
 
+
+
+DEEPSEEK_API_KEY = "your_actual_deepseek_api_key_here"
