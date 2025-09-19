@@ -1,14 +1,24 @@
 asgiref==3.9.1
+certifi==2025.8.3
+charset-normalizer==3.4.3
 Django==5.2.4
+django-cors-headers==4.9.0
 djangorestframework==3.16.0
 djangorestframework_simplejwt==5.5.1
+idna==3.10
+lxml==6.0.1
+packaging==25.0
+pdf2image==1.17.0
+pillow==11.3.0
+psycopg2-binary==2.9.10
 PyJWT==2.10.1
+PyPDF2==3.0.1
+pytesseract==0.3.13
+python-docx==1.2.0
+requests==2.32.5
+setuptools==80.9.0
 sqlparse==0.5.3
+typing_extensions==4.15.0
 tzdata==2025.2
-
-# Deployment & production extras
-gunicorn==23.0.0              # WSGI server (needed in production)
-whitenoise==6.8.2             # Serve static files efficiently
-django-cors-headers==4.6.0    # Allow frontend to access backend API
-python-dotenv==1.0.1          # Manage environment variables easily
-psycopg2-binary==2.9.9        # PostgreSQL database driver
+urllib3==2.5.0
+wheel==0.45.1
