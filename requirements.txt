@@ -5,3 +5,10 @@ djangorestframework_simplejwt==5.5.1
 PyJWT==2.10.1
 sqlparse==0.5.3
 tzdata==2025.2
+
+# Deployment & production extras
+gunicorn==23.0.0              # WSGI server (needed in production)
+whitenoise==6.8.2             # Serve static files efficiently
+django-cors-headers==4.6.0    # Allow frontend to access backend API
+python-dotenv==1.0.1          # Manage environment variables easily
+psycopg2-binary==2.9.9        # PostgreSQL database driver
