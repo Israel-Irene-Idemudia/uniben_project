@@ -31,24 +31,27 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
+    # Django Core Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-Party Apps
     'rest_framework',
+    'rest_framework_simplejwt',
+    'corsheaders',
+
+    # Your Local Apps
+    'accounts',
+    'api',
     'core',
-    'news',
+    'cbt',
     'events',
     'materials',
-    'cbt',
-    'corsheaders',
-    'api',
-    'rest_framework_simplejwt',
-    'rest_framework.authtoken',
-    'accounts',
+    'news',
     'notifications',
 ]
 
@@ -172,3 +175,5 @@ AUTHENTICATION_BACKENDS = [
     # This is the default Django backend
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+
