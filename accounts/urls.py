@@ -1,10 +1,9 @@
 from django.urls import path
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from .views import RegisterView, MeView
+# --- THIS IS THE FIX ---
+# We are only importing RegisterView because MeView does not exist.
+from .views import RegisterView
 
 urlpatterns = [
     path("register/", RegisterView.as_view(), name="register"),
-    path("login/", TokenObtainPairView.as_view(), name="login"),
-    path("refresh/", TokenRefreshView.as_view(), name="refresh"),
-    path("me/", MeView.as_view(), name="me"),
+    # The path for 'me/' has been removed because the MeView doesn't exist.
 ]

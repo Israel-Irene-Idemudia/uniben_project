@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -159,3 +161,7 @@ ONESIGNAL_REST_API_KEY = "os_v2_app_gtv4zqiaijbfnliobuw5cz62ionoo2yiekbu43fnqodk
 
 
 DEEPSEEK_API_KEY = "your_actual_deepseek_api_key_here"
+
+# at the bottom of settings.py
+
+CORS_ALLOW_ALL_ORIGINS = True
