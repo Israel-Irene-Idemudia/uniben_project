@@ -18,27 +18,32 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenRefreshView
 
-# --- THIS IS THE CRUCIAL LINE ---
-# It imports the custom login view we created in the 'accounts' app,
-# which allows this file to find and use 'MyTokenObtainPairView'.
+# --- This is the crucial import ---
+# It tells this file where to find the custom login view we created in the 'accounts' app.
 from accounts.views import MyTokenObtainPairView
 
 urlpatterns = [
+    # Django Admin Site
     path('admin/', admin.site.urls),
+
+    # API endpoints for different apps
     path('api/', include('news.urls')),
     path('api/', include('events.urls')),
     path('api/', include('materials.urls')),
     path('api/cbt/', include('cbt.urls')),
-
-    # This line now works correctly because we imported MyTokenObtainPairView above.
-    path("api/token/", MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
-    
-    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/", include("api.urls")),
     path("api/core/", include("core.urls")),
-    path("api/accounts/", include("accounts.urls")),
     path("ai/", include("aiassistant.urls")),
+    
+    # --- Authentication Endpoints ---
+    
+    # This path now correctly uses our custom view for logging in.
+    path("api/token/", MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
+    
+    # This path uses the default view for refreshing an authentication token.
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    
+    # This includes all URLs from the 'accounts' app, such as '/register/'.
+    path("api/accounts/", include("accounts.urls")),
 ]
-
-
 

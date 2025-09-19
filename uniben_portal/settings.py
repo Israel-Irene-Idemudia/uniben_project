@@ -165,3 +165,10 @@ DEEPSEEK_API_KEY = "your_actual_deepseek_api_key_here"
 # at the bottom of settings.py
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+AUTHENTICATION_BACKENDS = [
+    # This is our new, custom backend
+    'accounts.backends.EmailOrUsernameBackend',
+    # This is the default Django backend
+    'django.contrib.auth.backends.ModelBackend',
+]

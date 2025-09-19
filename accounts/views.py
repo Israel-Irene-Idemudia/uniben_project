@@ -5,6 +5,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny
+
+# Correctly imports RegisterSerializer from the serializers.py file
 from .serializers import RegisterSerializer
 
 UserModel = get_user_model()
@@ -41,7 +43,10 @@ class MyTokenObtainPairView(TokenObtainPairView):
 class RegisterView(APIView):
     """
     Handles new user registration.
+    This view is set to allow any user (even unauthenticated ones) to access it.
     """
+    permission_classes = [AllowAny]
+    
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
@@ -51,6 +56,4 @@ class RegisterView(APIView):
                 "email": serializer.data.get('email'),
             }, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    permission_classes = [AllowAny]
 
