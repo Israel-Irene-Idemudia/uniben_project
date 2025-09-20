@@ -142,7 +142,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOW_ALL_ORIGINS = True  # ⚠️ only for development!
 
-# AUTH_USER_MODEL = 'accounts.CustomUser'
+#AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -165,7 +165,6 @@ ONESIGNAL_REST_API_KEY = "os_v2_app_gtv4zqiaijbfnliobuw5cz62ionoo2yiekbu43fnqodk
 
 DEEPSEEK_API_KEY = "your_actual_deepseek_api_key_here"
 
-# at the bottom of settings.py
 
 CORS_ALLOW_ALL_ORIGINS = True
 
