@@ -4,7 +4,7 @@ from .models import Event
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('title', 'start_time', 'end_time', 'location', 'image_preview')
+    list_display = ('title', 'event_date', 'location', 'image_preview')
 
     def image_preview(self, obj):
         if obj.image:
