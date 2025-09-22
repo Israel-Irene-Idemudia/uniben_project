@@ -21,3 +21,11 @@ env/
 # Ignore IDE settings
 .vscode/
 .idea/
+
+# Ignore OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Ignore local environment files
+*.env
+.env
