@@ -8,8 +8,7 @@ db.sqlite3
 # Ignore media uploads (user files)
 media/
 
-# Ignore collected static files
-staticfiles/
+
 
 # Ignore virtual environments
 venv/
