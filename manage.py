@@ -20,3 +20,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+if "RUN_SUPERUSER" in os.environ:
+        import create_superuser
+        create_superuser.run()
