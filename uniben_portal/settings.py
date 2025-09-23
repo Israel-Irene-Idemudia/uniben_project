@@ -215,19 +215,3 @@ AUTHENTICATION_BACKENDS = [
 # Media files (for user uploads like PDFs, images, etc.)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-import os
-from django.contrib.auth import get_user_model
-
-if os.environ.get("CREATE_SUPERUSER", "") == "true":
-    try:
-        User = get_user_model()
-        if not User.objects.filter(username="admin").exists():
-            User.objects.create_superuser(
-                username="problem_solvers",
-                email="admin@example.com",
-                password="problemsolvers"
-            )
-            print("✅ Superuser created:problem_solvers / problemsolvers")
-    except Exception as e:
-        print(f"⚠️ Error creating superuser: {e}")
