@@ -111,6 +111,7 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 # --- DATABASE: default SQLite for local dev, override when DATABASE_URL exists ---
+"""""
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -121,6 +122,26 @@ DATABASES = {
 DATABASE_URL = os.environ.get("DATABASE_URL")
 if DATABASE_URL:
     DATABASES["default"] = dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=True)
+"""
+"""
+DATABASES = {
+    "default": dj_database_url.config(
+        default="postgres://uniben_user:problemsolvers@localhost:5432/uniben_db",
+        conn_max_age=600,
+    )
+}
+"""
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "uniben_db",
+        "USER": "uniben_user",
+        "PASSWORD": "problemsolvers",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
+}
+
 
 # --- STATIC (WhiteNoise) ---
 import os
