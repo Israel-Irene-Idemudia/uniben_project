@@ -16,8 +16,17 @@ else
     echo "⚠️ No initial_data.json found, skipping loaddata step."
 fi
 
+# 3b. Load CBT questions if the fixture exists
+if [ -f "cbt_questions.json" ]; then
+    echo "📥 Loading CBT questions from cbt_questions.json..."
+    python3 manage.py loaddata cbt_questions.json || true
+else
+    echo "⚠️ No cbt_questions.json found, skipping CBT data load."
+fi
+
 # 4. Collect static files
 python3 manage.py collectstatic --noinput
 
 # 5. (Optional) Run your own script for superuser creation
 python3 manage.py shell -c "import create_superuser; create_superuser.run()" || true
+
