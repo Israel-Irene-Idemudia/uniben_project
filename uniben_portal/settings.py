@@ -110,6 +110,8 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 # Use an env var for allowed hosts (comma-separated)
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
+ALLOWED_HOSTS = ["skholar.onrender.com", "localhost", "127.0.0.1"]
+
 # --- DATABASE: default SQLite for local dev, override when DATABASE_URL exists ---
 """""
 DATABASES = {
