@@ -152,7 +152,18 @@ DATABASES = {
     }
 }
 """
-
+# If DATABASE_URL is not set (local dev), fall back to manual config
+if not os.environ.get("DATABASE_URL"):
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "uniben_db",      # your local db name
+            "USER": "uniben_user",    # your local db user
+            "PASSWORD": "problemsolvers",  # your local db password
+            "HOST": "localhost",
+            "PORT": "5432",
+        }
+    }
 # --- STATIC (WhiteNoise) ---
 import os
 

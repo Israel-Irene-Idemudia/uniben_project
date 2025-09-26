@@ -6,3 +6,6 @@ pip install -r requirements.txt
 
 python manage.py migrate --noinput
 python manage.py collectstatic --noinput
+
+# Create superuser if not exists
+python manage.py shell -c "import create_superuser; create_superuser.run()"
