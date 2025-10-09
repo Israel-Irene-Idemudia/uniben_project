@@ -255,7 +255,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 # Media files (for user uploads like PDFs, images, etc.)
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media/materials/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
