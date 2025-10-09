@@ -255,8 +255,8 @@ AUTHENTICATION_BACKENDS = [
 
 
 # Media files (for user uploads like PDFs, images, etc.)
-MEDIA_URL = '/materials/material/'
-MEDIA_ROOT = BASE_DIR / 'materials'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 import sys
