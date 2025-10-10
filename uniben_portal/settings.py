@@ -294,7 +294,7 @@ CLOUDINARY_STORAGE = {
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_URL = 'https://res.cloudinary.com/dsrepnl1c/'
+#MEDIA_URL = 'https://res.cloudinary.com/dsrepnl1c/'
 
 
 import sys
