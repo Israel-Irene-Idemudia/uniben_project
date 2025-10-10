@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'materials',
     'news',
     'notifications',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -255,8 +257,44 @@ AUTHENTICATION_BACKENDS = [
 
 
 # Media files (for user uploads like PDFs, images, etc.)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = BASE_DIR / 'media'
+
+""""
+CLOUDINARY_URL = 'cloudinary://<817612193932414>:<IPkq5LMtmfPV3isOqnQRhUp63QU>@dsrepnl1c'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dsrepnl1c',
+    'API_KEY': '842995521482586',
+    'API_SECRET': 'GeEOVDevkxI5fcveE34IkT8fcxo',
+}
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dsrepnl1c',
+    'API_KEY': '817612193932414',
+    'API_SECRET': 'IPkq5LMtmfPV3isOqnQRhUp63QU',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+
+"""
+# ============================
+# 📸 Cloudinary Configuration
+# ============================
+CLOUDINARY_URL = 'cloudinary://817612193932414:IPkq5LMtmfPV3isOqnQRhUp63QU@dsrepnl1c'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dsrepnl1c',
+    'API_KEY': '817612193932414',
+    'API_SECRET': 'IPkq5LMtmfPV3isOqnQRhUp63QU',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MEDIA_URL = 'https://res.cloudinary.com/dsrepnl1c/'
 
 
 import sys
@@ -275,3 +313,5 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
+print("Default storage:", DEFAULT_FILE_STORAGE)
