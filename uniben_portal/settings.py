@@ -261,12 +261,12 @@ AUTHENTICATION_BACKENDS = [
 #MEDIA_ROOT = BASE_DIR / 'media'
 
 """"
-CLOUDINARY_URL = 'cloudinary://<817612193932414>:<IPkq5LMtmfPV3isOqnQRhUp63QU>@dsrepnl1c'
+CLOUDINARY_URL = 'cloudinary://<342264455361488>:<nGauwKW5KJy8ENqdkAB-nM86H0s>@dsrepnl1c'
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dsrepnl1c',
-    'API_KEY': '842995521482586',
-    'API_SECRET': 'GeEOVDevkxI5fcveE34IkT8fcxo',
+    'API_KEY': '342264455361488',
+    'API_SECRET': 'nGauwKW5KJy8ENqdkAB-nM86H0s',
 }
 
 
@@ -283,12 +283,12 @@ STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 # ============================
 # 📸 Cloudinary Configuration
 # ============================
-CLOUDINARY_URL = 'cloudinary://817612193932414:IPkq5LMtmfPV3isOqnQRhUp63QU@dsrepnl1c'
+CLOUDINARY_URL = 'cloudinary://342264455361488:nGauwKW5KJy8ENqdkAB-nM86H0s@dsrepnl1c'
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dsrepnl1c',
-    'API_KEY': '817612193932414',
-    'API_SECRET': 'IPkq5LMtmfPV3isOqnQRhUp63QU',
+    'API_KEY': '342264455361488',
+    'API_SECRET': 'nGauwKW5KJy8ENqdkAB-nM86H0s',
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
