@@ -78,4 +78,3 @@ def get_queryset(self):
 
     # No filters provided → return nothing (prevents dumping all courses)
     return qs.none()
-    
