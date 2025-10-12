@@ -1,26 +1,22 @@
 from django.db import models
 from django.conf import settings
+from cloudinary_storage.storage import MediaCloudinaryStorage
 
 class News(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     image = models.ImageField(
         upload_to='news_images/',
-        null=True,
+        storage=MediaCloudinaryStorage(),
         blank=True,
+        null=True,
         help_text="Optional image for the news."
     )
 
-    # Visibility
-    for_all = models.BooleanField(
-        default=False,
-        help_text="Check this if everyone should see this news (overrides faculty/department/level)."
-    )
+    for_all = models.BooleanField(default=False)
     faculty = models.ForeignKey("core.Faculty", on_delete=models.CASCADE, null=True, blank=True)
     department = models.ForeignKey("core.Department", on_delete=models.CASCADE, null=True, blank=True)
     level = models.ForeignKey("core.Level", on_delete=models.CASCADE, null=True, blank=True)
-
-    # Optional author
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
