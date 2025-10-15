@@ -10373,7 +10373,7 @@
   "model": "core.course",
   "pk": 1048,
   "fields": {
-    "code": "GCE 312",
+    "code": "GCE 311",
     "title": "Career Counselling, Job Analysis and Job Evaluation",
     "level": 65
   }
@@ -10709,15 +10709,6 @@
     "code": "GCE 426",
     "title": "Leadership Development",
     "level": 66
-  }
-},
-{
-  "model": "core.course",
-  "pk": 1086,
-  "fields": {
-    "code": "Course Code",
-    "title": "Course Title",
-    "level": 58
   }
 },
 {
