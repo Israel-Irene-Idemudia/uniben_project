@@ -1,13 +1,10 @@
-# core/management/commands/import_courses_from_csv.py
-
+# core/management/commands/import_courses_clean.py
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from core.models import Faculty, Department, CourseArea, Level, Course
-import csv
-import os
 
 class Command(BaseCommand):
-    help = "Import courses from a CSV with headers: Level, Semester, Course Code, Course Title, Course Area, Department, Faculty"
+    help = "Import courses from CSV with detailed logging"
 
     def add_arguments(self, parser):
         parser.add_argument(
@@ -15,107 +12,93 @@ class Command(BaseCommand):
             required=True,
             help="Path to CSV file",
         )
-        parser.add_argument(
-            "--update",
-            action="store_true",
-            help="Update course title if a course with the same (level, code) already exists",
-        )
-        parser.add_argument(
-            "--encoding",
-            default="utf-8",
-            help="CSV encoding (default: utf-8)",
-        )
+
+    def clean_text(self, text):
+        return text.strip() if text else ""
 
     @transaction.atomic
     def handle(self, *args, **opts):
+        import csv
         path = opts["path"]
-        update = opts["update"]
-        encoding = opts["encoding"]
+        
+        created_counts = {
+            'faculty': 0,
+            'department': 0,
+            'course_area': 0,
+            'level': 0,
+            'course': 0
+        }
 
-        if not os.path.exists(path):
-            self.stderr.write(self.style.ERROR(f"File not found: {path}"))
-            return
-
-        created_fac = created_dep = created_area = created_lvl = created_crs = 0
-        updated_crs = 0
-        total_rows = 0
-
-        with open(path, "r", encoding=encoding, newline="") as f:
+        with open(path, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
-            required_headers = [
-                "Level",
-                "Semester",       # we will read but not store (you can add later if needed)
-                "Course Code",
-                "Course Title",
-                "Course Area",    # may be empty
-                "Department",
-                "Faculty",
-            ]
-            missing = [h for h in required_headers if h not in (reader.fieldnames or [])]
-            if missing:
-                self.stderr.write(self.style.ERROR(f"CSV missing headers: {', '.join(missing)}"))
-                return
+            
+            for row in reader:
+                # Clean data
+                faculty_name = self.clean_text(row['Faculty'])
+                department_name = self.clean_text(row['Department'])
+                course_area_name = self.clean_text(row['Course Area'])
+                level_name = self.clean_text(row['Level'])
+                course_code = self.clean_text(row['Course Code'])
+                course_title = self.clean_text(row['Course Title'])
 
-            for row_idx, row in enumerate(reader, start=2):
-                total_rows += 1
-
-                level_name = (row.get("Level") or "").strip()          # e.g., "100L"
-                # semester = (row.get("Semester") or "").strip()       # read if needed later
-                code = (row.get("Course Code") or "").strip().upper()
-                title = (row.get("Course Title") or "").strip()
-                course_area_name = (row.get("Course Area") or "").strip()
-                department_name = (row.get("Department") or "").strip()
-                faculty_name = (row.get("Faculty") or "").strip()
-
-                if not (level_name and code and title and department_name and faculty_name):
-                    self.stderr.write(self.style.WARNING(f"Row {row_idx}: missing required values; skipped"))
-                    continue
-
-                # Faculty
-                faculty, fac_created = Faculty.objects.get_or_create(name=faculty_name)
-                if fac_created:
-                    created_fac += 1
-
-                # Department (scoped by faculty)
-                department, dep_created = Department.objects.get_or_create(
-                    name=department_name, faculty=faculty
-                )
-                if dep_created:
-                    created_dep += 1
-
-                # Course area (optional)
-                course_area = None
-                if course_area_name:
-                    course_area, area_created = CourseArea.objects.get_or_create(
-                        name=course_area_name, department=department
+                try:
+                    # Create Faculty
+                    faculty, created = Faculty.objects.get_or_create(
+                        name=faculty_name
                     )
-                    if area_created:
-                        created_area += 1
+                    if created:
+                        created_counts['faculty'] += 1
+                        self.stdout.write(f"Created faculty: {faculty_name}")
 
-                # Level (scoped by department + course_area)
-                level, lvl_created = Level.objects.get_or_create(
-                    name=level_name,
-                    department=department,
-                    course_area=course_area,
-                )
-                if lvl_created:
-                    created_lvl += 1
+                    # Create Department
+                    department, created = Department.objects.get_or_create(
+                        name=department_name,
+                        faculty=faculty
+                    )
+                    if created:
+                        created_counts['department'] += 1
+                        self.stdout.write(f"Created department: {department_name}")
 
-                # Course (unique by level + code)
-                course, crs_created = Course.objects.get_or_create(
-                    level=level,
-                    code=code,
-                    defaults={"title": title},
-                )
-                if crs_created:
-                    created_crs += 1
-                elif update and course.title != title:
-                    course.title = title
-                    course.save(update_fields=["title"])
-                    updated_crs += 1
+                    # Create Course Area
+                    course_area = None
+                    if course_area_name:
+                        course_area, created = CourseArea.objects.get_or_create(
+                            name=course_area_name,
+                            department=department
+                        )
+                        if created:
+                            created_counts['course_area'] += 1
+                            self.stdout.write(f"Created course area: {course_area_name}")
 
-        self.stdout.write(self.style.SUCCESS("Import complete"))
-        self.stdout.write(f"Rows processed: {total_rows}")
-        self.stdout.write(f"Created: Faculty={created_fac}, Department={created_dep}, CourseArea={created_area}, Level={created_lvl}, Course={created_crs}")
-        if update:
-            self.stdout.write(f"Updated course titles: {updated_crs}")
+                    # Create Level
+                    level, created = Level.objects.get_or_create(
+                        name=level_name,
+                        department=department,
+                        course_area=course_area
+                    )
+                    if created:
+                        created_counts['level'] += 1
+                        self.stdout.write(f"Created level: {level_name} for {department_name}")
+
+                    # Create Course
+                    course, created = Course.objects.get_or_create(
+                        code=course_code,
+                        level=level,
+                        defaults={'title': course_title}
+                    )
+                    if created:
+                        created_counts['course'] += 1
+                        self.stdout.write(f"Created course: {course_code} - {course_title}")
+
+                except Exception as e:
+                    self.stdout.write(self.style.ERROR(
+                        f"Error processing row: {row}\nError: {str(e)}"
+                    ))
+
+        # Print summary
+        self.stdout.write(self.style.SUCCESS("\nImport Summary:"))
+        self.stdout.write(f"Faculties created: {created_counts['faculty']}")
+        self.stdout.write(f"Departments created: {created_counts['department']}")
+        self.stdout.write(f"Course Areas created: {created_counts['course_area']}")
+        self.stdout.write(f"Levels created: {created_counts['level']}")
+        self.stdout.write(f"Courses created: {created_counts['course']}")
