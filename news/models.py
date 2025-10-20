@@ -1,11 +1,13 @@
 from django.db import models
 from django.conf import settings
+from cloudinary_storage.storage import MediaCloudinaryStorage  # ✅ import Cloudinary storage
 
 class News(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     image = models.ImageField(
         upload_to='news_images/',
+        storage=MediaCloudinaryStorage(),  # ✅ Explicitly use Cloudinary
         null=True,
         blank=True,
         help_text="Optional image for the news."
