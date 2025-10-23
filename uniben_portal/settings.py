@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'cloudinary',
     'cloudinary_storage',
-    'django_filters',
 
     # Local Apps
     'accounts',
@@ -152,9 +151,6 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticatedOrReadOnly",
     ),
-    'DEFAULT_FILTER_BACKENDS': [
-        'django_filters.rest_framework.DjangoFilterBackend'
-    ],
 }
 
 
@@ -242,3 +238,4 @@ try:
     print("✅ Default storage manually switched to:", storage_module.default_storage.__class__)
 except Exception as e:
     print("⚠️ Cloudinary setup issue:", e)
+
