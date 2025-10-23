@@ -5,12 +5,14 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Course, Question
 from .serializers import CourseSerializer, QuestionSerializer
-
+import django_filters.rest_framework
 
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+    filterset_fields = ['department__faculty__name', 'department__name', 'level']
 
     # GET /api/courses/{id}/questions/
     @action(detail=True, methods=["get"])
