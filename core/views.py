@@ -39,16 +39,11 @@ class CourseViewSet(ReadOnlyModelViewSet):
         course_area_id = as_int('course_area_id')
         level_id = as_int('level_id')
 
-        faculty_name = as_str('faculty__name')
-        department_name = as_str('department__name')
+        # FIX: Use correct query param names sent from the app
+        faculty_name = as_str('faculty_name')
+        department_name = as_str('department_name')
         course_area_name = as_str('course_area')
         level_param = as_str('level')  # e.g., "100"
-
-        level_name = None
-        if level_param and level_param.isdigit():
-            level_name = f"{level_param}L"
-        elif level_param:
-            level_name = level_param
 
         q = Q()
 
@@ -76,8 +71,9 @@ class CourseViewSet(ReadOnlyModelViewSet):
         # Level (ID or name like "100L")
         if level_id:
             q &= Q(level_id=level_id)
-        elif level_name:
-            q &= Q(level__name__iexact=level_name)
+        # FIX: Use istartswith for more flexible matching (e.g., "100" matches "100L")
+        elif level_param:
+            q &= Q(level__name__istartswith=level_param)
 
         # If we have at least one filter, return filtered results
         if q.children:
