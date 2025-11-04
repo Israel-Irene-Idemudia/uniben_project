@@ -1,4 +1,4 @@
-if thfrom django.db.models import Q
+from django.db.models import Q
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import AllowAny
 
