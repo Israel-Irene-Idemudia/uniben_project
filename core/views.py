@@ -1,3 +1,4 @@
+
 from django.db.models import Q
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import AllowAny
@@ -38,10 +39,16 @@ class CourseViewSet(ReadOnlyModelViewSet):
         course_area_id = as_int('course_area_id')
         level_id = as_int('level_id')
 
-        faculty_name = as_str('faculty')
-        department_name = as_str('department')
+        faculty_name = as_str('faculty__name')
+        department_name = as_str('department__name')
         course_area_name = as_str('course_area')
-        level_name = as_str('level')  # e.g., "100L"
+        level_param = as_str('level')  # e.g., "100"
+
+        level_name = None
+        if level_param and level_param.isdigit():
+            level_name = f"{level_param}L"
+        elif level_param:
+            level_name = level_param
 
         q = Q()
 
