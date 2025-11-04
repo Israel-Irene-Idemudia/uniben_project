@@ -1,4 +1,4 @@
-from django.db.models import Q
+if thfrom django.db.models import Q
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import AllowAny
 
@@ -45,18 +45,17 @@ class CourseViewSet(ReadOnlyModelViewSet):
 
         q = Q()
 
-        # Department (ID or name). Department takes precedence over faculty.
+        # Faculty (ID or name)
+        if faculty_id:
+            q &= Q(level__department__faculty_id=faculty_id)
+        elif faculty_name:
+            q &= Q(level__department__faculty__name__iexact=faculty_name)
+
+        # Department (ID or name)
         if department_id:
             q &= Q(level__department_id=department_id)
         elif department_name:
             q &= Q(level__department__name__iexact=department_name)
-
-        # Faculty (only if department wasn’t given)
-        if not (department_id or department_name):
-            if faculty_id:
-                q &= Q(level__department__faculty_id=faculty_id)
-            elif faculty_name:
-                q &= Q(level__department__faculty__name__iexact=faculty_name)
 
         # Course area (ID or name)
         if course_area_id is not None:
