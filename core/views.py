@@ -39,7 +39,6 @@ class CourseViewSet(ReadOnlyModelViewSet):
         course_area_id = as_int('course_area_id')
         level_id = as_int('level_id')
 
-        # FIX: Use correct query param names sent from the app
         faculty_name = as_str('faculty_name')
         department_name = as_str('department_name')
         course_area_name = as_str('course_area')
@@ -47,17 +46,19 @@ class CourseViewSet(ReadOnlyModelViewSet):
 
         q = Q()
 
+        # FIX: Use `icontains` for more flexible, robust matching.
+
         # Faculty (ID or name)
         if faculty_id:
             q &= Q(level__department__faculty_id=faculty_id)
         elif faculty_name:
-            q &= Q(level__department__faculty__name__iexact=faculty_name)
+            q &= Q(level__department__faculty__name__icontains=faculty_name)
 
         # Department (ID or name)
         if department_id:
             q &= Q(level__department_id=department_id)
         elif department_name:
-            q &= Q(level__department__name__iexact=department_name)
+            q &= Q(level__department__name__icontains=department_name)
 
         # Course area (ID or name)
         if course_area_id is not None:
@@ -66,12 +67,11 @@ class CourseViewSet(ReadOnlyModelViewSet):
             if course_area_name.lower() in ('none', 'null', 'n/a'):
                 q &= Q(level__course_area__isnull=True)
             else:
-                q &= Q(level__course_area__name__iexact=course_area_name)
+                q &= Q(level__course_area__name__icontains=course_area_name)
 
         # Level (ID or name like "100L")
         if level_id:
             q &= Q(level_id=level_id)
-        # FIX: Use istartswith for more flexible matching (e.g., "100" matches "100L")
         elif level_param:
             q &= Q(level__name__istartswith=level_param)
 
