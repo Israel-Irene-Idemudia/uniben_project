@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Faculty, Department, CourseArea, Level, Course
+
 @admin.register(Faculty)
 class FacultyAdmin(admin.ModelAdmin):
     list_display = ("name",)
@@ -18,6 +19,7 @@ class CourseAreaAdmin(admin.ModelAdmin):
 class LevelAdmin(admin.ModelAdmin):
     list_display = ("name", "department", "course_area")
     list_filter = ("department",)
+    fields = ['name', 'department', 'course_area']  # This line adds the fields to the form
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):

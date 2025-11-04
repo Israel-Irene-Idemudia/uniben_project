@@ -13,7 +13,7 @@ class Department(models.Model):
     faculty = models.ForeignKey('core.Faculty', on_delete=models.CASCADE, related_name='departments')
 
     def __str__(self):
-        return self.name
+        return f"{self.faculty.name} - {self.name}"
 
 
 class CourseArea(models.Model):  # optional (for departments that have areas)
