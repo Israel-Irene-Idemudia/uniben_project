@@ -1,9 +1,8 @@
 from django.urls import path
-# --- THIS IS THE FIX ---
-# We are only importing RegisterView because MeView does not exist.
-from .views import RegisterView
+from .views import RegisterView, UpdateProfileView, MeView
 
 urlpatterns = [
     path("register/", RegisterView.as_view(), name="register"),
-    # The path for 'me/' has been removed because the MeView doesn't exist.
+    path('me/', MeView.as_view(), name='me'),
+    path("profile/update/", UpdateProfileView.as_view(), name="update_profile"),
 ]
