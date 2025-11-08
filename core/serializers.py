@@ -1,6 +1,7 @@
 # core/serializers.py
 from rest_framework import serializers
-from core.models import Faculty, Department, CourseArea, Course
+# Import the Level model
+from core.models import Faculty, Department, CourseArea, Level, Course
 
 class FacultySerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,6 +16,12 @@ class DepartmentSerializer(serializers.ModelSerializer):
 class CourseAreaSerializer(serializers.ModelSerializer):
     class Meta:
         model = CourseArea
+        fields = ['id', 'name']
+
+# --- NEW: The missing LevelSerializer ---
+class LevelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Level
         fields = ['id', 'name']
 
 class CourseSerializer(serializers.ModelSerializer):
