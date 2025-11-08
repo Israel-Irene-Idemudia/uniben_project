@@ -49,11 +49,11 @@ class CourseAreaViewSet(ReadOnlyModelViewSet):
         return qs
 
 
-# --- Corrected CourseViewSet using IDs ---
+# --- Corrected CourseViewSet using Names ---
 
 class CourseViewSet(ReadOnlyModelViewSet):
     """
-    Filters courses based on provided IDs for faculty, department,
+    Filters courses based on provided names for faculty, department,
     and optionally course_area, plus the level name.
     """
     serializer_class = CourseSerializer
@@ -66,37 +66,30 @@ class CourseViewSet(ReadOnlyModelViewSet):
 
         params = self.request.query_params
 
-        # --- Get and validate required ID parameters ---
-        try:
-            faculty_id = int(params.get('faculty_id'))
-            department_id = int(params.get('department_id'))
-            level_param = params.get('level', '').strip()
-        except (ValueError, TypeError):
-            # If required IDs are missing or not integers, return no results.
+        # --- Get and validate required NAME parameters ---
+        faculty_name = params.get('faculty__name', '').strip()
+        department_name = params.get('department__name', '').strip()
+        level_param = params.get('level', '').strip()
+
+        if not all([faculty_name, department_name, level_param]):
+            # If required names are missing, return no results.
             return qs.none()
 
-        if not level_param:
-            return qs.none()
-
-        # --- Build the filter using precise IDs ---
+        # --- Build the filter using names (case-insensitive) ---
         final_qs = qs.filter(
-            level__department__faculty_id=faculty_id,
-            level__department_id=department_id,
+            level__department__faculty__name__iexact=faculty_name,
+            level__department__name__iexact=department_name,
         )
 
-        # --- Handle optional Course Area ID ---
-        course_area_id_str = params.get('course_area_id', '').strip()
-        if course_area_id_str and course_area_id_str.lower() not in ('null', 'none', ''):
-            try:
-                course_area_id = int(course_area_id_str)
-                final_qs = final_qs.filter(level__course_area_id=course_area_id)
-            except (ValueError, TypeError):
-                return qs.none()  # Invalid course_area_id.
+        # --- Handle optional Course Area name ---
+        course_area_name = params.get('course_area', '').strip()
+        if course_area_name and course_area_name.lower() not in ('null', 'none', ''):
+            final_qs = final_qs.filter(level__course_area__name__iexact=course_area_name)
         else:
-            # If no course area ID is provided, find courses where it's not set.
+            # If no course area name is provided, find courses where it's not set.
             final_qs = final_qs.filter(level__course_area__isnull=True)
 
-        # --- Filter by Level name ---
+        # --- Filter by Level name (handles "100" and "100L") ---
         final_qs = final_qs.filter(
             Q(level__name__iexact=level_param) | Q(level__name__iexact=f'{level_param}L')
         )
