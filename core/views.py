@@ -8,21 +8,15 @@ from core.models import Faculty, Department, CourseArea, Level, Course
 from core.serializers import FacultySerializer, DepartmentSerializer, CourseAreaSerializer, CourseSerializer
 
 
-# --- New ViewSets to expose IDs ---
+# --- ViewSets for listing Faculties, Departments, and Course Areas ---
 
 class FacultyViewSet(ReadOnlyModelViewSet):
-    """
-    Provides a read-only list of all faculties.
-    """
     queryset = Faculty.objects.all()
     serializer_class = FacultySerializer
     permission_classes = [AllowAny]
 
 
 class DepartmentViewSet(ReadOnlyModelViewSet):
-    """
-    Provides a read-only list of departments, filterable by faculty_id.
-    """
     serializer_class = DepartmentSerializer
     permission_classes = [AllowAny]
 
@@ -35,9 +29,6 @@ class DepartmentViewSet(ReadOnlyModelViewSet):
 
 
 class CourseAreaViewSet(ReadOnlyModelViewSet):
-    """
-    Provides a read-only list of course areas, filterable by department_id.
-    """
     serializer_class = CourseAreaSerializer
     permission_classes = [AllowAny]
 
@@ -49,11 +40,11 @@ class CourseAreaViewSet(ReadOnlyModelViewSet):
         return qs
 
 
-# --- Corrected CourseViewSet using Names ---
+# --- Corrected CourseViewSet using IDs ---
 
 class CourseViewSet(ReadOnlyModelViewSet):
     """
-    Filters courses based on provided names for faculty, department,
+    Filters courses based on provided IDs for faculty, department,
     and optionally course_area, plus the level name.
     """
     serializer_class = CourseSerializer
@@ -66,27 +57,27 @@ class CourseViewSet(ReadOnlyModelViewSet):
 
         params = self.request.query_params
 
-        # --- Get and validate required NAME parameters ---
-        faculty_name = params.get('faculty__name', '').strip()
-        department_name = params.get('department__name', '').strip()
+        # --- Get and validate required ID and NAME parameters ---
+        faculty_id = params.get('faculty_id')
+        department_id = params.get('department_id')
         level_param = params.get('level', '').strip()
 
-        if not all([faculty_name, department_name, level_param]):
-            # If required names are missing, return no results.
+        # If required parameters are missing, return no results to prevent errors.
+        if not all([faculty_id, department_id, level_param]):
             return qs.none()
 
-        # --- Build the filter using names (case-insensitive) ---
+        # --- Build the filter using IDs ---
         final_qs = qs.filter(
-            level__department__faculty__name__iexact=faculty_name,
-            level__department__name__iexact=department_name,
+            level__department__faculty_id=faculty_id,
+            level__department_id=department_id
         )
 
-        # --- Handle optional Course Area name ---
-        course_area_name = params.get('course_area', '').strip()
-        if course_area_name and course_area_name.lower() not in ('null', 'none', ''):
-            final_qs = final_qs.filter(level__course_area__name__iexact=course_area_name)
+        # --- Handle optional Course Area ID ---
+        course_area_id = params.get('course_area_id')
+        if course_area_id:
+            final_qs = final_qs.filter(level__course_area_id=course_area_id)
         else:
-            # If no course area name is provided, find courses where it's not set.
+            # If no course area ID is provided, find courses where it's not set.
             final_qs = final_qs.filter(level__course_area__isnull=True)
 
         # --- Filter by Level name (handles "100" and "100L") ---
