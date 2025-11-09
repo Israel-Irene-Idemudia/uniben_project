@@ -1,19 +1,18 @@
-# accounts/models.py
+
 from django.db import models
 from django.conf import settings
+from core.models import Faculty, Department, Level, CourseArea
 
-
-class Faculty(models.Model):
+class UserProfile(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        unique=True,
-        null=True,   # ✅ allow missing user for now
-        blank=True   # ✅ allow admin save without user
+        related_name='profile'
     )
-    department = models.CharField(max_length=100)
-    course_area = models.CharField(max_length=100)
-    level = models.CharField(max_length=50)
+    faculty = models.ForeignKey(Faculty, on_delete=models.SET_NULL, null=True, blank=True)
+    department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, blank=True)
+    level = models.ForeignKey(Level, on_delete=models.SET_NULL, null=True, blank=True)
+    course_area = models.ForeignKey(CourseArea, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.department} - {self.level}"
+        return self.user.username

@@ -24,16 +24,16 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
 class RegisterSerializer(serializers.ModelSerializer):
     faculty_id = serializers.PrimaryKeyRelatedField(
-        queryset=Faculty.objects.all(), source='userprofile.faculty', write_only=True
+        queryset=Faculty.objects.all(), write_only=True
     )
     department_id = serializers.PrimaryKeyRelatedField(
-        queryset=Department.objects.all(), source='userprofile.department', write_only=True
+        queryset=Department.objects.all(), write_only=True
     )
     level_id = serializers.PrimaryKeyRelatedField(
-        queryset=Level.objects.all(), source='userprofile.level', write_only=True
+        queryset=Level.objects.all(), write_only=True
     )
     course_area_id = serializers.PrimaryKeyRelatedField(
-        queryset=CourseArea.objects.all(), source='userprofile.course_area', required=False, write_only=True, allow_null=True
+        queryset=CourseArea.objects.all(), required=False, write_only=True, allow_null=True
     )
 
     class Meta:
@@ -42,14 +42,17 @@ class RegisterSerializer(serializers.ModelSerializer):
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
-        profile_data = validated_data.pop('userprofile', {})
+        faculty = validated_data.pop('faculty_id')
+        department = validated_data.pop('department_id')
+        level = validated_data.pop('level_id')
+        course_area = validated_data.pop('course_area_id', None)
         user = User.objects.create_user(**validated_data)
         UserProfile.objects.create(
             user=user,
-            faculty=profile_data.get('faculty'),
-            department=profile_data.get('department'),
-            level=profile_data.get('level'),
-            course_area=profile_data.get('course_area')
+            faculty=faculty,
+            department=department,
+            level=level,
+            course_area=course_area
         )
         return user
 
