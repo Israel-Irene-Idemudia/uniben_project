@@ -1,0 +1,10 @@
+
+# render.yaml
+services:
+  - type: web
+    name: skholar-backend
+    env: python
+    pythonVersion: "3.11"
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn uniben_portal.wsgi:application"
+    autoDeploy: true
