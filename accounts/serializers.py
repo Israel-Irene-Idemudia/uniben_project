@@ -1,7 +1,6 @@
 
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import UserProfile
 from core.models import Department, CourseArea, Level, Faculty
 
 User = get_user_model()
@@ -19,6 +18,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     course_area = serializers.StringRelatedField()
 
     class Meta:
+        from .models import UserProfile
         model = UserProfile
         fields = ['user', 'faculty', 'department', 'level', 'course_area']
 
@@ -42,6 +42,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
+        from .models import UserProfile
         profile_data = validated_data.pop('userprofile', {})
         user = User.objects.create_user(**validated_data)
         UserProfile.objects.create(
@@ -68,5 +69,6 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
     )
 
     class Meta:
+        from .models import UserProfile
         model = UserProfile
         fields = ['faculty_id', 'department_id', 'level_id', 'course_area_id']
