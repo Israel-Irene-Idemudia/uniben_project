@@ -126,7 +126,6 @@ if not os.environ.get("DATABASE_URL"):
 # =========================
 # 🧾 AUTH & PERMISSIONS
 # =========================
-AUTH_USER_MODEL = 'accounts.UserProfile'
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
