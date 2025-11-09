@@ -167,7 +167,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # =========================
 # 🕒 LOCALIZATION
 # =========================
-LANGUAGE_.CODE = "en-us"
+LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
