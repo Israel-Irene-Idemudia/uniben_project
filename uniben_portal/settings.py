@@ -1,3 +1,4 @@
+
 """
 Django settings for uniben_portal project.
 Clean version (Render + Cloudinary + PostgreSQL)
@@ -10,6 +11,7 @@ import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from decouple import config
 
 # =========================
 # 📁 BASE DIRECTORY
@@ -20,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # =========================
 # 🔐 SECURITY SETTINGS
 # =========================
-SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-dev-secret")
-DEBUG = os.environ.get("DEBUG", "False") == "True"
+SECRET_KEY = config("SECRET_KEY", default="django-insecure-dev-secret")
+DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1").split(",")
 ALLOWED_HOSTS += ["skholar.onrender.com"]
 
 
@@ -104,13 +106,13 @@ TEMPLATES = [
 # 🗄️ DATABASE
 # =========================
 DATABASES = {
-    "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
     )
 }
 
 # Local fallback (only used if DATABASE_URL not set)
-if not os.environ.get("DATABASE_URL"):
+if not config('DATABASE_URL', default=None):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
@@ -121,7 +123,6 @@ if not os.environ.get("DATABASE_URL"):
             "PORT": "5432",
         }
     }
-
 
 # =========================
 # 🧾 AUTH & PERMISSIONS
@@ -142,7 +143,7 @@ AUTHENTICATION_BACKENDS = [
 # =========================
 # 🌍 CORS + REST FRAMEWORK
 # =========================
-CORS_ALLOW_ALL_ORIGINS = True  # ⚠️ Only for dev — restrict later for production!
+CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default="").split(',')
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -177,10 +178,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # =========================
 # 🔔 NOTIFICATIONS / OTHERS
 # =========================
-ONESIGNAL_APP_ID = "34ebccc1-0042-4256-ad0e-0d2dd167da43"
-ONESIGNAL_REST_API_KEY = "os_v2_app_gtv4zqiaijbfnliobuw5cz62ionoo2yiekbu43fnqodkxoc6bsjrfloge2aeomukcdrtsvfvxrfru2vzj5pyi5xkv4eelnwwf4lrc5q"
+ONESIGNAL_APP_ID = config("ONESIGNAL_APP_ID")
+ONESIGNAL_REST_API_KEY = config("ONESIGNAL_REST_API_KEY")
 
-DEEPSEEK_API_KEY = "your_actual_deepseek_api_key_here"
+DEEPSEEK_API_KEY = config("DEEPSEEK_API_KEY")
 
 
 # =========================
@@ -203,15 +204,15 @@ LOGGING = {
 # ☁️ CLOUDINARY CONFIGURATION
 # =========================
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dsrepnl1c',
-    'API_KEY': '817612193932414',
-    'API_SECRET': 'IPkq5LMtmfPV3isOqnQRhUp63QU',
+    'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': config('CLOUDINARY_API_KEY'),
+    'API_SECRET': config('CLOUDINARY_API_SECRET'),
 }
 
 cloudinary.config(
-    cloud_name='dsrepnl1c',
-    api_key='817612193932414',
-    api_secret='IPkq5LMtmfPV3isOqnQRhUp63QU',
+    cloud_name=config('CLOUDINARY_CLOUD_NAME'),
+    api_key=config('CLOUDINARY_API_KEY'),
+    api_secret=config('CLOUDINARY_API_SECRET'),
     secure=True
 )
 
