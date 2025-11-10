@@ -2,7 +2,7 @@
 # render.yaml
 services:
   - type: web
-    name: skholar-backend
+    name: Skholar
     env: python
     pythonVersion: "3.11"
     buildCommand: "./build.sh"
