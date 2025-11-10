@@ -40,6 +40,7 @@ class CourseSerializer(serializers.ModelSerializer):
         # Define the fields that the JSON response will include
         fields = [
             'level',
+            'semester',
             'course_code',
             'course_title',
             'course_area',
