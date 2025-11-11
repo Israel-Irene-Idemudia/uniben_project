@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -15,6 +16,11 @@ from core.serializers import CourseSerializer
 
 class UserSubscribedCoursesWithQuizzes(generics.ListAPIView):
     """
+    MODIFIED: Now returns ALL courses that have at least one exam (quiz),
+    ignoring the user's specific subscriptions. This is a temporary change
+    for development/testing purposes.
+    
+    Original docstring:
     Returns a list of courses for the logged-in user's department and level
     that have at least one exam (quiz) available.
     """
@@ -22,28 +28,37 @@ class UserSubscribedCoursesWithQuizzes(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        user = self.request.user
-        try:
-            profile = user.userprofile
-        except AttributeError:
-            return Course.objects.none()
+        # The original implementation filtered courses by the user's profile.
+        # This has been temporarily removed as per the co-founder's request
+        # to make all quizzes available to all users during development.
 
-        department = profile.department
-        level = profile.level
+        # --- Original implementation commented out for reference ---
+        # user = self.request.user
+        # try:
+        #     profile = user.userprofile
+        # except AttributeError:
+        #     return Course.objects.none()
+        #
+        # department = profile.department
+        # level = profile.level
+        #
+        # if not department or not level:
+        #     return Course.objects.none()
+        #
+        # queryset = Course.objects.filter(
+        #     level__department=department,
+        #     level=level
+        # ).annotate(
+        #     has_exams=Exists(Exam.objects.filter(course=OuterRef('pk')))
+        # ).filter(
+        #     has_exams=True
+        # )
+        # return queryset
 
-        if not department or not level:
-            return Course.objects.none()
-
-        queryset = Course.objects.filter(
-            level__department=department,
-            level=level
-        ).annotate(
+        # New implementation: Return all courses that have quizzes.
+        return Course.objects.annotate(
             has_exams=Exists(Exam.objects.filter(course=OuterRef('pk')))
-        ).filter(
-            has_exams=True
-        )
-        
-        return queryset
+        ).filter(has_exams=True)
 
 # --- MODIFIED: Upgraded ExamListView to filter by course ---
 class ExamListView(generics.ListAPIView):
