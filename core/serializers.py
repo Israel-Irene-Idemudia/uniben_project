@@ -39,6 +39,7 @@ class CourseSerializer(serializers.ModelSerializer):
         model = Course
         # Define the fields that the JSON response will include
         fields = [
+            'id', # Added for frontend navigation
             'level',
             'semester',
             'course_code',

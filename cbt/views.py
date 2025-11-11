@@ -1,13 +1,62 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import permissions, status
+from rest_framework import permissions, status, generics
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from decimal import Decimal
+from django.db.models import Exists, OuterRef
 
 from .models import Exam, ExamSession, ExamQuestion, Question, Option
 from .serializers import ExamSerializer, QuestionSerializer, ExamSessionSerializer
+from core.models import Course
+from core.serializers import CourseSerializer
+
+
+class UserSubscribedCoursesWithQuizzes(generics.ListAPIView):
+    """
+    Returns a list of courses for the logged-in user's department and level
+    that have at least one exam (quiz) available.
+    """
+    serializer_class = CourseSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        try:
+            profile = user.userprofile
+        except AttributeError:
+            return Course.objects.none()
+
+        department = profile.department
+        level = profile.level
+
+        if not department or not level:
+            return Course.objects.none()
+
+        queryset = Course.objects.filter(
+            level__department=department,
+            level=level
+        ).annotate(
+            has_exams=Exists(Exam.objects.filter(course=OuterRef('pk')))
+        ).filter(
+            has_exams=True
+        )
+        
+        return queryset
+
+# --- MODIFIED: Upgraded ExamListView to filter by course ---
+class ExamListView(generics.ListAPIView):
+    serializer_class = ExamSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get_queryset(self):
+        """ 
+        This view returns a list of all published exams for a given course.
+        """
+        course_id = self.kwargs['course_id']
+        return Exam.objects.filter(course_id=course_id, is_published=True)
+# --- END MODIFICATION ---
 
 def grade_session(session: ExamSession):
     total = Decimal('0')
@@ -18,14 +67,11 @@ def grade_session(session: ExamSession):
         if q.qtype in (Question.QTYPE_MCQ, Question.QTYPE_MULTI):
             selected = ans.get('selected_option_ids', [])
             correct_ids = list(q.options.filter(is_correct=True).values_list('id', flat=True))
-            # exact set match => award full marks
             if set(map(int, selected)) == set(map(int, correct_ids)):
                 total += q.marks
             else:
-                # apply negative mark if configured:
                 total -= exam.negative_mark or Decimal('0')
         else:
-            # text answers require manual grading -> skip here
             pass
     session.score = max(total, Decimal('0'))
     session.status = ExamSession.STATUS_SUBMITTED
@@ -33,17 +79,10 @@ def grade_session(session: ExamSession):
     session.save()
     return session.score
 
-class ExamListView(APIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    def get(self, request):
-        exams = Exam.objects.filter(is_published=True)
-        return Response(ExamSerializer(exams, many=True).data)
-
 class StartExamView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     def post(self, request, exam_id):
         exam = get_object_or_404(Exam, pk=exam_id, is_published=True)
-        # Optionally: check enrollment / start_time / end_time here
         session = ExamSession.objects.create(
             exam=exam,
             student=request.user,
@@ -74,7 +113,6 @@ class AutoSaveView(APIView):
     def post(self, request, token):
         session = get_object_or_404(ExamSession, token=token, student=request.user)
         answers = request.data.get('answers', {})
-        # merge answers into session.answers_json
         data = session.answers_json or {}
         data.update(answers)
         session.answers_json = data
@@ -85,14 +123,11 @@ class SubmitView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     def post(self, request, token):
         session = get_object_or_404(ExamSession, token=token, student=request.user)
-        # final merge (accept latest answers in payload if provided)
         answers = request.data.get('answers')
         if isinstance(answers, dict):
             data = session.answers_json or {}
             data.update(answers)
             session.answers_json = data
             session.save()
-        # Run grading for objective Qs (subjective will need manual grading)
         grade_session(session)
         return Response({'status':'submitted','score':str(session.score)})
-
