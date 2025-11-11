@@ -44,15 +44,19 @@ class Level(models.Model):
 class Course(models.Model):
     code = models.CharField(max_length=20)   # e.g. "MTH101"
     title = models.CharField(max_length=200)
+    # ADDED: semester field as an integer.
+    semester = models.IntegerField(default=1) # Using 1 for 1st semester, 2 for 2nd
     level = models.ForeignKey('core.Level', on_delete=models.CASCADE, related_name='courses')
 
     def __str__(self):
-        return f"{self.code} - {self.title}"
+        return f"{self.code} - {self.title} ({self.semester} Semester)"
 
     class Meta:
         constraints = [
+             # UPDATED: The constraint now includes 'semester' to ensure a course
+             # code is unique within a specific level and semester.
             models.UniqueConstraint(
-                fields=['level', 'code'],
-                name='uniq_course_code_per_level',
+                fields=['level', 'code', 'semester'],
+                name='uniq_course_per_level_semester',
             )
         ]
