@@ -28,50 +28,24 @@ class UserSubscribedCoursesWithQuizzes(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        # The original implementation filtered courses by the user's profile.
-        # This has been temporarily removed as per the co-founder's request
-        # to make all quizzes available to all users during development.
-
-        # --- Original implementation commented out for reference ---
-        # user = self.request.user
-        # try:
-        #     profile = user.userprofile
-        # except AttributeError:
-        #     return Course.objects.none()
-        #
-        # department = profile.department
-        # level = profile.level
-        #
-        # if not department or not level:
-        #     return Course.objects.none()
-        #
-        # queryset = Course.objects.filter(
-        #     level__department=department,
-        #     level=level
-        # ).annotate(
-        #     has_exams=Exists(Exam.objects.filter(course=OuterRef('pk')))
-        # ).filter(
-        #     has_exams=True
-        # )
-        # return queryset
-
         # New implementation: Return all courses that have quizzes.
         return Course.objects.annotate(
             has_exams=Exists(Exam.objects.filter(course=OuterRef('pk')))
         ).filter(has_exams=True)
 
-# --- MODIFIED: Upgraded ExamListView to filter by course ---
 class ExamListView(generics.ListAPIView):
     serializer_class = ExamSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def get_queryset(self):
         """ 
-        This view returns a list of all published exams for a given course.
+        MODIFIED: This view now returns a list of ALL exams for a given course,
+        ignoring the 'is_published' flag. This is for development purposes
+        to make all quizzes visible.
         """
         course_id = self.kwargs['course_id']
-        return Exam.objects.filter(course_id=course_id, is_published=True)
-# --- END MODIFICATION ---
+        # REMOVED: The `is_published=True` filter to show all quizzes.
+        return Exam.objects.filter(course_id=course_id)
 
 def grade_session(session: ExamSession):
     total = Decimal('0')
@@ -97,7 +71,8 @@ def grade_session(session: ExamSession):
 class StartExamView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     def post(self, request, exam_id):
-        exam = get_object_or_404(Exam, pk=exam_id, is_published=True)
+        # MODIFIED: Removed 'is_published=True' to allow starting any exam.
+        exam = get_object_or_404(Exam, pk=exam_id)
         session = ExamSession.objects.create(
             exam=exam,
             student=request.user,
