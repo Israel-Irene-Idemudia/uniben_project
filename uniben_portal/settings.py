@@ -12,6 +12,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from decouple import config
+from datetime import timedelta
 
 # =========================
 # 📁 BASE DIRECTORY
@@ -141,7 +142,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 # =========================
-# 🌍 CORS + REST FRAMEWORK
+#  JWT & REST FRAMEWORK
 # =========================
 CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default="").split(',')
 
@@ -154,6 +155,13 @@ REST_FRAMEWORK = {
     ),
 }
 
+# NEW: JWT Token Lifespan Configuration
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+    'ROTATE_REFRESH_TOKENS': False, # Keep it simple
+    'BLACKLIST_AFTER_ROTATION': True,
+}
 
 # =========================
 # 📦 STATIC & MEDIA (Render)
