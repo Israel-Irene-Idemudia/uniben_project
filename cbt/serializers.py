@@ -4,14 +4,16 @@ from .models import Exam, Question, Option, ExamSession
 class OptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Option
-        # MODIFIED: Removed 'is_correct' to prevent sending answers to the client during a quiz.
         fields = ['id', 'text']
 
 class QuestionSerializer(serializers.ModelSerializer):
-    options = OptionSerializer(many=True, read_only=True)
+    # RENAMED 'options' to 'answers' to match the Flutter app's expectation
+    answers = OptionSerializer(many=True, read_only=True, source='options')
+
     class Meta:
         model = Question
-        fields = ['id','text','qtype','marks','options']
+        # UPDATED fields list to use the new name 'answers'
+        fields = ['id', 'text', 'qtype', 'marks', 'answers']
 
 class ExamSerializer(serializers.ModelSerializer):
     class Meta:
