@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from decimal import Decimal
 from django.db.models import Exists, OuterRef
+import random
 
 from .models import Exam, ExamSession, ExamQuestion, Question, Option
 from .serializers import ExamSerializer, QuestionSerializer, ExamSessionSerializer
@@ -15,20 +16,10 @@ from core.serializers import CourseSerializer
 
 
 class UserSubscribedCoursesWithQuizzes(generics.ListAPIView):
-    """
-    MODIFIED: Now returns ALL courses that have at least one exam (quiz),
-    ignoring the user's specific subscriptions. This is a temporary change
-    for development/testing purposes.
-    
-    Original docstring:
-    Returns a list of courses for the logged-in user's department and level
-    that have at least one exam (quiz) available.
-    """
     serializer_class = CourseSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        # New implementation: Return all courses that have quizzes.
         return Course.objects.annotate(
             has_exams=Exists(Exam.objects.filter(course=OuterRef('pk')))
         ).filter(has_exams=True)
@@ -38,13 +29,7 @@ class ExamListView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def get_queryset(self):
-        """ 
-        MODIFIED: This view now returns a list of ALL exams for a given course,
-        ignoring the 'is_published' flag. This is for development purposes
-        to make all quizzes visible.
-        """
         course_id = self.kwargs['course_id']
-        # REMOVED: The `is_published=True` filter to show all quizzes.
         return Exam.objects.filter(course_id=course_id)
 
 def grade_session(session: ExamSession):
@@ -71,7 +56,6 @@ def grade_session(session: ExamSession):
 class StartExamView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     def post(self, request, exam_id):
-        # MODIFIED: Removed 'is_published=True' to allow starting any exam.
         exam = get_object_or_404(Exam, pk=exam_id)
         session = ExamSession.objects.create(
             exam=exam,
@@ -86,12 +70,14 @@ class StartExamView(APIView):
         for eq in eqs:
             q = eq.question
             questions.append(QuestionSerializer(q).data)
-        import random
+        
         if exam.shuffle_questions:
             random.shuffle(questions)
             for q in questions:
-                if 'options' in q:
+                # CORRECTED: Shuffle the options list in-place without reassigning
+                if 'options' in q and q['options']:
                     random.shuffle(q['options'])
+
         return Response({
             'session_token': session.token,
             'questions': questions,

@@ -11,7 +11,8 @@ def gen_token():
 
 class Exam(models.Model):
     title = models.CharField(max_length=255)
-    course = models.ForeignKey('core.Course', on_delete=models.CASCADE, null=True, blank=True)  # change if no courses app
+    # MODIFIED: The course field is now required.
+    course = models.ForeignKey('core.Course', on_delete=models.CASCADE)
     instructions = models.TextField(blank=True)
     start_time = models.DateTimeField(null=True, blank=True)
     end_time = models.DateTimeField(null=True, blank=True)

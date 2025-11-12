@@ -4,7 +4,8 @@ from .models import Exam, Question, Option, ExamSession
 class OptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Option
-        fields = ['id','text','is_correct']
+        # MODIFIED: Removed 'is_correct' to prevent sending answers to the client during a quiz.
+        fields = ['id', 'text']
 
 class QuestionSerializer(serializers.ModelSerializer):
     options = OptionSerializer(many=True, read_only=True)
