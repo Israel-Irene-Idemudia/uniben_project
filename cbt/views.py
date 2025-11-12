@@ -1,4 +1,3 @@
-
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -10,7 +9,8 @@ from django.db.models import Exists, OuterRef
 import random
 
 from .models import Exam, ExamSession, ExamQuestion, Question, Option
-from .serializers import ExamSerializer, QuestionSerializer, ExamSessionSerializer
+# UPDATED: Imported the new ReviewQuestionSerializer
+from .serializers import ExamSerializer, QuestionSerializer, ReviewQuestionSerializer, ExamSessionSerializer
 from core.models import Course
 from core.serializers import CourseSerializer
 
@@ -74,9 +74,8 @@ class StartExamView(APIView):
         if exam.shuffle_questions:
             random.shuffle(questions)
             for q in questions:
-                # CORRECTED: Shuffle the options list in-place without reassigning
-                if 'options' in q and q['options']:
-                    random.shuffle(q['options'])
+                if 'answers' in q and q['answers']:
+                    random.shuffle(q['answers'])
 
         return Response({
             'session_token': session.token,
@@ -106,4 +105,19 @@ class SubmitView(APIView):
             session.answers_json = data
             session.save()
         grade_session(session)
-        return Response({'status':'submitted','score':str(session.score)})
+
+        # MODIFIED: Get all questions from the exam again to prepare the review data.
+        exam = session.exam
+        eqs = ExamQuestion.objects.filter(exam=exam).select_related('question')
+        questions_for_review = []
+        for eq in eqs:
+            q = eq.question
+            # Use the new ReviewQuestionSerializer to include correct answers.
+            questions_for_review.append(ReviewQuestionSerializer(q).data)
+
+        # Return the graded score AND the full questions data for review.
+        return Response({
+            'status': 'submitted',
+            'score': str(session.score),
+            'questions': questions_for_review
+        })

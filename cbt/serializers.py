@@ -1,21 +1,34 @@
 from rest_framework import serializers
 from .models import Exam, Question, Option, ExamSession
 
+# Serializer for when a user is TAKING a quiz.
+# It intentionally hides the 'is_correct' field.
 class OptionSerializer(serializers.ModelSerializer):
-    # REVERTED: The frontend expects the answer text in a field named 'text'.
-    # This correctly serializes the 'text' model field.
     class Meta:
         model = Option
-        # UPDATED: The output fields are now 'id' and 'text', matching the frontend.
         fields = ['id', 'text']
 
-class QuestionSerializer(serializers.ModelSerializer):
-    # This correctly sources from 'options' and outputs as 'answers' for the frontend.
-    answers = OptionSerializer(many=True, read_only=True, source='options')
+# Serializer for when a user is REVIEWING a quiz.
+# It INCLUDES the 'is_correct' field.
+class CorrectAnswerOptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Option
+        fields = ['id', 'text', 'is_correct']
 
+# Serializer for the questions during a quiz.
+class QuestionSerializer(serializers.ModelSerializer):
+    answers = OptionSerializer(many=True, read_only=True, source='options')
     class Meta:
         model = Question
         fields = ['id', 'text', 'qtype', 'marks', 'answers']
+
+# Serializer for the questions during review.
+class ReviewQuestionSerializer(serializers.ModelSerializer):
+    answers = CorrectAnswerOptionSerializer(many=True, read_only=True, source='options')
+    class Meta:
+        model = Question
+        fields = ['id', 'text', 'qtype', 'marks', 'answers']
+
 
 class ExamSerializer(serializers.ModelSerializer):
     class Meta:
