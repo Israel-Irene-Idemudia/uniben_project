@@ -12,10 +12,11 @@ import random
 from .models import Exam, ExamSession, Question
 from .serializers import ExamSerializer, QuestionSerializer, ReviewQuestionSerializer
 from core.models import Course
+from core.serializers import CourseSerializer
 
 
 class UserSubscribedCoursesWithQuizzes(generics.ListAPIView):
-    serializer_class = ExamSerializer
+    serializer_class = CourseSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
