@@ -19,8 +19,6 @@ class UserSubscribedCoursesWithQuizzes(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        # Students should only see courses they are subscribed to that have quizzes
-        # This requires a proper subscription model which is assumed for this query
         return Course.objects.annotate(
             has_exams=Exists(Exam.objects.filter(course=OuterRef('pk')))
         ).filter(has_exams=True)
@@ -35,37 +33,32 @@ class ExamListView(generics.ListAPIView):
         return Exam.objects.filter(course_id=course_id)
 
 
-# BUG FIX: Score calculation logic is now robust.
 def grade_session(session: ExamSession):
     total_marks = Decimal('0')
     answers = session.answers_json or {}
-
-    # Get all question IDs for this exam session to ensure we grade all of them
     all_question_ids = {str(eq.question.id) for eq in session.exam.exam_questions.all()}
 
     for q_id_str in all_question_ids:
-        question = Question.objects.get(id=int(q_id_str))
-        user_answer = answers.get(q_id_str)
+        try:
+            question = Question.objects.get(id=int(q_id_str))
+        except Question.DoesNotExist:
+            continue
 
-        # Safely get the selected option ID
+        user_answer = answers.get(q_id_str)
         selected_option_id = None
         if user_answer and 'selected_option_id' in user_answer:
             try:
                 selected_option_id = int(user_answer['selected_option_id'])
             except (ValueError, TypeError):
-                selected_option_id = None # Handle cases where the ID is not a valid integer
+                selected_option_id = None
 
-        # Get the correct option ID for the question
         correct_option = question.options.filter(is_correct=True).first()
 
         if correct_option and selected_option_id == correct_option.id:
             total_marks += question.marks
-        else:
-            # Apply negative marking only if an answer was submitted and it was wrong
-            if selected_option_id is not None:
-                total_marks -= session.exam.negative_mark or Decimal('0')
-    
-    # Score cannot be negative
+        elif selected_option_id is not None:
+            total_marks -= session.exam.negative_mark or Decimal('0')
+
     session.score = max(total_marks, Decimal('0'))
     session.status = ExamSession.STATUS_SUBMITTED
     session.submitted_at = timezone.now()
@@ -76,7 +69,7 @@ class StartExamView(APIView):
 
     def post(self, request, exam_id):
         exam = get_object_or_404(Exam, pk=exam_id)
-        num_questions_str = request.data.get('num_questions')
+        num_questions_req = request.data.get('num_questions')
 
         session = ExamSession.objects.create(
             exam=exam,
@@ -87,27 +80,23 @@ class StartExamView(APIView):
             device_info=request.META.get('HTTP_USER_AGENT', '')
         )
 
-        # Fetch all questions for the exam
         all_questions = list(Question.objects.filter(examquestion__exam=exam))
-        
-        # Shuffle all questions before slicing
         if exam.shuffle_questions:
             random.shuffle(all_questions)
 
-        # BUG FIX: Respect the num_questions parameter.
-        try:
-            num_questions = int(num_questions_str)
-            if num_questions > 0:
-                questions_to_send = all_questions[:num_questions]
-            else:
-                questions_to_send = all_questions
-        except (ValueError, TypeError):
-            questions_to_send = all_questions
+        # FINAL BUG FIX: Robustly handle the num_questions parameter to prevent server crash.
+        questions_to_send = all_questions
+        if num_questions_req is not None:
+            try:
+                num_questions = int(num_questions_req)
+                if num_questions > 0:
+                    questions_to_send = all_questions[:num_questions]
+            except (ValueError, TypeError):
+                # If conversion fails, just send all questions as a fallback.
+                pass
 
-        # Serialize the final list of questions
         serialized_questions = QuestionSerializer(questions_to_send, many=True).data
 
-        # Shuffle options within each question if enabled
         if exam.shuffle_questions:
             for q_data in serialized_questions:
                 if 'options' in q_data:
@@ -118,7 +107,7 @@ class StartExamView(APIView):
             'quiz_title': f"{exam.course.code} - {exam.name}",
             'questions': serialized_questions,
             'duration_minutes': exam.duration_minutes
-        })
+        }, status=status.HTTP_200_OK)
 
 class AutoSaveView(APIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -145,10 +134,8 @@ class SubmitView(APIView):
             session.answers_json = data
             session.save()
 
-        # Grade the session using the corrected logic
         grade_session(session)
 
-        # BUG FIX: Prepare and send the full data required for review.
         all_exam_questions = Question.objects.filter(examquestion__exam=session.exam)
         review_data = ReviewQuestionSerializer(all_exam_questions, many=True).data
 
@@ -159,4 +146,4 @@ class SubmitView(APIView):
                 'questions': review_data,
                 'selected_answers': session.answers_json or {}
             }
-        })
+        }, status=status.HTTP_200_OK)
