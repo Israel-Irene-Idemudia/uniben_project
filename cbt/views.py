@@ -80,11 +80,13 @@ class StartExamView(APIView):
             device_info=request.META.get('HTTP_USER_AGENT', '')
         )
 
-        all_questions = list(Question.objects.filter(examquestion__exam=exam))
+        # THE DEFINITIVE FIX: Correctly query questions through the ExamQuestion model.
+        exam_questions = exam.exam_questions.all()
+        all_questions = [eq.question for eq in exam_questions]
+
         if exam.shuffle_questions:
             random.shuffle(all_questions)
 
-        # FINAL BUG FIX: Robustly handle the num_questions parameter to prevent server crash.
         questions_to_send = all_questions
         if num_questions_req is not None:
             try:
@@ -92,7 +94,6 @@ class StartExamView(APIView):
                 if num_questions > 0:
                     questions_to_send = all_questions[:num_questions]
             except (ValueError, TypeError):
-                # If conversion fails, just send all questions as a fallback.
                 pass
 
         serialized_questions = QuestionSerializer(questions_to_send, many=True).data
@@ -104,7 +105,7 @@ class StartExamView(APIView):
 
         return Response({
             'session_token': session.token,
-            'quiz_title': f"{exam.course.code} - {exam.name}",
+            'quiz_title': f"{exam.course.code} - {exam.title}", # Corrected from exam.name
             'questions': serialized_questions,
             'duration_minutes': exam.duration_minutes
         }, status=status.HTTP_200_OK)
@@ -117,7 +118,6 @@ class AutoSaveView(APIView):
         answers = request.data.get('answers', {})
         data = session.answers_json or {}
         data.update(answers)
-        session.answers_json = data
         session.save()
         return Response({'status': 'ok'})
 
@@ -136,7 +136,9 @@ class SubmitView(APIView):
 
         grade_session(session)
 
-        all_exam_questions = Question.objects.filter(examquestion__exam=session.exam)
+        # Correctly get questions for review.
+        exam_questions = session.exam.exam_questions.all()
+        all_exam_questions = [eq.question for eq in exam_questions]
         review_data = ReviewQuestionSerializer(all_exam_questions, many=True).data
 
         return Response({
