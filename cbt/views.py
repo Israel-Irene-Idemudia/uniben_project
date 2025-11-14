@@ -6,10 +6,10 @@ from rest_framework import permissions, status, generics
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from decimal import Decimal
-from django.db.models import Exists, OuterRef
+from django.db.models import Exists, OuterRef, Prefetch
 import random
 
-from .models import Exam, ExamSession, Question
+from .models import Exam, ExamSession, Question, Option
 from .serializers import ExamSerializer, QuestionSerializer, ReviewQuestionSerializer
 from core.models import Course
 from core.serializers import CourseSerializer
@@ -19,16 +19,13 @@ class UserSubscribedCoursesWithQuizzes(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
-        courses_with_exams = Course.objects.annotate(
+        # Using distinct on a specific field after ordering is a way to get unique items
+        # based on that field. We also prefetch exams to be efficient.
+        unique_courses_with_exams = Course.objects.annotate(
             has_exams=Exists(Exam.objects.filter(course=OuterRef('pk')))
-        ).filter(has_exams=True).order_by('code', 'id')
-
-        unique_courses = {}
-        for course in courses_with_exams:
-            if course.code not in unique_courses:
-                unique_courses[course.code] = course
+        ).filter(has_exams=True).order_by('code', 'id').distinct('code')
         
-        serializer = CourseSerializer(list(unique_courses.values()), many=True)
+        serializer = CourseSerializer(unique_courses_with_exams, many=True)
         return Response(serializer.data)
 
 
@@ -46,10 +43,17 @@ def grade_session(session: ExamSession):
     answers = session.answers_json or {}
     session_question_ids = answers.keys()
 
+    # Efficiently fetch all questions and their correct options at once
+    questions = Question.objects.filter(
+        id__in=[int(q_id) for q_id in session_question_ids]
+    ).prefetch_related(
+        Prefetch('options', queryset=Option.objects.filter(is_correct=True), to_attr='correct_options')
+    )
+    question_map = {str(q.id): q for q in questions}
+
     for q_id_str in session_question_ids:
-        try:
-            question = Question.objects.get(id=int(q_id_str))
-        except Question.DoesNotExist:
+        question = question_map.get(q_id_str)
+        if not question:
             continue
 
         user_answer = answers.get(q_id_str)
@@ -63,7 +67,8 @@ def grade_session(session: ExamSession):
             except (ValueError, TypeError):
                 pass
 
-        correct_option = question.options.filter(is_correct=True).first()
+        # Use the prefetched correct option
+        correct_option = question.correct_options[0] if hasattr(question, 'correct_options') and question.correct_options else None
 
         if correct_option and selected_option_id == correct_option.id:
             total_marks += question.marks
@@ -79,11 +84,18 @@ class StartExamView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request, exam_id):
-        exam = get_object_or_404(Exam, pk=exam_id)
+        # --- FIX: Prefetch all related questions and their options in one go ---
+        exam = get_object_or_404(
+            Exam.objects.prefetch_related('exam_questions__question__options'), 
+            pk=exam_id
+        )
+        # --- END FIX ---
+        
         num_questions_req = request.data.get('num_questions')
 
-        exam_questions = exam.exam_questions.select_related('question').all()
-        all_questions = [eq.question for eq in exam_questions]
+        # The 'exam_questions' are ExamQuestion linker model instances.
+        # We pre-fetched the related 'question' and its 'options' so this is now efficient.
+        all_questions = [eq.question for eq in exam.exam_questions.all()]
 
         if exam.shuffle_questions:
             random.shuffle(all_questions)
@@ -148,7 +160,12 @@ class SubmitView(APIView):
         grade_session(session)
 
         session_question_ids = session.answers_json.keys()
-        questions_for_review = Question.objects.filter(id__in=session_question_ids)
+        
+        # --- FIX: Prefetch options to prevent N+1 queries ---
+        questions_for_review = Question.objects.filter(
+            id__in=session_question_ids
+        ).prefetch_related('options')
+        # --- END FIX ---
 
         q_map = {str(q.id): q for q in questions_for_review}
         ordered_questions = [q_map[qid] for qid in session_question_ids if qid in q_map]
