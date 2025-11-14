@@ -15,14 +15,21 @@ from core.models import Course
 from core.serializers import CourseSerializer
 
 
-class UserSubscribedCoursesWithQuizzes(generics.ListAPIView):
-    serializer_class = CourseSerializer
+class UserSubscribedCoursesWithQuizzes(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self):
-        return Course.objects.annotate(
+    def get(self, request, *args, **kwargs):
+        courses_with_exams = Course.objects.annotate(
             has_exams=Exists(Exam.objects.filter(course=OuterRef('pk')))
-        ).filter(has_exams=True)
+        ).filter(has_exams=True).order_by('code', 'id')
+
+        unique_courses = {}
+        for course in courses_with_exams:
+            if course.code not in unique_courses:
+                unique_courses[course.code] = course
+        
+        serializer = CourseSerializer(list(unique_courses.values()), many=True)
+        return Response(serializer.data)
 
 
 class ExamListView(generics.ListAPIView):
