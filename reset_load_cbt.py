@@ -2,6 +2,10 @@ import os
 import django
 import pandas as pd
 from django.db import transaction
+import sys
+
+# This adds the project directory to the Python path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # ---------------- Django setup ----------------
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "uniben_portal.settings")
