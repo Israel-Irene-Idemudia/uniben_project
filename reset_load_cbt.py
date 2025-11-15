@@ -1,7 +1,10 @@
+from dotenv import load_dotenv
 import os
 import django
 import pandas as pd
 from django.db import transaction
+
+load_dotenv()
 
 # ---------------- Django setup ----------------
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "uniben_portal.settings")
