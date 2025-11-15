@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'api',
     'core',
     'cbt',
+    'course',
     'events',
     'materials.apps.MaterialsConfig',
     'news',
