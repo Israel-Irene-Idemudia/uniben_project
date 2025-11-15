@@ -2,18 +2,12 @@ import os
 import django
 import pandas as pd
 from django.db import transaction
-import sys
-
-# Add the project root directory to the Python path. This allows the script to find other modules in the project.
-project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(project_root)
 
 # ---------------- Django setup ----------------
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "uniben_portal.settings")
 django.setup()
 
 from cbt.models import Exam, Question, Option, ExamQuestion
-# Resolve Course via Django app registry to avoid static import resolution issues
 from django.apps import apps
 Course = apps.get_model('course', 'Course')
 from django.contrib.auth import get_user_model
@@ -49,24 +43,23 @@ def load_cbts():
                 csv_path,
                 quotechar='"',
                 skipinitialspace=True,
-                on_bad_lines='skip'  # skip malformed rows
+                on_bad_lines='skip'
             )
         except Exception as e:
             print(f"❌ Failed to read {filename}: {e}")
             continue
 
-        df.columns = df.columns.str.strip()  # remove extra spaces
+        df.columns = df.columns.str.strip()
 
         required_cols = ["Question", "Option A", "Option B"]
-        for col in required_cols:
-            if col not in df.columns:
-                print(f"❌ Skipping {filename}: missing required column '{col}'")
-                continue
+        missing_cols = [col for col in required_cols if col not in df.columns]
+        if missing_cols:
+            print(f"❌ Skipping {filename}: missing required columns {missing_cols}")
+            continue
 
-        # Create a default exam per CSV file
         exam_title = os.path.splitext(filename)[0]
         normalized_exam_title = exam_title.replace(" ", "").upper()
-        
+
         course_found = None
         for course_obj in all_courses:
             normalized_course_code = course_obj.code.replace(" ", "").upper()
@@ -82,14 +75,13 @@ def load_cbts():
 
         exam, _ = Exam.objects.get_or_create(
             title=exam_title,
-            course=course,  # Use the found course
+            course=course,
             defaults={"created_by": superuser}
         )
 
         print(f"📄 Processing {filename} ({len(df)} questions)")
 
         for _, row in df.iterrows():
-            # Skip rows missing question text
             if pd.isna(row["Question"]):
                 continue
 
@@ -100,13 +92,16 @@ def load_cbts():
                 created_by=superuser
             )
 
-            # Link question to exam
             order = exam.exam_questions.count() + 1
             ExamQuestion.objects.create(exam=exam, question=question, order=order)
 
-            # Options
             correct_raw = str(row.get("correct_indices", "")).replace(" ", "")
-            correct_indices = [int(x) for x in correct_raw.split(",") if x.isdigit()]
+            correct_indices = []
+            if correct_raw:
+                try:
+                    correct_indices = [int(x) for x in correct_raw.split(",") if x.isdigit()]
+                except (ValueError, TypeError):
+                    pass
 
             for idx, col in enumerate(["Option A", "Option B", "Option C", "Option D", "Option E"], start=1):
                 text = row.get(col)
