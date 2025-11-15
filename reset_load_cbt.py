@@ -37,6 +37,8 @@ def clear_cbt_data():
 def load_cbts():
     clear_cbt_data()
 
+    all_courses = list(Course.objects.all())
+
     for filename in os.listdir(CSV_FOLDER):
         if not filename.endswith(".csv"):
             continue
@@ -63,13 +65,20 @@ def load_cbts():
 
         # Create a default exam per CSV file
         exam_title = os.path.splitext(filename)[0]
+        normalized_exam_title = exam_title.replace(" ", "").upper()
+        
+        course_found = None
+        for course_obj in all_courses:
+            normalized_course_code = course_obj.code.replace(" ", "").upper()
+            if normalized_course_code == normalized_exam_title:
+                course_found = course_obj
+                break
 
-        try:
-            # Try to find the course by its code (which is the exam_title)
-            course = Course.objects.get(code=exam_title)
-        except Course.DoesNotExist:
+        if not course_found:
             print(f"⚠️ Skipping {filename}: Course with code '{exam_title}' not found.")
             continue
+        
+        course = course_found
 
         exam, _ = Exam.objects.get_or_create(
             title=exam_title,
