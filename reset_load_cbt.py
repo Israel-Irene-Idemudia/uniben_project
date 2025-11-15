@@ -13,7 +13,9 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "uniben_portal.settings")
 django.setup()
 
 from cbt.models import Exam, Question, Option, ExamQuestion
-from course.models import Course
+# Resolve Course via Django app registry to avoid static import resolution issues
+from django.apps import apps
+Course = apps.get_model('course', 'Course')
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
