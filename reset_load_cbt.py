@@ -4,8 +4,9 @@ import pandas as pd
 from django.db import transaction
 import sys
 
-# This adds the project directory to the Python path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# Add the project root directory to the Python path. This allows the script to find other modules in the project.
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(project_root)
 
 # ---------------- Django setup ----------------
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "uniben_portal.settings")
