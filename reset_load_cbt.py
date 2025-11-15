@@ -8,6 +8,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "uniben_portal.settings")
 django.setup()
 
 from cbt.models import Exam, Question, Option, ExamQuestion
+from course.models import Course
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -55,9 +56,17 @@ def load_cbts():
 
         # Create a default exam per CSV file
         exam_title = os.path.splitext(filename)[0]
+
+        try:
+            # Try to find the course by its code (which is the exam_title)
+            course = Course.objects.get(code=exam_title)
+        except Course.DoesNotExist:
+            print(f"⚠️ Skipping {filename}: Course with code '{exam_title}' not found.")
+            continue
+
         exam, _ = Exam.objects.get_or_create(
             title=exam_title,
-            course=None,
+            course=course,  # Use the found course
             defaults={"created_by": superuser}
         )
 
