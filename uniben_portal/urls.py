@@ -48,6 +48,9 @@ urlpatterns = [
     
     # This includes all URLs from the 'accounts' app, such as '/register/'.
     path("api/accounts/", include("accounts.urls")),
+    
+    # Password Reset
+    path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
 ]
 
 

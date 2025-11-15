@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'cloudinary',
     'cloudinary_storage',
+    'anymail',
+    'django_rest_passwordreset',
 
     # Local Apps
     'accounts',
@@ -91,7 +93,7 @@ WSGI_APPLICATION = "uniben_portal.wsgi.application"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -156,7 +158,6 @@ REST_FRAMEWORK = {
     ),
 }
 
-# NEW: JWT Token Lifespan Configuration
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
@@ -172,6 +173,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+
+# =========================
+# ✉️ EMAIL CONFIGURATION (SENDGRID)
+# =========================
+EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
+ANYMAIL = {
+    "SENDGRID_API_KEY": config("SENDGRID_API_KEY", default=None),
+}
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="Skholar <noreply@skholar.com>")
+
+
+# =========================
+# 🔑 PASSWORD RESET CONFIGURATION
+# =========================
+DJANGO_REST_PASSWORDRESET = {
+    'EMAIL_TEMPLATE': 'reset_password.html',
+}
 
 # =========================
 # 🕒 LOCALIZATION
