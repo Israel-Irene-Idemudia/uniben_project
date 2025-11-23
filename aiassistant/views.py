@@ -318,7 +318,7 @@ Keep your explanation:
 
 Explanation:"""
 
-        API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3"
+        API_URL = "https://router.huggingface.co/mistralai/Mistral-7B-Instruct-v0.3"
         API_KEY = settings.HUGGINGFACE_API_KEY
         headers = {"Authorization": f"Bearer {API_KEY}"}
         
@@ -359,7 +359,7 @@ class PdfSummaryView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
+        API_URL = "https://router.huggingface.co/facebook/bart-large-cnn"
         API_KEY = settings.HUGGINGFACE_API_KEY
         headers = {"Authorization": f"Bearer {API_KEY}"}
         
