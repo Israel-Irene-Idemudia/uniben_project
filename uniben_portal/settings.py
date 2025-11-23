@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'materials.apps.MaterialsConfig',
     'news',
     'notifications',
+    'aiassistant',
 ]
 
 
