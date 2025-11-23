@@ -48,10 +48,10 @@ def extract_text_from_image(file_path):
     return pytesseract.image_to_string(Image.open(file_path))
 
 
-# === DeepSeek API ===
-def send_to_deepseek(text):
-    API_URL = "https://api.deepseek.com/v1/chat/completions"
-    API_KEY = "PUT_YOUR_DEEPSEEK_API_KEY_HERE"
+# === Hugging Face API (Mistral-7B) ===
+def send_to_huggingface(text):
+    API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3"
+    API_KEY = settings.HUGGINGFACE_API_KEY
 
     if len(text) > MAX_CHARS_FOR_DEEPSEEK:
         text = text[:MAX_CHARS_FOR_DEEPSEEK] + "\n\n[Text truncated for AI processing]"
@@ -60,20 +60,36 @@ def send_to_deepseek(text):
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json"
     }
-    data = {
-        "model": "deepseek-chat",
-        "messages": [
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": text}
-        ]
+    
+    prompt = f"""You are an AI assistant that analyzes documents.
+    
+Document Content:
+{text}
+
+Task: Provide a concise summary and key insights from the document above.
+"""
+
+    payload = {
+        "inputs": prompt,
+        "parameters": {
+            "max_new_tokens": 500,
+            "temperature": 0.5,
+            "top_p": 0.9,
+            "return_full_text": False
+        }
     }
+
     try:
-        response = requests.post(API_URL, headers=headers, json=data)
-        response.raise_for_status()
-        # Assuming the AI response is a string in the JSON
-        return response.json().get("ai_response", "[No response from AI]")
+        response = requests.post(API_URL, headers=headers, json=payload, timeout=30)
+        
+        if response.status_code == 200:
+            data = response.json()
+            return data[0]['generated_text'] if isinstance(data, list) else data.get('generated_text', '')
+        else:
+            return f"[AI Error: {response.status_code} - {response.text}]"
+            
     except Exception as e:
-        return f"[DeepSeek API error: {str(e)}]"
+        return f"[AI Request Failed: {str(e)}]"
 
 
 # === Upload View (Plain Text) ===
@@ -105,8 +121,8 @@ def upload_file(request):
                     all_responses += f"File: {file.name}\nError: No text extracted\n\n"
                     continue
 
-                ai_response = send_to_deepseek(text)
-                all_responses += f"File: {file.name}\nAI Response:\n{ai_response}\n\n"
+                ai_response = send_to_huggingface(text)
+                all_responses += f"File: {file.name}\nAI Analysis:\n{ai_response}\n\n"
 
             finally:
                 if os.path.exists(file_path):
