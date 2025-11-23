@@ -48,36 +48,54 @@ def extract_text_from_image(file_path):
     return pytesseract.image_to_string(Image.open(file_path))
 
 
-# === Hugging Face API (Mistral-7B) ===
-def send_to_huggingface(text):
-    API_URL = "https://router.huggingface.co/mistralai/Mistral-7B-Instruct-v0.3"
+# === Hugging Face API (Multimodal - LLaVA) ===
+def send_to_huggingface(text, image_path=None):
+    # Use LLaVA for images, Mistral for text-only
+    if image_path:
+        API_URL = "https://router.huggingface.co/llava-hf/llava-1.5-7b-hf"
+    else:
+        API_URL = "https://router.huggingface.co/mistralai/Mistral-7B-Instruct-v0.3"
+        
     API_KEY = settings.HUGGINGFACE_API_KEY
+    headers = {"Authorization": f"Bearer {API_KEY}"}
 
     if len(text) > MAX_CHARS_FOR_DEEPSEEK:
         text = text[:MAX_CHARS_FOR_DEEPSEEK] + "\n\n[Text truncated for AI processing]"
 
-    headers = {
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json"
-    }
-    
-    prompt = f"""You are an AI assistant that analyzes documents.
+    # Prepare payload
+    if image_path:
+        import base64
+        with open(image_path, "rb") as img_file:
+            b64_image = base64.b64encode(img_file.read()).decode('utf-8')
+            
+        # LLaVA prompt format
+        prompt = f"USER: <image>\n{text if text else 'Describe this image in detail.'}\nASSISTANT:"
+        
+        payload = {
+            "inputs": prompt,
+            "parameters": {
+                "max_new_tokens": 500,
+                "images": [b64_image]
+            }
+        }
+    else:
+        # Mistral prompt format
+        prompt = f"""You are an AI assistant that analyzes documents.
     
 Document Content:
 {text}
 
 Task: Provide a concise summary and key insights from the document above.
 """
-
-    payload = {
-        "inputs": prompt,
-        "parameters": {
-            "max_new_tokens": 500,
-            "temperature": 0.5,
-            "top_p": 0.9,
-            "return_full_text": False
+        payload = {
+            "inputs": prompt,
+            "parameters": {
+                "max_new_tokens": 500,
+                "temperature": 0.5,
+                "top_p": 0.9,
+                "return_full_text": False
+            }
         }
-    }
 
     try:
         response = requests.post(API_URL, headers=headers, json=payload, timeout=30)
@@ -92,7 +110,7 @@ Task: Provide a concise summary and key insights from the document above.
         return f"[AI Request Failed: {str(e)}]"
 
 
-# === Upload View (Plain Text) ===
+# === Upload View (Multimodal) ===
 @csrf_exempt
 def upload_file(request):
     if request.method == "POST" and request.FILES.getlist("files"):
@@ -103,6 +121,7 @@ def upload_file(request):
             file_path = default_storage.save(file.name, file)
             text = ""
             filename_lower = file.name.lower()
+            is_image = False
 
             try:
                 if filename_lower.endswith(".pdf"):
@@ -110,18 +129,23 @@ def upload_file(request):
                 elif filename_lower.endswith(".docx"):
                     text = extract_text_from_docx(file_path)
                 elif filename_lower.endswith((".jpg", ".jpeg", ".png")):
-                    text = extract_text_from_image(file_path)
+                    # For images, we now send the image itself to LLaVA
+                    # But we can also extract text (OCR) as context if needed
+                    is_image = True
+                    # Optional: extract text too if it's a document image
+                    # text = extract_text_from_image(file_path) 
                 elif filename_lower.endswith(".txt"):
                     text = file.read().decode("utf-8")
                 else:
                     all_responses += f"File: {file.name}\nError: Unsupported file type\n\n"
                     continue
 
-                if not text.strip():
+                if not is_image and not text.strip():
                     all_responses += f"File: {file.name}\nError: No text extracted\n\n"
                     continue
 
-                ai_response = send_to_huggingface(text)
+                # Send to AI (pass image_path if it's an image)
+                ai_response = send_to_huggingface(text, image_path=file_path if is_image else None)
                 all_responses += f"File: {file.name}\nAI Analysis:\n{ai_response}\n\n"
 
             finally:
@@ -141,26 +165,47 @@ class LumoraChatView(APIView):
     """
     Proxy endpoint for Lumora AI chat.
     Forwards requests to Hugging Face API to avoid CORS issues.
+    Supports both text (Mistral) and image (LLaVA) inputs.
     """
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
         user_prompt = request.data.get('prompt')
         conversation_history = request.data.get('conversation_history', [])
+        image_data = request.data.get('image')  # Base64 encoded image string
         
-        if not user_prompt:
+        if not user_prompt and not image_data:
             return Response(
-                {"error": "Prompt is required"}, 
+                {"error": "Prompt or Image is required"}, 
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # Hugging Face API configuration
-        API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3"
         API_KEY = settings.HUGGINGFACE_API_KEY
         headers = {"Authorization": f"Bearer {API_KEY}"}
 
-        # Build prompt with Mistral's [INST] format
-        system_prompt = """You are **Lumora**, the SKHOLAR AI Assistant for students of the **University of Benin (UNIBEN)**.
+        # === CASE 1: Image Present (Use LLaVA) ===
+        if image_data:
+            API_URL = "https://router.huggingface.co/llava-hf/llava-1.5-7b-hf"
+            
+            # LLaVA prompt format
+            # Note: LLaVA handles single-turn best, but we can try to append history if needed.
+            # For now, let's keep it simple: User Prompt + Image.
+            prompt = f"USER: <image>\n{user_prompt if user_prompt else 'Describe this image.'}\nASSISTANT:"
+            
+            payload = {
+                "inputs": prompt,
+                "parameters": {
+                    "max_new_tokens": 500,
+                    "images": [image_data]
+                }
+            }
+
+        # === CASE 2: Text Only (Use Mistral) ===
+        else:
+            API_URL = "https://router.huggingface.co/mistralai/Mistral-7B-Instruct-v0.3"
+            
+            # Build prompt with Mistral's [INST] format
+            system_prompt = """You are **Lumora**, the SKHOLAR AI Assistant for students of the **University of Benin (UNIBEN)**.
 
 🎓 Personality & Role
 - Friendly, supportive, and smart like a helpful senior student.
@@ -177,36 +222,35 @@ class LumoraChatView(APIView):
 - Never invent information.
 - Keep answers concise and well structured."""
 
-        # Format conversation history
-        prompt = ""
-        is_first = True
-        
-        for msg in conversation_history:
-            if msg['role'] == 'user':
-                if is_first:
-                    prompt += f"<s>[INST] {system_prompt}\n\n{msg['text']} [/INST]"
-                    is_first = False
+            # Format conversation history
+            prompt = ""
+            is_first = True
+            
+            for msg in conversation_history:
+                if msg['role'] == 'user':
+                    if is_first:
+                        prompt += f"<s>[INST] {system_prompt}\n\n{msg['text']} [/INST]"
+                        is_first = False
+                    else:
+                        prompt += f" [INST] {msg['text']} [/INST]"
                 else:
-                    prompt += f" [INST] {msg['text']} [/INST]"
+                    prompt += f" {msg['text']} </s>"
+            
+            # Add current message
+            if is_first:
+                prompt += f"<s>[INST] {system_prompt}\n\n{user_prompt} [/INST]"
             else:
-                prompt += f" {msg['text']} </s>"
-        
-        # Add current message
-        if is_first:
-            prompt += f"<s>[INST] {system_prompt}\n\n{user_prompt} [/INST]"
-        else:
-            prompt += f" [INST] {user_prompt} [/INST]"
+                prompt += f" [INST] {user_prompt} [/INST]"
 
-        # Payload for Hugging Face
-        payload = {
-            "inputs": prompt,
-            "parameters": {
-                "max_new_tokens": 1000,
-                "temperature": 0.7,
-                "top_p": 0.95,
-                "return_full_text": False
+            payload = {
+                "inputs": prompt,
+                "parameters": {
+                    "max_new_tokens": 1000,
+                    "temperature": 0.7,
+                    "top_p": 0.95,
+                    "return_full_text": False
+                }
             }
-        }
 
         # Call Hugging Face API
         try:
