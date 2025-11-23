@@ -50,20 +50,17 @@ def extract_text_from_image(file_path):
 
 # === Hugging Face API (Multimodal - LLaVA) ===
 def send_to_huggingface(text, image_path=None):
-    # Use LLaVA for images, Mistral for text-only
-    if image_path:
-        API_URL = "https://router.huggingface.co/llava-hf/llava-1.5-7b-hf"
-    else:
-        API_URL = "https://router.huggingface.co/mistralai/Mistral-7B-Instruct-v0.3"
-        
     API_KEY = settings.HUGGINGFACE_API_KEY
     headers = {"Authorization": f"Bearer {API_KEY}"}
 
     if len(text) > MAX_CHARS_FOR_DEEPSEEK:
         text = text[:MAX_CHARS_FOR_DEEPSEEK] + "\n\n[Text truncated for AI processing]"
 
-    # Prepare payload
+    # === CASE 1: Image Analysis (LLaVA) ===
     if image_path:
+        # FIXED URL: Added /models/
+        API_URL = "https://router.huggingface.co/models/llava-hf/llava-1.5-7b-hf"
+        
         import base64
         with open(image_path, "rb") as img_file:
             b64_image = base64.b64encode(img_file.read()).decode('utf-8')
@@ -78,15 +75,24 @@ def send_to_huggingface(text, image_path=None):
                 "images": [b64_image]
             }
         }
-    else:
-        # Mistral prompt format
-        prompt = f"""You are an AI assistant that analyzes documents.
     
+    # === CASE 2: Text Analysis (Zephyr) ===
+    else:
+        # FIXED URL: Switched to Zephyr and added /models/
+        API_URL = "https://router.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
+        
+        # Zephyr/Mistral prompt format
+        prompt = f"""<|system|>
+You are an AI assistant that analyzes documents.
+</s>
+<|user|>
 Document Content:
 {text}
 
 Task: Provide a concise summary and key insights from the document above.
-"""
+</s>
+<|assistant|>"""
+
         payload = {
             "inputs": prompt,
             "parameters": {
@@ -129,11 +135,7 @@ def upload_file(request):
                 elif filename_lower.endswith(".docx"):
                     text = extract_text_from_docx(file_path)
                 elif filename_lower.endswith((".jpg", ".jpeg", ".png")):
-                    # For images, we now send the image itself to LLaVA
-                    # But we can also extract text (OCR) as context if needed
                     is_image = True
-                    # Optional: extract text too if it's a document image
-                    # text = extract_text_from_image(file_path) 
                 elif filename_lower.endswith(".txt"):
                     text = file.read().decode("utf-8")
                 else:
@@ -144,7 +146,7 @@ def upload_file(request):
                     all_responses += f"File: {file.name}\nError: No text extracted\n\n"
                     continue
 
-                # Send to AI (pass image_path if it's an image)
+                # Send to AI
                 ai_response = send_to_huggingface(text, image_path=file_path if is_image else None)
                 all_responses += f"File: {file.name}\nAI Analysis:\n{ai_response}\n\n"
 
@@ -162,11 +164,6 @@ def upload_file(request):
 # ============================================
 
 class LumoraChatView(APIView):
-    """
-    Proxy endpoint for Lumora AI chat.
-    Forwards requests to Hugging Face API to avoid CORS issues.
-    Supports both text (Mistral) and image (LLaVA) inputs.
-    """
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
@@ -185,11 +182,9 @@ class LumoraChatView(APIView):
 
         # === CASE 1: Image Present (Use LLaVA) ===
         if image_data:
-            API_URL = "https://router.huggingface.co/llava-hf/llava-1.5-7b-hf"
+            # FIXED URL: Added /models/
+            API_URL = "https://router.huggingface.co/models/llava-hf/llava-1.5-7b-hf"
             
-            # LLaVA prompt format
-            # Note: LLaVA handles single-turn best, but we can try to append history if needed.
-            # For now, let's keep it simple: User Prompt + Image.
             prompt = f"USER: <image>\n{user_prompt if user_prompt else 'Describe this image.'}\nASSISTANT:"
             
             payload = {
@@ -200,48 +195,31 @@ class LumoraChatView(APIView):
                 }
             }
 
-        # === CASE 2: Text Only (Use Mistral) ===
+        # === CASE 2: Text Only (Use Zephyr) ===
         else:
-            # We'll use Zephyr (a very smart, fast, and free version of Mistral)
+            # FIXED URL: Switched to Zephyr and ensure /models/ is present
             API_URL = "https://router.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
             
-            # Build prompt with Mistral's [INST] format
             system_prompt = """You are **Lumora**, the SKHOLAR AI Assistant for students of the **University of Benin (UNIBEN)**.
-
 🎓 Personality & Role
-- Friendly, supportive, and smart like a helpful senior student.
-- Always accurate and concise.
+- Friendly, supportive, and smart.
 - Understands Nigerian Pidgin but replies in clear English.
-
 💡 Capabilities
-1. Academic help: explanations, problem-solving, note summaries.
-2. Campus info: directions and verified data about UNIBEN.
-3. Study support: tips, planning, motivation.
-
+1. Academic help: explanations, problem-solving.
+2. Campus info: verified data about UNIBEN.
 ⚖️ Rules
-- If unsure, say so and suggest reliable sources.
 - Never invent information.
-- Keep answers concise and well structured."""
+- Keep answers concise."""
 
-            # Format conversation history
-            prompt = ""
-            is_first = True
+            # Build prompt with Zephyr format <|system|>...<|user|>...
+            prompt = f"<|system|>\n{system_prompt}</s>\n"
             
             for msg in conversation_history:
-                if msg['role'] == 'user':
-                    if is_first:
-                        prompt += f"<s>[INST] {system_prompt}\n\n{msg['text']} [/INST]"
-                        is_first = False
-                    else:
-                        prompt += f" [INST] {msg['text']} [/INST]"
-                else:
-                    prompt += f" {msg['text']} </s>"
+                role = "user" if msg['role'] == 'user' else "assistant"
+                prompt += f"<|{role}|>\n{msg['text']}</s>\n"
             
             # Add current message
-            if is_first:
-                prompt += f"<s>[INST] {system_prompt}\n\n{user_prompt} [/INST]"
-            else:
-                prompt += f" [INST] {user_prompt} [/INST]"
+            prompt += f"<|user|>\n{user_prompt}</s>\n<|assistant|>"
 
             payload = {
                 "inputs": prompt,
@@ -253,7 +231,6 @@ class LumoraChatView(APIView):
                 }
             }
 
-        # Call Hugging Face API
         try:
             response = requests.post(API_URL, headers=headers, json=payload, timeout=30)
             
@@ -262,21 +239,11 @@ class LumoraChatView(APIView):
                 generated_text = data[0]['generated_text'] if isinstance(data, list) else data.get('generated_text', '')
                 return Response({"response": generated_text})
             else:
-                try:
-                    error_msg = response.json()
-                except:
-                    error_msg = response.text
-                
                 return Response(
-                    {"error": error_msg}, 
+                    {"error": f"HF Error {response.status_code}: {response.text}"}, 
                     status=response.status_code
                 )
                 
-        except requests.exceptions.Timeout:
-            return Response(
-                {"error": "Request timed out"}, 
-                status=status.HTTP_504_GATEWAY_TIMEOUT
-            )
         except Exception as e:
             return Response(
                 {"error": f"Internal Server Error: {str(e)}"}, 
@@ -302,24 +269,23 @@ class CbtExplanationView(APIView):
 
         is_correct = user_answer.strip().lower() == correct_answer.strip().lower()
         
-        prompt = f"""You are a helpful tutor explaining CBT exam answers to university students.
-
+        # Zephyr format
+        prompt = f"""<|system|>
+You are a helpful tutor explaining CBT exam answers to university students.
+</s>
+<|user|>
 Question: {question}
-
 Correct Answer: {correct_answer}
 Student's Answer: {user_answer}
 {f"All Options: {', '.join(options)}" if options else ''}
 
 Task: {'Explain why this answer is correct' if is_correct else "Explain why the student's answer is wrong and why the correct answer is right"}.
+Keep it concise (under 100 words).
+</s>
+<|assistant|>"""
 
-Keep your explanation:
-- Clear and concise
-- Educational and encouraging
-- Under 150 words
-
-Explanation:"""
-
-        API_URL = "https://router.huggingface.co/mistralai/Mistral-7B-Instruct-v0.3"
+        # FIXED URL: Switched to Zephyr
+        API_URL = "https://router.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
         API_KEY = settings.HUGGINGFACE_API_KEY
         headers = {"Authorization": f"Bearer {API_KEY}"}
         
@@ -328,7 +294,6 @@ Explanation:"""
             "parameters": {
                 "max_new_tokens": 300,
                 "temperature": 0.7,
-                "top_p": 0.9,
                 "return_full_text": False
             }
         }
@@ -340,7 +305,7 @@ Explanation:"""
                 explanation = data[0]['generated_text'] if isinstance(data, list) else data.get('generated_text', '')
                 return Response({"explanation": explanation})
             else:
-                return Response({"error": response.json()}, status=response.status_code)
+                return Response({"error": response.text}, status=response.status_code)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -355,12 +320,10 @@ class PdfSummaryView(APIView):
         min_length = request.data.get('min_length', 50)
 
         if not text:
-            return Response(
-                {"error": "Text is required"}, 
-                status=status.HTTP_400_BAD_REQUEST
-            )
+            return Response({"error": "Text is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        API_URL = "https://router.huggingface.co/facebook/bart-large-cnn"
+        # FIXED URL: Added /models/
+        API_URL = "https://router.huggingface.co/models/facebook/bart-large-cnn"
         API_KEY = settings.HUGGINGFACE_API_KEY
         headers = {"Authorization": f"Bearer {API_KEY}"}
         
@@ -380,6 +343,6 @@ class PdfSummaryView(APIView):
                 summary = data[0]['summary_text'] if isinstance(data, list) else data.get('summary_text', '')
                 return Response({"summary": summary})
             else:
-                return Response({"error": response.json()}, status=response.status_code)
+                return Response({"error": response.text}, status=response.status_code)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
