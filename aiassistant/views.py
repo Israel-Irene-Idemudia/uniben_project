@@ -203,7 +203,7 @@ class LumoraChatView(APIView):
         # === CASE 2: Text Only (Use Mistral) ===
         else:
             # We'll use Zephyr (a very smart, fast, and free version of Mistral)
-            API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
+            API_URL = "https://router.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
             
             # Build prompt with Mistral's [INST] format
             system_prompt = """You are **Lumora**, the SKHOLAR AI Assistant for students of the **University of Benin (UNIBEN)**.
