@@ -50,7 +50,7 @@ def extract_text_from_image(file_path):
 
 # === Hugging Face API (Mistral-7B) ===
 def send_to_huggingface(text):
-    API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3"
+    API_URL = "https://router.huggingface.co/mistralai/Mistral-7B-Instruct-v0.3"
     API_KEY = settings.HUGGINGFACE_API_KEY
 
     if len(text) > MAX_CHARS_FOR_DEEPSEEK:
