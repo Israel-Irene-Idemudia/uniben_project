@@ -210,6 +210,9 @@ ONESIGNAL_REST_API_KEY = config("ONESIGNAL_REST_API_KEY")
 
 DEEPSEEK_API_KEY = config("DEEPSEEK_API_KEY")
 
+# Hugging Face API for Lumora AI
+HUGGINGFACE_API_KEY = config("HUGGINGFACE_API_KEY", default="")
+
 
 # =========================
 # 🪵 LOGGING
