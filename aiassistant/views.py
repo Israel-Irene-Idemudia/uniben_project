@@ -261,8 +261,13 @@ class LumoraChatView(APIView):
                 generated_text = data[0]['generated_text'] if isinstance(data, list) else data.get('generated_text', '')
                 return Response({"response": generated_text})
             else:
+                try:
+                    error_msg = response.json()
+                except:
+                    error_msg = response.text
+                
                 return Response(
-                    {"error": response.json()}, 
+                    {"error": error_msg}, 
                     status=response.status_code
                 )
                 
@@ -273,7 +278,7 @@ class LumoraChatView(APIView):
             )
         except Exception as e:
             return Response(
-                {"error": str(e)}, 
+                {"error": f"Internal Server Error: {str(e)}"}, 
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
