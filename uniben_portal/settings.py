@@ -214,6 +214,9 @@ DEEPSEEK_API_KEY = config("DEEPSEEK_API_KEY")
 # Hugging Face API for Lumora AI
 HUGGINGFACE_API_KEY = config("HUGGINGFACE_API_KEY", default="")
 
+# Groq API for Lumora AI (Primary AI Engine)
+GROQ_API_KEY = config("GROQ_API_KEY", default="") 
+
 
 # =========================
 # 🪵 LOGGING
