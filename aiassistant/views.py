@@ -206,10 +206,10 @@ class LumoraChatView(APIView):
             )
 
         # Build message context
-messages = [
-    {
-        "role": "system",
-        "content": '''You are **Lumora**, the SKHOLAR AI Assistant for students of the **University of Benin (UNIBEN)**.
+        messages = [
+            {
+                "role": "system",
+                "content": '''You are **Lumora**, the SKHOLAR AI Assistant for students of the **University of Benin (UNIBEN)**.
 
 🎓 Personality & Role
 - Friendly, supportive, and smart like a helpful senior student.
@@ -244,15 +244,15 @@ The SKHOLAR app was built by "The Problem Solvers," a talented team of students:
     }
 ]
         
-        # Add conversation history (limit to last 6 messages to save tokens)
-        for msg in conversation_history[-6:]:
-            role = msg.get('role', 'user')
-            content = msg.get('text', '')
-            if content:
-                messages.append({
-                    "role": role,
-                    "content": content
-                })
+    # Add conversation history (limit to last 6 messages to save tokens)
+    for msg in conversation_history[-6:]:
+        role = msg.get('role', 'user')
+        content = msg.get('text', '')
+        if content:
+            messages.append({
+                "role": role,
+                "content": content
+            })
         
         # Add current user message
         messages.append({
