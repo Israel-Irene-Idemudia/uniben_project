@@ -270,10 +270,10 @@ The SKHOLAR app was built by "The Problem Solvers," a talented team of students:
         
         # Handle errors
         if result.startswith("["):
-        return Response(
-                {"error": result}, 
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+            return Response(
+                    {"error": result}, 
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                )
         
         return Response({"response": result})
 
