@@ -241,18 +241,18 @@ The SKHOLAR app was built by "The Problem Solvers," a talented team of students:
 - Block math: Use $$x = \\frac{{-b \\pm \\sqrt{{b^2 - 4ac}}}}{{2a}}$$ format
 - For multi-line equations, use double dollar signs
 - Avoid using code fences for normal text responses'''
-    }
-]
+            }
+        ]
         
-    # Add conversation history (limit to last 6 messages to save tokens)
-    for msg in conversation_history[-6:]:
-        role = msg.get('role', 'user')
-        content = msg.get('text', '')
-        if content:
-            messages.append({
-                "role": role,
-                "content": content
-            })
+        # Add conversation history (limit to last 6 messages to save tokens)
+        for msg in conversation_history[-6:]:
+            role = msg.get('role', 'user')
+            content = msg.get('text', '')
+            if content:
+                messages.append({
+                    "role": role,
+                    "content": content
+                })
         
         # Add current user message
         messages.append({
