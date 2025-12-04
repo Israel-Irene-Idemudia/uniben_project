@@ -180,13 +180,16 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # =========================
-# ✉️ EMAIL CONFIGURATION (SENDGRID)
+# ✉️ EMAIL CONFIGURATION (ZOHO SMTP)
 # =========================
-EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
-ANYMAIL = {
-    "SENDGRID_API_KEY": config("SENDGRID_API_KEY", default=None),
-}
-DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="Skholar <noreply@skholar.com>")
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.zoho.com"
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="Skholar <theproblemsolvers@skholar.site>")
 
 
 # =========================
