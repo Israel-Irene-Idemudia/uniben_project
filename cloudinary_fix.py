@@ -10,7 +10,7 @@ from django.conf import settings
 from django.core.files.storage import storages
 from importlib import import_module
 
-print(f"✅ Cloudinary successfully configured for: {settings.CLOUDINARY_STORAGE.get('CLOUD_NAME', 'Unknown')}")
+print(f"Cloudinary successfully configured for: {settings.CLOUDINARY_STORAGE.get('CLOUD_NAME', 'Unknown')}")
 
 # --- Force reload Cloudinary Storage ---
 storages._storages.clear()
@@ -21,4 +21,4 @@ storage_class = getattr(import_module(module_path), class_name)
 
 settings.DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-print(f"✅ Default storage manually switched to: {storage_class}")
+print(f"Default storage manually switched to: {storage_class}")

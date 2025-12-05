@@ -216,7 +216,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 ONESIGNAL_APP_ID = config("ONESIGNAL_APP_ID")
 ONESIGNAL_REST_API_KEY = config("ONESIGNAL_REST_API_KEY")
 
-DEEPSEEK_API_KEY = config("DEEPSEEK_API_KEY")
+DEEPSEEK_API_KEY = config("DEEPSEEK_API_KEY", default="")
 
 # Hugging Face API for Lumora AI
 HUGGINGFACE_API_KEY = config("HUGGINGFACE_API_KEY", default="")
@@ -259,7 +259,7 @@ cloudinary.config(
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-print("✅ Cloudinary successfully configured for:", CLOUDINARY_STORAGE['CLOUD_NAME'])
+print("Cloudinary successfully configured for:", CLOUDINARY_STORAGE['CLOUD_NAME'])
 
 # =========================
 # ⚙️ FORCE DJANGO TO USE CLOUDINARY STORAGE
@@ -277,6 +277,6 @@ try:
     storage_class = getattr(import_module(module_path), class_name)
     storage_module.default_storage = storage_class()
 
-    print("✅ Default storage manually switched to:", storage_module.default_storage.__class__)
+    print("Default storage manually switched to:", storage_module.default_storage.__class__)
 except Exception as e:
-    print("⚠️ Cloudinary setup issue:", e)
+    print("Cloudinary setup issue:", e)

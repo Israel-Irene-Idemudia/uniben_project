@@ -18,7 +18,7 @@ class MaterialsConfig(AppConfig):
         # Manually override the already-loaded default storage
         from django.core.files.storage import default_storage
         if not isinstance(default_storage, MediaCloudinaryStorage):
-            print("🔄 Replacing FileSystemStorage with MediaCloudinaryStorage...")
+            print("Replacing FileSystemStorage with MediaCloudinaryStorage...")
             from django.core.files.storage import Storage
             from django.core.files.storage import storages
             storages._storages["default"] = MediaCloudinaryStorage()
