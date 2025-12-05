@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django_rest_passwordreset',
 
     # Local Apps
-    'accounts',
+    'accounts.apps.AccountsConfig',
     'api',
     'core',
     'cbt',
