@@ -197,6 +197,7 @@ DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="Skholar <theproblemso
 # =========================
 DJANGO_REST_PASSWORDRESET = {
     'EMAIL_TEMPLATE': 'reset_password.html',
+    'TOKEN_GENERATOR_CLASS': 'accounts.token_generator.NumericTokenGenerator',
 }
 
 # =========================
