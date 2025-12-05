@@ -83,3 +83,29 @@ class UserPreferences(models.Model):
     
     def __str__(self):
         return f"{self.user.username}'s Preferences"
+
+
+class UserTodoEntry(models.Model):
+    """Stores todo entries for users to enable cross-device sync."""
+    
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='todo_entries'
+    )
+    task = models.CharField(max_length=500)
+    time = models.CharField(max_length=50, blank=True, null=True)
+    is_completed = models.BooleanField(default=False)
+    
+    # Metadata
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'User Todo Entry'
+        verbose_name_plural = 'User Todo Entries'
+    
+    def __str__(self):
+        return f"{self.user.username} - {self.task[:50]}"
+

@@ -20,6 +20,9 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         data = super().validate(attrs)
         data['username'] = self.user.username
         data['email'] = self.user.email
+        # Add admin status to token response
+        data['is_staff'] = self.user.is_staff
+        data['is_superuser'] = self.user.is_superuser
         # Add profile IDs to token response for frontend use
         try:
             profile = self.user.userprofile
