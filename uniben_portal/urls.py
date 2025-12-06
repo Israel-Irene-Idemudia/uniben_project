@@ -38,6 +38,7 @@ urlpatterns = [
     path("api/core/", include("core.urls")),
     path("api/aiassistant/", include("aiassistant.urls")),
     path("api/notifications/", include("notifications.urls")),
+    path("api/analytics/", include("app_analytics.urls")),
     
     # --- Authentication Endpoints ---
     

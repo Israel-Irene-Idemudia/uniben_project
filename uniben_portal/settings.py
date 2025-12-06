@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'news',
     'notifications',
     'aiassistant',
+    'app_analytics',
 ]
 
 

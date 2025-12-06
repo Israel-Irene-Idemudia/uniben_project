@@ -83,15 +83,15 @@ class Command(BaseCommand):
                     
                     correct_label = ''
                     if correct_index_val == '-1':
-                        pass # No correct answer
+                        pass  # No correct answer
                     elif correct_index_val:
                         try:
                             numeric_index = int(correct_index_val)
-                            if 0 <= numeric_index <= 4: # 0-based A-E
+                            # CSV uses 0-based indexing: 0=A, 1=B, 2=C, 3=D, 4=E
+                            if 0 <= numeric_index <= 4:
                                 correct_label = chr(ord('A') + numeric_index)
-                            elif 1 <= numeric_index <= 5: # 1-based A-E
-                                correct_label = chr(ord('A') + numeric_index - 1)
                         except (ValueError, TypeError):
+                            # Handle letter-based indices
                             if correct_index_val in ['A', 'B', 'C', 'D', 'E']:
                                 correct_label = correct_index_val
 

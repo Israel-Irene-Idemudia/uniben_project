@@ -21,6 +21,11 @@ class EventListAPI(generics.ListCreateAPIView):
     queryset = Event.objects.all().order_by('event_date')
     serializer_class = EventSerializer
     permission_classes = [IsAdminOrReadOnly]
+    
+    def perform_create(self, serializer):
+        # Save event (creator field is optional in Event model)
+        serializer.save()
+
 
 
 # Event detail (update/delete for admins)
