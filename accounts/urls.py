@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import RegisterView, UpdateProfileView, MeView
+from .views import RegisterView, UpdateProfileView, MeView, UserListView, UserDetailView
 from .profile_views import (
     TimetableListCreateView,
     TimetableDetailView,
@@ -27,4 +27,8 @@ urlpatterns = [
     
     # User preferences
     path('profile/preferences/', UserPreferencesView.as_view(), name='user-preferences'),
+    
+    # User management (admin only)
+    path('users/', UserListView.as_view(), name='user-list'),
+    path('users/<int:user_id>/', UserDetailView.as_view(), name='user-detail'),
 ]
