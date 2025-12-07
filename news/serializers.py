@@ -12,6 +12,9 @@ class NewsSerializer(serializers.ModelSerializer):
         read_only_fields = ['author', 'created_at', 'updated_at']
     
     def create(self, validated_data):
+        # Set default for_all to True if not provided
+        if 'for_all' not in validated_data:
+            validated_data['for_all'] = True
         # Author will be set by the view's perform_create
         return super().create(validated_data)
     
