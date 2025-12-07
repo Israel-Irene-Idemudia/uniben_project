@@ -15,12 +15,21 @@ User = get_user_model()
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
     """
     Handles password reset tokens
-    When a token is created, an email is sent to the user
+    When a token is created, an email is sent to the user with a 5-digit numeric code
     """
-    # Render the email template with the token and user
+    import random
+    
+    # Generate a 5-digit numeric token
+    numeric_token = str(random.randint(10000, 99999))
+    
+    # Update the token in the database to use our numeric token
+    reset_password_token.key = numeric_token
+    reset_password_token.save()
+    
+    # Render the email template with the numeric token
     context = {
         'user': reset_password_token.user,
-        'token': reset_password_token.key,
+        'token': numeric_token,
         'username': reset_password_token.user.username,
     }
     
@@ -31,9 +40,9 @@ Hello,
 
 You are receiving this email because you requested a password reset for your user account at Skholar.
 
-Please enter the following code in the app to reset your password:
+Please enter the following 5-digit code in the app to reset your password:
 
-{reset_password_token.key}
+{numeric_token}
 
 Your username, in case you've forgotten: {reset_password_token.user.username}
 
