@@ -27,7 +27,15 @@ class NewsAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         if not obj.author:
             obj.author = request.user
-        super().save_model(request, obj, form, change)
+        try:
+            super().save_model(request, obj, form, change)
+        except Exception as e:
+            from django.contrib import messages
+            import logging
+            logger = logging.getLogger(__name__)
+            logger.error(f"Failed to save news: {str(e)}", exc_info=True)
+            messages.error(request, f"Failed to create news: {str(e)}")
+            raise
 
     # Make visibility fields readonly if 'for_all' is checked
     def get_readonly_fields(self, request, obj=None):
