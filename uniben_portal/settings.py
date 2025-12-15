@@ -153,6 +153,10 @@ CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default="").split(',')
 CORS_ALLOWED_ORIGINS += [
     "https://skholar.site",
     "https://www.skholar.site",
+    "http://localhost:8080",
+    "http://localhost:3000",
+    "http://127.0.0.1:8080",
+    "http://127.0.0.1:3000",
 ]
 
 REST_FRAMEWORK = {
