@@ -184,12 +184,14 @@ class SubmitView(APIView):
 
     def post(self, request, token):
         session = get_object_or_404(ExamSession, token=token, student=request.user)
-        answers = request.data.get('answers')
         
-        if isinstance(answers, dict):
-            data = session.answers_json or {}
-            data.update(answers)
-            session.answers_json = data
+        # FIX: Frontend sends answers directly as body, not nested under 'answers' key
+        # request.data is already the map: {"question_id": option_id, ...}
+        answers = request.data
+        
+        if isinstance(answers, dict) and answers:
+            # Replace session answers completely (don't merge with empty initialization)
+            session.answers_json = answers
             session.save()
 
         grade_session(session)
