@@ -159,6 +159,12 @@ CORS_ALLOWED_ORIGINS += [
     "http://127.0.0.1:3000",
 ]
 
+# Allow any localhost port for local development (Flutter uses random ports)
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^http://localhost:\d+$",
+    r"^http://127\.0\.0\.1:\d+$",
+]
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
