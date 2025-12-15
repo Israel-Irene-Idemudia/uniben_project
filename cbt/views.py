@@ -39,9 +39,16 @@ class ExamListView(generics.ListAPIView):
 
 
 def grade_session(session: ExamSession):
+    import logging
+    logger = logging.getLogger(__name__)
+    
     total_marks = Decimal('0')
     answers = session.answers_json or {}
     session_question_ids = answers.keys()
+    
+    logger.info(f"=== GRADING SESSION {session.token[:8]} ===")
+    logger.info(f"Total questions answered: {len(session_question_ids)}")
+    logger.info(f"Answers JSON: {answers}")
 
     # Fetch all questions with ALL their options
     questions = Question.objects.filter(
@@ -49,27 +56,36 @@ def grade_session(session: ExamSession):
     ).prefetch_related('options')
     
     question_map = {str(q.id): q for q in questions}
+    logger.info(f"Questions fetched: {len(question_map)}")
 
     for q_id_str in session_question_ids:
         question = question_map.get(q_id_str)
         if not question:
+            logger.warning(f"Question {q_id_str} not found in map")
             continue
 
         user_answer = answers.get(q_id_str)
         if not user_answer:
+            logger.warning(f"No answer for question {q_id_str}")
             continue
+        
+        logger.info(f"Q{q_id_str}: user_answer={user_answer}, type={type(user_answer)}")
 
         selected_option_id = None
         if isinstance(user_answer, dict):
             selected_option_id = user_answer.get('selected_option_id')
+            logger.info(f"Q{q_id_str}: Extracted from dict: {selected_option_id}")
         else:
             # Handle case where answer is just the option ID directly
             selected_option_id = user_answer
+            logger.info(f"Q{q_id_str}: Direct value: {selected_option_id}")
 
         if selected_option_id is not None:
             try:
                 selected_option_id = int(selected_option_id)
+                logger.info(f"Q{q_id_str}: Converted to int: {selected_option_id}")
             except (ValueError, TypeError):
+                logger.error(f"Q{q_id_str}: Failed to convert {selected_option_id} to int")
                 selected_option_id = None
 
         # Find the correct option by iterating through all options
@@ -78,11 +94,21 @@ def grade_session(session: ExamSession):
             if opt.is_correct:
                 correct_option = opt
                 break
+        
+        if correct_option:
+            logger.info(f"Q{q_id_str}: Correct option ID={correct_option.id}")
+            logger.info(f"Q{q_id_str}: Selected={selected_option_id}, Match={selected_option_id == correct_option.id}")
+        else:
+            logger.error(f"Q{q_id_str}: NO CORRECT OPTION FOUND!")
 
         if correct_option and selected_option_id == correct_option.id:
             total_marks += question.marks
+            logger.info(f"Q{q_id_str}: CORRECT! +{question.marks} marks. Total: {total_marks}")
         elif selected_option_id is not None:
-            total_marks -= session.exam.negative_mark or Decimal('0')
+            penalty = session.exam.negative_mark or Decimal('0')
+            total_marks -= penalty
+            logger.info(f"Q{q_id_str}: WRONG! -{penalty} marks. Total: {total_marks}")
+
 
     session.score = max(total_marks, Decimal('0'))
     session.status = ExamSession.STATUS_SUBMITTED
