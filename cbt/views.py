@@ -43,12 +43,11 @@ def grade_session(session: ExamSession):
     answers = session.answers_json or {}
     session_question_ids = answers.keys()
 
-    # Efficiently fetch all questions and their correct options at once
+    # Fetch all questions with ALL their options
     questions = Question.objects.filter(
         id__in=[int(q_id) for q_id in session_question_ids]
-    ).prefetch_related(
-        Prefetch('options', queryset=Option.objects.filter(is_correct=True), to_attr='correct_options')
-    )
+    ).prefetch_related('options')
+    
     question_map = {str(q.id): q for q in questions}
 
     for q_id_str in session_question_ids:
@@ -67,8 +66,12 @@ def grade_session(session: ExamSession):
             except (ValueError, TypeError):
                 pass
 
-        # Use the prefetched correct option
-        correct_option = question.correct_options[0] if hasattr(question, 'correct_options') and question.correct_options else None
+        # Find the correct option by iterating through all options
+        correct_option = None
+        for opt in question.options.all():
+            if opt.is_correct:
+                correct_option = opt
+                break
 
         if correct_option and selected_option_id == correct_option.id:
             total_marks += question.marks
