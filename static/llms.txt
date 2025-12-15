@@ -1,0 +1,28 @@
+# Skholar - Your Academic Companion
+
+> Skholar is an AI-powered academic platform designed to help students with CBT practice, grade calculation, and study resources.
+
+## Project Overview
+
+- **Name**: Skholar (Lumora Project)
+- **Purpose**: Academic utility app for students (focus on UNIBEN).
+- **Core Features**:
+  - **CBT Practice**: Computer Based Test simulation with real past questions.
+  - **AI Chat**: Academic assistant powered by LLMs.
+  - **GPA Calculator**: Tools for calculating semester and cumulative GPAs.
+  - **Campus Map**: Digital map of the university campus.
+  - **PDF Resources**: Library of academic materials.
+
+## Key Documentation
+
+- [README](https://github.com/Israel-Irene-Idemudia/uniben_project/blob/main/README.md): Setup and installation instructions.
+- [API Documentation](/api/docs): Backend API endpoints (if public).
+
+## For AI Agents
+
+This project uses a Django backend (DRF) and a Flutter frontend. The codebase is structured as follows:
+
+- `backend/uniben_project`: Django project root.
+- `lib/`: Flutter source code.
+- `lib/screens`: UI screens for mobile/web.
+- `lib/services`: API integration services.
