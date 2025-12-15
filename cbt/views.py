@@ -60,11 +60,17 @@ def grade_session(session: ExamSession):
             continue
 
         selected_option_id = None
-        if 'selected_option_id' in user_answer:
+        if isinstance(user_answer, dict):
+            selected_option_id = user_answer.get('selected_option_id')
+        else:
+            # Handle case where answer is just the option ID directly
+            selected_option_id = user_answer
+
+        if selected_option_id is not None:
             try:
-                selected_option_id = int(user_answer['selected_option_id'])
+                selected_option_id = int(selected_option_id)
             except (ValueError, TypeError):
-                pass
+                selected_option_id = None
 
         # Find the correct option by iterating through all options
         correct_option = None
