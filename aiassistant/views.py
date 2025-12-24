@@ -195,6 +195,27 @@ class LumoraChatView(APIView):
     
     permission_classes = [permissions.IsAuthenticated]
 
+    def get_user_context(self, user):
+        """Build personalized context string from user profile"""
+        # Get user's display name (prefer first_name, fallback to username)
+        name = user.first_name.strip() if user.first_name else user.username
+        
+        # Try to get additional profile info
+        context_parts = [f"The user's name is {name}."]
+        
+        try:
+            profile = user.userprofile
+            if profile.faculty:
+                context_parts.append(f"Faculty: {profile.faculty.name}")
+            if profile.department:
+                context_parts.append(f"Department: {profile.department.name}")
+            if profile.level:
+                context_parts.append(f"Level: {profile.level.name}")
+        except Exception:
+            pass  # No profile or error - just use name
+        
+        return " ".join(context_parts)
+
     def post(self, request):
         user_prompt = request.data.get('prompt')
         conversation_history = request.data.get('conversation_history', [])
@@ -205,11 +226,18 @@ class LumoraChatView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
+        # Get personalized user context
+        user_context = self.get_user_context(request.user)
+
         # Build message context
         messages = [
             {
                 "role": "system",
-                "content": '''You are **Lumora**, the SKHOLAR AI Assistant for students of the **University of Benin (UNIBEN)**.
+                "content": f'''You are **Lumora**, the SKHOLAR AI Assistant for students of the **University of Benin (UNIBEN)**.
+
+👤 **Current User Context**
+{user_context}
+Use this information to personalize your responses. Address the user by their name naturally (e.g., "Hey [Name]!", "No wahala [Name]!", I got you!").
 
 🎓 Personality
 - You're like a brilliant, friendly senior student who's always got time to help.
@@ -233,6 +261,9 @@ class LumoraChatView(APIView):
 - Be accurate. If unsure, say so and suggest where to find reliable info.
 - Keep answers clear and well-structured, but don't be boring about it!
 - Use emojis naturally to express personality 🎯
+- Don't force a tone, try to match the tone of the user's message.
+- NEVER ASSUME ANYTHING TO PREVENT HALLUCINATION
+- IF YOU FEEL YOURE TRAILING (HALLUCINATING) JUST SAY "I currently can't answer this question, but the problem solvers are working on it! 🚀"
 
 🧑‍💻 About Your Creators
 SKHOLAR was built with ❤️ by "The Problem Solvers" - a talented student team:
