@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand
 from core.models import Department, Faculty
 
 class Command(BaseCommand):
-    help = 'Create missing Faculties and Departments from CSV'
+    help = 'Create missing Faculties and Departments from CSV safely'
 
     def add_arguments(self, parser):
         parser.add_argument('--file', type=str, default='import_data/latest version.csv')
@@ -15,48 +15,57 @@ class Command(BaseCommand):
         created_dept = 0
 
         try:
-            # use utf-8-sig to handle BOM if present
+            # Use utf-8-sig to handle potential BOM characters from Excel
             with open(file_path, 'r', encoding='utf-8-sig') as csvfile:
                 reader = csv.DictReader(csvfile)
                 
                 for row in reader:
-                    # 1. Get Names
+                    # 1. Get Names and Strip Whitespace
                     faculty_name = row.get('faculty_title', '').strip()
-                    faculty_code = row.get('faculty_code', '').strip()[:10]
-                    
                     dept_name = row.get('department_title', '').strip()
+
+                    # Check if 'code' columns exist in CSV, but don't assume models have them
+                    faculty_code = row.get('faculty_code', '').strip()[:10]
                     dept_code = row.get('department_code', '').strip()[:10]
 
                     if not faculty_name or not dept_name:
                         continue
 
                     # 2. Ensure Faculty Exists
+                    # We check if the Faculty model actually has a 'code' field
+                    faculty_defaults = {'name': faculty_name}
+                    
+                    if hasattr(Faculty, 'code'):
+                         faculty_defaults['code'] = faculty_code
+
                     faculty, f_created = Faculty.objects.get_or_create(
                         name__iexact=faculty_name,
-                        defaults={
-                            'name': faculty_name,
-                            'code': faculty_code
-                        }
+                        defaults=faculty_defaults
                     )
+                    
                     if f_created:
                         self.stdout.write(self.style.SUCCESS(f"Created Faculty: {faculty_name}"))
                         created_fac += 1
 
                     # 3. Ensure Department Exists (Linked to Faculty)
+                    dept_defaults = {
+                        'name': dept_name,
+                        'faculty': faculty
+                    }
+                    
+                    if hasattr(Department, 'code'):
+                         dept_defaults['code'] = dept_code
+
                     department, d_created = Department.objects.get_or_create(
                         name__iexact=dept_name,
-                        defaults={
-                            'name': dept_name,
-                            'code': dept_code,
-                            'faculty': faculty
-                        }
+                        defaults=dept_defaults
                     )
                     
-                    # Update faculty if department exists but has no faculty
+                    # Fix: If department exists but has NO faculty or WRONG faculty, update it
                     if not d_created and department.faculty != faculty:
                         department.faculty = faculty
                         department.save()
-                        self.stdout.write(f"Updated Faculty for: {dept_name}")
+                        self.stdout.write(f"Updated Faculty linkage for: {dept_name}")
 
                     if d_created:
                         self.stdout.write(self.style.SUCCESS(f"Created Dept: {dept_name}"))
@@ -66,3 +75,5 @@ class Command(BaseCommand):
 
         except FileNotFoundError:
             self.stdout.write(self.style.ERROR(f"File not found: {file_path}"))
+        except Exception as e:
+            self.stdout.write(self.style.ERROR(f"Error: {str(e)}"))
