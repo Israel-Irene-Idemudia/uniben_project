@@ -20,7 +20,7 @@ class Command(BaseCommand):
         parser.add_argument(
             '--file',
             type=str,
-            default='import_data/undergraduate_courses.csv',
+            default='import_data/latest version.csv',
             help='Path to the CSV file to import'
         )
         parser.add_argument(
@@ -102,12 +102,44 @@ class Command(BaseCommand):
                         if department_title in department_cache:
                             department = department_cache[department_title]
                         else:
-                            # Try to find department by exact title match
-                            department = Department.objects.filter(name__iexact=department_title).first()
+                            import re
                             
-                            if not department:
-                                # Try contains match for partial titles
-                                department = Department.objects.filter(name__icontains=department_title[:20]).first()
+                            def normalize_name(name):
+                                """Normalize department name for matching"""
+                                n = name.strip()
+                                # Collapse multiple spaces into one
+                                n = re.sub(r'\s+', ' ', n)
+                                # Remove "Department of " prefix (case insensitive)
+                                n = re.sub(r'^department of\s+', '', n, flags=re.IGNORECASE)
+                                # Remove parenthetical codes at end like "(ENL)", "(AEE)"
+                                n = re.sub(r'\s*\([A-Z]{2,5}\)\s*$', '', n)
+                                # Remove common suffixes
+                                n = re.sub(r'\s*department\s*$', '', n, flags=re.IGNORECASE)
+                                return n.strip().lower()
+                            
+                            normalized_csv = normalize_name(department_title)
+                            department = None
+                            
+                            # Try all departments and find best match
+                            for dept in Department.objects.all():
+                                normalized_db = normalize_name(dept.name)
+                                
+                                # Exact normalized match
+                                if normalized_db == normalized_csv:
+                                    department = dept
+                                    break
+                                
+                                # One contains the other
+                                if normalized_csv in normalized_db or normalized_db in normalized_csv:
+                                    department = dept
+                                    break
+                                
+                                # Check first significant word (e.g. "agricultural", "english")
+                                csv_words = normalized_csv.split()
+                                db_words = normalized_db.split()
+                                if csv_words and db_words and csv_words[0] == db_words[0]:
+                                    department = dept
+                                    break
                             
                             if not department:
                                 self.stdout.write(
