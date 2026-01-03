@@ -1123,5 +1123,179 @@
     "statement": "Mr. Macaroni is known for the phrase 'Ooin, you are doing well'.",
     "answer": true,
     "category": "Entertainment"
+  },  {
+    "statement": "The capital of Australia is Sydney.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Peanuts are technically nuts.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Frankenstein was the name of the monster.",
+    "answer": false,
+    "category": "Literature"
+  },
+  {
+    "statement": "A tomato is scientifically a fruit.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Killer Whales (Orcas) are actually dolphins.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Fortune Cookies originated in China.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "The 'Black Box' on an airplane is actually orange.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "Chameleons change color mainly to blend in with their surroundings.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "French Fries originated in France.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "Humans have exactly 5 senses.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "The phrase 'Elementary, my dear Watson' appears in the original Sherlock Holmes books.",
+    "answer": false,
+    "category": "Literature"
+  },
+  {
+    "statement": "Blood inside your body is blue until it touches oxygen.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Shaving hair makes it grow back thicker and darker.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Sushi means 'Raw Fish'.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "Coconuts are giant nuts.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Paper money is made mostly of cotton, not paper pulp.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Coffee beans are actually seeds of a fruit.",
+    "answer": true,
+    "category": "Food"
+  },
+  {
+    "statement": "The Sun is actually white, not yellow.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Pineapples grow on trees.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Mount Everest is the tallest mountain from base to peak.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Bats are completely blind.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Drinking alcohol warms up your body temperature.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Water conducts electricity perfectly.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Nigeria has always used the Naira as its currency.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "George Washington had wooden teeth.",
+    "answer": false,
+    "category": "History"
+  },
+  {
+    "statement": "A strawberry is not a true berry, but a watermelon is.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The Statue of Liberty was a gift from Spain.",
+    "answer": false,
+    "category": "History"
+  },
+  {
+    "statement": "Birds are biologically related to dinosaurs.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "A penny dropped from the Empire State Building can kill a person.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "The 'funny bone' is a nerve, not a bone.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Camels store water in their humps.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "It is impossible to sneeze with your eyes open.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The Atlantic Ocean is the largest ocean in the world.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Lightning never strikes the same place twice.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Toads give you warts if you touch them.",
+    "answer": false,
+    "category": "Science"
   }
 ]
