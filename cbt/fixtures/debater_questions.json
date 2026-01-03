@@ -73,5 +73,155 @@
     "statement": "DNA stands for Deoxyribonucleic Acid.",
     "answer": true,
     "category": "Science"
+  },
+  {
+    "statement": "The University of Benin was formerly known as the Midwest Institute of Technology.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Flutter was developed by Facebook.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Naira was introduced as Nigeria's currency in 1973.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The Great Hall in UNIBEN is named after Professor T.M. Yesufu.",
+    "answer": false,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "HTML is a programming language.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The atomic number of Carbon is 6.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "UNIBEN's main campus is located at Ugbowo.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Whales are classified as fish.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Nigeria has 36 states and a Federal Capital Territory.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "In Python, a list is immutable.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The current Vice Chancellor acts as the academic head of the University.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Sound travels faster in a vacuum than in air.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Elon Musk is the founder of Microsoft.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The Ekehuan campus of UNIBEN primarily hosts Science students.",
+    "answer": false,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "RAM stands for Random Access Memory.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Niger River is the longest river in West Africa.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Absolute Zero is -273.15 degrees Celsius.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "UNIBEN's motto is 'Knowledge for Service'.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "JavaScript and Java are the same language.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The human heart has four chambers.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Professor Grace Alele-Williams was the first female Vice-Chancellor of UNIBEN.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "A byte consists of 4 bits.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "Nigeria's coat of arms features two white horses.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Newton's First Law is also known as the Law of Inertia.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The Akin Deko Auditorium is located in the Ekehuan Campus.",
+    "answer": false,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Linux is an open-source operating system.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The planet Mars is also known as the Red Planet.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Democracy Day in Nigeria is celebrated on May 29th.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "HTTP stands for HyperText Transfer Protocol.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "UNIBEN became a federal university in 1975.",
+    "answer": true,
+    "category": "Uniben History"
   }
 ]
