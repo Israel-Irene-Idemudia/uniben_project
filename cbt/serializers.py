@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Exam, Question, Option, ExamSession
+from .models import Exam, Question, Option, ExamSession, DebaterQuestion
 
 # Serializer for when a user is TAKING a quiz.
 # It intentionally hides the 'is_correct' field.
@@ -40,3 +40,10 @@ class ExamSessionSerializer(serializers.ModelSerializer):
         model = ExamSession
         fields = ['token','exam','student','started_at','submitted_at','status','score','answers_json']
         read_only_fields = ['token','started_at','submitted_at','status','score']
+
+
+class DebaterQuestionSerializer(serializers.ModelSerializer):
+    """Serializer for Debater game questions"""
+    class Meta:
+        model = DebaterQuestion
+        fields = ['id', 'statement', 'answer', 'category']

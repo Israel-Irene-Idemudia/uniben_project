@@ -96,3 +96,28 @@ class ExamSession(models.Model):
     def __str__(self):
         return f"Session {self.token[:8]} for {self.student}"
 
+
+class DebaterQuestion(models.Model):
+    """Questions for The Debater game - True/False statements"""
+    CATEGORY_GENERAL = 'General Knowledge'
+    CATEGORY_SCIENCE = 'Science'
+    CATEGORY_UNIBEN = 'Uniben History'
+    CATEGORY_CHOICES = [
+        (CATEGORY_GENERAL, 'General Knowledge'),
+        (CATEGORY_SCIENCE, 'Science'),
+        (CATEGORY_UNIBEN, 'Uniben History'),
+    ]
+
+    statement = models.TextField(help_text="The true/false statement")
+    answer = models.BooleanField(help_text="True if statement is correct, False if incorrect")
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default=CATEGORY_GENERAL)
+    difficulty = models.CharField(max_length=20, blank=True, help_text="Optional difficulty tag")
+    is_active = models.BooleanField(default=True, help_text="Inactive questions won't appear in game")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['category', '-created_at']
+
+    def __str__(self):
+        return f"[{self.category}] {self.statement[:60]}..."

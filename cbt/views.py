@@ -217,3 +217,37 @@ class SubmitView(APIView):
                 'selected_answers': session.answers_json or {}
             }
         }, status=status.HTTP_200_OK)
+
+
+class DebaterQuestionsView(APIView):
+    """
+    API endpoint for The Debater game questions.
+    GET /cbt/debater-questions/?category=Science
+    Returns active questions, optionally filtered by category.
+    """
+    permission_classes = [permissions.AllowAny]  # Public endpoint for offline-first caching
+
+    def get(self, request, *args, **kwargs):
+        from .models import DebaterQuestion
+        from .serializers import DebaterQuestionSerializer
+        
+        category = request.GET.get('category', None)
+        
+        # Get active questions
+        questions = DebaterQuestion.objects.filter(is_active=True)
+        
+        # Filter by category if provided
+        if category:
+            questions = questions.filter(category=category)
+        
+        # Get version (latest updated_at timestamp)
+        latest_question = DebaterQuestion.objects.filter(is_active=True).order_by('-updated_at').first()
+        version = latest_question.updated_at.isoformat() if latest_question else None
+        
+        # Serialize and return
+        serializer = DebaterQuestionSerializer(questions, many=True)
+        return Response({
+            'version': version,
+            'questions': serializer.data,
+            'count': len(serializer.data)
+        }, status=status.HTTP_200_OK)

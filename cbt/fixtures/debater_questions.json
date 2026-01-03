@@ -1,0 +1,77 @@
+[
+  {
+    "statement": "The capital of Nigeria is Abuja.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Mitochondria are the powerhouses of the cell.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The chemical symbol for gold is Ag.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "University of Benin was founded in 1970.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "The speed of light is slower than the speed of sound.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Nigeria gained independence in 1960.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Water boils at 100 degrees Celsius at sea level.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Lagos is the capital of Nigeria.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Photosynthesis occurs in the mitochondria.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Uniben is located in Edo State.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "The Earth is flat.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Python is a programming language.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The human body has 206 bones.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Mount Everest is the tallest mountain on Earth.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "DNA stands for Deoxyribonucleic Acid.",
+    "answer": true,
+    "category": "Science"
+  }
+]

@@ -4,7 +4,8 @@ from .views import (
     StartExamView, 
     AutoSaveView, 
     SubmitView,
-    UserSubscribedCoursesWithQuizzes
+    UserSubscribedCoursesWithQuizzes,
+    DebaterQuestionsView
 )
 
 urlpatterns = [
@@ -16,4 +17,7 @@ urlpatterns = [
     path('<int:exam_id>/start/', StartExamView.as_view(), name='cbt-exam-start'),
     path('sessions/<str:token>/autosave/', AutoSaveView.as_view(), name='cbt-autosave'),
     path('sessions/<str:token>/submit/', SubmitView.as_view(), name='cbt-submit'),
+    
+    # The Debater game questions API
+    path('debater-questions/', DebaterQuestionsView.as_view(), name='debater-questions'),
 ]
