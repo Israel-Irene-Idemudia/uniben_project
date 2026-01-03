@@ -39,13 +39,23 @@ class Command(BaseCommand):
                 continue
 
             course_code = filename.replace('.csv', '').strip()
+            # Normalize course code: remove spaces, uppercase
+            course_code_normalized = course_code.replace(' ', '').upper()
             
-            # --- FIX: Use filter().first() to handle duplicate courses ---
-            course = Course.objects.filter(code=course_code).first()
+            # Try to find existing course with normalized code
+            course = Course.objects.filter(code__iexact=course_code_normalized).first()
+            
             if not course:
-                self.stdout.write(self.style.WARNING(f'Course {course_code} does not exist, skipping'))
+                # Try without normalization for exact match
+                course = Course.objects.filter(code__iexact=course_code).first()
+            
+            if not course:
+                self.stdout.write(self.style.WARNING(
+                    f'Course {course_code} (normalized: {course_code_normalized}) not found in database, skipping'
+                ))
                 continue
-            # --- END FIX ---
+            
+            self.stdout.write(self.style.SUCCESS(f'Found course: {course.code} - {course.title}'))
 
             exam, created = Exam.objects.get_or_create(
                 title=f"{course.code} Exam",
