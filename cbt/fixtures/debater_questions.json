@@ -223,5 +223,580 @@
     "statement": "UNIBEN became a federal university in 1975.",
     "answer": true,
     "category": "Uniben History"
+  },
+  {
+    "statement": "A PDF file can be edited easily using Notepad.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The human brain stops growing around age 18.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Benin City is known as the 'Cradle of Black Civilization'.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Zoom is a video conferencing app owned by Google.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The 'Hall of Residence 2' in UNIBEN is popularly called 'Hall 2'.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Antibiotics are used to kill viruses.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Zuckerberg dropped out of Harvard University.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "5G internet is faster than 4G.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The June 12 Hall is located in the Ugbowo Campus.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Nigeria is the most populous country in Africa.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Oxygen is the most abundant gas in the Earth's atmosphere.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Android is an operating system owned by Apple.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The boiling point of water is higher on a mountain than at sea level.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "UNIBEN usually holds its convocation ceremonies at the Akin Deko Auditorium.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "A 'bug' in computer terms refers to an insect inside the CPU.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "Diamonds are made of pure Carbon.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Wole Soyinka was the first African to win a Nobel Prize in Literature.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "You need an internet connection to send an SMS.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The 'Capitol' is a popular student relaxation spot in UNIBEN.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Sharks have bones.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "TikTok was originally called Musical.ly.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The naira note with the faces of two people is the 500 Naira note.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "GST 111 is typically 'Use of English'.",
+    "answer": false,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Light travels faster than sound.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The 'Cloud' in technology refers to actual clouds in the sky.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "Nollywood is the second largest film industry in the world by output.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "UNIBEN has a Faculty of Veterinary Medicine.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Humans share about 50% of their DNA with bananas.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "A Terabyte is larger than a Gigabyte.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The River Benue meets the River Niger at Lokoja.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Spiders are insects.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Artificial Intelligence (AI) can think and feel emotions like humans.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The 'Basement' is a popular location near the Faculty of Arts.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Nelson Mandela was a President of Ghana.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Gravity is weaker on the Moon than on Earth.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The currency code for the Nigerian Naira is NGN.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Google Chrome is a search engine, not a browser.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The main library in UNIBEN is called the John Harris Library.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Humans breathe in Oxygen and breathe out mostly Carbon Dioxide.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "A tomato is scientifically classified as a vegetable.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Bill Gates is the founder of Facebook.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The Hall 3 hostel in UNIBEN is exclusively for female students.",
+    "answer": false,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Wi-Fi stands for Wireless Fidelity.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "Nigeria is located in East Africa.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Water expands when it freezes into ice.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The 'at' symbol in an email address is written as @.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "UNIBEN has a Faculty of Dentistry.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "The sun revolves around the Earth.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Chinua Achebe wrote 'Things Fall Apart'.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "A USB flash drive uses magnetic tape to store data.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "Hall 4 is known as the 'Queen Idia Hall'.",
+    "answer": false,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "The hardest natural substance on Earth is a diamond.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Instagram is owned by Meta.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Nigerian flag was designed by Taiwo Akinkunmi.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Penicillin is a type of antibiotic derived from mold.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The 'Back Gate' of UNIBEN leads directly to BDPA.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "You can download more RAM for your computer from the internet.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "A hexagon has five sides.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Venus is the hottest planet in our solar system.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "UNIBEN's main administrative building is known as the Senate Building.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "iOS is the operating system used on Samsung phones.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "Malaria is caused by a virus.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "The 36th state created in Nigeria was Ebonyi State.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Ctrl + C is the universal shortcut for 'Paste'.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "Professor Lilian Salami was a Vice-Chancellor of UNIBEN.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Light from the sun takes about 8 minutes to reach Earth.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Nnamdi Azikiwe was the first military Head of State of Nigeria.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "An IP address identifies a device on a network.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Faculty of Law in UNIBEN is located at the Ekehuan Campus.",
+    "answer": false,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Bats are the only mammals capable of true flight.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Twitter's logo is now an 'X'.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Zuma Rock is located in Lagos State.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Electrons have a positive charge.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "UNIBEN has a teaching hospital known as UBTH.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Bluetooth technology is named after a Danish King.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "A leap year has 366 days.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The heart pumps blood through arteries and veins.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The 'Ekosodin' gate is a popular entry point for students living off-campus.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "SSD stands for Super Speed Drive.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "Sharks are immune to cancer.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Fela Kuti is the creator of Afrobeat music.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The main colors of the UNIBEN logo are Purple and Blue.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Incognito mode hides your browsing history from your Internet Service Provider (ISP).",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "Sound cannot travel through a vacuum (space).",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Calabar is the capital of Cross River State.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The University of Benin was the first university in Nigeria to appoint a female Vice-Chancellor.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Bananas are berries, but strawberries are not.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "It rains diamonds on Jupiter and Saturn.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The 'Funny Bone' is actually a bone.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramids.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Nigeria has the highest number of twins in the world (specifically Igbo-Ora).",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Your nose and ears never stop growing.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Bulls are angered by the color red.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The first computer bug was an actual real moth stuck in a machine.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "A cloud can weigh more than 1 million pounds (approx. 450,000 kg).",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The shortest war in history lasted only 38 minutes.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Humans can't breathe and swallow at the same time.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The Great Wall of China is the only man-made object visible from space with the naked eye.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "There are more mobile phone connections in Nigeria than there are people.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "An octopus has three hearts.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Goldfish only have a 3-second memory.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "UNIBEN was originally located at the Iyaro Campus before moving to Ugbowo.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Wombat poop is cube-shaped.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The Twitter bird's official name is Larry.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "Napoleon Bonaparte was extremely short.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Hot water freezes faster than cold water (The Mpemba Effect).",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Nigeria launched a satellite into space before it had a steady power supply.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "Honey never spoils; you could eat 3000-year-old honey.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "A day on Venus is longer than a year on Venus.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The '# symbol' is technically called an Octothorpe.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "Vikings wore horned helmets.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The letter 'Q' does not appear in any U.S. state name.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Humans share 60% of their DNA with bananas.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Sloths can hold their breath longer than dolphins.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Oxford University is older than the Aztec Empire.",
+    "answer": true,
+    "category": "General Knowledge"
   }
 ]
