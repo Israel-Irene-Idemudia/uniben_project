@@ -798,5 +798,330 @@
     "statement": "Oxford University is older than the Aztec Empire.",
     "answer": true,
     "category": "General Knowledge"
+  },
+  {
+    "statement": "Nigeria won the Olympic Gold Medal in football in 1996.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "Pounded Yam is traditionally made from Cassava.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "Burna Boy has won a Grammy Award.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "The Sahara Desert is the largest desert in the world.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Cristiano Ronaldo has won the World Cup.",
+    "answer": false,
+    "category": "Sports"
+  },
+  {
+    "statement": "Egusi soup is made primarily from melon seeds.",
+    "answer": true,
+    "category": "Food"
+  },
+  {
+    "statement": "Funke Akindele played the character 'Jenifa'.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Mount Kilimanjaro is located in Kenya.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Jay-Z is the richest musician in the world.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Garri is processed from Yam.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "Arsenal FC won the Premier League in 2004 without losing a single game (The Invincibles).",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "The Nile River flows south to north.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Wizkid's real name is David Adeleke.",
+    "answer": false,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Suya is typically made from spicy grilled chicken.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "Lionel Messi is from Brazil.",
+    "answer": false,
+    "category": "Sports"
+  },
+  {
+    "statement": "The Eiffel Tower is located in London.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Genevieve Nnaji is a Nollywood actress.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Amala is traditionally associated with the Yoruba people.",
+    "answer": true,
+    "category": "Food"
+  },
+  {
+    "statement": "The Super Eagles are the Nigerian national basketball team.",
+    "answer": false,
+    "category": "Sports"
+  },
+  {
+    "statement": "Africa is a country.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Rema is signed to Mavin Records (or Jonzing World).",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Jollof Rice originally comes from Senegal.",
+    "answer": true,
+    "category": "Food"
+  },
+  {
+    "statement": "A standard football match lasts 90 minutes.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "Canada has more lakes than the rest of the world combined.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Squid Game is a Japanese TV series.",
+    "answer": false,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Akara is made from fried bean paste.",
+    "answer": true,
+    "category": "Food"
+  },
+  {
+    "statement": "Victor Osimhen plays as a goalkeeper.",
+    "answer": false,
+    "category": "Sports"
+  },
+  {
+    "statement": "Australia is both a country and a continent.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Don Jazzy is a music producer.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Indomie is a Nigerian brand by origin.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "The 2022 FIFA World Cup was held in Qatar.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "The Amazon Rainforest is primarily in Brazil.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Black Panther is a movie set in the fictional nation of Wakanda.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Moi-Moi is cooked by frying.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "Basketball teams have 11 players on the court each.",
+    "answer": false,
+    "category": "Sports"
+  },
+  {
+    "statement": "Antarctica is the coldest continent on Earth.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Olamide is known as 'Baddo'.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Chapman is a popular Nigerian cocktail drink.",
+    "answer": true,
+    "category": "Food"
+  },
+  {
+    "statement": "Usain Bolt is a marathon runner.",
+    "answer": false,
+    "category": "Sports"
+  },
+  {
+    "statement": "Egypt is located in North Africa.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Netflix started as a DVD rental service.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Palm oil is red in color.",
+    "answer": true,
+    "category": "Food"
+  },
+  {
+    "statement": "A tennis game uses the scoring system 15, 30, 40.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "Tokyo is the capital of China.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Iron Man's real name is Bruce Wayne.",
+    "answer": false,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Fufu can be made from Cassava.",
+    "answer": true,
+    "category": "Food"
+  },
+  {
+    "statement": "FIFA stands for Federation International Football Association.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "Russia is the largest country in the world by land area.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Tiwa Savage is known as the 'African Bad Gyal'.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Pepper Soup is usually served cold.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "Manchester United's home stadium is Old Trafford.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "There are 7 continents in the world.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Beyoncé was a member of Destiny's Child.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Ofada Rice is a variety of rice grown in Nigeria.",
+    "answer": true,
+    "category": "Food"
+  },
+  {
+    "statement": "Michael Jordan played for the Chicago Bulls.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "The Dead Sea is so salty that you can float in it easily.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Spongebob Squarepants lives in a pineapple.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Eba is made by pouring hot water into yam flour.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "Serena Williams is a famous golfer.",
+    "answer": false,
+    "category": "Sports"
+  },
+  {
+    "statement": "Mount Everest is in Nepal.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Broda Shaggi is a comedian and actor.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Kilishi is basically dried meat similar to beef jerky.",
+    "answer": true,
+    "category": "Food"
+  },
+  {
+    "statement": "A marathon is 42.195 kilometers long.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "Alaska is part of Canada.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Mr. Macaroni is known for the phrase 'Ooin, you are doing well'.",
+    "answer": true,
+    "category": "Entertainment"
   }
 ]
