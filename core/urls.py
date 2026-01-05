@@ -7,10 +7,10 @@ from .views import (
     FacultyViewSet,
     DepartmentViewSet,
     CourseAreaViewSet,
-    LevelViewSet,  # Import the new LevelViewSet
-    LevelViewSet,  # Import the new LevelViewSet
+    LevelViewSet,
     CourseViewSet,
-    ContactMessageCreateAPI
+    ContactMessageCreateAPI,
+    ContactMessageListAPI
 )
 
 # Create a router and register our viewsets with it.
@@ -25,4 +25,5 @@ router.register(r'courses', CourseViewSet, basename='course')
 urlpatterns = [
     path('', include(router.urls)),
     path('contact/', ContactMessageCreateAPI.as_view(), name='contact-create'),
+    path('contact/list/', ContactMessageListAPI.as_view(), name='contact-list'),
 ]

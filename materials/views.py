@@ -32,3 +32,30 @@ class MaterialUploadAPI(generics.CreateAPIView):
     def perform_create(self, serializer):
         # Explicitly set is_verified to False (redundant due to default, but safe)
         serializer.save(is_verified=False)
+
+# Admin: List all/unverified materials
+class MaterialAdminListAPI(generics.ListAPIView):
+    queryset = Material.objects.all().order_by('-uploaded_at')
+    serializer_class = MaterialSerializer
+    permission_classes = [permissions.IsAdminUser]
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['title', 'description']
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        status = self.request.query_params.get('status') # 'verified', 'pending'
+        if status == 'verified':
+            return qs.filter(is_verified=True)
+        elif status == 'pending':
+            return qs.filter(is_verified=False)
+        return qs
+
+# Admin: Verify/Reject material
+class MaterialVerificationAPI(generics.UpdateAPIView):
+    queryset = Material.objects.all()
+    serializer_class = MaterialSerializer
+    permission_classes = [permissions.IsAdminUser]
+
+    def perform_update(self, serializer):
+        # Allow updating is_verified and other fields
+        serializer.save()

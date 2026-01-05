@@ -1297,5 +1297,730 @@
     "statement": "Toads give you warts if you touch them.",
     "answer": false,
     "category": "Science"
+  },
+  {
+    "statement": "In programming, arrays start counting at 1.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Nigerian 20 Naira note features a woman, Ladi Kwali.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The chemical symbol for Iron is Fe.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Amazon owns the streaming platform Twitch.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Hall 5 hostel in UNIBEN is for male students.",
+    "answer": false,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "Sound travels faster through steel than through air.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Git and GitHub are the exact same thing.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "Nigeria changed from driving on the left to the right in 1972.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "A '404' error indicates that a page was not found.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Ooni of Ife is a traditional ruler in Igbo land.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Helium is the lightest gas in the universe.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "UNIBEN is located along the Lagos-Benin Expressway.",
+    "answer": true,
+    "category": "Uniben History"
+  },
+  {
+    "statement": "JPEG images lose quality every time they are saved (Lossy compression).",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Super Falcons are Nigeria's female national football team.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "Clouds are made of water vapor (gas).",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Burnaboy's album 'Twice as Tall' won a Grammy.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Ctrl + Z is the universal shortcut for 'Undo'.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "Nigeria has won the FIFA World Cup.",
+    "answer": false,
+    "category": "Sports"
+  },
+  {
+    "statement": "The dot over the letter 'i' or 'j' is technically called a 'tittle'.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The programming language 'C++' is older than 'Java'.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "Male seahorses give birth to their young.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Dangote Cement is headquartered in Lagos.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "A 'Bit' is short for 'Binary Digit'.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "Venus spins in the opposite direction to most other planets.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "The NYSC scheme was established in 1973.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "CSS is used to structure a webpage, not style it.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Yoruba word for 'Water' is 'Omi'.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Mushrooms are a type of plant.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Davido's record label is called YBNL.",
+    "answer": false,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "The HTTP error code 418 is officially defined as 'I'm a teapot'.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "Owls can turn their heads 360 degrees.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Professor Wole Soyinka won the Nobel Prize in 1986.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "In Python, you use curly braces {} to define code blocks.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The Femur (thigh bone) is the longest bone in the human body.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Benin City was famously invaded by the British in 1897.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Bitcoin was created by Elon Musk.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "A standard piano has 88 keys.",
+    "answer": true,
+    "category": "Entertainment"
+  },
+  {
+    "statement": "Cows sleep standing up.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Calabar is famous for the Carnival held every December.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "The shortcut Alt + F4 usually saves your work.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The currency of Japan is the Yuan.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Naruto's favorite food is Ramen.",
+    "answer": true,
+    "category": "Anime & Comics"
+  },
+  {
+    "statement": "Elon Musk was born in the United States.",
+    "answer": false,
+    "category": "Business"
+  },
+  {
+    "statement": "The fear of long words is called Hippopotomonstrosesquippedaliophobia.",
+    "answer": true,
+    "category": "Psychology"
+  },
+  {
+    "statement": "In the Marvel Cinematic Universe, Thanos collected 5 Infinity Stones.",
+    "answer": false,
+    "category": "Movies"
+  },
+  {
+    "statement": "Ethereum is a cryptocurrency platform.",
+    "answer": true,
+    "category": "Business"
+  },
+  {
+    "statement": "The 'Mona Lisa' has no eyebrows.",
+    "answer": true,
+    "category": "Art & Culture"
+  },
+  {
+    "statement": "Nigeria's internet country code top-level domain is .ng.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "Simba is the name of the main character in 'The Lion King'.",
+    "answer": true,
+    "category": "Movies"
+  },
+  {
+    "statement": "The capital of Canada is Toronto.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Psychology is the scientific study of the mind and behavior.",
+    "answer": true,
+    "category": "Psychology"
+  },
+  {
+    "statement": "Goku is a Saiyan from the planet Earth.",
+    "answer": false,
+    "category": "Anime & Comics"
+  },
+  {
+    "statement": "Jeff Bezos founded Amazon in a garage.",
+    "answer": true,
+    "category": "Business"
+  },
+  {
+    "statement": "The human eye can distinguish 10 million different colors.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Anthony Joshua represents Nigeria in the Olympics.",
+    "answer": false,
+    "category": "Sports"
+  },
+  {
+    "statement": "The first iPhone was released in 2005.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "Vatican City is the smallest country in the world.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "In chess, the Queen can move in an L-shape.",
+    "answer": false,
+    "category": "Sports & Games"
+  },
+  {
+    "statement": "Spotify was founded in Sweden.",
+    "answer": true,
+    "category": "Business"
+  },
+  {
+    "statement": "The chemical symbol for Silver is Si.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Luffy from 'One Piece' ate the Gum-Gum Fruit.",
+    "answer": true,
+    "category": "Anime & Comics"
+  },
+  {
+    "statement": "Pavlov's Dog experiment is a famous study in Classical Conditioning.",
+    "answer": true,
+    "category": "Psychology"
+  },
+  {
+    "statement": "Abuja has always been the capital of Nigeria.",
+    "answer": false,
+    "category": "History"
+  },
+  {
+    "statement": "A 'Unicorn' in business is a startup valued at over $1 billion.",
+    "answer": true,
+    "category": "Business"
+  },
+  {
+    "statement": "The Olympic rings have 6 colors including the white background.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "Superman's weakness is Kryptonite.",
+    "answer": true,
+    "category": "Anime & Comics"
+  },
+  {
+    "statement": "SQL stands for Structured Question Language.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The word 'Queue' is pronounced the same way when the last 4 letters are removed.",
+    "answer": true,
+    "category": "Language"
+  },
+  {
+    "statement": "Nigeria has won the African Cup of Nations (AFCON) more than 5 times.",
+    "answer": false,
+    "category": "Sports"
+  },
+  {
+    "statement": "Deja Vu is the feeling that you have experienced a situation before.",
+    "answer": true,
+    "category": "Psychology"
+  },
+  {
+    "statement": "Walt Disney holds the record for the most Academy Awards (Oscars).",
+    "answer": true,
+    "category": "Movies"
+  },
+  {
+    "statement": "The 'K' in 'K-Pop' stands for Korean.",
+    "answer": true,
+    "category": "Music"
+  },
+  {
+    "statement": "Mario made his first appearance in a game called 'Donkey Kong'.",
+    "answer": true,
+    "category": "Gaming"
+  },
+  {
+    "statement": "A standard deck of cards has 54 cards including Jokers.",
+    "answer": true,
+    "category": "Games"
+  },
+  {
+    "statement": "Apple became the first company to reach a $3 Trillion market cap.",
+    "answer": true,
+    "category": "Business"
+  },
+  {
+    "statement": "Diamonds are the hardest metal on Earth.",
+    "answer": false,
+    "category": "Science"
+  },
+  {
+    "statement": "Sherlock Holmes is a real historical detective.",
+    "answer": false,
+    "category": "Literature"
+  },
+  {
+    "statement": "The unicorn is the national animal of Scotland.",
+    "answer": true,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Google's original name was 'BackRub'.",
+    "answer": true,
+    "category": "Technology"
+  },
+  {
+    "statement": "The phrase 'Hakuna Matata' means 'No Worries'.",
+    "answer": true,
+    "category": "Language"
+  },
+  {
+    "statement": "The Playstation 2 is the best-selling game console of all time.",
+    "answer": true,
+    "category": "Gaming"
+  },
+  {
+    "statement": "Zlatan Ibrahimovic has never won the UEFA Champions League.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "In 'Game of Thrones', Jon Snow knows nothing.",
+    "answer": true,
+    "category": "Pop Culture"
+  },
+  {
+    "statement": "NFT stands for Non-Fungible Token.",
+    "answer": true,
+    "category": "Business"
+  },
+  {
+    "statement": "The Great Pyramid of Giza is located in Mexico.",
+    "answer": false,
+    "category": "Geography"
+  },
+  {
+    "statement": "Saitama is the main character of 'Attack on Titan'.",
+    "answer": false,
+    "category": "Anime & Comics"
+  },
+  {
+    "statement": "Coca-Cola originally contained cocaine.",
+    "answer": true,
+    "category": "History"
+  },
+  {
+    "statement": "A 'Baker's Dozen' is 12.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "Usain Bolt is from Jamaica.",
+    "answer": true,
+    "category": "Sports"
+  },
+  {
+    "statement": "The Python programming language is named after the snake.",
+    "answer": false,
+    "category": "Technology"
+  },
+  {
+    "statement": "The number 1 is a prime number.",
+    "answer": false,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "A noun is a word that names a person, place, thing, or idea.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "In the equation '2 + 2 x 2', the answer is 8.",
+    "answer": false,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "The past tense of 'run' is 'ran'.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "A triangle with all equal sides is called Isosceles.",
+    "answer": false,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "The word 'set' has the highest number of definitions in the dictionary.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "Zero (0) is an even number.",
+    "answer": true,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "An antonym is a word that means the same as another word.",
+    "answer": false,
+    "category": "English"
+  },
+  {
+    "statement": "Pi (π) is exactly equal to 3.14.",
+    "answer": false,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "The word 'racecar' is a palindrome.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "Any number to the power of zero equals 1.",
+    "answer": true,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "A sentence must always contain a verb.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "A negative number multiplied by a negative number gives a negative result.",
+    "answer": false,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "The silent 'k' in 'knee' makes it a silent letter.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "A hexagon has 8 sides.",
+    "answer": false,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "The plural of 'sheep' is 'sheeps'.",
+    "answer": false,
+    "category": "English"
+  },
+  {
+    "statement": "In the fraction 3/4, the number 4 is the numerator.",
+    "answer": false,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "Adjectives describe nouns.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "A century is 100 years.",
+    "answer": true,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "The word 'fast' can be both an adjective and an adverb.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "Dividing any number by zero results in zero.",
+    "answer": false,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "The phrase 'raining cats and dogs' is a metaphor.",
+    "answer": false,
+    "category": "English"
+  },
+  {
+    "statement": "The sum of angles in a triangle is always 180 degrees.",
+    "answer": true,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "'I' comes before 'E' except after 'C' is a common spelling rule.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "The Roman Numeral 'V' stands for 10.",
+    "answer": false,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "A preposition shows the relationship between a noun and another word.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "-10 is greater than -5.",
+    "answer": false,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "The word 'Oxymoron' refers to a figure of speech.",
+    "answer": true,
+    "category": "English"
+  },
+  {
+    "statement": "A standard deck of cards has 4 suits.",
+    "answer": true,
+    "category": "Mathematics"
+  },
+  {
+    "statement": "Every sentence must end with a full stop (period).",
+    "answer": false,
+    "category": "English"
+  },
+  {
+    "statement": "No number from 0 to 999 contains the letter 'a' in its English spelling.",
+    "answer": true,
+    "category": "Wordplay"
+  },
+  {
+    "statement": "Polar bear fur is white.",
+    "answer": false,
+    "category": "Science Myth"
+  },
+  {
+    "statement": "Astronauts cannot burp in space.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "A pony is a baby horse.",
+    "answer": false,
+    "category": "Animals"
+  },
+  {
+    "statement": "Ketchup was originally sold as medicine.",
+    "answer": true,
+    "category": "History"
+  },
+  {
+    "statement": "Glass is a liquid that flows very slowly.",
+    "answer": false,
+    "category": "Science Myth"
+  },
+  {
+    "statement": "The plural of 'Octopus' is technically 'Octopi'.",
+    "answer": false,
+    "category": "Grammar"
+  },
+  {
+    "statement": "Banana trees are scientifically classified as trees.",
+    "answer": false,
+    "category": "Botany"
+  },
+  {
+    "statement": "Mount Chimborazo is closer to space than Mount Everest.",
+    "answer": true,
+    "category": "Geography"
+  },
+  {
+    "statement": "Eating carrots significantly improves night vision.",
+    "answer": false,
+    "category": "Science Myth"
+  },
+  {
+    "statement": "Your heart stops for a millisecond when you sneeze.",
+    "answer": false,
+    "category": "Anatomy"
+  },
+  {
+    "statement": "Hippopotamus milk is pink.",
+    "answer": true,
+    "category": "Animals"
+  },
+  {
+    "statement": "Diamonds are formed from compressed coal.",
+    "answer": false,
+    "category": "Science Myth"
+  },
+  {
+    "statement": "The color 'Orange' was named after the fruit.",
+    "answer": true,
+    "category": "Etymology"
+  },
+  {
+    "statement": "Rabbits cannot vomit.",
+    "answer": true,
+    "category": "Animals"
+  },
+  {
+    "statement": "Tigers have striped skin, not just striped fur.",
+    "answer": true,
+    "category": "Animals"
+  },
+  {
+    "statement": "A 'jiffy' is an actual scientific unit of time.",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "Blue Whales eat the largest animals in the ocean.",
+    "answer": false,
+    "category": "Animals"
+  },
+  {
+    "statement": "Slugs have four noses.",
+    "answer": true,
+    "category": "Animals"
+  },
+  {
+    "statement": "The United States has an official language.",
+    "answer": false,
+    "category": "General Knowledge"
+  },
+  {
+    "statement": "You can see a rainbow at night (Moonbow).",
+    "answer": true,
+    "category": "Science"
+  },
+  {
+    "statement": "A cricket's ears are located on its legs.",
+    "answer": true,
+    "category": "Animals"
+  },
+  {
+    "statement": "French toast originated in France.",
+    "answer": false,
+    "category": "Food"
+  },
+  {
+    "statement": "The dot over the letter 'i' is called a 'tittle'.",
+    "answer": true,
+    "category": "Wordplay"
+  },
+  {
+    "statement": "Pigs can physically look up at the sky.",
+    "answer": false,
+    "category": "Animals"
   }
 ]

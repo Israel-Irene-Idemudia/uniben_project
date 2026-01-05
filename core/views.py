@@ -108,6 +108,13 @@ class CourseViewSet(ReadOnlyModelViewSet):
 from rest_framework import generics
 from core.models import ContactMessage
 from core.serializers import ContactMessageSerializer
+from rest_framework import permissions
+
+class ContactMessageListAPI(generics.ListAPIView):
+    queryset = ContactMessage.objects.all().order_by('-created_at')
+    serializer_class = ContactMessageSerializer
+    permission_classes = [permissions.IsAdminUser]
+
 
 class ContactMessageCreateAPI(generics.CreateAPIView):
     queryset = ContactMessage.objects.all()
