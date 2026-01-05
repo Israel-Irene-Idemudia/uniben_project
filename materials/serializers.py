@@ -5,3 +5,4 @@ class MaterialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Material
         fields = '__all__'
+        read_only_fields = ['is_verified']

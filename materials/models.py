@@ -12,6 +12,7 @@ class Material(models.Model):
     description = models.TextField(blank=True, null=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='course')
     file = models.FileField(upload_to='materials/', storage=MediaCloudinaryStorage())
+    is_verified = models.BooleanField(default=False)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

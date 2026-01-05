@@ -104,3 +104,54 @@ class CourseViewSet(ReadOnlyModelViewSet):
             final_qs = final_qs.filter(level__course_area__isnull=True)
 
         return final_qs
+
+from rest_framework import generics
+from core.models import ContactMessage
+from core.serializers import ContactMessageSerializer
+
+class ContactMessageCreateAPI(generics.CreateAPIView):
+    queryset = ContactMessage.objects.all()
+    serializer_class = ContactMessageSerializer
+    permission_classes = [AllowAny]
+
+    def perform_create(self, serializer):
+        instance = None
+        if self.request.user.is_authenticated:
+            # Auto-fill name/email if authenticated
+            instance = serializer.save(
+                user=self.request.user, 
+                email=self.request.user.email or "",
+                name=f"{self.request.user.first_name} {self.request.user.last_name}".strip()
+            )
+        else:
+            instance = serializer.save()
+
+        # Send email notification
+        try:
+            from django.core.mail import send_mail
+            from django.conf import settings
+            
+            subject = f"[Skholar Support] {instance.subject}"
+            message = f"""
+New support message received from {instance.name} ({instance.email}):
+
+Subject: {instance.subject}
+
+Message:
+{instance.message}
+
+---
+Sent from Skholar App
+            """
+            
+            recipient_list = ['theproblemsolvers@skholar.site']
+            
+            send_mail(
+                subject,
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                recipient_list,
+                fail_silently=True,
+            )
+        except Exception as e:
+            print(f"Failed to send support email: {e}")

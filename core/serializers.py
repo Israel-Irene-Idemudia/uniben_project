@@ -47,4 +47,13 @@ class CourseSerializer(serializers.ModelSerializer):
             'course_area',
             'department',
             'faculty',
+            'faculty',
         ]
+
+from core.models import ContactMessage
+
+class ContactMessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ContactMessage
+        fields = '__all__'
+        read_only_fields = ['user', 'created_at']

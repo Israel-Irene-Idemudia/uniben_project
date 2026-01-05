@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Faculty, Department, CourseArea, Level, Course
+from .models import Faculty, Department, CourseArea, Level, Course, ContactMessage
 
 @admin.register(Faculty)
 class FacultyAdmin(admin.ModelAdmin):
@@ -26,3 +26,10 @@ class CourseAdmin(admin.ModelAdmin):
     list_display = ("code", "title", "level")
     list_filter = ("level",)
     search_fields = ("code", "title")
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ("subject", "name", "email", "created_at")
+    list_filter = ("created_at",)
+    search_fields = ("subject", "message", "name", "email")
+    readonly_fields = ("name", "email", "subject", "message", "created_at", "user")
