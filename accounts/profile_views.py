@@ -147,3 +147,162 @@ class TodoBulkSyncView(APIView):
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+# ============= NOTES SYNC VIEWS =============
+
+class NotesListView(APIView):
+    """
+    GET: List all notes for the authenticated user
+    """
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get(self, request):
+        from .models import UserNoteEntry
+        from .serializers import UserNoteEntrySerializer
+        notes = UserNoteEntry.objects.filter(user=request.user)
+        serializer = UserNoteEntrySerializer(notes, many=True)
+        return Response(serializer.data)
+
+
+class NotesBulkSyncView(APIView):
+    """
+    POST: Bulk sync notes (replace all with new data)
+    """
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def post(self, request):
+        from .models import UserNoteEntry
+        from .serializers import UserNoteEntrySerializer
+        
+        # Delete existing entries
+        UserNoteEntry.objects.filter(user=request.user).delete()
+        
+        # Create new entries
+        entries_data = request.data.get('entries', [])
+        created_notes = []
+        
+        for entry in entries_data:
+            note = UserNoteEntry.objects.create(
+                user=request.user,
+                note_id=entry.get('note_id'),
+                title=entry.get('title', ''),
+                body=entry.get('body', ''),
+                color=entry.get('color', 0xFF6EA8FE),
+                pinned=entry.get('pinned', False),
+                note_updated_at=entry.get('note_updated_at')
+            )
+            created_notes.append(note)
+        
+        serializer = UserNoteEntrySerializer(created_notes, many=True)
+        return Response({
+            'message': f'Successfully synced {len(created_notes)} notes',
+            'entries': serializer.data
+        }, status=status.HTTP_201_CREATED)
+
+
+# ============= GPA SYNC VIEWS =============
+
+class GpaListView(APIView):
+    """
+    GET: List all GPA entries for the authenticated user
+    """
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get(self, request):
+        from .models import UserGpaEntry
+        from .serializers import UserGpaEntrySerializer
+        entries = UserGpaEntry.objects.filter(user=request.user)
+        serializer = UserGpaEntrySerializer(entries, many=True)
+        return Response(serializer.data)
+
+
+class GpaBulkSyncView(APIView):
+    """
+    POST: Bulk sync GPA entries (replace all with new data)
+    """
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def post(self, request):
+        from .models import UserGpaEntry
+        from .serializers import UserGpaEntrySerializer
+        
+        # Delete existing entries
+        UserGpaEntry.objects.filter(user=request.user).delete()
+        
+        # Create new entries
+        entries_data = request.data.get('entries', [])
+        created_entries = []
+        
+        for entry in entries_data:
+            gpa_entry = UserGpaEntry.objects.create(
+                user=request.user,
+                course_code=entry.get('course_code', ''),
+                course_name=entry.get('course_name', ''),
+                unit=entry.get('unit', 0),
+                grade=entry.get('grade', 'A'),
+                grade_point=entry.get('grade_point', 5.0)
+            )
+            created_entries.append(gpa_entry)
+        
+        serializer = UserGpaEntrySerializer(created_entries, many=True)
+        return Response({
+            'message': f'Successfully synced {len(created_entries)} GPA entries',
+            'entries': serializer.data
+        }, status=status.HTTP_201_CREATED)
+
+
+# ============= DEBATER PROGRESS SYNC VIEWS =============
+
+class DebaterProgressView(APIView):
+    """
+    GET: Retrieve debater progress (creates default if doesn't exist)
+    POST/PUT: Update debater progress
+    """
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get(self, request):
+        from .models import UserDebaterProgress
+        from .serializers import UserDebaterProgressSerializer
+        
+        progress, created = UserDebaterProgress.objects.get_or_create(
+            user=request.user
+        )
+        serializer = UserDebaterProgressSerializer(progress)
+        return Response(serializer.data)
+    
+    def post(self, request):
+        return self.put(request)
+    
+    def put(self, request):
+        from .models import UserDebaterProgress
+        from .serializers import UserDebaterProgressSerializer
+        
+        progress, created = UserDebaterProgress.objects.get_or_create(
+            user=request.user
+        )
+        
+        # Update only if client's score is higher (high score logic)
+        if 'beginner_score' in request.data:
+            progress.beginner_score = max(
+                progress.beginner_score, 
+                request.data.get('beginner_score', 0)
+            )
+        if 'intermediate_score' in request.data:
+            progress.intermediate_score = max(
+                progress.intermediate_score,
+                request.data.get('intermediate_score', 0)
+            )
+        if 'advanced_score' in request.data:
+            progress.advanced_score = max(
+                progress.advanced_score,
+                request.data.get('advanced_score', 0)
+            )
+        if 'expert_score' in request.data:
+            progress.expert_score = max(
+                progress.expert_score,
+                request.data.get('expert_score', 0)
+            )
+        
+        progress.save()
+        serializer = UserDebaterProgressSerializer(progress)
+        return Response(serializer.data)

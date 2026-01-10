@@ -109,3 +109,85 @@ class UserTodoEntry(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.task[:50]}"
 
+
+class UserNoteEntry(models.Model):
+    """Stores notes for users to enable cross-device sync."""
+    
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='note_entries'
+    )
+    note_id = models.CharField(max_length=50)  # Client-generated ID
+    title = models.CharField(max_length=255, blank=True)
+    body = models.TextField(blank=True)
+    color = models.IntegerField()  # ARGB color value
+    pinned = models.BooleanField(default=False)
+    note_updated_at = models.DateTimeField()  # Client's timestamp
+    
+    # Metadata
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['-pinned', '-note_updated_at']
+        verbose_name = 'User Note Entry'
+        verbose_name_plural = 'User Note Entries'
+        unique_together = ['user', 'note_id']  # One note_id per user
+    
+    def __str__(self):
+        return f"{self.user.username} - {self.title[:30] or 'Untitled'}"
+
+
+class UserGpaEntry(models.Model):
+    """Stores GPA calculator entries for users to enable cross-device sync."""
+    
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='gpa_entries'
+    )
+    course_code = models.CharField(max_length=20, blank=True)
+    course_name = models.CharField(max_length=255)
+    unit = models.FloatField()
+    grade = models.CharField(max_length=2)  # A, B, C, D, E, F
+    grade_point = models.FloatField()
+    
+    # Metadata
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['course_name']
+        verbose_name = 'User GPA Entry'
+        verbose_name_plural = 'User GPA Entries'
+    
+    def __str__(self):
+        return f"{self.user.username} - {self.course_name} ({self.grade})"
+
+
+class UserDebaterProgress(models.Model):
+    """Stores Debater game progress for users to enable cross-device sync."""
+    
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='debater_progress'
+    )
+    
+    # High scores for each difficulty level
+    beginner_score = models.IntegerField(default=0)
+    intermediate_score = models.IntegerField(default=0)
+    advanced_score = models.IntegerField(default=0)
+    expert_score = models.IntegerField(default=0)
+    
+    # Metadata
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        verbose_name = 'User Debater Progress'
+        verbose_name_plural = 'User Debater Progress'
+    
+    def __str__(self):
+        return f"{self.user.username}'s Debater Progress"

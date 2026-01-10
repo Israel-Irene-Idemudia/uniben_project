@@ -72,3 +72,30 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
         from .models import UserProfile
         model = UserProfile
         fields = ['faculty_id', 'department_id', 'level_id', 'course_area_id']
+
+
+# ============= SYNC SERIALIZERS =============
+
+class UserNoteEntrySerializer(serializers.ModelSerializer):
+    """Serializer for syncing user notes."""
+    class Meta:
+        from .models import UserNoteEntry
+        model = UserNoteEntry
+        fields = ['note_id', 'title', 'body', 'color', 'pinned', 'note_updated_at']
+
+
+class UserGpaEntrySerializer(serializers.ModelSerializer):
+    """Serializer for syncing GPA calculator entries."""
+    class Meta:
+        from .models import UserGpaEntry
+        model = UserGpaEntry
+        fields = ['course_code', 'course_name', 'unit', 'grade', 'grade_point']
+
+
+class UserDebaterProgressSerializer(serializers.ModelSerializer):
+    """Serializer for syncing Debater game progress."""
+    class Meta:
+        from .models import UserDebaterProgress
+        model = UserDebaterProgress
+        fields = ['beginner_score', 'intermediate_score', 'advanced_score', 'expert_score', 'updated_at']
+        read_only_fields = ['updated_at']

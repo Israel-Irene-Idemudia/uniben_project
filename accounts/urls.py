@@ -8,6 +8,12 @@ from .profile_views import (
     TodoListCreateView,
     TodoDetailView,
     TodoBulkSyncView,
+    # New sync views
+    NotesListView,
+    NotesBulkSyncView,
+    GpaListView,
+    GpaBulkSyncView,
+    DebaterProgressView,
 )
 
 urlpatterns = [
@@ -24,6 +30,17 @@ urlpatterns = [
     path('profile/todos/', TodoListCreateView.as_view(), name='todo-list'),
     path('profile/todos/<int:pk>/', TodoDetailView.as_view(), name='todo-detail'),
     path('profile/todos/bulk-sync/', TodoBulkSyncView.as_view(), name='todo-bulk-sync'),
+    
+    # Notes sync endpoints
+    path('profile/notes/', NotesListView.as_view(), name='notes-list'),
+    path('profile/notes/bulk-sync/', NotesBulkSyncView.as_view(), name='notes-bulk-sync'),
+    
+    # GPA sync endpoints
+    path('profile/gpa/', GpaListView.as_view(), name='gpa-list'),
+    path('profile/gpa/bulk-sync/', GpaBulkSyncView.as_view(), name='gpa-bulk-sync'),
+    
+    # Debater progress sync endpoint
+    path('profile/debater/', DebaterProgressView.as_view(), name='debater-progress'),
     
     # User preferences
     path('profile/preferences/', UserPreferencesView.as_view(), name='user-preferences'),
