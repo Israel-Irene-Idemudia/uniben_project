@@ -30,8 +30,8 @@ class MaterialUploadAPI(generics.CreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
-        # Explicitly set is_verified to False (redundant due to default, but safe)
-        serializer.save(is_verified=False)
+        # Save with user and set is_verified to False
+        serializer.save(user=self.request.user, is_verified=False)
 
 # Admin: List all/unverified materials
 class MaterialAdminListAPI(generics.ListAPIView):
@@ -59,3 +59,10 @@ class MaterialVerificationAPI(generics.UpdateAPIView):
     def perform_update(self, serializer):
         # Allow updating is_verified and other fields
         serializer.save()
+
+# Admin: Delete material
+class MaterialDeleteAPI(generics.DestroyAPIView):
+    queryset = Material.objects.all()
+    serializer_class = MaterialSerializer
+    permission_classes = [permissions.IsAdminUser]
+

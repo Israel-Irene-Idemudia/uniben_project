@@ -119,7 +119,14 @@ class ContactMessageListAPI(generics.ListAPIView):
 class ContactMessageCreateAPI(generics.CreateAPIView):
     queryset = ContactMessage.objects.all()
     serializer_class = ContactMessageSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [permissions.AllowAny]  # Allow anyone to submit
+
+
+class ContactMessageDeleteAPI(generics.DestroyAPIView):
+    """Admin-only endpoint to delete contact messages"""
+    queryset = ContactMessage.objects.all()
+    serializer_class = ContactMessageSerializer
+    permission_classes = [permissions.IsAdminUser]  # Only admins can delete
 
     def perform_create(self, serializer):
         instance = None

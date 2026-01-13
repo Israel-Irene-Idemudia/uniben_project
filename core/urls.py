@@ -10,7 +10,8 @@ from .views import (
     LevelViewSet,
     CourseViewSet,
     ContactMessageCreateAPI,
-    ContactMessageListAPI
+    ContactMessageListAPI,
+    ContactMessageDeleteAPI  # Added for admin delete
 )
 
 # Create a router and register our viewsets with it.
@@ -26,4 +27,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('contact/', ContactMessageCreateAPI.as_view(), name='contact-create'),
     path('contact/list/', ContactMessageListAPI.as_view(), name='contact-list'),
+    path('contact/<int:pk>/', ContactMessageDeleteAPI.as_view(), name='contact-delete'),  # Delete endpoint
 ]
