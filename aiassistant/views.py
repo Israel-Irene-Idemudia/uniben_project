@@ -389,7 +389,10 @@ SKHOLAR was built with ❤️ by "The Problem Solvers" - a talented student team
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR
                 )
         
-        return Response({"response": result})
+        return Response({
+            "response": result,
+            "file_context": attached_text_context if attached_text_context else None
+        })
 
 
 # ============================================

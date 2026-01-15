@@ -1,10 +1,7 @@
-
 # render.yaml
 services:
   - type: web
     name: Skholar
-    env: python
-    pythonVersion: "3.11"
-    buildCommand: "./build.sh"
-    startCommand: "gunicorn uniben_portal.wsgi:application"
+    env: docker
+    dockerfilePath: ./Dockerfile
     autoDeploy: true
