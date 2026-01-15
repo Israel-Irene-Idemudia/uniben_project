@@ -2,6 +2,8 @@ from django.shortcuts import render
 from rest_framework import generics, filters
 from .models import Material
 from .serializers import MaterialSerializer
+from django.utils import timezone
+from rest_framework.exceptions import ValidationError
 
 # All materials with search + filter
 class MaterialListAPI(generics.ListAPIView):
@@ -30,6 +32,18 @@ class MaterialUploadAPI(generics.CreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
+        # Rate Limiting: Check uploads by this user today
+        today = timezone.now().date()
+        upload_count = Material.objects.filter(
+            user=self.request.user, 
+            uploaded_at__date=today
+        ).count()
+
+        if upload_count >= 2:
+            raise ValidationError(
+                {"detail": "Daily upload limit reached. You can only upload 2 materials per day."}
+            )
+
         # Save with user and set is_verified to False
         serializer.save(user=self.request.user, is_verified=False)
 

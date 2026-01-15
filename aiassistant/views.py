@@ -8,6 +8,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import permissions, status
 from django.conf import settings
+import base64
+from django.core.files.base import ContentFile
 
 from PyPDF2 import PdfReader
 from docx import Document
@@ -229,6 +231,40 @@ class LumoraChatView(APIView):
         # Get personalized user context
         user_context = self.get_user_context(request.user)
 
+        # Handle File Attachment (PDF/Image)
+        file_data = request.data.get('file_data')
+        mime_type = request.data.get('mime_type')
+        attached_text_context = ""
+
+        if file_data and mime_type:
+            try:
+                # Decode base64
+                format, imgstr = file_data.split(';base64,') if ';base64,' in file_data else (None, file_data)
+                ext = mime_type.split('/')[-1]
+                data = ContentFile(base64.b64decode(imgstr), name=f"temp.{ext}")
+                
+                # Save temporarily
+                temp_path = default_storage.save(f"temp/ai_upload_{request.user.id}.{ext}", data)
+                full_temp_path = default_storage.path(temp_path)
+
+                # Extract text
+                if 'pdf' in mime_type:
+                    attached_text_context = extract_text_from_pdf(full_temp_path)
+                elif 'image' in mime_type:
+                    attached_text_context = extract_text_from_image(full_temp_path)
+                
+                # Cleanup
+                if os.path.exists(full_temp_path):
+                    os.remove(full_temp_path)
+                default_storage.delete(temp_path) # Ensure removal from storage ref as well
+
+                if attached_text_context:
+                    attached_text_context = f"\n\n[USER ATTACHED FILE CONTENT]:\n{attached_text_context[:MAX_CHARS_FOR_AI]}\n[END OF FILE CONTENT]\n"
+            
+            except Exception as e:
+                print(f"Error processing AI file upload: {e}")
+                # We continue without the file content if error occurs
+
         # Build message context
         messages = [
             {
@@ -294,7 +330,7 @@ SKHOLAR was built with ❤️ by "The Problem Solvers" - a talented student team
         # Add current user message
         messages.append({
             "role": "user",
-            "content": user_prompt
+            "content": user_prompt + attached_text_context
         })
         
         # Get AI response
