@@ -1,0 +1,41 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test/Coverage
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
+
+# Local files
+*.sqlite3
+*.log
+media/
+staticfiles/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -51,7 +51,7 @@ def extract_text_from_image(file_path):
         return pytesseract.image_to_string(Image.open(file_path))
     except Exception as e:
         print(f"OCR failed (Tesseract may not be installed): {e}")
-        return "[Image text extraction is not available on this server. Please manually describe what's in the image.]"
+        return "[I can see you've attached an image! However, I cannot read text from images directly. Please describe what's in the image or type out any text you'd like me to help with.]"
 
 
 # ============================================
