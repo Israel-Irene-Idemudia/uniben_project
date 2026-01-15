@@ -242,6 +242,7 @@ class LumoraChatView(APIView):
 
         if file_data and mime_type:
             try:
+                import tempfile
                 print(f"[AI File Upload] Received file_data length: {len(file_data)}, mime_type: {mime_type}")
                 
                 # Decode base64 - handle both "data:...;base64,XXX" format and raw base64
@@ -251,25 +252,26 @@ class LumoraChatView(APIView):
                     imgstr = file_data
                     
                 ext = mime_type.split('/')[-1]
-                data = ContentFile(base64.b64decode(imgstr), name=f"temp.{ext}")
+                file_bytes = base64.b64decode(imgstr)
                 
-                # Save temporarily
-                temp_path = default_storage.save(f"temp/ai_upload_{request.user.id}.{ext}", data)
-                full_temp_path = default_storage.path(temp_path)
-                print(f"[AI File Upload] Saved to: {full_temp_path}")
+                # Use tempfile instead of default_storage (works with Cloudinary)
+                with tempfile.NamedTemporaryFile(suffix=f".{ext}", delete=False) as temp_file:
+                    temp_file.write(file_bytes)
+                    temp_path = temp_file.name
+                
+                print(f"[AI File Upload] Saved to temp: {temp_path}")
 
                 # Extract text
                 if 'pdf' in mime_type:
-                    attached_text_context = extract_text_from_pdf(full_temp_path)
+                    attached_text_context = extract_text_from_pdf(temp_path)
                     print(f"[AI File Upload] PDF extracted {len(attached_text_context)} chars")
                 elif 'image' in mime_type:
-                    attached_text_context = extract_text_from_image(full_temp_path)
+                    attached_text_context = extract_text_from_image(temp_path)
                     print(f"[AI File Upload] Image OCR result: {len(attached_text_context)} chars")
                 
-                # Cleanup
-                if os.path.exists(full_temp_path):
-                    os.remove(full_temp_path)
-                default_storage.delete(temp_path)
+                # Cleanup temp file
+                if os.path.exists(temp_path):
+                    os.remove(temp_path)
 
                 if attached_text_context:
                     attached_text_context = f"\n\n[USER ATTACHED FILE CONTENT]:\n{attached_text_context[:MAX_CHARS_FOR_AI]}\n[END OF FILE CONTENT]\n"
