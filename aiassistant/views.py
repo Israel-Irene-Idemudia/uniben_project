@@ -241,6 +241,30 @@ class LumoraChatView(APIView):
         attached_text_context = ""
 
         if file_data and mime_type:
+            # Rate limiting for file uploads
+            from django.utils import timezone
+            from aiassistant.models import AIUploadLog
+            
+            today = timezone.now().date()
+            file_type = 'pdf' if 'pdf' in mime_type else 'image'
+            
+            # Check daily limits: 2 PDFs, 3 images
+            daily_uploads = AIUploadLog.objects.filter(
+                user=request.user,
+                file_type=file_type,
+                uploaded_at__date=today
+            ).count()
+            
+            limit = 2 if file_type == 'pdf' else 3
+            if daily_uploads >= limit:
+                return Response(
+                    {"error": f"Daily {file_type.upper()} upload limit reached. You can upload {limit} {file_type}s per day."},
+                    status=status.HTTP_429_TOO_MANY_REQUESTS
+                )
+            
+            # Log this upload
+            AIUploadLog.objects.create(user=request.user, file_type=file_type)
+            
             try:
                 import tempfile
                 print(f"[AI File Upload] Received file_data length: {len(file_data)}, mime_type: {mime_type}")

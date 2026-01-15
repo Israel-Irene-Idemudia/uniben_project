@@ -2,6 +2,10 @@
 # exit on error
 set -o errexit  
 
+# 0. Install Tesseract OCR for image text extraction
+echo "📦 Installing Tesseract OCR..."
+apt-get update && apt-get install -y tesseract-ocr || echo "⚠️ Tesseract install failed (may require sudo)"
+
 # 1. Install dependencies
 pip install -r requirements.txt
 
