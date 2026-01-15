@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Faculty, Department, CourseArea, Level, Course, ContactMessage
+from .models import Faculty, Department, CourseArea, Level, Course, ContactMessage, CampusLocation
 
 @admin.register(Faculty)
 class FacultyAdmin(admin.ModelAdmin):
@@ -33,3 +33,12 @@ class ContactMessageAdmin(admin.ModelAdmin):
     list_filter = ("created_at",)
     search_fields = ("subject", "message", "name", "email")
     readonly_fields = ("name", "email", "subject", "message", "created_at", "user")
+
+
+@admin.register(CampusLocation)
+class CampusLocationAdmin(admin.ModelAdmin):
+    list_display = ("name", "category", "latitude", "longitude", "is_active")
+    list_filter = ("category", "is_active")
+    search_fields = ("name", "description")
+    list_editable = ("is_active",)  # Quick toggle for active status
+

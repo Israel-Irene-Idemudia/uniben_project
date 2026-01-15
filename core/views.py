@@ -4,17 +4,35 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.permissions import AllowAny
 
 # Import all models and serializers needed
-from core.models import Faculty, Department, CourseArea, Level, Course
+from core.models import Faculty, Department, CourseArea, Level, Course, CampusLocation
 from core.serializers import (
     FacultySerializer, 
     DepartmentSerializer, 
     CourseAreaSerializer, 
     LevelSerializer,
-    CourseSerializer
+    CourseSerializer,
+    CampusLocationSerializer
 )
 
 
 # --- ViewSets for listing Faculties, Departments, Course Areas, and Levels ---
+
+class CampusLocationViewSet(ReadOnlyModelViewSet):
+    """
+    API endpoint for campus map locations.
+    Returns only active locations, ordered by category and name.
+    Supports filtering by category via ?category=faculty
+    """
+    serializer_class = CampusLocationSerializer
+    permission_classes = [AllowAny]
+    
+    def get_queryset(self):
+        qs = CampusLocation.objects.filter(is_active=True)
+        category = self.request.query_params.get('category')
+        if category:
+            qs = qs.filter(category=category)
+        return qs
+
 
 class FacultyViewSet(ReadOnlyModelViewSet):
     queryset = Faculty.objects.all()

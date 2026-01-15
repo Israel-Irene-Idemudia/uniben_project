@@ -71,3 +71,35 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return self.subject
+
+
+class CampusLocation(models.Model):
+    """
+    Represents a point of interest on the campus map.
+    Managed via admin panel - no app updates needed for new locations.
+    """
+    CATEGORY_CHOICES = [
+        ('faculty', 'Faculty'),
+        ('hostel', 'Hostel'),
+        ('admin', 'Admin'),
+        ('landmark', 'Landmark'),
+        ('sports', 'Sports'),
+        ('health', 'Health'),
+        ('religious', 'Religious'),
+        ('commercial', 'Commercial'),
+    ]
+    
+    name = models.CharField(max_length=200)
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='landmark')
+    latitude = models.DecimalField(max_digits=9, decimal_places=6)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    description = models.TextField(blank=True, help_text="Optional description or directions")
+    is_active = models.BooleanField(default=True, help_text="Inactive locations won't show on the map")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['category', 'name']
+
+    def __str__(self):
+        return f"{self.name} ({self.get_category_display()})"

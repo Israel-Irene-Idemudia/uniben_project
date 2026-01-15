@@ -57,3 +57,13 @@ class ContactMessageSerializer(serializers.ModelSerializer):
         model = ContactMessage
         fields = '__all__'
         read_only_fields = ['user', 'created_at']
+
+
+from core.models import CampusLocation
+
+class CampusLocationSerializer(serializers.ModelSerializer):
+    category_display = serializers.CharField(source='get_category_display', read_only=True)
+    
+    class Meta:
+        model = CampusLocation
+        fields = ['id', 'name', 'category', 'category_display', 'latitude', 'longitude', 'description']
