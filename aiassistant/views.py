@@ -47,7 +47,11 @@ def extract_text_from_docx(file_path):
 
 
 def extract_text_from_image(file_path):
-    return pytesseract.image_to_string(Image.open(file_path))
+    try:
+        return pytesseract.image_to_string(Image.open(file_path))
+    except Exception as e:
+        print(f"OCR failed (Tesseract may not be installed): {e}")
+        return "[Image text extraction is not available on this server. Please manually describe what's in the image.]"
 
 
 # ============================================
@@ -238,32 +242,43 @@ class LumoraChatView(APIView):
 
         if file_data and mime_type:
             try:
-                # Decode base64
-                format, imgstr = file_data.split(';base64,') if ';base64,' in file_data else (None, file_data)
+                print(f"[AI File Upload] Received file_data length: {len(file_data)}, mime_type: {mime_type}")
+                
+                # Decode base64 - handle both "data:...;base64,XXX" format and raw base64
+                if ';base64,' in file_data:
+                    format, imgstr = file_data.split(';base64,')
+                else:
+                    imgstr = file_data
+                    
                 ext = mime_type.split('/')[-1]
                 data = ContentFile(base64.b64decode(imgstr), name=f"temp.{ext}")
                 
                 # Save temporarily
                 temp_path = default_storage.save(f"temp/ai_upload_{request.user.id}.{ext}", data)
                 full_temp_path = default_storage.path(temp_path)
+                print(f"[AI File Upload] Saved to: {full_temp_path}")
 
                 # Extract text
                 if 'pdf' in mime_type:
                     attached_text_context = extract_text_from_pdf(full_temp_path)
+                    print(f"[AI File Upload] PDF extracted {len(attached_text_context)} chars")
                 elif 'image' in mime_type:
                     attached_text_context = extract_text_from_image(full_temp_path)
+                    print(f"[AI File Upload] Image OCR result: {len(attached_text_context)} chars")
                 
                 # Cleanup
                 if os.path.exists(full_temp_path):
                     os.remove(full_temp_path)
-                default_storage.delete(temp_path) # Ensure removal from storage ref as well
+                default_storage.delete(temp_path)
 
                 if attached_text_context:
                     attached_text_context = f"\n\n[USER ATTACHED FILE CONTENT]:\n{attached_text_context[:MAX_CHARS_FOR_AI]}\n[END OF FILE CONTENT]\n"
             
             except Exception as e:
-                print(f"Error processing AI file upload: {e}")
-                # We continue without the file content if error occurs
+                print(f"[AI File Upload] Error processing file: {e}")
+                import traceback
+                traceback.print_exc()
+                # Continue without the file content if error occurs
 
         # Build message context
         messages = [
