@@ -231,7 +231,7 @@ class DeleteAccountAPI(APIView):
         except Exception as e:
             return Response(
                 {"error": f"Failed to submit request: {str(e)}"},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                status=status.HTTP_400_BAD_REQUEST
             )
 
 # ================= ADMIN DELETION REQUESTS =================

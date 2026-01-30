@@ -39,7 +39,7 @@ class MaterialUploadAPI(generics.CreateAPIView):
             serializer.save(user=self.request.user, is_verified=False)
         except Exception as e:
             print(f"❌ Upload failed: {e}")
-            raise e
+            raise ValidationError({"error": f"Upload failed: {str(e)}"})
 
 # Admin: List all/unverified materials
 class MaterialAdminListAPI(generics.ListAPIView):
