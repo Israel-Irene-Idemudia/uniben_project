@@ -32,10 +32,10 @@ class MaterialUploadAPI(generics.CreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
-        # Rate Limiting: Check uploads by this user today
+        # Rate limit: 2 uploads per day
         today = timezone.now().date()
         upload_count = Material.objects.filter(
-            user=self.request.user, 
+            user=self.request.user,
             uploaded_at__date=today
         ).count()
 

@@ -139,13 +139,6 @@ class ContactMessageCreateAPI(generics.CreateAPIView):
     serializer_class = ContactMessageSerializer
     permission_classes = [permissions.AllowAny]  # Allow anyone to submit
 
-
-class ContactMessageDeleteAPI(generics.DestroyAPIView):
-    """Admin-only endpoint to delete contact messages"""
-    queryset = ContactMessage.objects.all()
-    serializer_class = ContactMessageSerializer
-    permission_classes = [permissions.IsAdminUser]  # Only admins can delete
-
     def perform_create(self, serializer):
         instance = None
         if self.request.user.is_authenticated:
@@ -187,3 +180,10 @@ Sent from Skholar App
             )
         except Exception as e:
             print(f"Failed to send support email: {e}")
+
+
+class ContactMessageDeleteAPI(generics.DestroyAPIView):
+    """Admin-only endpoint to delete contact messages"""
+    queryset = ContactMessage.objects.all()
+    serializer_class = ContactMessageSerializer
+    permission_classes = [permissions.IsAdminUser]  # Only admins can delete

@@ -179,3 +179,48 @@ class UserDetailView(APIView):
             'message': 'User updated successfully'
         })
 
+    def delete(self, request, user_id):
+        """Delete a user (admin only)."""
+        if not request.user.is_staff:
+            return Response(
+                {'error': 'Admin access required'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+        
+        try:
+            user = UserModel.objects.get(id=user_id)
+            # Prevent deleting yourself
+            if user.id == request.user.id:
+                return Response(
+                    {'error': 'Cannot delete your own account'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            
+            user.delete()
+            return Response(
+                {'message': 'User deleted successfully'},
+                status=status.HTTP_204_NO_CONTENT
+            )
+        except UserModel.DoesNotExist:
+            return Response(
+                {'error': 'User not found'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+class DeleteAccountAPI(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def delete(self, request):
+        user = request.user
+        # Optional: Log deletion or send goodbye email here
+        try:
+            user.delete()
+            return Response(
+                {"message": "Account deleted successfully."},
+                status=status.HTTP_204_NO_CONTENT
+            )
+        except Exception as e:
+            return Response(
+                {"error": f"Failed to delete account: {str(e)}"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )

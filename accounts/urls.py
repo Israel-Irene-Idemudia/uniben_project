@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import RegisterView, UpdateProfileView, MeView, UserListView, UserDetailView
+from .views import RegisterView, UpdateProfileView, MeView, UserListView, UserDetailView, DeleteAccountAPI
 from .profile_views import (
     TimetableListCreateView,
     TimetableDetailView,
@@ -20,6 +20,7 @@ urlpatterns = [
     path("register/", RegisterView.as_view(), name="register"),
     path('me/', MeView.as_view(), name='me'),
     path("profile/update/", UpdateProfileView.as_view(), name="update_profile"),
+    path("delete/", DeleteAccountAPI.as_view(), name="delete_account"),
     
     # Timetable sync endpoints
     path('profile/timetable/', TimetableListCreateView.as_view(), name='timetable-list'),
