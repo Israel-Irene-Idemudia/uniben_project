@@ -12,7 +12,8 @@ from .views import (
     CampusLocationViewSet,
     ContactMessageCreateAPI,
     ContactMessageListAPI,
-    ContactMessageDeleteAPI  # Added for admin delete
+    ContactMessageDeleteAPI,  # Added for admin delete
+    ContactMessageReplyAPI
 )
 
 # Create a router and register our viewsets with it.
@@ -30,5 +31,6 @@ urlpatterns = [
     path('contact/', ContactMessageCreateAPI.as_view(), name='contact-create'),
     path('contact/list/', ContactMessageListAPI.as_view(), name='contact-list'),
     path('contact/<int:pk>/', ContactMessageDeleteAPI.as_view(), name='contact-delete'),  # Delete endpoint
+    path('contact/<int:pk>/reply/', ContactMessageReplyAPI.as_view(), name='contact-reply'), # Admin reply endpoint
 ]
 

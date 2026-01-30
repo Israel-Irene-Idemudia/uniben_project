@@ -187,3 +187,54 @@ class ContactMessageDeleteAPI(generics.DestroyAPIView):
     queryset = ContactMessage.objects.all()
     serializer_class = ContactMessageSerializer
     permission_classes = [permissions.IsAdminUser]  # Only admins can delete
+
+
+class ContactMessageReplyAPI(APIView):
+    """
+    Admin-only endpoint to reply to a contact message via email.
+    POST /api/contact/<id>/reply/
+    Body: { "message": "Your reply content..." }
+    """
+    permission_classes = [permissions.IsAdminUser]
+
+    def post(self, request, pk):
+        message_body = request.data.get('message')
+        if not message_body:
+             return Response({"error": "Message content is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            contact_msg = ContactMessage.objects.get(pk=pk)
+        except ContactMessage.DoesNotExist:
+             return Response({"error": "Contact message not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        if not contact_msg.email:
+             return Response({"error": "This contact message has no associated email address."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Send Email
+        try:
+            from django.core.mail import send_mail
+            from django.conf import settings
+
+            subject = f"Re: {contact_msg.subject} - [Skholar Support]"
+            email_content = f"""
+Hello {contact_msg.name or 'User'},
+
+{message_body}
+
+---
+Best regards,
+The Skholar Team
+            """
+            
+            send_mail(
+                subject,
+                email_content,
+                settings.DEFAULT_FROM_EMAIL,
+                [contact_msg.email],
+                fail_silently=False,
+            )
+            
+            return Response({"message": "Reply sent successfully."}, status=status.HTTP_200_OK)
+
+        except Exception as e:
+            return Response({"error": f"Failed to send email: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
