@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY", default="django-insecure-dev-secret")
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-# Increase max upload size to 50MB (default is 2.5MB)
-DATA_UPLOAD_MAX_MEMORY_SIZE = 52428800
-FILE_UPLOAD_MAX_MEMORY_SIZE = 52428800
+# Increase max upload size to 100MB
+DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600
+FILE_UPLOAD_MAX_MEMORY_SIZE = 104857600
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1").split(",")
 ALLOWED_HOSTS += ["skholar.onrender.com", "skholar.site", "www.skholar.site"]

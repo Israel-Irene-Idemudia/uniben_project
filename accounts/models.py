@@ -191,3 +191,26 @@ class UserDebaterProgress(models.Model):
     
     def __str__(self):
         return f"{self.user.username}'s Debater Progress"
+
+
+class AccountDeletionRequest(models.Model):
+    """Stores user requests for account deletion (Soft Delete)."""
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='deletion_request'
+    )
+    reason = models.TextField(blank=True, null=True)
+    request_date = models.DateTimeField(auto_now_add=True)
+    
+    # If approved, the user (and this request) is deleted.
+    # If rejected, this request object is deleted.
+    # So we mainly use this to track PENDING requests.
+    
+    class Meta:
+        verbose_name = 'Account Deletion Request'
+        verbose_name_plural = 'Account Deletion Requests'
+        ordering = ['-request_date']
+
+    def __str__(self):
+        return f"Deletion Request: {self.user.username}"

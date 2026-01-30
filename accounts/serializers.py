@@ -97,5 +97,17 @@ class UserDebaterProgressSerializer(serializers.ModelSerializer):
     class Meta:
         from .models import UserDebaterProgress
         model = UserDebaterProgress
-        fields = ['beginner_score', 'intermediate_score', 'advanced_score', 'expert_score', 'updated_at']
-        read_only_fields = ['updated_at']
+    def __str__(self):
+        return f"{self.user.username}'s Debater Progress"
+
+
+class AccountDeletionRequestSerializer(serializers.ModelSerializer):
+    """Serializer for Account Deletion Requests."""
+    username = serializers.CharField(source='user.username', read_only=True)
+    email = serializers.EmailField(source='user.email', read_only=True)
+    
+    class Meta:
+        from .models import AccountDeletionRequest
+        model = AccountDeletionRequest
+        fields = ['id', 'user', 'username', 'email', 'reason', 'request_date']
+        read_only_fields = ['request_date', 'user', 'username', 'email']

@@ -212,15 +212,61 @@ class DeleteAccountAPI(APIView):
 
     def delete(self, request):
         user = request.user
-        # Optional: Log deletion or send goodbye email here
         try:
-            user.delete()
+            # Check if request already exists
+            if hasattr(user, 'deletion_request'):
+                return Response(
+                    {"message": "Deletion request already submitted."},
+                    status=status.HTTP_200_OK
+                )
+            
+            # Create deletion request
+            from .models import AccountDeletionRequest
+            AccountDeletionRequest.objects.create(user=user, reason="User requested deletion")
+            
             return Response(
-                {"message": "Account deleted successfully."},
-                status=status.HTTP_204_NO_CONTENT
+                {"message": "Deletion request submitted successfully."},
+                status=status.HTTP_200_OK
             )
         except Exception as e:
             return Response(
-                {"error": f"Failed to delete account: {str(e)}"},
+                {"error": f"Failed to submit request: {str(e)}"},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+
+# ================= ADMIN DELETION REQUESTS =================
+
+from .serializers import AccountDeletionRequestSerializer
+from .models import AccountDeletionRequest
+
+class AdminDeletionRequestListAPI(generics.ListAPIView):
+    """List all pending account deletion requests."""
+    queryset = AccountDeletionRequest.objects.all()
+    serializer_class = AccountDeletionRequestSerializer
+    permission_classes = [permissions.IsAdminUser]
+
+class AdminDeletionActionAPI(APIView):
+    """Approve or Reject a deletion request."""
+    permission_classes = [permissions.IsAdminUser]
+
+    def post(self, request, pk):
+        action = request.data.get('action') # 'approve' or 'reject'
+        
+        try:
+            deletion_request = AccountDeletionRequest.objects.get(pk=pk)
+        except AccountDeletionRequest.DoesNotExist:
+            return Response({"error": "Request not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        if action == 'approve':
+            # Soft Delete: Determine logic. User wants to delete user.
+            user = deletion_request.user
+            user.delete() # This cascades and deletes the request too
+            return Response({"message": "User account permanently deleted."}, status=status.HTTP_200_OK)
+        
+        elif action == 'reject':
+            # Just delete the request, keep user
+            deletion_request.delete()
+            return Response({"message": "Deletion request rejected."}, status=status.HTTP_200_OK)
+        
+        else:
+            return Response({"error": "Invalid action. Use 'approve' or 'reject'."}, status=status.HTTP_400_BAD_REQUEST)

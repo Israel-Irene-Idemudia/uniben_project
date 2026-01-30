@@ -45,7 +45,11 @@ class MaterialUploadAPI(generics.CreateAPIView):
             )
 
         # Save with user and set is_verified to False
-        serializer.save(user=self.request.user, is_verified=False)
+        try:
+            serializer.save(user=self.request.user, is_verified=False)
+        except Exception as e:
+            print(f"❌ Upload failed: {e}")
+            raise e
 
 # Admin: List all/unverified materials
 class MaterialAdminListAPI(generics.ListAPIView):

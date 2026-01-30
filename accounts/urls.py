@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import RegisterView, UpdateProfileView, MeView, UserListView, UserDetailView, DeleteAccountAPI
+from .views import RegisterView, UpdateProfileView, MeView, UserListView, UserDetailView, DeleteAccountAPI, AdminDeletionRequestListAPI, AdminDeletionActionAPI
 from .profile_views import (
     TimetableListCreateView,
     TimetableDetailView,
@@ -49,4 +49,8 @@ urlpatterns = [
     # User management (admin only)
     path('users/', UserListView.as_view(), name='user-list'),
     path('users/<int:user_id>/', UserDetailView.as_view(), name='user-detail'),
+    
+    # Account Deletion Requests (Admin)
+    path('deletion-requests/', AdminDeletionRequestListAPI.as_view(), name='deletion-request-list'),
+    path('deletion-requests/<int:pk>/action/', AdminDeletionActionAPI.as_view(), name='deletion-request-action'),
 ]
