@@ -51,7 +51,7 @@ class BroadcastNotificationView(APIView):
             # Create in-app notifications for all users
             from accounts.models import User
             users = User.objects.all()
-            
+
             notifications_created = 0
             for user in users:
                 InAppNotification.objects.create(
