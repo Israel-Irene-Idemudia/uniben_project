@@ -23,6 +23,7 @@ class IsAdminUser(permissions.BasePermission):
 class BroadcastNotificationView(APIView):
     """
     Send a broadcast push notification to all app users.
+    Also creates in-app notifications for all users.
     Only accessible by admin users.
     """
     permission_classes = [permissions.IsAuthenticated, IsAdminUser]
@@ -38,6 +39,7 @@ class BroadcastNotificationView(APIView):
             )
 
         try:
+            # Send push notification via OneSignal
             result = send_onesignal_notification(title, body)
 
             if 'error' in result:
@@ -46,10 +48,25 @@ class BroadcastNotificationView(APIView):
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR
                 )
 
+            # Create in-app notifications for all users
+            from accounts.models import User
+            users = User.objects.all()
+            
+            notifications_created = 0
+            for user in users:
+                InAppNotification.objects.create(
+                    user=user,
+                    notification_type='announcement',
+                    title=title,
+                    message=body,
+                )
+                notifications_created += 1
+
             return Response({
                 'success': True,
                 'message': 'Notification sent successfully',
-                'onesignal_response': result
+                'onesignal_response': result,
+                'in_app_notifications_created': notifications_created
             }, status=status.HTTP_200_OK)
 
         except Exception as e:
@@ -60,6 +77,53 @@ class BroadcastNotificationView(APIView):
 
 
 # ==================== IN-APP NOTIFICATIONS ====================
+
+class AdminSendNotificationView(APIView):
+    """
+    Admin endpoint to send in-app notification to a specific user.
+    Used for direct messaging from admin panel.
+    """
+    permission_classes = [permissions.IsAuthenticated, IsAdminUser]
+
+    def post(self, request):
+        user_id = request.data.get('user_id')
+        title = request.data.get('title')
+        message = request.data.get('message')
+        notification_type = request.data.get('notification_type', 'general')
+
+        if not all([user_id, title, message]):
+            return Response(
+                {'error': 'user_id, title, and message are required'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            from accounts.models import User
+            user = User.objects.get(id=user_id)
+
+            notification = InAppNotification.objects.create(
+                user=user,
+                notification_type=notification_type,
+                title=title,
+                message=message,
+            )
+
+            serializer = InAppNotificationSerializer(notification)
+            return Response(
+                {'success': True, 'notification': serializer.data},
+                status=status.HTTP_201_CREATED
+            )
+        except User.DoesNotExist:
+            return Response(
+                {'error': 'User not found'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        except Exception as e:
+            return Response(
+                {'error': str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
 
 class NotificationListView(generics.ListAPIView):
     """
@@ -156,6 +220,22 @@ class NotificationDeleteView(APIView):
                 {'error': 'Notification not found'},
                 status=status.HTTP_404_NOT_FOUND
             )
+
+
+class NotificationDeleteAllView(APIView):
+    """
+    Delete all notifications for the authenticated user.
+    """
+    permission_classes = [permissions.IsAuthenticated]
+
+    def delete(self, request):
+        deleted_count = InAppNotification.objects.filter(
+            user=request.user
+        ).delete()[0]
+        return Response(
+            {'deleted_count': deleted_count},
+            status=status.HTTP_200_OK
+        )
 
 
 # ==================== SUPPORT TICKETS ====================
