@@ -4,6 +4,10 @@ from rest_framework.response import Response
 from django.utils import timezone
 from .utils import send_onesignal_notification
 from .models import InAppNotification, SupportTicket
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
 from .serializers import (
     InAppNotificationSerializer,
     SupportTicketSerializer,
@@ -49,7 +53,6 @@ class BroadcastNotificationView(APIView):
                 )
 
             # Create in-app notifications for all users
-            from accounts.models import User
             users = User.objects.all()
 
             notifications_created = 0
@@ -98,7 +101,6 @@ class AdminSendNotificationView(APIView):
             )
 
         try:
-            from accounts.models import User
             user = User.objects.get(id=user_id)
 
             notification = InAppNotification.objects.create(
