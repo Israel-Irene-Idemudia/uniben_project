@@ -270,10 +270,10 @@ class SupportTicketListView(generics.ListAPIView):
         return queryset
 
 
-class SupportTicketDetailView(generics.RetrieveUpdateAPIView):
+class SupportTicketDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
-    Get or update a support ticket (Admin only).
-    Used for admins to reply to tickets.
+    Get, update, or delete a support ticket (Admin only).
+    Used for admins to reply to or delete tickets.
     """
     serializer_class = SupportTicketSerializer
     permission_classes = [permissions.IsAuthenticated, IsAdminUser]

@@ -164,16 +164,29 @@ class StudentBreakdownView(APIView):
             reverse=True
         )[:10]
 
-        # Students by Level
+        # Students by Level (grouped by numeric level: 100L, 200L, etc.)
         level_breakdown = []
-        levels = Level.objects.all().order_by('name')
-        for level in levels:
-            count = profiles.filter(level=level).count()
-            if count > 0:
-                level_breakdown.append({
-                    'name': level.name,
-                    'count': count
-                })
+        # Group students by extracting numeric part of level name
+        level_groups = {}
+        for profile in profiles:
+            if profile.level and profile.level.name:
+                # Extract numeric part (e.g., "100" from "100L", "100 Level", etc.)
+                level_name = profile.level.name.strip()
+                # Get first 3 digits
+                numeric_part = ''.join(filter(str.isdigit, level_name))[:3]
+                if numeric_part:
+                    level_key = f"{numeric_part}L"
+                    level_groups[level_key] = level_groups.get(
+                        level_key, 0) + 1
+
+        # Sort by numeric value and create breakdown list
+        sorted_levels = sorted(level_groups.items(),
+                               key=lambda x: int(x[0][:-1]))
+        for level_name, count in sorted_levels:
+            level_breakdown.append({
+                'name': level_name,
+                'count': count
+            })
 
         # Students without complete profile
         incomplete_profiles = User.objects.filter(
