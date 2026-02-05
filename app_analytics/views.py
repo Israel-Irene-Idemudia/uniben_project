@@ -203,3 +203,159 @@ class StudentBreakdownView(APIView):
             'level_breakdown': level_breakdown,
             'incomplete_profiles': incomplete_profiles,
         })
+
+
+class TodayJoinersView(APIView):
+    """
+    Get detailed information about users who joined today.
+    Returns list of users with their faculty, department, and level.
+    """
+    permission_classes = [permissions.IsAuthenticated, IsAdminUser]
+
+    def get(self, request):
+        now = timezone.now()
+        today = now.date()
+
+        # Get users who joined today with their profiles
+        today_users = User.objects.filter(
+            date_joined__date=today
+        ).select_related('userprofile__faculty', 'userprofile__department', 'userprofile__level')
+
+        joiners_list = []
+        for user in today_users:
+            profile = user.userprofile if hasattr(
+                user, 'userprofile') else None
+
+            joiners_list.append({
+                'id': user.id,
+                'username': user.username,
+                'email': user.email,
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'faculty': profile.faculty.name if profile and profile.faculty else 'Not set',
+                'department': profile.department.name if profile and profile.department else 'Not set',
+                'level': profile.level.name if profile and profile.level else 'Not set',
+                'date_joined': user.date_joined.isoformat(),
+                'is_active': user.is_active,
+                'is_staff': user.is_staff,
+            })
+
+        # Group by faculty for summary
+        faculty_summary = {}
+        for user in today_users:
+            profile = user.userprofile if hasattr(
+                user, 'userprofile') else None
+            faculty_name = profile.faculty.name if profile and profile.faculty else 'Not set'
+            faculty_summary[faculty_name] = faculty_summary.get(
+                faculty_name, 0) + 1
+
+        # Group by department for summary
+        department_summary = {}
+        for user in today_users:
+            profile = user.userprofile if hasattr(
+                user, 'userprofile') else None
+            dept_name = profile.department.name if profile and profile.department else 'Not set'
+            department_summary[dept_name] = department_summary.get(
+                dept_name, 0) + 1
+
+        # Group by level for summary
+        level_summary = {}
+        for user in today_users:
+            profile = user.userprofile if hasattr(
+                user, 'userprofile') else None
+            level_name = profile.level.name if profile and profile.level else 'Not set'
+            level_summary[level_name] = level_summary.get(level_name, 0) + 1
+
+        return Response({
+            'total_joiners': len(joiners_list),
+            'joiners': joiners_list,
+            'faculty_summary': faculty_summary,
+            'department_summary': department_summary,
+            'level_summary': level_summary,
+            'date': today.isoformat(),
+        })
+
+
+class UserDetailsView(APIView):
+    """
+    Get detailed information about a specific user.
+    Returns comprehensive user profile data.
+    """
+    permission_classes = [permissions.IsAuthenticated, IsAdminUser]
+
+    def get(self, request, user_id):
+        try:
+            user = User.objects.select_related(
+                'userprofile__faculty',
+                'userprofile__department',
+                'userprofile__level'
+            ).get(id=user_id)
+
+            profile = user.userprofile if hasattr(
+                user, 'userprofile') else None
+
+            # Get user activity stats
+            activity_count = UserActivity.objects.filter(user=user).count()
+            recent_activity = UserActivity.objects.filter(
+                user=user).order_by('-timestamp')[:5]
+
+            # Get CBT exam stats
+            exam_sessions = ExamSession.objects.filter(user=user)
+            total_exams = exam_sessions.count()
+            completed_exams = exam_sessions.filter(
+                status=ExamSession.STATUS_SUBMITTED).count()
+
+            user_data = {
+                'id': user.id,
+                'username': user.username,
+                'email': user.email,
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'is_active': user.is_active,
+                'is_staff': user.is_staff,
+                'is_superuser': user.is_superuser,
+                'date_joined': user.date_joined.isoformat(),
+                'last_login': user.last_login.isoformat() if user.last_login else None,
+
+                # Profile information
+                'faculty': {
+                    'id': profile.faculty.id if profile and profile.faculty else None,
+                    'name': profile.faculty.name if profile and profile.faculty else 'Not set'
+                },
+                'department': {
+                    'id': profile.department.id if profile and profile.department else None,
+                    'name': profile.department.name if profile and profile.department else 'Not set'
+                },
+                'level': {
+                    'id': profile.level.id if profile and profile.level else None,
+                    'name': profile.level.name if profile and profile.level else 'Not set'
+                },
+
+                # Activity statistics
+                'activity_stats': {
+                    'total_activities': activity_count,
+                    'recent_activities': [
+                        {
+                            'action': activity.action,
+                            'timestamp': activity.timestamp.isoformat(),
+                            'metadata': activity.metadata
+                        }
+                        for activity in recent_activity
+                    ]
+                },
+
+                # Academic statistics
+                'academic_stats': {
+                    'total_exams_taken': total_exams,
+                    'completed_exams': completed_exams,
+                    'pending_exams': total_exams - completed_exams,
+                }
+            }
+
+            return Response(user_data)
+
+        except User.DoesNotExist:
+            return Response(
+                {'error': 'User not found'},
+                status=status.HTTP_404_NOT_FOUND
+            )
