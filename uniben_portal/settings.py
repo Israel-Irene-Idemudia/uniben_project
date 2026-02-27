@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # Third-Party Apps
     'rest_framework',
     'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
     'cloudinary',
     'cloudinary_storage',
@@ -191,9 +192,9 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),  # 30 days - good UX for student app
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
-    'ROTATE_REFRESH_TOKENS': False, # Keep it simple
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),  # 15 minutes - secure, short-lived
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # 30 days - good UX
+    'ROTATE_REFRESH_TOKENS': True, # Enable rotation
     'BLACKLIST_AFTER_ROTATION': True,
 }
 
