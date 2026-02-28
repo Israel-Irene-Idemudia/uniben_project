@@ -66,12 +66,19 @@ class AnalyticsView(APIView):
         daily_activity = []
         for i in range(7):
             date = today - timedelta(days=i)
+            # Active Users
             count = UserActivity.objects.filter(
                 timestamp__date=date
             ).values('user').distinct().count()
+            # New Joiners
+            joiners_count = User.objects.filter(
+                date_joined__date=date
+            ).count()
+
             daily_activity.append({
                 'date': date.isoformat(),
-                'active_users': count
+                'active_users': count,
+                'joined_users': joiners_count
             })
 
         return Response({

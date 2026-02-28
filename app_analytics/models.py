@@ -13,6 +13,8 @@ class UserActivity(models.Model):
         ('timetable_view', 'Timetable Viewed'),
         ('map_view', 'Map Viewed'),
         ('ai_chat', 'AI Chat Used'),
+        ('course_view', 'Course Viewed'),
+        ('search_not_found', 'Search Not Found'),
     ]
     
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
