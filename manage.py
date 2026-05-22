@@ -2,7 +2,9 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-import cloudinary_fix  # 👈 Force Cloudinary before Django setup
+
+if 'test' not in sys.argv and not any('test' in arg for arg in sys.argv):
+    import cloudinary_fix  # 👈 Force Cloudinary before Django setup
 
 
 def main():

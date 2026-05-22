@@ -3,6 +3,8 @@ from .models import Material
 
 class MaterialSerializer(serializers.ModelSerializer):
     uploaded_by = serializers.SerializerMethodField()
+    faculty_name = serializers.CharField(source='faculty.name', read_only=True)
+    department_name = serializers.CharField(source='department.name', read_only=True)
     
     class Meta:
         model = Material
@@ -17,3 +19,4 @@ class MaterialSerializer(serializers.ModelSerializer):
                 'id': obj.user.id
             }
         return None
+

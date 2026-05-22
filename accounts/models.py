@@ -14,6 +14,11 @@ class UserProfile(models.Model):
     level = models.ForeignKey(Level, on_delete=models.SET_NULL, null=True)
     course_area = models.ForeignKey(CourseArea, on_delete=models.SET_NULL, null=True, blank=True)
 
+    # Points & Rewards fields
+    points = models.IntegerField(default=0)
+    phone = models.CharField(max_length=20, blank=True, default='')
+    network = models.CharField(max_length=15, blank=True, default='')
+
     def __str__(self):
         return f'{self.user.username} Profile'
 

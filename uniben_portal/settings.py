@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'notifications',
     'aiassistant',
     'app_analytics',
+    'rewards',
 ]
 
 
@@ -286,26 +287,34 @@ cloudinary.config(
     secure=True
 )
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+import sys
+IS_TESTING = 'test' in sys.argv or any('test' in arg for arg in sys.argv)
 
-print("Cloudinary successfully configured for:", CLOUDINARY_STORAGE['CLOUD_NAME'])
+if IS_TESTING:
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+    print("Test mode detected: Using FileSystemStorage")
+else:
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# =========================
-# ⚙️ FORCE DJANGO TO USE CLOUDINARY STORAGE
-# =========================
-from importlib import import_module
-from django.core.files import storage as storage_module
+    print("Cloudinary successfully configured for:", CLOUDINARY_STORAGE['CLOUD_NAME'])
 
-try:
-    # Clear cached storages if Django 5.1+ (they cause fallback to FileSystem)
-    if hasattr(storage_module, 'storages'):
-        storage_module.storages._storages.clear()
+    # =========================
+    # ⚙️ FORCE DJANGO TO USE CLOUDINARY STORAGE
+    # =========================
+    from importlib import import_module
+    from django.core.files import storage as storage_module
 
-    # Manually force default_storage to Cloudinary
-    module_path, class_name = DEFAULT_FILE_STORAGE.rsplit('.', 1)
-    storage_class = getattr(import_module(module_path), class_name)
-    storage_module.default_storage = storage_class()
+    try:
+        # Clear cached storages if Django 5.1+ (they cause fallback to FileSystem)
+        if hasattr(storage_module, 'storages'):
+            storage_module.storages._storages.clear()
 
-    print("Default storage manually switched to:", storage_module.default_storage.__class__)
-except Exception as e:
-    print("Cloudinary setup issue:", e)
+        # Manually force default_storage to Cloudinary
+        module_path, class_name = DEFAULT_FILE_STORAGE.rsplit('.', 1)
+        storage_class = getattr(import_module(module_path), class_name)
+        storage_module.default_storage = storage_class()
+
+        print("Default storage manually switched to:", storage_module.default_storage.__class__)
+    except Exception as e:
+        print("Cloudinary setup issue:", e)
+

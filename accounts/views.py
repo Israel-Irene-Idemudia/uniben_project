@@ -30,6 +30,9 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
             data['user_department_id'] = profile.department_id
             data['user_level_id'] = profile.level_id
             data['user_course_area_id'] = profile.course_area_id
+            data['points'] = profile.points
+            data['phone'] = profile.phone
+            data['network'] = profile.network
         except UserProfile.DoesNotExist:
             pass # Handle cases where profile might not exist
         return data
@@ -107,8 +110,42 @@ class UserListView(APIView):
             )
         
         users = UserModel.objects.all().select_related('userprofile')
-        user_list = []
         
+        # Search filter
+        search = request.query_params.get('search', '').strip()
+        if search:
+            from django.db.models import Q
+            users = users.filter(Q(username__icontains=search) | Q(email__icontains=search))
+            
+        # Order by newest
+        users = users.order_by('-date_joined')
+        
+        # Pagination / Limit
+        page = request.query_params.get('page')
+        page_size = request.query_params.get('page_size', '100')
+        
+        try:
+            page_size = int(page_size)
+        except ValueError:
+            page_size = 100
+            
+        total_count = users.count()
+        
+        if page:
+            try:
+                page = int(page)
+                if page < 1:
+                    page = 1
+            except ValueError:
+                page = 1
+            start = (page - 1) * page_size
+            end = start + page_size
+            users = users[start:end]
+        else:
+            # Fallback limit to avoid server crash (default 100)
+            users = users[:page_size]
+            
+        user_list = []
         for user in users:
             user_data = {
                 'id': user.id,
@@ -132,7 +169,7 @@ class UserListView(APIView):
             user_list.append(user_data)
         
         return Response({
-            'count': len(user_list),
+            'count': total_count,
             'users': user_list
         })
 

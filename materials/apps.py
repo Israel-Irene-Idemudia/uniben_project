@@ -12,6 +12,10 @@ class MaterialsConfig(AppConfig):
     name = 'materials'
 
     def ready(self):
+        import sys
+        if 'test' in sys.argv or any('test' in arg for arg in sys.argv):
+            return
+
         # Force Django to use Cloudinary storage for all media uploads
         settings.DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
@@ -22,3 +26,4 @@ class MaterialsConfig(AppConfig):
             from django.core.files.storage import Storage
             from django.core.files.storage import storages
             storages._storages["default"] = MediaCloudinaryStorage()
+

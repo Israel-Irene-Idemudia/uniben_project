@@ -16,11 +16,17 @@ class UserProfileSerializer(serializers.ModelSerializer):
     department = serializers.StringRelatedField()
     level = serializers.StringRelatedField()
     course_area = serializers.StringRelatedField()
+    pending_points = serializers.SerializerMethodField()
 
     class Meta:
         from .models import UserProfile
         model = UserProfile
-        fields = ['user', 'faculty', 'department', 'level', 'course_area']
+        fields = ['user', 'faculty', 'department', 'level', 'course_area', 'points', 'pending_points', 'phone', 'network']
+
+    def get_pending_points(self, obj):
+        from materials.models import Material
+        return Material.objects.filter(user=obj.user, is_verified=False).count() * 10
+
 
 class RegisterSerializer(serializers.ModelSerializer):
     faculty_id = serializers.PrimaryKeyRelatedField(
@@ -56,13 +62,13 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 class UpdateProfileSerializer(serializers.ModelSerializer):
     faculty_id = serializers.PrimaryKeyRelatedField(
-        queryset=Faculty.objects.all(), source='faculty', write_only=True
+        queryset=Faculty.objects.all(), source='faculty', write_only=True, required=False, allow_null=True
     )
     department_id = serializers.PrimaryKeyRelatedField(
-        queryset=Department.objects.all(), source='department', write_only=True
+        queryset=Department.objects.all(), source='department', write_only=True, required=False, allow_null=True
     )
     level_id = serializers.PrimaryKeyRelatedField(
-        queryset=Level.objects.all(), source='level', write_only=True
+        queryset=Level.objects.all(), source='level', write_only=True, required=False, allow_null=True
     )
     course_area_id = serializers.PrimaryKeyRelatedField(
         queryset=CourseArea.objects.all(), source='course_area', required=False, allow_null=True
@@ -71,7 +77,7 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
     class Meta:
         from .models import UserProfile
         model = UserProfile
-        fields = ['faculty_id', 'department_id', 'level_id', 'course_area_id']
+        fields = ['faculty_id', 'department_id', 'level_id', 'course_area_id', 'phone', 'network']
 
 
 # ============= SYNC SERIALIZERS =============

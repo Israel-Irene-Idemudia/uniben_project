@@ -29,8 +29,9 @@ class Material(models.Model):
         help_text="Full course name"
     )
 
-    file = models.FileField(upload_to='materials/',
-                            storage=MediaCloudinaryStorage())
+    file = models.FileField(upload_to='materials/')
+    faculty = models.ForeignKey('core.Faculty', on_delete=models.SET_NULL, null=True, blank=True, related_name='materials')
+    department = models.ForeignKey('core.Department', on_delete=models.SET_NULL, null=True, blank=True, related_name='materials')
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True,
                              blank=True, related_name='uploaded_materials')  # Track uploader
     is_verified = models.BooleanField(default=False)
@@ -41,7 +42,9 @@ class Material(models.Model):
         indexes = [
             models.Index(fields=['course_code', 'is_verified']),
             models.Index(fields=['category', 'is_verified']),
+            models.Index(fields=['faculty', 'department']),
         ]
+
 
     def __str__(self):
         if self.course_code:

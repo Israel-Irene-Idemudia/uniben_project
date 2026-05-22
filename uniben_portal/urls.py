@@ -39,6 +39,7 @@ urlpatterns = [
     path("api/aiassistant/", include("aiassistant.urls")),
     path("api/notifications/", include("notifications.urls")),
     path("api/analytics/", include("app_analytics.urls")),
+    path("api/rewards/", include("rewards.urls")),
     
     # --- Authentication Endpoints ---
     
