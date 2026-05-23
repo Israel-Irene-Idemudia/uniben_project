@@ -31,5 +31,5 @@ RUN python manage.py collectstatic --noinput || true
 # Expose port (Render provides PORT env variable)
 EXPOSE 8000
 
-# Run with gunicorn
-CMD gunicorn uniben_portal.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 2 --timeout 120
+# Run migrations and then start gunicorn
+CMD python manage.py migrate --noinput && gunicorn uniben_portal.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 2 --timeout 120

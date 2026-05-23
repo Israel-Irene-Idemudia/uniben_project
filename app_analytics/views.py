@@ -138,78 +138,85 @@ class StudentBreakdownView(APIView):
     permission_classes = [permissions.IsAuthenticated, IsAdminUser]
 
     def get(self, request):
-        # Get all user profiles
-        profiles = UserProfile.objects.select_related(
-            'faculty', 'department', 'level')
+        try:
+            # Get all user profiles
+            profiles = UserProfile.objects.select_related(
+                'faculty', 'department', 'level')
 
-        # Students by Faculty
-        faculty_breakdown = []
-        faculties = Faculty.objects.all()
-        for faculty in faculties:
-            count = profiles.filter(faculty=faculty).count()
-            if count > 0:
-                faculty_breakdown.append({
-                    'name': faculty.name,
+            # Students by Faculty
+            faculty_breakdown = []
+            faculties = Faculty.objects.all()
+            for faculty in faculties:
+                count = profiles.filter(faculty=faculty).count()
+                if count > 0:
+                    faculty_breakdown.append({
+                        'name': faculty.name,
+                        'count': count
+                    })
+
+            # Students by Department (top 10)
+            department_breakdown = []
+            departments = Department.objects.all()
+            for dept in departments:
+                count = profiles.filter(department=dept).count()
+                if count > 0:
+                    department_breakdown.append({
+                        'name': dept.name,
+                        'faculty': dept.faculty.name if getattr(dept, 'faculty', None) else 'N/A',
+                        'count': count
+                    })
+            # Sort by count and get top 10
+            department_breakdown = sorted(
+                department_breakdown,
+                key=lambda x: x['count'],
+                reverse=True
+            )[:10]
+
+            # Students by Level (grouped by numeric level: 100L, 200L, etc.)
+            level_breakdown = []
+            # Group students by extracting numeric part of level name
+            level_groups = {}
+            for profile in profiles:
+                if getattr(profile, 'level', None) and getattr(profile.level, 'name', None):
+                    # Extract numeric part (e.g., "100" from "100L", "100 Level", etc.)
+                    level_name = profile.level.name.strip()
+                    # Get first 3 digits
+                    numeric_part = ''.join(filter(str.isdigit, level_name))[:3]
+                    if numeric_part:
+                        level_key = f"{numeric_part}L"
+                        level_groups[level_key] = level_groups.get(
+                            level_key, 0) + 1
+
+            # Sort by numeric value and create breakdown list
+            sorted_levels = sorted(level_groups.items(),
+                                   key=lambda x: int(x[0][:-1]))
+            for level_name, count in sorted_levels:
+                level_breakdown.append({
+                    'name': level_name,
                     'count': count
                 })
 
-        # Students by Department (top 10)
-        department_breakdown = []
-        departments = Department.objects.all()
-        for dept in departments:
-            count = profiles.filter(department=dept).count()
-            if count > 0:
-                department_breakdown.append({
-                    'name': dept.name,
-                    'faculty': dept.faculty.name if dept.faculty else 'N/A',
-                    'count': count
-                })
-        # Sort by count and get top 10
-        department_breakdown = sorted(
-            department_breakdown,
-            key=lambda x: x['count'],
-            reverse=True
-        )[:10]
+            # Students without complete profile
+            incomplete_profiles = User.objects.filter(
+                Q(userprofile__isnull=True) |
+                Q(userprofile__faculty__isnull=True) |
+                Q(userprofile__department__isnull=True) |
+                Q(userprofile__level__isnull=True)
+            ).count()
 
-        # Students by Level (grouped by numeric level: 100L, 200L, etc.)
-        level_breakdown = []
-        # Group students by extracting numeric part of level name
-        level_groups = {}
-        for profile in profiles:
-            if profile.level and profile.level.name:
-                # Extract numeric part (e.g., "100" from "100L", "100 Level", etc.)
-                level_name = profile.level.name.strip()
-                # Get first 3 digits
-                numeric_part = ''.join(filter(str.isdigit, level_name))[:3]
-                if numeric_part:
-                    level_key = f"{numeric_part}L"
-                    level_groups[level_key] = level_groups.get(
-                        level_key, 0) + 1
-
-        # Sort by numeric value and create breakdown list
-        sorted_levels = sorted(level_groups.items(),
-                               key=lambda x: int(x[0][:-1]))
-        for level_name, count in sorted_levels:
-            level_breakdown.append({
-                'name': level_name,
-                'count': count
+            return Response({
+                'total_students': User.objects.count(),
+                'faculty_breakdown': faculty_breakdown,
+                'department_breakdown': department_breakdown,
+                'level_breakdown': level_breakdown,
+                'incomplete_profiles': incomplete_profiles,
             })
-
-        # Students without complete profile
-        incomplete_profiles = User.objects.filter(
-            Q(userprofile__isnull=True) |
-            Q(userprofile__faculty__isnull=True) |
-            Q(userprofile__department__isnull=True) |
-            Q(userprofile__level__isnull=True)
-        ).count()
-
-        return Response({
-            'total_students': User.objects.count(),
-            'faculty_breakdown': faculty_breakdown,
-            'department_breakdown': department_breakdown,
-            'level_breakdown': level_breakdown,
-            'incomplete_profiles': incomplete_profiles,
-        })
+        except Exception as e:
+            import traceback
+            return Response(
+                {'error': str(e), 'traceback': traceback.format_exc()},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 class TodayJoinersView(APIView):
