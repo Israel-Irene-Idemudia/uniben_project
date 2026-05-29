@@ -254,6 +254,16 @@ HUGGINGFACE_API_KEY = config("HUGGINGFACE_API_KEY", default="")
 # Groq API for Lumora AI (Primary AI Engine)
 GROQ_API_KEY = config("GROQ_API_KEY", default="") 
 
+# =========================
+# 🤖 AWS BEDROCK AI CONFIGURATION
+# =========================
+AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID", default="")
+AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY", default="")
+AWS_REGION_NAME = config("AWS_REGION_NAME", default="us-east-1")
+
+AWS_BEDROCK_NORMAL_MODEL = "amazon.nova-lite-v1:0"
+AWS_BEDROCK_DEEP_STUDY_MODEL = "amazon.nova-pro-v1:0"
+
 
 # =========================
 # 🪵 LOGGING
