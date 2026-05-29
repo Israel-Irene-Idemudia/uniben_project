@@ -61,10 +61,6 @@ server {
     server_name api.skholar.site;
 
     location = /favicon.ico { access_log off; log_not_found off; }
-    
-    location /static/ {
-        alias /var/www/skholar/staticfiles/;
-    }
 
     location / {
         include proxy_params;
