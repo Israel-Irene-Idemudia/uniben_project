@@ -27,7 +27,7 @@ from accounts.views import MyTokenObtainPairView
 
 urlpatterns = [
     # Django Admin Site
-    path('admin/', admin.site.urls),
+    path('admin/tps/', admin.site.urls),
 
     # API endpoints for different apps
     path('api/', include('news.urls')),

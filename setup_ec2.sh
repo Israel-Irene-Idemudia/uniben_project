@@ -58,7 +58,7 @@ echo "Creating Nginx configuration template..."
 sudo bash -c "cat > /etc/nginx/sites-available/skholar <<EOF
 server {
     listen 80;
-    server_name skholar.site www.skholar.site;
+    server_name api.skholar.site;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     
