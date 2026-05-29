@@ -31,7 +31,7 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600
 FILE_UPLOAD_MAX_MEMORY_SIZE = 104857600
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1").split(",")
-ALLOWED_HOSTS += ["skholar.onrender.com", "skholar.site", "www.skholar.site"]
+ALLOWED_HOSTS += ["skholar.onrender.com", "skholar.site", "www.skholar.site", "api.skholar.site"]
 
 
 # =========================
