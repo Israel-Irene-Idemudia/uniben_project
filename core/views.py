@@ -248,23 +248,59 @@ from core.serializers import GlobalPromptSerializer
 class GlobalPromptAPI(APIView):
     """
     API endpoint for the Global Prompt (Windows Prompt / Countdown).
-    GET: Returns the current prompt (allow any).
-    PUT: Updates the prompt (admin only).
+    GET: Returns a list of all prompts (admin only) or the active prompt (public).
+    POST: Creates a new prompt (admin only).
+    PUT: Updates a specific prompt (admin only).
+    DELETE: Deletes a specific prompt (admin only).
     """
     def get_permissions(self):
-        if self.request.method == 'GET':
+        if self.request.method == 'GET' and 'admin' not in self.request.query_params:
             return [permissions.AllowAny()]
         return [permissions.IsAdminUser()]
 
     def get(self, request):
-        prompt = GlobalPrompt.load()
-        serializer = GlobalPromptSerializer(prompt)
-        return Response(serializer.data)
+        if request.user.is_staff and request.query_params.get('admin') == 'true':
+            prompts = GlobalPrompt.objects.all().order_by('-id')
+            serializer = GlobalPromptSerializer(prompts, many=True)
+            return Response(serializer.data)
+        else:
+            prompt = GlobalPrompt.objects.filter(is_active=True).first()
+            if prompt:
+                serializer = GlobalPromptSerializer(prompt)
+                return Response(serializer.data)
+            return Response({'error': 'No active prompt found'}, status=status.HTTP_404_NOT_FOUND)
+
+    def post(self, request):
+        serializer = GlobalPromptSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request):
-        prompt = GlobalPrompt.load()
+        prompt_id = request.data.get('id')
+        if not prompt_id:
+            return Response({'error': 'Prompt ID is required'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            prompt = GlobalPrompt.objects.get(id=prompt_id)
+        except GlobalPrompt.DoesNotExist:
+            return Response({'error': 'Prompt not found'}, status=status.HTTP_404_NOT_FOUND)
+
         serializer = GlobalPromptSerializer(prompt, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request):
+        prompt_id = request.query_params.get('id')
+        if not prompt_id:
+            return Response({'error': 'Prompt ID is required'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            prompt = GlobalPrompt.objects.get(id=prompt_id)
+            prompt.delete()
+            return Response({'message': 'Prompt deleted'}, status=status.HTTP_204_NO_CONTENT)
+        except GlobalPrompt.DoesNotExist:
+            return Response({'error': 'Prompt not found'}, status=status.HTTP_404_NOT_FOUND)

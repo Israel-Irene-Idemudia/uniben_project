@@ -129,13 +129,10 @@ class GlobalPrompt(models.Model):
         verbose_name_plural = 'Global Prompts'
 
     def save(self, *args, **kwargs):
-        self.pk = 1 # Ensure this is a singleton
+        # If this prompt is being saved as active, deactivate all other prompts
+        if self.is_active:
+            GlobalPrompt.objects.exclude(pk=self.pk).update(is_active=False)
         super(GlobalPrompt, self).save(*args, **kwargs)
-
-    @classmethod
-    def load(cls):
-        obj, created = cls.objects.get_or_create(pk=1, defaults={'title': 'Welcome', 'message': 'Welcome to Skholar!'})
-        return obj
 
     def __str__(self):
         return f"Global Prompt: {self.title} ({self.prompt_type})"
