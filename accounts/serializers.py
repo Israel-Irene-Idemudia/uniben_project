@@ -21,7 +21,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         from .models import UserProfile
         model = UserProfile
-        fields = ['user', 'faculty', 'department', 'level', 'course_area', 'points', 'pending_points', 'phone', 'network']
+        fields = ['user', 'faculty', 'department', 'level', 'course_area', 'points', 'pending_points', 'phone', 'network', 'student_id', 'matric_number']
 
     def get_pending_points(self, obj):
         from materials.models import Material
@@ -77,7 +77,7 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
     class Meta:
         from .models import UserProfile
         model = UserProfile
-        fields = ['faculty_id', 'department_id', 'level_id', 'course_area_id', 'phone', 'network']
+        fields = ['faculty_id', 'department_id', 'level_id', 'course_area_id', 'phone', 'network', 'student_id', 'matric_number']
 
 
 # ============= SYNC SERIALIZERS =============

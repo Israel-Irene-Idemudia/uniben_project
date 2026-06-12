@@ -13,7 +13,8 @@ from .views import (
     ContactMessageCreateAPI,
     ContactMessageListAPI,
     ContactMessageDeleteAPI,  # Added for admin delete
-    ContactMessageReplyAPI
+    ContactMessageReplyAPI, # Admin reply endpoint
+    GlobalPromptAPI
 )
 
 # Create a router and register our viewsets with it.
@@ -32,5 +33,6 @@ urlpatterns = [
     path('contact/list/', ContactMessageListAPI.as_view(), name='contact-list'),
     path('contact/<int:pk>/', ContactMessageDeleteAPI.as_view(), name='contact-delete'),  # Delete endpoint
     path('contact/<int:pk>/reply/', ContactMessageReplyAPI.as_view(), name='contact-reply'), # Admin reply endpoint
+    path('global-prompt/', GlobalPromptAPI.as_view(), name='global-prompt'),
 ]
 

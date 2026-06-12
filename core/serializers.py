@@ -67,3 +67,10 @@ class CampusLocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = CampusLocation
         fields = ['id', 'name', 'category', 'category_display', 'latitude', 'longitude', 'description']
+
+from core.models import GlobalPrompt
+
+class GlobalPromptSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GlobalPrompt
+        fields = '__all__'

@@ -33,6 +33,8 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
             data['points'] = profile.points
             data['phone'] = profile.phone
             data['network'] = profile.network
+            data['student_id'] = profile.student_id
+            data['matric_number'] = profile.matric_number
         except UserProfile.DoesNotExist:
             pass # Handle cases where profile might not exist
         return data

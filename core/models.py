@@ -103,3 +103,39 @@ class CampusLocation(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.get_category_display()})"
+
+
+class GlobalPrompt(models.Model):
+    """
+    Singleton model to control the global 'Windows Prompt' or countdown alert.
+    """
+    PROMPT_TYPES = [
+        ('STANDARD', 'Standard Announcement'),
+        ('UPDATE', 'Actionable Update'),
+        ('COUNTDOWN', 'Live Countdown'),
+        ('CRITICAL', 'Critical/Non-dismissible Alert'),
+    ]
+
+    is_active = models.BooleanField(default=False)
+    prompt_type = models.CharField(max_length=20, choices=PROMPT_TYPES, default='STANDARD')
+    title = models.CharField(max_length=255)
+    message = models.TextField()
+    button_text = models.CharField(max_length=50, blank=True)
+    action_route = models.CharField(max_length=255, blank=True)
+    target_date = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Global Prompt'
+        verbose_name_plural = 'Global Prompts'
+
+    def save(self, *args, **kwargs):
+        self.pk = 1 # Ensure this is a singleton
+        super(GlobalPrompt, self).save(*args, **kwargs)
+
+    @classmethod
+    def load(cls):
+        obj, created = cls.objects.get_or_create(pk=1, defaults={'title': 'Welcome', 'message': 'Welcome to Skholar!'})
+        return obj
+
+    def __str__(self):
+        return f"Global Prompt: {self.title} ({self.prompt_type})"

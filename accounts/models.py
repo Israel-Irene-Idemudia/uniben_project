@@ -18,6 +18,8 @@ class UserProfile(models.Model):
     points = models.IntegerField(default=0)
     phone = models.CharField(max_length=20, blank=True, default='')
     network = models.CharField(max_length=15, blank=True, default='')
+    student_id = models.CharField(max_length=50, blank=True, default='')
+    matric_number = models.CharField(max_length=50, blank=True, default='')
 
     def __str__(self):
         return f'{self.user.username} Profile'

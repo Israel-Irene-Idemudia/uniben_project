@@ -241,3 +241,30 @@ The Skholar Team
 
         except Exception as e:
             return Response({"error": f"Failed to send email: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+from core.models import GlobalPrompt
+from core.serializers import GlobalPromptSerializer
+
+class GlobalPromptAPI(APIView):
+    """
+    API endpoint for the Global Prompt (Windows Prompt / Countdown).
+    GET: Returns the current prompt (allow any).
+    PUT: Updates the prompt (admin only).
+    """
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.AllowAny()]
+        return [permissions.IsAdminUser()]
+
+    def get(self, request):
+        prompt = GlobalPrompt.load()
+        serializer = GlobalPromptSerializer(prompt)
+        return Response(serializer.data)
+
+    def put(self, request):
+        prompt = GlobalPrompt.load()
+        serializer = GlobalPromptSerializer(prompt, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
