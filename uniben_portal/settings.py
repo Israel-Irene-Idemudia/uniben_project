@@ -115,26 +115,28 @@ TEMPLATES = [
 
 
 # =========================
-# 🗄️ DATABASE
-# =========================
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+import sys
+IS_TESTING = 'test' in sys.argv or any('test' in arg for arg in sys.argv)
 
-# Local fallback (only used if DATABASE_URL not set)
-if not config('DATABASE_URL', default=None):
+if IS_TESTING:
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": "uniben_db",
-            "USER": "uniben_user",
-            "PASSWORD": "problemsolvers",
-            "HOST": "localhost",
-            "PORT": "5432",
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "test_db.sqlite3",
         }
     }
+elif config('DATABASE_URL', default=None):
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
 
 # =========================
 # 🧾 AUTH & PERMISSIONS

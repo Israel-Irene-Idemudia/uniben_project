@@ -16,3 +16,9 @@ db.sqlite3-journal
 
 # Local logs
 *.log
+
+# Certificates and keys
+*.pem
+*.key
+*.crt
+

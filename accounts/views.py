@@ -13,6 +13,7 @@ UserModel = get_user_model()
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
+        attrs = dict(attrs)
         identifier = attrs.get('username')
         user = UserModel.objects.filter(email=identifier).first() or UserModel.objects.filter(username=identifier).first()
         if user:
@@ -55,9 +56,11 @@ class RegisterView(APIView):
                 'access': str(refresh.access_token),
             }
             # Add user and profile info to the registration response
-            data.update(MyTokenObtainPairSerializer(context=self.get_serializer_context()).validate(request.data))
+            auth_payload = {'username': user.username, 'password': request.data.get('password')}
+            data.update(MyTokenObtainPairSerializer(context=self.get_serializer_context()).validate(auth_payload))
             return Response(data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     def get_serializer_context(self):
         return {'request': self.request}
 
