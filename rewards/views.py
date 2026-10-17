@@ -15,16 +15,19 @@ class RedeemRewardAPI(APIView):
         serializer = RedemptionSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        
-        point_cost = request.data.get('point_cost', 50)
+
         try:
-            point_cost = int(point_cost)
-        except ValueError:
+            point_cost = int(request.data.get('point_cost', 50))
+        except (TypeError, ValueError):
             return Response({'error': 'Invalid point cost format.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Get profile and check points
+        if point_cost <= 0:
+            return Response({'error': 'Invalid point cost.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Lock this student's profile row until the transaction ends,
+        # so two simultaneous requests cannot spend the same points twice.
         try:
-            profile = request.user.userprofile
+            profile = UserProfile.objects.select_for_update().get(user=request.user)
         except UserProfile.DoesNotExist:
             return Response({'error': 'User profile not found.'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -34,11 +37,8 @@ class RedeemRewardAPI(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # Deduct points
         profile.points -= point_cost
-        profile.save()
 
-        # Update profile phone and network if they are provided and weren't set yet
         phone = serializer.validated_data.get('phone')
         network = serializer.validated_data.get('network')
         if phone:
@@ -47,9 +47,7 @@ class RedeemRewardAPI(APIView):
             profile.network = network
         profile.save()
 
-        # Save redemption log
         redemption = serializer.save(user=request.user, point_cost=point_cost, status='pending')
-        
         return Response(RedemptionSerializer(redemption).data, status=status.HTTP_201_CREATED)
 
 
