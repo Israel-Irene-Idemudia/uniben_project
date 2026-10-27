@@ -16,10 +16,15 @@ def reset_request_id(token):
 def get_request_id():
     return _request_id.get()
 
-
 class RequestIDFilter(logging.Filter):
     """Adds `request_id` to every log record ('-' outside a request)."""
 
     def filter(self, record):
-        record.request_id = get_request_id() or "-"
+        # django.request logs 4xx/5xx lines AFTER our middleware has cleared
+        # the context, but attaches the request object to the record, so fall
+        # back to the ID stored on it.
+        request = getattr(record, "request", None)
+        record.request_id = (
+            get_request_id() or getattr(request, "request_id", None) or "-"
+        )
         return True

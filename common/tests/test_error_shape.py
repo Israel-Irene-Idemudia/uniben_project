@@ -1,5 +1,6 @@
 import logging
 import uuid
+from types import SimpleNamespace
 
 from django.contrib.auth import get_user_model
 from django.test import SimpleTestCase, override_settings
@@ -123,6 +124,11 @@ class RequestIDFilterTests(SimpleTestCase):
         RequestIDFilter().filter(record)
         self.assertEqual(record.request_id, "-")
 
+    def test_filter_reads_id_from_django_request_log_records(self):
+        record = self._record()
+        record.request = SimpleNamespace(request_id="req-2")
+        RequestIDFilter().filter(record)
+        self.assertEqual(record.request_id, "req-2")
 
 class LegacyResponsesUnchangedTests(APITestCase):
     """The v1 error shape must not leak onto legacy routes (API-05, D-11)."""
