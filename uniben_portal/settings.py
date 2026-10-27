@@ -209,6 +209,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+# SECURITY: without MEDIA_ROOT, Django's default is "" (the working directory),
+# and the /media/ route in urls.py would serve project source files.
+# Pin it to a dedicated folder that holds nothing but uploads.
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # =========================
 # ✉️ EMAIL CONFIGURATION (ZOHO SMTP)
