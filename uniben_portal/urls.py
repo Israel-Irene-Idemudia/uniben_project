@@ -29,6 +29,12 @@ urlpatterns = [
     # Django Admin Site
     path('admin/tps/', admin.site.urls),
 
+    # Versioned API (Skholar World). Kept ABOVE the legacy "api/" includes so
+    # legacy routes can never match an /api/v1/ path first.
+    path("api/v1/", include("common.v1_urls")),
+
+    # API endpoints for different apps
+
     # API endpoints for different apps
     path('api/', include('news.urls')),
     path('api/', include('events.urls')),
