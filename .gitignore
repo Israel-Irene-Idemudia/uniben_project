@@ -22,3 +22,13 @@ db.sqlite3-journal
 *.key
 *.crt
 
+# Virtual environments
+venv/
+.venv/
+
+# SQLite files (the test runner creates test_db.sqlite3)
+*.sqlite3
+
+# Env files (keep the template)
+.env.*
+!.env.example
