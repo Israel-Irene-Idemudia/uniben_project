@@ -5,19 +5,27 @@ IsAuthenticatedOrReadOnly, so a v1 view that forgets to set permissions would
 be publicly readable. We cannot change that global default (it would break the
 live legacy endpoints), so v1 views opt in to a safe default through these
 classes, and a test fails if a v1 route uses anything else.
+
+The same mixin also switches v1 views to the v1 error shape (API-06), again
+per view, so legacy error responses are untouched.
 """
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
 
+from common.exceptions import v1_exception_handler
+
 
 class V1ViewMixin:
-    """Marks a view as part of v1 and makes it authenticated by default.
+    """Marks a view as part of v1: authenticated by default, v1 error shape.
 
     Mix into any DRF view or viewset base (APIView, GenericAPIView, ...).
     Put it first in the bases so these attributes win.
     """
 
     permission_classes = [IsAuthenticated]
+
+    def get_exception_handler(self):
+        return v1_exception_handler
 
 
 class V1APIView(V1ViewMixin, APIView):

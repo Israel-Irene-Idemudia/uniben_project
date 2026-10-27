@@ -77,6 +77,7 @@ INSTALLED_APPS = [
 # ⚙️ MIDDLEWARE
 # =========================
 MIDDLEWARE = [
+    "common.middleware.RequestIDMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
@@ -279,8 +280,21 @@ AWS_BEDROCK_DEEP_STUDY_MODEL = "amazon.nova-pro-v1:0"
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
+    "filters": {
+        "request_id": {"()": "common.request_context.RequestIDFilter"},
+    },
+    "formatters": {
+        "with_request_id": {
+            "format": "%(asctime)s %(levelname)s [%(request_id)s] %(name)s: %(message)s",
+        },
+    },
     "handlers": {
-        "console": {"class": "logging.StreamHandler", "stream": sys.stdout},
+        "console": {
+            "class": "logging.StreamHandler",
+            "stream": sys.stdout,
+            "filters": ["request_id"],
+            "formatter": "with_request_id",
+        },
     },
     "root": {
         "handlers": ["console"],
