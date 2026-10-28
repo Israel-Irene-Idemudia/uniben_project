@@ -30,6 +30,7 @@ _CODE_BY_STATUS = {
     409: "conflict",
     415: "unsupported_media_type",
     429: "rate_limited",
+    503: "service_unavailable",
 }
 
 
@@ -39,6 +40,13 @@ class ConflictError(APIException):
     status_code = status.HTTP_409_CONFLICT
     default_detail = "This request conflicts with an earlier one."
     default_code = "conflict"
+
+class ServiceUnavailable(APIException):
+    """503. Used by the readiness check when a dependency is down."""
+
+    status_code = status.HTTP_503_SERVICE_UNAVAILABLE
+    default_detail = "Service temporarily unavailable."
+    default_code = "service_unavailable"
 
 
 def _body(code, message, request_id, field_errors=None):
