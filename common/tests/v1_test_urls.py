@@ -4,6 +4,7 @@ from rest_framework import serializers
 from rest_framework.exceptions import PermissionDenied, Throttled
 from rest_framework.response import Response
 from common.idempotency import idempotent
+from common.throttling import V1CompetitiveThrottle
 
 from accounts.models import UserTodoEntry
 from common.exceptions import ConflictError
@@ -108,6 +109,13 @@ class ExplodingTodoView(V1APIView):
         UserTodoEntry.objects.create(user=request.user, task="doomed")
         raise RuntimeError("boom")
 
+
+class CompetitivePing(V1APIView):
+    throttle_classes = [V1CompetitiveThrottle]
+
+    def get(self, request):
+        return Response({"ok": True})
+
 urlpatterns = [
     path("api/v1/_test/protected/", ProtectedPing.as_view()),
     path("api/v1/_test/public/", PublicPing.as_view()),
@@ -124,5 +132,6 @@ urlpatterns = [
     path("api/v1/_test/todos-b/", CreateTodoView.as_view()),
     path("api/v1/_test/todos-reject/", RejectingTodoView.as_view()),
     path("api/v1/_test/todos-explode/", ExplodingTodoView.as_view()),
+    path("api/v1/_test/competitive/", CompetitivePing.as_view()),
     path("", include("uniben_portal.urls")),
 ]

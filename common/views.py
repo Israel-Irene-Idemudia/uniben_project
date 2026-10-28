@@ -11,7 +11,7 @@ per view, so legacy error responses are untouched.
 """
 
 from rest_framework.generics import ListAPIView
-
+from common.throttling import V1DefaultThrottle
 from common.pagination import V1CursorPagination, V1PageNumberPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
@@ -27,6 +27,7 @@ class V1ViewMixin:
     """
 
     permission_classes = [IsAuthenticated]
+    throttle_classes = [V1DefaultThrottle]
 
     def get_exception_handler(self):
         return v1_exception_handler
