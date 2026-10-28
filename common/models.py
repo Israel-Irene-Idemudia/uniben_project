@@ -35,3 +35,36 @@ class IdempotencyKey(models.Model):
 
     def __str__(self):
         return f"{self.endpoint} [{self.key}]"
+
+class FeatureFlag(models.Model):
+    """Admin-editable switch for a feature (SRS section 3.3, rule 7).
+
+    Release 2 and 3 features ship dark: every one is seeded OFF and only
+    turned on by a person in admin, per cohort or department if wanted.
+    """
+
+    AUDIENCE_ALL = "all"
+    AUDIENCE_COHORT = "cohort"
+    AUDIENCE_DEPARTMENT = "department"
+    AUDIENCE_CHOICES = [
+        (AUDIENCE_ALL, "Everyone"),
+        (AUDIENCE_COHORT, "Named users (cohort)"),
+        (AUDIENCE_DEPARTMENT, "Named departments"),
+    ]
+
+    name = models.SlugField(max_length=100, unique=True)
+    description = models.CharField(max_length=255, blank=True)
+    enabled = models.BooleanField(default=False)
+    audience = models.CharField(
+        max_length=20, choices=AUDIENCE_CHOICES, default=AUDIENCE_ALL
+    )
+    users = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, blank=True, related_name="feature_flags"
+    )
+    departments = models.ManyToManyField(
+        "core.Department", blank=True, related_name="feature_flags"
+    )
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.name} ({'on' if self.enabled else 'off'}, {self.audience})"
