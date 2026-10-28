@@ -3,6 +3,11 @@ from django.conf import settings
 
 class Faculty(models.Model):
     name = models.CharField(max_length=200)
+    # Phase 2.2 (BE-02.1). Nullable and NOT unique on purpose: production data
+    # has not been checked for duplicates yet (task 2.1). Retire with
+    # is_active instead of deleting, because deleting cascades to results.
+    code = models.CharField(max_length=20, blank=True, null=True)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
@@ -11,6 +16,8 @@ class Faculty(models.Model):
 class Department(models.Model):
     name = models.CharField(max_length=200)
     faculty = models.ForeignKey('core.Faculty', on_delete=models.CASCADE, related_name='departments')
+    code = models.CharField(max_length=20, blank=True, null=True)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.faculty.name} - {self.name}"

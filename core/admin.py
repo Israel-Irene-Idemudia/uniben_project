@@ -1,14 +1,31 @@
 from django.contrib import admin
 from .models import Faculty, Department, CourseArea, Level, Course, ContactMessage, CampusLocation
 
+class NoDeleteAdmin(admin.ModelAdmin):
+    """Registry rows are retired with is_active, never deleted: deleting a
+    Department cascades to levels, courses, exams and student results."""
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        actions.pop("delete_selected", None)
+        return actions
+
+
 @admin.register(Faculty)
-class FacultyAdmin(admin.ModelAdmin):
-    list_display = ("name",)
+class FacultyAdmin(NoDeleteAdmin):
+    list_display = ("name", "code", "is_active")
+    list_filter = ("is_active",)
+    search_fields = ("name", "code")
+
 
 @admin.register(Department)
-class DepartmentAdmin(admin.ModelAdmin):
-    list_display = ("name", "faculty")
-    list_filter = ("faculty",)
+class DepartmentAdmin(NoDeleteAdmin):
+    list_display = ("name", "faculty", "code", "is_active")
+    list_filter = ("faculty", "is_active")
+    search_fields = ("name", "code")
 
 @admin.register(CourseArea)
 class CourseAreaAdmin(admin.ModelAdmin):
