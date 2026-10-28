@@ -3,6 +3,7 @@ from django.urls import include, path
 from rest_framework import serializers
 from rest_framework.exceptions import PermissionDenied, Throttled
 from rest_framework.response import Response
+from common.idempotency import idempotent
 
 from accounts.models import UserTodoEntry
 from common.exceptions import ConflictError
@@ -85,6 +86,28 @@ class PageList(V1AdminListAPIView):
     serializer_class = _TodoSerializer
 
 
+class CreateTodoView(V1APIView):
+    @idempotent
+    def post(self, request):
+        entry = UserTodoEntry.objects.create(
+            user=request.user, task=request.data.get("task", "t")
+        )
+        return Response({"id": entry.id, "task": entry.task}, status=201)
+
+
+class RejectingTodoView(V1APIView):
+    @idempotent
+    def post(self, request):
+        UserTodoEntry.objects.create(user=request.user, task="attempt")
+        return Response({"detail": "nope"}, status=400)
+
+
+class ExplodingTodoView(V1APIView):
+    @idempotent
+    def post(self, request):
+        UserTodoEntry.objects.create(user=request.user, task="doomed")
+        raise RuntimeError("boom")
+
 urlpatterns = [
     path("api/v1/_test/protected/", ProtectedPing.as_view()),
     path("api/v1/_test/public/", PublicPing.as_view()),
@@ -97,5 +120,9 @@ urlpatterns = [
     path("api/v1/_test/cursor/", CursorList.as_view()),
     path("api/v1/_test/cursor-tiny/", TinyCursorList.as_view()),
     path("api/v1/_test/pages/", PageList.as_view()),
+    path("api/v1/_test/todos/", CreateTodoView.as_view()),
+    path("api/v1/_test/todos-b/", CreateTodoView.as_view()),
+    path("api/v1/_test/todos-reject/", RejectingTodoView.as_view()),
+    path("api/v1/_test/todos-explode/", ExplodingTodoView.as_view()),
     path("", include("uniben_portal.urls")),
 ]
