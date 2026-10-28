@@ -4,8 +4,15 @@ from rest_framework import serializers
 from rest_framework.exceptions import PermissionDenied, Throttled
 from rest_framework.response import Response
 
+from accounts.models import UserTodoEntry
 from common.exceptions import ConflictError
-from common.views import PublicV1APIView, V1APIView
+from common.pagination import V1CursorPagination
+from common.views import (
+    PublicV1APIView,
+    V1AdminListAPIView,
+    V1APIView,
+    V1ListAPIView,
+)
 
 
 class ProtectedPing(V1APIView):
@@ -54,6 +61,30 @@ class BoomView(V1APIView):
         raise RuntimeError("secret internal detail")
 
 
+class _TodoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserTodoEntry
+        fields = ["id", "task"]
+
+
+class CursorList(V1ListAPIView):
+    queryset = UserTodoEntry.objects.all()
+    serializer_class = _TodoSerializer
+
+
+class _TinyCursorPagination(V1CursorPagination):
+    max_page_size = 5
+
+
+class TinyCursorList(CursorList):
+    pagination_class = _TinyCursorPagination
+
+
+class PageList(V1AdminListAPIView):
+    queryset = UserTodoEntry.objects.order_by("id")
+    serializer_class = _TodoSerializer
+
+
 urlpatterns = [
     path("api/v1/_test/protected/", ProtectedPing.as_view()),
     path("api/v1/_test/public/", PublicPing.as_view()),
@@ -63,5 +94,8 @@ urlpatterns = [
     path("api/v1/_test/conflict/", ConflictView.as_view()),
     path("api/v1/_test/throttled/", ThrottledView.as_view()),
     path("api/v1/_test/boom/", BoomView.as_view()),
+    path("api/v1/_test/cursor/", CursorList.as_view()),
+    path("api/v1/_test/cursor-tiny/", TinyCursorList.as_view()),
+    path("api/v1/_test/pages/", PageList.as_view()),
     path("", include("uniben_portal.urls")),
 ]

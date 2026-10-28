@@ -9,6 +9,10 @@ classes, and a test fails if a v1 route uses anything else.
 The same mixin also switches v1 views to the v1 error shape (API-06), again
 per view, so legacy error responses are untouched.
 """
+
+from rest_framework.generics import ListAPIView
+
+from common.pagination import V1CursorPagination, V1PageNumberPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
 
@@ -42,3 +46,20 @@ class PublicV1APIView(V1ViewMixin, APIView):
 
     permission_classes = [AllowAny]
     authentication_classes = []
+
+
+class V1ListAPIView(V1ViewMixin, ListAPIView):
+    """Cursor-paginated v1 list (feeds, ledgers, anything that grows).
+
+    The queryset's model needs `created_at` and `id` for the default ordering;
+    otherwise set `pagination_class` to a V1CursorPagination subclass with its
+    own `ordering`.
+    """
+
+    pagination_class = V1CursorPagination
+
+
+class V1AdminListAPIView(V1ViewMixin, ListAPIView):
+    """Page-number v1 list, for small admin lists only (D-4)."""
+
+    pagination_class = V1PageNumberPagination
