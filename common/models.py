@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.core.validators import RegexValidator
 
 
 class IdempotencyKey(models.Model):
@@ -68,3 +69,101 @@ class FeatureFlag(models.Model):
 
     def __str__(self):
         return f"{self.name} ({'on' if self.enabled else 'off'}, {self.audience})"
+
+
+SETTING_KEY_PATTERN = r"[a-z0-9_.]{1,100}"
+
+
+class PlatformSetting(models.Model):
+    """Central configuration, editable in admin without a deploy (BE-20.1).
+
+    Never write this model directly: use common.services.set_setting so the
+    change and its audit row are written together.
+    """
+
+    key = models.CharField(
+        max_length=100,
+        unique=True,
+        validators=[
+            RegexValidator(
+                rf"^{SETTING_KEY_PATTERN}$",
+                "Use lowercase letters, digits, underscores and dots.",
+            )
+        ],
+    )
+    value = models.JSONField()
+    description = models.CharField(max_length=255, blank=True)
+    updated_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,  # the audit log keeps the history
+        related_name="+",
+    )
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.key
+
+
+class ImmutableRecordError(Exception):
+    """Raised on any attempt to change or delete an append-only record."""
+
+
+class AuditLogQuerySet(models.QuerySet):
+    """No bulk path may rewrite or remove audit rows (BE-15.4)."""
+
+    def update(self, **kwargs):
+        raise ImmutableRecordError("Audit log rows cannot be updated.")
+
+    def bulk_update(self, objs, fields, batch_size=None):
+        raise ImmutableRecordError("Audit log rows cannot be updated.")
+
+    def delete(self):
+        raise ImmutableRecordError("Audit log rows cannot be deleted.")
+
+
+class AuditLog(models.Model):
+    """Append-only record of admin, moderator and system actions (BE-15.4).
+
+    Write rows only through common.services.log_audit. There is no update or
+    delete path in application code. The actor FK is PROTECT (history must
+    survive) and actor_label keeps a readable username snapshot.
+    """
+
+    actor = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.PROTECT,
+        related_name="+",
+    )
+    actor_label = models.CharField(max_length=150, blank=True)
+    action = models.CharField(max_length=100)
+    target_type = models.CharField(max_length=100)
+    target_id = models.CharField(max_length=255)
+    before = models.JSONField(null=True, blank=True)
+    after = models.JSONField(null=True, blank=True)
+    reason = models.TextField(blank=True)
+    request_id = models.CharField(max_length=64, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    objects = AuditLogQuerySet.as_manager()
+
+    class Meta:
+        ordering = ["-created_at", "-id"]
+        indexes = [
+            models.Index(fields=["target_type", "target_id"]),
+            models.Index(fields=["action"]),
+        ]
+
+    def __str__(self):
+        return f"{self.action} on {self.target_type}:{self.target_id}"
+
+    def save(self, *args, **kwargs):
+        if not self._state.adding:
+            raise ImmutableRecordError("Audit log rows cannot be changed.")
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        raise ImmutableRecordError("Audit log rows cannot be deleted.")
