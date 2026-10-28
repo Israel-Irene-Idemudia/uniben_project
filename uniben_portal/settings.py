@@ -238,6 +238,9 @@ DJANGO_REST_PASSWORDRESET = {
     'TOKEN_GENERATOR_CLASS': 'accounts.token_generator.NumericTokenGenerator',
 }
 
+# Reset codes are only 5 digits, so they must be short-lived (F9). Hours, as a float.
+DJANGO_REST_MULTITOKENAUTH_RESET_TOKEN_EXPIRY_TIME = 0.25
+
 # =========================
 # 🕒 LOCALIZATION
 # =========================

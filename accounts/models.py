@@ -221,3 +221,21 @@ class AccountDeletionRequest(models.Model):
 
     def __str__(self):
         return f"Deletion Request: {self.user.username}"
+class AuthEvent(models.Model):
+    """Attempt log used for database-backed limits (works across workers).
+
+    Phase 2.8 reuses this model for login lockout and the auth log.
+    key_hash is a SHA-256 of the email, never the email itself.
+    """
+
+    KIND_RESET_REQUEST = "reset_request"
+    KIND_RESET_CONFIRM = "reset_confirm"  # confirm and validate_token share this
+
+    kind = models.CharField(max_length=30)
+    key_hash = models.CharField(max_length=64, blank=True)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    success = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        indexes = [models.Index(fields=["kind", "created_at"])]

@@ -6,10 +6,18 @@ from django.conf import settings
 from django.db.models.signals import post_save
 from django.contrib.auth import get_user_model
 from django_rest_passwordreset.signals import reset_password_token_created
-
+import secrets
+from django.utils import timezone
+from django_rest_passwordreset.models import ResetPasswordToken
 
 User = get_user_model()
-
+def _new_code(exclude_pk):
+    # secrets, not random: reset codes must not be predictable.
+    # Retry on a clash because ResetPasswordToken.key is unique.
+    while True:
+        code = str(secrets.randbelow(90000) + 10000)
+        if not ResetPasswordToken.objects.exclude(pk=exclude_pk).filter(key=code).exists():
+            return code
 
 @receiver(reset_password_token_created)
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
@@ -17,13 +25,11 @@ def password_reset_token_created(sender, instance, reset_password_token, *args, 
     Handles password reset tokens
     When a token is created, an email is sent to the user with a 5-digit numeric code
     """
-    import random
-    
-    # Generate a 5-digit numeric token
-    numeric_token = str(random.randint(10000, 99999))
-    
-    # Update the token in the database to use our numeric token
+   
+    numeric_token = _new_code(reset_password_token.pk)
     reset_password_token.key = numeric_token
+    # A re-requested code must get a fresh expiry window.
+    reset_password_token.created_at = timezone.now()
     reset_password_token.save()
     
     # Render the email template with the numeric token
