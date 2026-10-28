@@ -10,6 +10,16 @@ import secrets
 from django.utils import timezone
 from django_rest_passwordreset.models import ResetPasswordToken
 
+
+import logging
+
+from django.db import transaction
+
+from accounts.models import UserProfile
+from accounts.services import sync_department_history
+
+logger = logging.getLogger(__name__)
+
 User = get_user_model()
 def _new_code(exclude_pk):
     # secrets, not random: reset codes must not be predictable.
@@ -115,3 +125,15 @@ The Skholar Team
         except Exception:
             # Log the error but don't prevent user registration
             pass
+
+@receiver(post_save, sender=UserProfile)
+def keep_department_history(sender, instance, **kwargs):
+    """Every path that changes a department (registration, legacy profile
+    update, admin) leaves a history row. A failure here must never break
+    registration or a profile update, so it is logged and swallowed; the
+    savepoint stops a database error from poisoning the outer transaction."""
+    try:
+        with transaction.atomic():
+            sync_department_history(instance)
+    except Exception:
+        logger.exception("Could not record department history for user %s", instance.user_id)

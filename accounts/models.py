@@ -239,3 +239,46 @@ class AuthEvent(models.Model):
 
     class Meta:
         indexes = [models.Index(fields=["kind", "created_at"])]
+
+
+class StudentDepartmentHistory(models.Model):
+    """Which department a student belonged to, and when (DATA-02, BE-02.2).
+
+    Past season results read this, so a department change never rewrites
+    history. The user FK is PROTECT on purpose: history must survive. Names
+    are snapshotted so a later rename does not alter the past. Faculty and
+    department FKs are SET_NULL so nothing here can block registry cleanup.
+    """
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="department_history"
+    )
+    faculty = models.ForeignKey(
+        "core.Faculty", null=True, blank=True, on_delete=models.SET_NULL, related_name="+"
+    )
+    department = models.ForeignKey(
+        "core.Department", null=True, blank=True, on_delete=models.SET_NULL, related_name="+"
+    )
+    faculty_name = models.CharField(max_length=200, blank=True)
+    department_name = models.CharField(max_length=200, blank=True)
+    effective_from = models.DateTimeField()
+    effective_to = models.DateTimeField(null=True, blank=True)  # null = current
+    changed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name="+"
+    )
+    reason = models.CharField(max_length=255, blank=True)
+
+    class Meta:
+        ordering = ["-effective_from", "-id"]
+        constraints = [
+            # At most one current department per student.
+            models.UniqueConstraint(
+                fields=["user"],
+                condition=models.Q(effective_to__isnull=True),
+                name="uniq_open_department_history_per_user",
+            )
+        ]
+        indexes = [models.Index(fields=["user", "effective_from"])]
+
+    def __str__(self):
+        return f"{self.user_id}: {self.department_name} ({self.effective_from:%Y-%m-%d})"
