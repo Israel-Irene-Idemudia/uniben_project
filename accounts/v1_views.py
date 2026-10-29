@@ -5,6 +5,12 @@ from accounts.v1_profile import me_payload, profile_for, progress_payload
 from accounts.v1_serializers import MeUpdateSerializer
 from common.views import V1APIView
 
+from rest_framework.exceptions import ValidationError
+
+from accounts.services import DepartmentChangeError, change_department
+from accounts.v1_serializers import DepartmentChangeSerializer
+from common.exceptions import ConflictError
+
 _USER_FIELDS = ("first_name", "last_name")
 _PROFILE_FIELDS = ("phone", "network", "student_id", "matric_number")
 
@@ -40,3 +46,21 @@ class MeProgressView(V1APIView):
 
     def get(self, request):
         return Response(progress_payload(profile_for(request.user)))
+
+class DepartmentChangeView(V1APIView):
+    """Change department (BE-02.2): once per semester unless an admin approves."""
+
+    def post(self, request):
+        serializer = DepartmentChangeSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        data = serializer.validated_data
+        profile_for(request.user)  # make sure a profile row exists
+        try:
+            change_department(
+                request.user, data["department"], data["level"], reason=data.get("reason", "")
+            )
+        except DepartmentChangeError as exc:
+            if exc.code == "same_department":
+                raise ValidationError({"department_id": [exc.message]})
+            raise ConflictError(exc.message)
+        return Response(me_payload(profile_for(request.user)))

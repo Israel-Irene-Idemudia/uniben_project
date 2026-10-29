@@ -282,3 +282,24 @@ class StudentDepartmentHistory(models.Model):
 
     def __str__(self):
         return f"{self.user_id}: {self.department_name} ({self.effective_from:%Y-%m-%d})"
+
+class DepartmentChangeApproval(models.Model):
+    """An admin's one-time permission for a student to change department
+    again within the same semester (BE-02.2). Consumed by the next change.
+
+    CASCADE is fine here: it is a disposable permission, not history. The
+    audit log keeps the permanent record of who approved what.
+    """
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="department_change_approvals"
+    )
+    approved_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name="+"
+    )
+    reason = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    used_at = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.user_id} approved ({'used' if self.used_at else 'unused'})"
