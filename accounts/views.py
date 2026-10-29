@@ -5,7 +5,17 @@ from django.contrib.auth import get_user_model
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, generics, permissions
+from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from .account_state import anonymise_user
+from .lockout import (
+    BAD_CREDENTIALS,
+    LOCKED,
+    lock_message,
+    lock_seconds_remaining,
+    login_key,
+    record_login_event,
+)
 from .serializers import RegisterSerializer, UserProfileSerializer, UpdateProfileSerializer
 from .models import UserProfile
 
@@ -41,7 +51,35 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         return data
 
 class MyTokenObtainPairView(TokenObtainPairView):
+    """Login, with lockout and an auth log (BE-01.4).
+
+    Success and error bodies are exactly what they were before. The only new
+    response is 429 {"detail": ...} plus a Retry-After header when an account
+    has had too many failed attempts.
+    """
     serializer_class = MyTokenObtainPairSerializer
+
+    def post(self, request, *args, **kwargs):
+        identifier = request.data.get("username") if hasattr(request.data, "get") else None
+        if not isinstance(identifier, str) or not identifier.strip():
+            return super().post(request, *args, **kwargs)  # normal 400 from the serializer
+
+        key, user = login_key(identifier)
+        wait = lock_seconds_remaining(key)
+        if wait:
+            record_login_event(request, key, user, success=False, detail=LOCKED)
+            return Response(
+                {"detail": lock_message(wait)},
+                status=status.HTTP_429_TOO_MANY_REQUESTS,
+                headers={"Retry-After": str(wait)},
+            )
+        try:
+            response = super().post(request, *args, **kwargs)
+        except AuthenticationFailed:
+            record_login_event(request, key, user, success=False, detail=BAD_CREDENTIALS)
+            raise
+        record_login_event(request, key, user, success=response.status_code == 200)
+        return response
 
 class RegisterView(APIView):
     permission_classes = [AllowAny]
@@ -222,7 +260,11 @@ class UserDetailView(APIView):
         })
 
     def delete(self, request, user_id):
-        """Delete a user (admin only)."""
+        """Delete a user (admin only).
+
+        Now anonymises instead of deleting the row (DATA-17): ledger, history
+        and audit records must survive. Same responses as before.
+        """
         if not request.user.is_staff:
             return Response(
                 {'error': 'Admin access required'},
@@ -238,7 +280,7 @@ class UserDetailView(APIView):
                     status=status.HTTP_400_BAD_REQUEST
                 )
             
-            user.delete()
+            anonymise_user(user, actor=request.user, reason="Deleted by an administrator")
             return Response(
                 {'message': 'User deleted successfully'},
                 status=status.HTTP_204_NO_CONTENT
@@ -300,9 +342,10 @@ class AdminDeletionActionAPI(APIView):
             return Response({"error": "Request not found"}, status=status.HTTP_404_NOT_FOUND)
 
         if action == 'approve':
-            # Soft Delete: Determine logic. User wants to delete user.
-            user = deletion_request.user
-            user.delete() # This cascades and deletes the request too
+            # Anonymise (keeps ledger, history and audit intact) and remove the request.
+            anonymise_user(
+                deletion_request.user, actor=request.user, reason="Deletion request approved"
+            )
             return Response({"message": "User account permanently deleted."}, status=status.HTTP_200_OK)
         
         elif action == 'reject':

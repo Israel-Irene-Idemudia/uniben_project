@@ -1,5 +1,6 @@
 from django.urls import path
 
+from accounts.v1_account_views import MeExportView
 from accounts.v1_views import (
     DepartmentChangeView,
     MeProgressView,
@@ -13,6 +14,8 @@ urlpatterns = [
     path("me/", MeView.as_view()),
     path("me/progress", MeProgressView.as_view(), name="v1-me-progress"),
     path("me/progress/", MeProgressView.as_view()),
+    path("me/export", MeExportView.as_view(), name="v1-me-export"),
+    path("me/export/", MeExportView.as_view()),
     path("me/department-change", DepartmentChangeView.as_view(), name="v1-department-change"),
     path("me/department-change/", DepartmentChangeView.as_view()),
     path("auth/world-handoff", WorldHandoffCreateView.as_view(), name="v1-world-handoff"),

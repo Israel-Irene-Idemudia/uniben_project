@@ -222,24 +222,31 @@ class AccountDeletionRequest(models.Model):
     def __str__(self):
         return f"Deletion Request: {self.user.username}"
 class AuthEvent(models.Model):
-    """Attempt log used for database-backed limits (works across workers).
+    """Attempt log: database-backed limits and the auth log (works across workers).
 
-    Phase 2.8 reuses this model for login lockout and the auth log.
-    key_hash is a SHA-256 of the email, never the email itself.
+    key_hash is a keyed hash of the account or login name, never the name
+    itself. Rows older than 90 days are removed (DATA-17).
     """
 
     KIND_RESET_REQUEST = "reset_request"
     KIND_RESET_CONFIRM = "reset_confirm"  # confirm and validate_token share this
+    KIND_LOGIN = "login"
 
     kind = models.CharField(max_length=30)
     key_hash = models.CharField(max_length=64, blank=True)
     ip_address = models.GenericIPAddressField(null=True, blank=True)
     success = models.BooleanField(default=False)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name="+"
+    )
+    detail = models.CharField(max_length=100, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        indexes = [models.Index(fields=["kind", "created_at"])]
-
+        indexes = [
+            models.Index(fields=["kind", "created_at"]),
+            models.Index(fields=["kind", "key_hash", "created_at"]),
+        ]
 
 class StudentDepartmentHistory(models.Model):
     """Which department a student belonged to, and when (DATA-02, BE-02.2).
@@ -322,3 +329,30 @@ class WorldHandoffToken(models.Model):
 
     def __str__(self):
         return f"handoff for user {self.user_id} ({'used' if self.used_at else 'unused'})"
+
+
+class AccountStatus(models.Model):
+    """Account state (BE-01.5). No row means 'active'.
+
+    Suspended accounts can still log in (so they can see why and appeal) but
+    are blocked from social and competitive features by IsNotSuspended.
+    'deleted' is set only by anonymise_user, never by hand.
+    """
+
+    ACTIVE = "active"
+    SUSPENDED = "suspended"
+    DELETED = "deleted"
+    STATE_CHOICES = [(ACTIVE, "Active"), (SUSPENDED, "Suspended"), (DELETED, "Deleted")]
+
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="account_status"
+    )
+    state = models.CharField(max_length=20, choices=STATE_CHOICES, default=ACTIVE)
+    reason = models.CharField(max_length=255, blank=True)
+    changed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name="+"
+    )
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.user_id}: {self.state}"
