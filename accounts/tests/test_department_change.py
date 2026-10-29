@@ -37,10 +37,14 @@ class DepartmentChangeTests(APITestCase):
     def _change(self, department, **extra):
         return self.client.post(URL, {"department_id": department.id, **extra}, format="json")
 
-    def _age_changes(self, days):
-        History.objects.filter(user=self.user, reason="Department change").update(
-            effective_from=timezone.now() - timedelta(days=days)
-        )
+    def _age_history(self, days):
+        """Pretend `days` more days have passed: move ALL of the student's
+        history rows back together so their order stays realistic.
+
+        Done row by row in Python so it behaves the same on every database."""
+        for row in History.objects.filter(user=self.user):
+            row.effective_from = row.effective_from - timedelta(days=days)
+            row.save(update_fields=["effective_from"])
 
     def test_requires_authentication(self):
         self.client.force_authenticate(None)
@@ -108,9 +112,9 @@ class DepartmentChangeTests(APITestCase):
 
     def test_fallback_window_is_180_days(self):
         self._change(self.chm)
-        self._age_changes(179)
-        self.assertEqual(self._change(self.mech).status_code, 409)
-        self._age_changes(181)
+        self._age_history(179)
+        self.assertEqual(self._change(self.mech).status_code, 409)  # 179 days: still blocked
+        self._age_history(2)  # now 181 days old
         self.assertEqual(self._change(self.mech).status_code, 200)
 
     def test_semester_settings_define_the_window(self):
@@ -120,17 +124,17 @@ class DepartmentChangeTests(APITestCase):
         set_setting("academic.semester_end", (today + timedelta(days=30)).isoformat(),
                     actor=self.admin_user, reason="test")
         self._change(self.chm)
-        # A change made BEFORE this semester started no longer counts,
-        # even though the 180-day fallback would still block it.
-        self._age_changes(31)
+        # The change is now 31 days old: before this semester began, so it no
+        # longer counts, even though the 180-day fallback would still block it.
+        self._age_history(31)
         self.assertEqual(self._change(self.mech).status_code, 200)
 
     def test_invalid_settings_fall_back_safely(self):
         set_setting("academic.semester_start", "garbage", actor=self.admin_user, reason="test")
         set_setting("academic.semester_end", "garbage", actor=self.admin_user, reason="test")
         self._change(self.chm)
-        self._age_changes(31)
-        self.assertEqual(self._change(self.mech).status_code, 409)
+        self._age_history(31)
+        self.assertEqual(self._change(self.mech).status_code, 409)  # fallback is 180 days
 
     def test_admin_approval_allows_exactly_one_extra_change(self):
         self._change(self.chm)
@@ -140,7 +144,7 @@ class DepartmentChangeTests(APITestCase):
         self.assertEqual(self._change(self.mech).status_code, 200)
         approval.refresh_from_db()
         self.assertIsNotNone(approval.used_at)
-        self.assertEqual(self._change(self.phy).status_code, 409)
+        self.assertEqual(self._change(self.phy).status_code, 409)  # permission slip used up
 
     def test_a_student_with_no_department_can_choose_freely(self):
         other = User.objects.create_user("new", "new@example.com", "Pass#12345")
@@ -150,8 +154,16 @@ class DepartmentChangeTests(APITestCase):
         self.assertEqual(r.status_code, 200)
         self.assertEqual(History.objects.filter(user=other).count(), 1)
 
-    def test_a_student_cannot_change_someone_elses_department(self):
-        r = self.client.post(URL, {"department_id": self.chm.id, "user_id": 1}, format="json")
-        self.assertEqual(r.status_code, 200)  # extra keys are ignored: only the caller changes
+    def test_only_the_caller_is_changed_even_if_a_user_id_is_sent(self):
+        bystander = User.objects.create_user("bystander", "b@example.com", "Pass#12345")
+        bystander_profile = UserProfile.objects.create(
+            user=bystander, faculty=self.sci, department=self.phy
+        )
+        r = self.client.post(
+            URL, {"department_id": self.chm.id, "user_id": bystander.id}, format="json"
+        )
+        self.assertEqual(r.status_code, 200)
         self.profile.refresh_from_db()
+        bystander_profile.refresh_from_db()
         self.assertEqual(self.profile.department_id, self.chm.id)
+        self.assertEqual(bystander_profile.department_id, self.phy.id)
