@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 
+from accounts.session_revocation import revoke_all_sessions
 from common.services import log_audit
 
 from .models import DepartmentChangeApproval, StudentDepartmentHistory, UserProfile
@@ -13,8 +14,24 @@ class UserProfileInline(admin.StackedInline):
     verbose_name_plural = 'User Profile'
 
 
+@admin.action(description="Sign out selected users everywhere (revoke refresh tokens)")
+def sign_out_everywhere(modeladmin, request, queryset):
+    total = 0
+    users = list(queryset)
+    for user in users:
+        total += revoke_all_sessions(
+            user, actor=request.user, reason="Admin action: sign out everywhere"
+        )
+    modeladmin.message_user(
+        request,
+        f"Revoked {total} login(s) for {len(users)} user(s). "
+        "Access tokens already issued expire within 15 minutes.",
+    )
+
+
 class CustomUserAdmin(UserAdmin):
     inlines = (UserProfileInline, )
+    actions = [sign_out_everywhere]
 
 
 admin.site.unregister(User)

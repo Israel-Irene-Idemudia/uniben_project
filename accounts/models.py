@@ -303,3 +303,22 @@ class DepartmentChangeApproval(models.Model):
 
     def __str__(self):
         return f"{self.user_id} approved ({'used' if self.used_at else 'unused'})"
+
+
+class WorldHandoffToken(models.Model):
+    """One-time key that carries a signed-in student from the Flutter app into
+    the web world (BE-01.3, decision D-8).
+
+    Only the SHA-256 hash of the key is stored, never the key itself. It is
+    bound to one user, lives a few seconds, and works once. CASCADE is fine:
+    it is a disposable credential, not history (the audit log keeps the record).
+    """
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="+")
+    token_hash = models.CharField(max_length=64, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+    expires_at = models.DateTimeField()
+    used_at = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return f"handoff for user {self.user_id} ({'used' if self.used_at else 'unused'})"

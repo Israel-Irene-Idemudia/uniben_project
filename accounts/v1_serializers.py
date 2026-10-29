@@ -65,3 +65,7 @@ class DepartmentChangeSerializer(serializers.Serializer):
         attrs["department"] = self._department
         attrs["level"] = level
         return attrs
+
+
+class HandoffExchangeSerializer(serializers.Serializer):
+    token = serializers.CharField(max_length=200, trim_whitespace=True)

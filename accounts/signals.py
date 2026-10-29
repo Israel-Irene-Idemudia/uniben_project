@@ -1,26 +1,27 @@
 # accounts/signals.py
+import logging
+import secrets
+
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.contrib.auth.hashers import check_password
 from django.core.mail import send_mail
+from django.db import transaction
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 from django.template.loader import render_to_string
-from django.conf import settings
-from django.db.models.signals import post_save
-from django.contrib.auth import get_user_model
-from django_rest_passwordreset.signals import reset_password_token_created
-import secrets
 from django.utils import timezone
 from django_rest_passwordreset.models import ResetPasswordToken
-
-
-import logging
-
-from django.db import transaction
+from django_rest_passwordreset.signals import reset_password_token_created
 
 from accounts.models import UserProfile
 from accounts.services import sync_department_history
-
-logger = logging.getLogger(__name__)
+from accounts.session_revocation import revoke_all_sessions
 
 User = get_user_model()
+logger = logging.getLogger(__name__)
+
+
 def _new_code(exclude_pk):
     # secrets, not random: reset codes must not be predictable.
     # Retry on a clash because ResetPasswordToken.key is unique.
@@ -29,26 +30,26 @@ def _new_code(exclude_pk):
         if not ResetPasswordToken.objects.exclude(pk=exclude_pk).filter(key=code).exists():
             return code
 
+
 @receiver(reset_password_token_created)
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
     """
     Handles password reset tokens
     When a token is created, an email is sent to the user with a 5-digit numeric code
     """
-   
     numeric_token = _new_code(reset_password_token.pk)
     reset_password_token.key = numeric_token
     # A re-requested code must get a fresh expiry window.
     reset_password_token.created_at = timezone.now()
     reset_password_token.save()
-    
+
     # Render the email template with the numeric token
     context = {
         'user': reset_password_token.user,
         'token': numeric_token,
         'username': reset_password_token.user.username,
     }
-    
+
     # Render the email content from the template
     email_html_message = render_to_string('reset_password.html', context)
     email_plaintext_message = f"""
@@ -92,7 +93,7 @@ def send_welcome_email(sender, instance, created, **kwargs):
             'username': instance.username,
             'email': instance.email,
         }
-        
+
         # Render the welcome email template
         email_html_message = render_to_string('welcome_email.html', context)
         email_plaintext_message = f"""
@@ -126,6 +127,7 @@ The Skholar Team
             # Log the error but don't prevent user registration
             pass
 
+
 @receiver(post_save, sender=UserProfile)
 def keep_department_history(sender, instance, **kwargs):
     """Every path that changes a department (registration, legacy profile
@@ -137,3 +139,47 @@ def keep_department_history(sender, instance, **kwargs):
             sync_department_history(instance)
     except Exception:
         logger.exception("Could not record department history for user %s", instance.user_id)
+
+
+@receiver(pre_save, sender=User)
+def note_password_change(sender, instance, **kwargs):
+    """Before a user is saved, work out whether the PASSWORD really changed.
+
+    Why this is careful: Django quietly re-saves the password hash when it
+    upgrades an old hash at login. That keeps the same password, so it must
+    not sign the student out. Django's upgrade is recognisable: it saves with
+    update_fields=["password"] and has already cleared the raw password.
+    A real change (set_password, then save) still has the raw password on the
+    object, so we compare it with the old hash.
+    """
+    instance._password_changed = False
+    if kwargs.get("raw") or instance.pk is None:  # fixtures, or a brand new user
+        return
+    update_fields = kwargs.get("update_fields")
+    if update_fields is not None and "password" not in update_fields:
+        return  # e.g. last_login updates: skip the extra query
+    old_hash = sender.objects.filter(pk=instance.pk).values_list("password", flat=True).first()
+    if old_hash is None or old_hash == instance.password:
+        return
+    raw = getattr(instance, "_password", None)
+    if raw is not None:
+        if check_password(raw, old_hash):
+            return  # same password, new hash: not a change
+    elif update_fields is not None and set(update_fields) == {"password"}:
+        return  # Django's own hash upgrade at login
+    instance._password_changed = True
+
+
+@receiver(post_save, sender=User)
+def revoke_sessions_after_password_change(sender, instance, created, **kwargs):
+    """A password change signs the student out everywhere (BE-01.2). This one
+    hook covers the reset flow, Django admin and any future change-password
+    endpoint. Failures are logged loudly, not allowed to break the change."""
+    if created or not getattr(instance, "_password_changed", False):
+        return
+    instance._password_changed = False
+    try:
+        with transaction.atomic():
+            revoke_all_sessions(instance, reason="Password changed")
+    except Exception:
+        logger.exception("Could not revoke sessions after password change for user %s", instance.pk)
