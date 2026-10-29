@@ -16,4 +16,5 @@ urlpatterns = [
     path("ready", ReadyView.as_view(), name="v1-ready"),
     path("ready/", ReadyView.as_view()),
     path("", include("core.v1_urls")),
+    path("", include("accounts.v1_urls")),
 ]
