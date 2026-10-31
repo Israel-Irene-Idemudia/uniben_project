@@ -1,0 +1,212 @@
+{
+  "status": "PREPARED FOR FINAL APPROVAL: six temporary indexes reviewed; group 1 documentation staged in real index at approval boundary; no commits or push",
+  "groups": [
+    {
+      "title": "docs(project): reconcile specifications and record preservation review",
+      "whole_files": [
+        "docs/FINAL_SAFETY_REVIEW.md",
+        "docs/GIT_CHECKPOINT_MANIFEST.json",
+        "docs/GIT_CHECKPOINT_PLAN.md",
+        "docs/IMPLEMENTATION_CHECKPOINT_HASHES.json",
+        "docs/MEDIA_SAFETY_INVENTORY.json",
+        "docs/PRESERVATION_REVIEW.md",
+        "docs/SKHOLAR_HANDOFF.md",
+        "docs/design/xp-ledger.md",
+        "docs/skholar-claude-pack/CLAUDE.md",
+        "docs/skholar-claude-pack/README.md",
+        "docs/skholar-claude-pack/docs/API_CONVENTIONS.md",
+        "docs/skholar-claude-pack/docs/DECISIONS.md",
+        "docs/skholar-claude-pack/docs/PHASES.md",
+        "docs/skholar-claude-pack/docs/PROGRESS.md",
+        "docs/skholar-claude-pack/docs/SRS.md",
+        "docs/skholar-claude-pack/docs/phases/phase-00-safety-and-baseline.md",
+        "docs/skholar-claude-pack/docs/phases/phase-01-platform-foundation.md",
+        "docs/skholar-claude-pack/docs/phases/phase-02-identity-and-registry.md",
+        "docs/skholar-claude-pack/docs/phases/phase-03-xp-ledger-and-rewards.md",
+        "docs/skholar-claude-pack/docs/phases/phase-04-seasons-leaderboards-quests.md",
+        "docs/skholar-claude-pack/docs/phases/phase-05-past-questions.md",
+        "docs/skholar-claude-pack/docs/phases/phase-06-feed-notifications-moderation.md",
+        "docs/skholar-claude-pack/docs/phases/phase-07-release-1-gate.md",
+        "docs/skholar-claude-pack/docs/phases/phase-08-badges-friends-communities.md",
+        "docs/skholar-claude-pack/docs/phases/phase-09-classrooms.md",
+        "docs/skholar-claude-pack/docs/phases/phase-10-courses-rag-audio.md",
+        "docs/skholar-claude-pack/docs/phases/phase-11-release-2-gate.md",
+        "docs/skholar-claude-pack/docs/phases/phase-12-business-and-location.md",
+        "docs/skholar-claude-pack/docs/phases/phase-13-release-3-gate.md"
+      ],
+      "partial_files": {}
+    },
+    {
+      "title": "feat(xp): preserve ledger and server-priced rewards",
+      "whole_files": [
+        "accounts/admin.py",
+        "accounts/tests/test_v1_me.py",
+        "accounts/tests/test_v1_me_xp.py",
+        "materials/views.py",
+        "rewards/admin.py",
+        "rewards/migrations/0002_reward_catalog.py",
+        "rewards/migrations/0003_seed_reward_catalog.py",
+        "rewards/models.py",
+        "rewards/services.py",
+        "rewards/test_redeem_validation.py",
+        "rewards/tests.py",
+        "rewards/v1_urls.py",
+        "rewards/v1_views.py",
+        "rewards/views.py",
+        "uniben_portal/urls.py",
+        "xp/__init__.py",
+        "xp/admin_base.py",
+        "xp/apps.py",
+        "xp/management/__init__.py",
+        "xp/management/commands/__init__.py",
+        "xp/management/commands/reconcile_points.py",
+        "xp/migrations/0001_xp_ledger.py",
+        "xp/migrations/0002_seed_rules_and_levels.py",
+        "xp/migrations/0003_opening_balances.py",
+        "xp/migrations/__init__.py",
+        "xp/serializers.py",
+        "xp/services.py",
+        "xp/tests/__init__.py",
+        "xp/tests/helpers.py",
+        "xp/tests/test_admin.py",
+        "xp/tests/test_api.py",
+        "xp/tests/test_migrations.py",
+        "xp/tests/test_models.py",
+        "xp/tests/test_services.py",
+        "xp/urls.py",
+        "xp/views.py"
+      ],
+      "partial_files": {
+        "accounts/v1_profile.py": "XP service import, public XP level/title, and ledger-backed progress_payload only. Leave university-related changes for group 3.",
+        "xp/models.py": "XPLedgerEntryQuerySet, XPLedgerEntry, XPAdjustment, XPRule, LevelConfig, and required imports. Leave XPQuarantineQuerySet and XPQuarantine for group 6. Current season-window explanatory docstring may stay as documentation; it imports no future app.",
+        "xp/admin.py": "Ledger, adjustment, rule and level forms/admin, with imports matching those classes. Leave quarantine imports, XPQuarantineForm and XPQuarantineAdmin for group 6.",
+        "uniben_portal/settings.py": "Comma required after CommonConfig and xp.apps.XpConfig registration only."
+      }
+    },
+    {
+      "title": "feat(core): preserve minimum multi-university foundation",
+      "whole_files": [
+        "core/admin.py",
+        "core/migrations/0006_university_faculty_university.py",
+        "core/migrations/0007_seed_uniben.py",
+        "core/models.py",
+        "core/tests/test_university.py",
+        "core/v1_serializers.py",
+        "core/v1_urls.py",
+        "core/v1_views.py"
+      ],
+      "partial_files": {
+        "accounts/v1_profile.py": "University-aware _PROFILE_RELATED and profile_for, university_of helper, university reference in public_profile. Retain group 2 XP changes."
+      }
+    },
+    {
+      "title": "feat(seasons): preserve audited season lifecycle",
+      "whole_files": [
+        "seasons/__init__.py",
+        "seasons/admin.py",
+        "seasons/apps.py",
+        "seasons/migrations/0001_initial.py",
+        "seasons/migrations/__init__.py",
+        "seasons/models.py",
+        "seasons/serializers.py",
+        "seasons/services.py",
+        "seasons/tests/__init__.py",
+        "seasons/tests/test_admin.py",
+        "seasons/tests/test_api.py",
+        "seasons/tests/test_services.py",
+        "seasons/v1_urls.py",
+        "seasons/views.py"
+      ],
+      "partial_files": {
+        "uniben_portal/settings.py": "seasons.apps.SeasonsConfig registration only.",
+        "common/v1_urls.py": "seasons.v1_urls include only."
+      }
+    },
+    {
+      "title": "feat(leaderboards): preserve contribution rules and personal boards",
+      "whole_files": [
+        "leaderboards/__init__.py",
+        "leaderboards/admin.py",
+        "leaderboards/apps.py",
+        "leaderboards/management/__init__.py",
+        "leaderboards/management/commands/__init__.py",
+        "leaderboards/management/commands/explain_leaderboard.py",
+        "leaderboards/migrations/0001_initial.py",
+        "leaderboards/migrations/__init__.py",
+        "leaderboards/models.py",
+        "leaderboards/serializers.py",
+        "leaderboards/services.py",
+        "leaderboards/tests/__init__.py",
+        "leaderboards/tests/board_helpers.py",
+        "leaderboards/tests/test_admin.py",
+        "leaderboards/tests/test_api.py",
+        "leaderboards/tests/test_board_api.py",
+        "leaderboards/tests/test_board_endpoint.py",
+        "leaderboards/tests/test_boards.py",
+        "leaderboards/tests/test_explain_command.py",
+        "leaderboards/tests/test_services.py",
+        "leaderboards/v1_urls.py",
+        "leaderboards/views.py"
+      ],
+      "partial_files": {
+        "uniben_portal/settings.py": "leaderboards.apps.LeaderboardsConfig registration only.",
+        "common/v1_urls.py": "leaderboards.v1_urls include only.",
+        "leaderboards/boards.py": "Personal board computation, top/page/me/around_me, scoring/window/isolation and suspended/deleted exclusions. Leave quarantine docstring bullet, XPQuarantine import, quarantine table lookup, and quarantined-award NOT EXISTS block (including params.extend) for group 6."
+      }
+    },
+    {
+      "title": "feat(leaderboards): preserve quarantined award exclusions",
+      "whole_files": [
+        "leaderboards/tests/test_quarantine_exclusion.py",
+        "xp/migrations/0004_xp_quarantine.py",
+        "xp/quarantine.py",
+        "xp/tests/test_quarantine.py"
+      ],
+      "partial_files": {
+        "xp/models.py": "XPQuarantineQuerySet and XPQuarantine, preserving existing ledger model contents.",
+        "xp/admin.py": "XPQuarantine and quarantine-service imports, XPQuarantineForm and XPQuarantineAdmin.",
+        "leaderboards/boards.py": "Quarantine explanatory bullet, XPQuarantine import, quarantine table lookup, EXCLUDING_STATES and NOT EXISTS predicate with its parameters."
+      }
+    }
+  ],
+  "excluded_untracked": [
+    "avatar_usage.txt",
+    "docs/skholar-claude-pack/.claude/settings.json",
+    "git_log.txt",
+    "git_status.txt",
+    "kholar-world-dev",
+    "materials/test_doc_LwpacbU.pdf",
+    "materials/test_doc_UGAex6l.pdf",
+    "materials/test_doc_fOtK4tb.pdf",
+    "migrations_list.txt",
+    "phase2_data_check.py",
+    "points_grep.txt",
+    "points_usage.txt",
+    "tree.txt"
+  ],
+  "ignored_test_media": [
+    "media/materials/test_doc.pdf",
+    "media/materials/test_doc_1cNgYQU.pdf",
+    "media/materials/test_doc_3p0Sjvc.pdf",
+    "media/materials/test_doc_4eKjwIM.pdf",
+    "media/materials/test_doc_5phxTKu.pdf",
+    "media/materials/test_doc_94Nd99z.pdf",
+    "media/materials/test_doc_d0BxzYp.pdf",
+    "media/materials/test_doc_DCQorQG.pdf",
+    "media/materials/test_doc_GCD4E5L.pdf",
+    "media/materials/test_doc_hb6hMSY.pdf",
+    "media/materials/test_doc_jdPVaoM.pdf",
+    "media/materials/test_doc_Koe8vRn.pdf",
+    "media/materials/test_doc_lHz9Gkf.pdf",
+    "media/materials/test_doc_oy2Boj3.pdf",
+    "media/materials/test_doc_pfPO6YA.pdf",
+    "media/materials/test_doc_pqOnZlq.pdf",
+    "media/materials/test_doc_veYWupT.pdf",
+    "media/materials/test_doc_VIaIczC.pdf",
+    "media/materials/test_doc_Vkol18m.pdf",
+    "media/materials/test_doc_vPBkton.pdf",
+    "media/materials/test_doc_Ykhvh9s.pdf"
+  ],
+  "external_gate": "Do not push until active deployment branch/integrations are confirmed and Israel gives explicit final approval.",
+  "split_caveat": "Shared-file variants exist only in temporary indexes and validation snapshots. Original application files are unchanged; all 90 final application blobs match the working tree. Each cumulative source snapshot has system/migration checks and full-suite results recorded in FINAL_SAFETY_REVIEW.md."
+}
