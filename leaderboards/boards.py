@@ -24,6 +24,9 @@ DECISIONS (approved defaults, 30 Oct 2026; see DECISIONS.md D-5 and D-19):
   user id ascending, so pages are stable between calls.
 - Suspended and deleted accounts are excluded at read time (BE-05.5); their
   ledger rows are untouched.
+- Quarantined awards (Phase 4.5, BE-05.5, D-22) are excluded per ledger row
+  while an xp.XPQuarantine row for them is open; the student's other awards
+  still count. The ledger row is untouched. Clearing arrives with Phase 5.8.
 """
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -35,7 +38,7 @@ from django.db import connection
 from accounts.models import AccountStatus, StudentDepartmentHistory
 from core.models import Faculty
 from seasons.models import Season
-from xp.models import XPLedgerEntry
+from xp.models import XPLedgerEntry, XPQuarantine
 
 SCOPE_DEPARTMENT = "department"
 SCOPE_FACULTY = "faculty"
@@ -127,6 +130,7 @@ def _scores_sql(scope: str, unit_id: int, window: BoardWindow) -> Tuple[str, lis
     history = StudentDepartmentHistory._meta.db_table
     faculty = Faculty._meta.db_table
     status = AccountStatus._meta.db_table
+    quarantine = XPQuarantine._meta.db_table
 
     # Historical membership: the history row in force when the XP was earned.
     # Half-open on both sides, matching sync_department_history, which closes
@@ -160,6 +164,15 @@ def _scores_sql(scope: str, unit_id: int, window: BoardWindow) -> Tuple[str, lis
         f"NOT EXISTS (SELECT 1 FROM {status} s WHERE s.user_id = l.user_id AND s.state <> %s)"
     )
     params.append(AccountStatus.ACTIVE)
+
+    # BE-05.5 (Phase 4.5): a quarantined award scores nowhere until cleared.
+    # Per ledger row, not per student: the student's other awards still count.
+    excluding = XPQuarantine.EXCLUDING_STATES
+    where.append(
+        f"NOT EXISTS (SELECT 1 FROM {quarantine} q WHERE q.entry_id = l.id"
+        f" AND q.state IN ({', '.join(['%s'] * len(excluding))}))"
+    )
+    params.extend(excluding)
 
     sql = (
         f"SELECT l.user_id AS user_id, SUM(l.amount) AS xp FROM {ledger} l "

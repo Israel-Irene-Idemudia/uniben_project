@@ -4,7 +4,8 @@ from django import forms
 from django.contrib import admin, messages
 
 from .admin_base import AuditedConfigAdmin, ReasonModelForm
-from .models import LevelConfig, XPAdjustment, XPLedgerEntry, XPRule
+from .models import LevelConfig, XPAdjustment, XPLedgerEntry, XPQuarantine, XPRule
+from .quarantine import QuarantineError, can_quarantine, open_quarantine, quarantine_award
 from .services import AdjustmentRefused, adjust_xp, check_adjustment
 
 
@@ -86,8 +87,82 @@ class XPAdjustmentAdmin(admin.ModelAdmin):
         obj._state.adding = False
 
 
+class XPQuarantineForm(forms.ModelForm):
+    """Quarantine one award (Phase 4.5). Reason mandatory; audited."""
+
+    reason = forms.CharField(
+        max_length=1000, widget=forms.Textarea,
+        help_text="Why? Saved permanently in the audit log.",
+    )
+
+    class Meta:
+        model = XPQuarantine
+        fields = ("entry", "reason")
+
+    def clean_entry(self):
+        entry = self.cleaned_data["entry"]
+        if entry.kind != XPLedgerEntry.KIND_AWARD:
+            raise forms.ValidationError("Only XP awards can be quarantined.")
+        if open_quarantine(entry) is not None:
+            raise forms.ValidationError("This award is already quarantined.")
+        return entry
 
 
+@admin.register(XPQuarantine)
+class XPQuarantineAdmin(admin.ModelAdmin):
+    """Hold an award off the leaderboards (BE-05.5, D-22).
+
+    Phase 4.5 minimum: add only, with the `quarantine_xp_award` permission.
+    Records are read-only afterwards and never deleted. Clearing, the review
+    queue and appeals are Phase 5.8 / 6.7.
+    """
+
+    form = XPQuarantineForm
+    fields = ("entry", "reason")
+    list_display = ("created_at", "entry", "user", "amount", "state", "source", "flagged_by")
+    list_filter = ("state", "source")
+    search_fields = ("entry__user__username", "entry__id")
+    raw_id_fields = ("entry",)
+    list_select_related = ("entry__user", "flagged_by")
+
+    @admin.display(description="Student")
+    def user(self, obj):
+        return obj.entry.user
+
+    @admin.display(description="XP")
+    def amount(self, obj):
+        return obj.entry.amount
+
+    def get_readonly_fields(self, request, obj=None):
+        return ("entry", "reason") if obj else ()
+
+    def has_view_permission(self, request, obj=None):
+        return can_quarantine(request.user) or super().has_view_permission(request, obj)
+
+    def has_add_permission(self, request):
+        return can_quarantine(request.user)
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def save_model(self, request, obj, form, change):
+        # Never obj.save(): the service checks the permission again and
+        # writes the record and its audit row together.
+        try:
+            record = quarantine_award(
+                form.cleaned_data["entry"],
+                actor=request.user,
+                reason=form.cleaned_data["reason"],
+                request_id=getattr(request, "request_id", None),
+            )
+        except QuarantineError as exc:
+            self.message_user(request, str(exc), level=messages.ERROR)
+            return
+        obj.pk = record.pk
+        obj._state.adding = False
 
 
 class XPRuleForm(ReasonModelForm):

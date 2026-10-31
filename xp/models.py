@@ -115,8 +115,96 @@ class XPLedgerEntry(models.Model):
         raise ImmutableRecordError("XP ledger rows cannot be deleted.")
 
 
+class XPQuarantineQuerySet(models.QuerySet):
+    """Quarantine rows are evidence too: no bulk rewrite or removal."""
+
+    def update(self, **kwargs):
+        raise ImmutableRecordError("Quarantine records cannot be updated.")
+
+    def bulk_update(self, objs, fields, batch_size=None):
+        raise ImmutableRecordError("Quarantine records cannot be updated.")
+
+    def delete(self):
+        raise ImmutableRecordError("Quarantine records cannot be deleted.")
 
 
+class XPQuarantine(models.Model):
+    """One award held off the leaderboards for review (Phase 4.5, BE-05.5).
+
+    Minimum needed for correct board scoring. DECISIONS.md D-22 sets the
+    boundary:
+    - Phase 4.5 (here): a row linked to ONE ledger entry, written only by
+      xp.quarantine.quarantine_award (permission + reason + AuditLog).
+      While state is `quarantined` the award scores on no board.
+    - Phase 5.8 / 6.7: detectors, the review queue, clear/uphold decisions,
+      appeals and release. They move `state` on from `quarantined`; any
+      other state scores normally again, so no board change is needed then.
+
+    The ledger row itself is never changed: quarantine is a separate record,
+    so the original transaction stays exactly as written (BE-04.1).
+    Quarantine does NOT change the spendable balance, lifetime XP or level
+    (D-2); it is a leaderboard exclusion only, which is all BE-05.5 asks.
+    """
+
+    STATE_QUARANTINED = "quarantined"
+    # Reserved for the Phase 5.8 review outcome. Nothing writes it yet.
+    STATE_CLEARED = "cleared"
+    STATE_CHOICES = [
+        (STATE_QUARANTINED, "Quarantined (off the boards)"),
+        (STATE_CLEARED, "Cleared (counts again)"),
+    ]
+    # Board scoring excludes an award while ANY of its rows is in one of these.
+    EXCLUDING_STATES = (STATE_QUARANTINED,)
+
+    SOURCE_MANUAL = "manual"  # Phase 5.8 detectors add their own codes.
+
+    entry = models.ForeignKey(
+        XPLedgerEntry, on_delete=models.PROTECT, related_name="quarantines"
+    )
+    state = models.CharField(max_length=20, choices=STATE_CHOICES, default=STATE_QUARANTINED)
+    source = models.CharField(max_length=50, default=SOURCE_MANUAL)
+    reason = models.TextField()
+    # Nullable only so a Phase 5.8 detector can flag without a person;
+    # the 4.5 service always requires an actor.
+    flagged_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.PROTECT,
+        related_name="+",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    objects = XPQuarantineQuerySet.as_manager()
+
+    class Meta:
+        ordering = ["-created_at", "-id"]
+        verbose_name = "XP quarantine"
+        verbose_name_plural = "XP quarantines"
+        # Only "view" by default: the generic add/change/delete permissions
+        # must not grant the power to quarantine.
+        default_permissions = ("view",)
+        permissions = [("quarantine_xp_award", "Can quarantine an XP award (off the leaderboards)")]
+        constraints = [
+            # One open case per award. Closed rows (5.8) stay as history.
+            models.UniqueConstraint(
+                fields=["entry"],
+                condition=Q(state="quarantined"),
+                name="uniq_open_xp_quarantine_per_entry",
+            ),
+        ]
+
+    def __str__(self):
+        return f"entry {self.entry_id}: {self.state}"
+
+    def save(self, *args, **kwargs):
+        # Append-only in 4.5. Phase 5.8 adds the audited state transition.
+        if not self._state.adding:
+            raise ImmutableRecordError("Quarantine records cannot be changed.")
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        raise ImmutableRecordError("Quarantine records cannot be deleted.")
 
 
 class XPAdjustment(XPLedgerEntry):
