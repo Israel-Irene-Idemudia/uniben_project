@@ -82,11 +82,16 @@ class V1MeTests(APITestCase):
         self.assertEqual(r.status_code, 400)
         self.assertIn("phone", r.json()["field_errors"])
 
-    def test_progress_has_placeholders_until_the_ledger_exists(self):
+    def test_progress_reads_the_ledger_not_the_legacy_points_field(self):
+        # The profile has points=70 but no ledger rows: the ledger wins (D7).
         self.auth()
         body = self.client.get("/api/v1/me/progress").json()
-        self.assertFalse(body["ledger_ready"])
-        for key in ("xp_total", "level", "xp_to_next_level", "personal_rank", "department_rank"):
+        self.assertTrue(body["ledger_ready"])
+        self.assertEqual(body["xp_total"], 0)
+        self.assertEqual(body["balance"], 0)
+        self.assertEqual(body["level"], 1)
+        # Ranks arrive with the Phase 4 boards.
+        for key in ("personal_rank", "department_rank"):
             self.assertIsNone(body[key])
         self.assertEqual(body["department"]["name"], "Physics")
         self.assertEqual(body["suggested_activities"], [])

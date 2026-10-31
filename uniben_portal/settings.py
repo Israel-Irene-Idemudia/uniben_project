@@ -69,7 +69,8 @@ INSTALLED_APPS = [
     'aiassistant',
     'app_analytics',
     'rewards',
-    'common.apps.CommonConfig'
+    'common.apps.CommonConfig',
+    'xp.apps.XpConfig',
 ]
 
 

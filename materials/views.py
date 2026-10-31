@@ -1,3 +1,6 @@
+import logging
+
+from django.db import transaction
 from django.shortcuts import render
 from rest_framework import generics, filters, permissions
 from .models import Material
@@ -6,6 +9,9 @@ from django.utils import timezone
 from rest_framework.exceptions import ValidationError
 from notifications.models import InAppNotification
 from notifications.utils import send_onesignal_notification
+from xp.services import UnknownXPAction, award_xp
+
+logger = logging.getLogger(__name__)
 
 # All materials with search + filter
 class MaterialListAPI(generics.ListAPIView):
@@ -110,17 +116,27 @@ class MaterialVerificationAPI(generics.UpdateAPIView):
     def perform_update(self, serializer):
         material = serializer.instance
         was_verified = material.is_verified
-        serializer.save()
-        if not was_verified and serializer.instance.is_verified:
-            user = serializer.instance.user
-            if user:
-                from accounts.models import UserProfile
-                try:
-                    profile = user.userprofile
-                    profile.points += 10
-                    profile.save()
-                except UserProfile.DoesNotExist:
-                    pass
+        with transaction.atomic():
+            serializer.save()
+            if not was_verified and serializer.instance.is_verified:
+                user = serializer.instance.user
+                if user:
+                    # Phase 3 (F6 fix): the +10 now goes through the XP ledger.
+                    # The key is fixed per material, so unverify -> verify again
+                    # can never pay twice. If an admin has switched the
+                    # 'material_verified' rule off, verification still succeeds
+                    # and simply awards nothing.
+                    try:
+                        award_xp(
+                            user,
+                            action_code="material_verified",
+                            source_feature="materials",
+                            source_record_id=str(serializer.instance.pk),
+                            idempotency_key=f"material_verified:{serializer.instance.pk}",
+                            created_by=self.request.user,
+                        )
+                    except UnknownXPAction:
+                        logger.warning("No active 'material_verified' XP rule; nothing awarded.")
 
 # Admin: Delete material
 class MaterialDeleteAPI(generics.DestroyAPIView):

@@ -32,6 +32,8 @@ urlpatterns = [
     # Versioned API (Skholar World). Kept ABOVE the legacy "api/" includes so
     # legacy routes can never match an /api/v1/ path first.
     path("api/v1/", include("common.v1_urls")),
+    path("api/v1/", include("xp.urls")),
+    path("api/v1/", include("rewards.v1_urls")),
 
     # API endpoints for different apps
 

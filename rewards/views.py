@@ -1,53 +1,53 @@
-from rest_framework import generics, permissions, status
+from rest_framework import generics, permissions, serializers, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.db import transaction
 from django.shortcuts import get_object_or_404
 from .models import Redemption
 from .serializers import RedemptionSerializer
-from accounts.models import UserProfile
+from .services import ProfileMissing, UnknownReward, redeem_reward
+from xp.services import InsufficientPoints
+
+
+class RedeemInputSerializer(serializers.Serializer):
+    """What a client may send to redeem. `point_cost` is deliberately NOT a
+    field: DRF drops unknown keys, so any price a client sends is ignored and
+    the catalogue price is charged (D-1, D7).
+
+    DECISION: a stale or tampered point_cost is silently ignored, not
+    rejected, so older Flutter builds that still send one keep working.
+    """
+
+    reward_type = serializers.CharField(max_length=100)
+    phone = serializers.CharField(max_length=20)
+    network = serializers.CharField(max_length=20)
+
 
 class RedeemRewardAPI(APIView):
+    """LEGACY /api/rewards/redeem/ - same request and response shapes as before."""
+
     permission_classes = [permissions.IsAuthenticated]
 
-    @transaction.atomic
     def post(self, request):
-        serializer = RedemptionSerializer(data=request.data)
+        serializer = RedeemInputSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+        data = serializer.validated_data
         try:
-            point_cost = int(request.data.get('point_cost', 50))
-        except (TypeError, ValueError):
-            return Response({'error': 'Invalid point cost format.'}, status=status.HTTP_400_BAD_REQUEST)
-
-        if point_cost <= 0:
-            return Response({'error': 'Invalid point cost.'}, status=status.HTTP_400_BAD_REQUEST)
-
-        # Lock this student's profile row until the transaction ends,
-        # so two simultaneous requests cannot spend the same points twice.
-        try:
-            profile = UserProfile.objects.select_for_update().get(user=request.user)
-        except UserProfile.DoesNotExist:
-            return Response({'error': 'User profile not found.'}, status=status.HTTP_404_NOT_FOUND)
-
-        if profile.points < point_cost:
-            return Response(
-                {'error': f'Insufficient points. You have {profile.points} points, but this costs {point_cost}.'},
-                status=status.HTTP_400_BAD_REQUEST
+            redemption = redeem_reward(
+                request.user,
+                reward_type=data["reward_type"],
+                phone=data["phone"],
+                network=data["network"],
             )
-
-        profile.points -= point_cost
-
-        phone = serializer.validated_data.get('phone')
-        network = serializer.validated_data.get('network')
-        if phone:
-            profile.phone = phone
-        if network:
-            profile.network = network
-        profile.save()
-
-        redemption = serializer.save(user=request.user, point_cost=point_cost, status='pending')
+        except UnknownReward:
+            return Response({'error': 'This reward is not available.'}, status=status.HTTP_400_BAD_REQUEST)
+        except ProfileMissing:
+            return Response({'error': 'User profile not found.'}, status=status.HTTP_404_NOT_FOUND)
+        except InsufficientPoints as exc:
+            return Response(
+                {'error': f'Insufficient points. You have {exc.balance} points, but this costs {exc.cost}.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         return Response(RedemptionSerializer(redemption).data, status=status.HTTP_201_CREATED)
 
 

@@ -20,6 +20,9 @@ class UserProfileInline(admin.StackedInline):
     model = UserProfile
     can_delete = False
     verbose_name_plural = 'User Profile'
+    # Phase 3 (BE-04.7): points is now a read-only mirror of the XP ledger.
+    # Change a balance only with admin -> XP adjustments (reason + audit).
+    readonly_fields = ('points',)
 
 
 @admin.action(description="Sign out selected users everywhere (revoke refresh tokens)")
