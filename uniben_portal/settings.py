@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     'common.apps.CommonConfig',
     'xp.apps.XpConfig',
     'seasons.apps.SeasonsConfig',
+    'leaderboards.apps.LeaderboardsConfig',
 ]
 
 
