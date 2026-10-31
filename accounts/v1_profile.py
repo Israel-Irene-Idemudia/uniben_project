@@ -8,7 +8,7 @@ from accounts.models import UserProfile
 from xp.services import get_balance, get_level
 
 
-_PROFILE_RELATED = ("faculty", "department", "level")
+_PROFILE_RELATED = ("faculty", "faculty__university", "department", "level")
 
 
 def profile_for(user):
@@ -19,6 +19,13 @@ def profile_for(user):
         # app can show a "complete your profile" state instead of an error.
         UserProfile.objects.get_or_create(user=user)
         return UserProfile.objects.select_related(*_PROFILE_RELATED).get(user=user)
+
+
+def university_of(profile):
+    """A student's university is reached through their faculty (no new
+    column on student records). None until the faculty is set."""
+    faculty = profile.faculty
+    return faculty.university if faculty is not None else None
 
 
 def _ref(obj, with_code=False):
@@ -48,6 +55,7 @@ def public_profile(profile):
         "xp_level": info.level,
         "xp_level_title": info.title,
         "badges": [],          # Phase 8
+        "university": _ref(university_of(profile), with_code=True),
         "faculty": _ref(profile.faculty, with_code=True),
         "department": _ref(profile.department, with_code=True),
         "academic_level": _ref(profile.level),  # core.Level: 100L, 200L...

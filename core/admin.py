@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Faculty, Department, CourseArea, Level, Course, ContactMessage, CampusLocation
+from .models import Faculty, Department, CourseArea, Level, Course, ContactMessage, CampusLocation, University
 
 class NoDeleteAdmin(admin.ModelAdmin):
     """Registry rows are retired with is_active, never deleted: deleting a
@@ -14,10 +14,17 @@ class NoDeleteAdmin(admin.ModelAdmin):
         return actions
 
 
+@admin.register(University)
+class UniversityAdmin(NoDeleteAdmin):
+    list_display = ("name", "short_name", "code", "is_active")
+    list_filter = ("is_active",)
+    search_fields = ("name", "short_name", "code")
+
+
 @admin.register(Faculty)
 class FacultyAdmin(NoDeleteAdmin):
-    list_display = ("name", "code", "is_active")
-    list_filter = ("is_active",)
+    list_display = ("name", "university", "code", "is_active")
+    list_filter = ("university", "is_active")
     search_fields = ("name", "code")
 
 

@@ -1,6 +1,32 @@
 from django.db import models
 from django.conf import settings
 
+
+class University(models.Model):
+    """A university served by Skholar (multi-university foundation).
+
+    UNIBEN is the first and, for now, only row (seeded by migration). The
+    university is reached through Faculty: Department and Level already hang
+    off Faculty, so existing student records need no new columns. Retire a
+    university with is_active, never delete it (PROTECT on Faculty).
+    """
+
+    name = models.CharField(max_length=200)
+    # Short stable identifier, e.g. "UNIBEN". Unique: there are no existing
+    # rows to clean, unlike Faculty.code and Department.code.
+    code = models.SlugField(max_length=20, unique=True)
+    short_name = models.CharField(max_length=50, blank=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["name", "id"]
+        verbose_name_plural = "universities"
+
+    def __str__(self):
+        return self.short_name or self.name
+
+
 class Faculty(models.Model):
     name = models.CharField(max_length=200)
     # Phase 2.2 (BE-02.1). Nullable and NOT unique on purpose: production data
@@ -8,6 +34,16 @@ class Faculty(models.Model):
     # is_active instead of deleting, because deleting cascades to results.
     code = models.CharField(max_length=20, blank=True, null=True)
     is_active = models.BooleanField(default=True)
+    # Nullable so the migration is additive; the data migration points every
+    # existing faculty at UNIBEN. PROTECT: retiring a university must never
+    # cascade into faculties, departments and student results.
+    university = models.ForeignKey(
+        "core.University",
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+        related_name="faculties",
+    )
 
     def __str__(self):
         return self.name

@@ -1,6 +1,12 @@
 from rest_framework import serializers
 
-from core.models import Department, Faculty
+from core.models import Department, Faculty, University
+
+
+class V1UniversitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = University
+        fields = ["id", "name", "code", "short_name"]
 
 
 class V1FacultySerializer(serializers.ModelSerializer):
